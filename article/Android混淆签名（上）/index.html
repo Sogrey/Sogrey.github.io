@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Sogrey" />
+
+
+
+<meta name="description" content="代码混淆，是将计算机程序的代码转换成一种功能上等价，但是难于阅读和理解的形式的行为。代码混淆可以用于程序源代码，也可以用于程序编译而成的中间代码。执行代码混淆的程序被称作代码混淆器。目前已经存在许多种功能各异的代码混淆器。 代码混淆的主要目的是为了保护源代码，阻止反向工程。反向工程会带来许多问题，诸如知识产权泄露，程序弱点暴露易受攻击等。使用即时编译技术的语言，如Java、C#所编写的程序更容易">
+<meta name="keywords" content="android,apk混淆,签名">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android混淆签名(上)">
+<meta property="og:url" content="https://sogrey.github.io/article/Android混淆签名（上）/index.html">
+<meta property="og:site_name" content="Sogrey">
+<meta property="og:description" content="代码混淆，是将计算机程序的代码转换成一种功能上等价，但是难于阅读和理解的形式的行为。代码混淆可以用于程序源代码，也可以用于程序编译而成的中间代码。执行代码混淆的程序被称作代码混淆器。目前已经存在许多种功能各异的代码混淆器。 代码混淆的主要目的是为了保护源代码，阻止反向工程。反向工程会带来许多问题，诸如知识产权泄露，程序弱点暴露易受攻击等。使用即时编译技术的语言，如Java、C#所编写的程序更容易">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-01-16T03:30:30.875Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android混淆签名(上)">
+<meta name="twitter:description" content="代码混淆，是将计算机程序的代码转换成一种功能上等价，但是难于阅读和理解的形式的行为。代码混淆可以用于程序源代码，也可以用于程序编译而成的中间代码。执行代码混淆的程序被称作代码混淆器。目前已经存在许多种功能各异的代码混淆器。 代码混淆的主要目的是为了保护源代码，阻止反向工程。反向工程会带来许多问题，诸如知识产权泄露，程序弱点暴露易受攻击等。使用即时编译技术的语言，如Java、C#所编写的程序更容易">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Sogrey" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Android混淆签名(上) | Sogrey</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/Sogrey.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Sogrey</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">必须努力，付出不亚于任何人努力</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="on" autocorrect="true" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+            
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/logs/">更新日志</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:408270653@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/1766036691" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/Sogrey" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/sogrey" title="知乎"></a>
+                            
+                                <a class="fa 简书" href="http://www.jianshu.com/u/9ede1ff4ccfb" title="简书"></a>
+                            
+                                <a class="fa CSDN" href="http://blog.csdn.net/sogrey" title="CSDN"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/sogrey" title="Coding"></a>
+                            
+                                <a class="fa LinkedIn" href="https://cn.linkedin.com/in/sogrey" title="LinkedIn"></a>
+                            
+                                <a class="fa LOFTER" href="http://sogrey.lofter.com/" title="LOFTER"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-pages/">Github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitment/">Gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo建站填坑/">Hexo建站填坑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html5/">Html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JCenter/">JCenter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JNI/">JNI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KSoap2/">KSoap2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Md5/">Md5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PPT/">PPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS-code/">VS code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebApp/">WebApp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webp/">Webp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webservice/">Webservice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webview/">Webview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yelee/">Yelee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apk混淆/">apk混淆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dex/">dex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icon-font字体图标/">icon font字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar/">jar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/marquee/">marquee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yelog/">yelog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/“关于我”/">“关于我”</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/“标签云”/">“标签云”</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地址与经纬度/">地址与经纬度</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/居中/">居中</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序/">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/手记/">手记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术文章/">技术文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文章分类/">文章分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂记/">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度-api/">百度 api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/签名/">签名</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://pan.baidu.com/s/1hr2PiG8">芝麻开门</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/JavaDocs/">JavaDoc</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/notes/">notes</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/html-css-js-demos/">html-css-js-demos</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Kotlin-Notes/">Kotlin-学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/WebTools/index.html">Web开发常用工具</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">必须努力，付出不亚于任何人努力</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Sogrey</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/Sogrey.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Sogrey</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">必须努力，付出不亚于任何人努力</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/logs/">更新日志</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:408270653@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1766036691" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/Sogrey" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/sogrey" title="知乎"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/9ede1ff4ccfb" title="简书"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/sogrey" title="CSDN"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/sogrey" title="Coding"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/sogrey" title="LinkedIn"></a>
+                            
+                                <a class="fa LOFTER" target="_blank" href="http://sogrey.lofter.com/" title="LOFTER"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Android混淆签名（上）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/article/Android混淆签名（上）/" class="article-date">
+      <time datetime="2017-01-13T08:31:07.000Z" itemprop="datePublished">2017-01-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android混淆签名(上)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apk混淆/">apk混淆</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/签名/">签名</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>代码混淆，是将计算机程序的代码转换成一种功能上等价，但是难于阅读和理解的形式的行为。代码混淆可以用于程序源代码，也可以用于程序编译而成的中间代码。执行代码混淆的程序被称作代码混淆器。目前已经存在许多种功能各异的代码混淆器。</p>
+<p>代码混淆的主要目的是为了保护源代码，阻止反向工程。反向工程会带来许多问题，诸如知识产权泄露，程序弱点暴露易受攻击等。使用即时编译技术的语言，如Java、C#所编写的程序更容易受到反向工程的威胁。<a href="http://blog.csdn.net/hongshan50/article/details/22746703" target="_blank" rel="noopener">1</a></p>
+<p>签名移步<a href="https://sogrey.github.io/article/Android%E6%B7%B7%E6%B7%86%E7%AD%BE%E5%90%8D%EF%BC%88%E4%B8%8B%EF%BC%89/">签名</a></p>
+</blockquote>
+<a id="more"></a>
+<h1 id="1-混淆"><a href="#1-混淆" class="headerlink" title="1 混淆"></a>1 混淆</h1><h2 id="1-1-混淆介绍"><a href="#1-1-混淆介绍" class="headerlink" title="1.1 混淆介绍"></a>1.1 混淆介绍</h2><p>首先先简单说一下什么是混淆和混淆的作用，其实这个搜索下可以找到一堆官方的说法等等，这里简单口语叙述一下，混淆就是把代码替换成a、b、c基本字母组成的代码，比如一个方法名为：function()，混淆后可能会被替换成a()。</p>
+<p>混淆的好处：</p>
+<ul>
+<li>代码混淆后阅读性降低，反编译后破译程序难度提高</li>
+<li>混淆后字节数减少，减少了应用了体积</li>
+</ul>
+<p>前者只能说有一点作用，后者则需要看代码的数量。</p>
+<p>当然不能忽视混淆的缺点：混淆后，测试不充分可能导致某些功能不能使用</p>
+<h2 id="1-2-Eclipse混淆和Android-Studio混淆"><a href="#1-2-Eclipse混淆和Android-Studio混淆" class="headerlink" title="1.2 Eclipse混淆和Android Studio混淆"></a>1.2 Eclipse混淆和Android Studio混淆</h2><p><strong>Eclipse</strong></p>
+<p>首先打开“project.properties”文件，然后在文件中添加一行：</p>
+<pre><code>proguard.config=${sdk.dir}/tools/proguard/proguard-android.txt:proguard-project.txt
+</code></pre><p>文件中之前就有一行，不过是被注释掉了。</p>
+<p>在release打包时就会按照我们的配置进行混淆，注意，在我们平时的debug时是不会进行混淆的。</p>
+<p><strong>Android Studio</strong></p>
+<p>在build.gradle中进行配置</p>
+<pre><code>android {
+    buildTypes {
+        release {
+            minifyEnabled true //true 表示开启混淆
+            proguardFiles getDefaultProguardFile（&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;
+            //proguardFile &apos;some-other-rules.txt&apos;  配置单个文件这样
+        }
+    }
+}
+</code></pre><h2 id="1-3-混淆步骤"><a href="#1-3-混淆步骤" class="headerlink" title="1.3 混淆步骤"></a>1.3 混淆步骤</h2><ol>
+<li>shrink： 去掉无用代码</li>
+<li>optimize：优化代码（静态化，内联，无用参数去除等。。）</li>
+<li>obfuscate：混淆，给类、变量、方法改名字</li>
+<li>preverify：预效验</li>
+</ol>
+<h2 id="1-4-混淆规则"><a href="#1-4-混淆规则" class="headerlink" title="1.4 混淆规则"></a>1.4 混淆规则</h2><p><a href="https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html" target="_blank" rel="noopener">混淆规则文档</a></p>
+<p><strong>优化控制</strong></p>
+<p>这个是用于控制混淆是否开启优化代码，例如一些if/else语句可以被简化等这些操作：</p>
+<pre><code># 不优化
+-dontoptimize 
+# 代码循环优化次数，0-7，默认为5
+-optimizationpasses 5
+</code></pre><p><strong>优化进阶</strong></p>
+<p>开启优化后可以设置下面的规则，assumenosideeffects表示指定的代码无效，可以优化，最终效果表现为不执行。    </p>
+<pre><code># 混淆时所采用的优化规则
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+# 关闭log
+-assumenosideeffects class android.util.Log {
+    public static boolean isLoggable(java.lang.String, int);
+    public static int v(...);
+    public static int i(...);
+    public static int w(...);
+    public static int d(...);
+    public static int e(...);
+}
+</code></pre><p><strong>基本混淆规则</strong></p>
+<p>下面这些一般混淆规则都要加入，其中前两个在默认文件中已经配置</p>
+<pre><code># 包名不使用大小写混合 aA Aa
+-dontusemixedcaseclassnames 
+# 不混淆第三方引用的库
+-dontskipnonpubliclibraryclasses 
+# 不做预校验
+-dontpreverify 
+# 忽略警告
+-ignorewarning
+</code></pre><p><strong>输出混淆记录</strong></p>
+<p>混淆后由于阅读困难性提高，所以为了方便自己查阅，可以输出mapping对应文件，可以利用AndroidSDK\tools\proguard\bin中的proguardgui.bat打开混淆工具，利用retrace结合mapping和stacktrace调试遇到的错误</p>
+<pre><code># 混淆后生产映射文件 map 类名-&gt;转化后类名的映射
+# 存放在app\build\outputs\mapping\release中
+-verbose 
+# 混淆前后的映射
+-printmapping mapping.txt 
+# apk 包内所有 class 的内部结构
+-dump class_files.txt 
+# 未混淆的类和成员
+-printseeds seeds.txt 
+# 列出从 apk 中删除的代码
+-printusage unused.txt
+</code></pre><p><strong>保留源代码行号</strong></p>
+<p>即使使用retrace工具，还是很难定位到错误的时候，可以暂时先保留行号，观察错误修改后再关闭掉</p>
+<pre><code># 抛出异常时保留代码行号
+# 这个最后release的时候关闭掉
+-keepattributes SourceFile,LineNumberTable
+</code></pre><p><strong>组件白名单”&gt;基本组件白名单</strong></p>
+<p>Android中的基本组件不能混淆，为了方便，下面提供了兼容性比较高的规则：</p>
+<pre><code>-keep public class * extends android.app.Fragment
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+</code></pre><p><strong>Support包规则</strong></p>
+<pre><code># 如果有引用v4包可以添加下面这行
+-keep public class * extends android.support.v4.app.Fragment
+
+# 如果引用了v4或者v7包
+-dontwarn android.support.**
+</code></pre><p><strong>不混淆本地方法</strong></p>
+<p>本地方法不能混淆，这个规则在默认配置文件中有：</p>
+<pre><code># 保持 native 方法不被混淆
+-keepclasseswithmembernames class * {
+    native &lt;methods&gt;;
+}
+</code></pre><p><strong>WebView混淆规则</strong></p>
+<p>使用了WebView的JS功能则开启下面规则，这个规则在自定义规则文件中已经用注释说明了：</p>
+<pre><code># WebView使用javascript功能则需要开启
+-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+    public *;
+}
+</code></pre><p><strong>注解、泛型和反射混淆</strong></p>
+<pre><code># 保护注解
+-keepattributes *Annotation*
+-keep class * extends java.lang.annotation.Annotation {*;}
+
+# 泛型与反射
+-keepattributes Signature
+-keepattributes EnclosingMethod&lt;/code&gt;
+</code></pre><p>有些注解可能不能被混淆，需要手动混淆一下</p>
+<p><strong>内部类混淆</strong></p>
+<pre><code># 不混淆内部类
+-keepattributes InnerClasses&lt;/code&gt;
+</code></pre><p><strong>部分第三方混淆参考规则</strong></p>
+<p>Gson</p>
+<pre><code># gson
+-dontwarn com.google.**
+-keep class com.google.gson.** {*;}
+</code></pre><p>otto</p>
+<pre><code># otto混淆规则
+-keepattributes *Annotation*
+-keepclassmembers class ** {
+    @com.squareup.otto.Subscribe public *;
+    @com.squareup.otto.Produce public *;
+}
+</code></pre><p>universal-image-loader</p>
+<pre><code>-dontwarn com.nostra13.universalimageloader.**
+-keep class com.nostra13.universalimageloader.** {*;}
+</code></pre><p>友盟统计</p>
+<pre><code># 友盟统计
+-keepclassmembers class * {
+    public &lt;init&gt; (org.json.JSONObject);
+}
+
+# 友盟统计5.0.0以上SDK需要
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+# 友盟统计R.java删除问题
+-keep public class com.gdhbgh.activity.R$*{
+    public static final int *;
+}
+</code></pre><p>OkHttp</p>
+<pre><code># OkHttp
+-dontwarn com.squareup.okhttp.**
+-keep class com.squareup.okhttp.** {*;}
+-keep interface com.squareup.okhttp.** {*;}
+-dontwarn okio.**&lt;/code&gt;
+</code></pre><p>nineoldandroids</p>
+<pre><code>-dontwarn com.nineoldandroids.*
+-keep class com.nineoldandroids.** {*;}
+</code></pre><p>支付宝</p>
+<pre><code># 支付宝
+-keep class com.alipay.android.app.IAlixPay{*;}
+-keep class com.alipay.android.app.IAlixPay$Stub{*;}
+-keep class com.alipay.android.app.IRemoteServiceCallback{*;}
+-keep class com.alipay.android.app.IRemoteServiceCallback$Stub{*;}
+-keep class com.alipay.sdk.app.PayTask{
+    public *;
+}
+-keep class com.alipay.sdk.app.AuthTask{
+    public *;
+}
+</code></pre><p>Socket.io</p>
+<pre><code># socket.io
+-keep class socket.io-client.
+-keepclasseswithmembers,allowshrinking class socket.io-client.* {*;}
+-keep class io.socket.
+-keepclasseswithmembers,allowshrinking class io.socket.* {*;}
+</code></pre><p>JPUSH</p>
+<pre><code># jpush
+-dontwarn cn.jpush.**
+-keep class cn.jpush.** {*;}
+
+# protobuf（jpush依赖）
+-dontwarn com.google.**
+-keep class com.google.protobuf.** {*;}
+</code></pre><p>友盟分享</p>
+<p>这个只有部分热门的SDK，具体可以参考分享文档：</p>
+<pre><code># 友盟分享
+-dontwarn com.umeng.**
+-dontwarn com.tencent.weibo.sdk.**
+
+-keep public interface com.tencent.**
+-keep public interface com.umeng.socialize.**
+-keep public interface com.umeng.socialize.sensor.**
+-keep public interface com.umeng.scrshot.**
+
+-keep public class com.umeng.socialize.* {*;}
+
+-keep class com.umeng.scrshot.**
+-keep public class com.tencent.** {*;}
+-keep class com.umeng.socialize.sensor.**
+-keep class com.umeng.socialize.handler.**
+-keep class com.umeng.socialize.handler.*
+-keep class com.tencent.mm.sdk.modelmsg.WXMediaMessage {*;}
+-keep class com.tencent.mm.sdk.modelmsg.** implements com.tencent.mm.sdk.modelmsg.WXMediaMessage$IMediaObject {*;}
+
+-keep class im.yixin.sdk.api.YXMessage {*;}
+-keep class im.yixin.sdk.api.** implements im.yixin.sdk.api.YXMessage$YXMessageData{*;}
+
+-keep class com.tencent.** {*;}
+-dontwarn com.tencent.**
+-keep public class com.umeng.soexample.R$*{
+    public static final int *;
+}
+-keep class com.tencent.open.TDialog$*
+-keep class com.tencent.open.TDialog$* {*;}
+-keep class com.tencent.open.PKDialog
+-keep class com.tencent.open.PKDialog {*;}
+-keep class com.tencent.open.PKDialog$*
+-keep class com.tencent.open.PKDialog$* {*;}
+
+-keep class com.sina.** {*;}
+-dontwarn com.sina.**
+-keep class  com.alipay.share.sdk.** {*;}
+</code></pre><h2 id="1-5-混淆模板"><a href="#1-5-混淆模板" class="headerlink" title="1.5 混淆模板"></a>1.5 混淆模板</h2><p>参见<a href="https://github.com/Sogrey/notes/blob/master/%E6%B7%B7%E6%B7%86%E6%A8%A1%E6%9D%BF.md" target="_blank" rel="noopener">这里</a></p>
+<h2 id="1-6-填混淆的坑"><a href="#1-6-填混淆的坑" class="headerlink" title="1.6 填混淆的坑"></a>1.6 填混淆的坑</h2><p><strong>网络层混淆</strong></p>
+<p>混淆要注意，一般网络层都不进行混淆，可以经过划分包后直接不混淆网络层的包：</p>
+<pre><code>-keep class com.xxx.xxx.http.** {*;}&lt;/code&gt;
+</code></pre><p><strong>数据模型混淆</strong></p>
+<p>所有bean都不要混淆，可以使用下面的：</p>
+<pre><code>-keep class * implements java.io.Serializable {*;}
+-keepclassmembers class * implements java.io.Serializable {*;}
+</code></pre><p>但是有时候上述代码可能导致应用卡住，没用任何错误提示，所以我建议采用分包模式，把所有bean放在一个包中，直接对该包加白名单：</p>
+<pre><code>-keep class com.xxx.xxx.domain.** {*;}
+</code></pre><p><strong>XML映射问题</strong></p>
+<p>如果你遇到一些控件无法Inflate，报NullPointException，比如ListView，NavigationView等等，这个问题花了我几个小时自己研究出了规则：</p>
+<pre><code>-keep class org.xmlpull.v1.** {*;}
+</code></pre><p><strong>混淆规则编写方法</strong></p>
+<p>如果混淆后报错，通过retrace后找到错误的问题后可以直接编写规则来去掉混淆，但是如果报的错误莫名其妙，而且报错的类没有混淆，那么你可以采用极端的方法，加入下面规则：</p>
+<pre><code>-keep class *.** {*;}
+</code></pre><p>这条规则表示不混淆所有类及其中所有代码，加了这条规则之后，<br>还不能运行表示是其他问题，例如注解，内部类等等，<br>可以运行后，可以通过反编译，寻找所有包名，记录下来，把上述规则改为：</p>
+<pre><code>-keep class android.** {*;}
+-keep class com.** {*;}
+-keep class io.** {*;}
+-keep class org.** {*;}
+...
+</code></pre><p>一个个去掉检查是否有报错，例如查到</p>
+<pre><code>-keep class com.** {*;}
+</code></pre><p>加了就不报错，则可以继续一级级往下检查。</p>
+<blockquote>
+<p>签名移步<a href="https://sogrey.github.io/article/Android%E6%B7%B7%E6%B7%86%E7%AD%BE%E5%90%8D%EF%BC%88%E4%B8%8B%EF%BC%89/">签名</a></p>
+</blockquote>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html" target="_blank" rel="noopener">混淆规则文档</a></li>
+<li><a href="http://www.2cto.com/kf/201607/530170.html" target="_blank" rel="noopener">Android混淆心得</a></li>
+<li><a href="http://www.cnblogs.com/cr330326/p/5534915.html" target="_blank" rel="noopener">ProGuard代码混淆技术详解</a></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/article/Android混淆签名（上）/">Android混淆签名(上)</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
+        <p><span>发布时间:</span>2017-01-13, 16:31:07</p>
+        <p><span>最后更新:</span>2017-01-16, 11:30:30</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/article/Android混淆签名（上）/" title="Android混淆签名(上)">https://sogrey.github.io/article/Android混淆签名（上）/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/Android混淆签名（上）/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/article/Android混淆签名（下）/">
+                    Android混淆签名(下)
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/article/我收集的一些开源项目/">
+                    我收集的一些开源项目
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-混淆"><span class="toc-text">1 混淆</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-混淆介绍"><span class="toc-text">1.1 混淆介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-Eclipse混淆和Android-Studio混淆"><span class="toc-text">1.2 Eclipse混淆和Android Studio混淆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-混淆步骤"><span class="toc-text">1.3 混淆步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-混淆规则"><span class="toc-text">1.4 混淆规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-混淆模板"><span class="toc-text">1.5 混淆模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-填混淆的坑"><span class="toc-text">1.6 填混淆的坑</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Android混淆签名(上)　| Sogrey　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="article/Android混淆签名（上）/" data-title="Android混淆签名(上)" data-url="https://sogrey.github.io/article/Android混淆签名（上）/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"sogrey"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/article/Android混淆签名（下）/" title="上一篇: Android混淆签名(下)">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/article/我收集的一些开源项目/" title="下一篇: 我收集的一些开源项目">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/article/Android 动态调用外部jar&dex/">Android 动态调用外部jar/dex</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JNI Md5加密生成so文件/">JNI Md5加密生成so文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/PE装机，开机设置启动项快捷键/">pe装机，开机设置启动项快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/article/VS-code-插件/">VS code 插件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/遍历Map的四种方法/">遍历Map的四种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/15种CSS居中方式/">15种CSS居中方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/利用百度URL-API实现地址-经纬度互相转换/">利用百度URL API实现地址与经纬度互相转换</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android获取view宽高的三种方式/">Android获取view宽高的三种方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-TextView属性android-ellipsize-marquee不生效的解决办法/">Android中TextView属性ellipsize=marquee不生效的解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/关于Android程序使用KSoap2调用Webservice运行不成功的问题/">关于Android程序使用KSoap2调用Webservice运行不成功的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo-添加-Gitment-评论/">Hexo 添加 Gitment 评论</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-Webview-内容自适应高度/">Android Webview 内容自适应高度</a></li><li class="post-list-item"><a class="post-list-link" href="/article/java实现定时任务的三种方法/">java实现定时任务的三种方法(收集)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Java读取文件夹大小的6种方法（收集）/">Java读取文件夹大小的6种方法（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/json转树状结构（收集）/">json转树状结构（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/一行  JavaScript 代码（收集）/">一行  JavaScript 代码（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo建站过程中遇到的问题（填坑）/">Hexo建站过程中遇到的问题（填坑篇）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-library-发布到-JCenter/">Android library 发布到 JCenter</a></li><li class="post-list-item"><a class="post-list-link" href="/article/正则表达式匹配汇集/">正则表达式匹配汇集</a></li><li class="post-list-item"><a class="post-list-link" href="/article/技术文章之Html（CSS-JS）/">技术文章之Html（CSS，JS）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/技术文章之Android/">技术文章之Android</a></li><li class="post-list-item"><a class="post-list-link" href="/article/web-app相关整理/">web app相关整理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/微信小程序初印象【整理】/">微信小程序初印象【整理】</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Webp的探究之路/">Webp的探究之路</a></li><li class="post-list-item"><a class="post-list-link" href="/article/android中使用icon-fonts字体图标/">android中使用icon fonts字体图标</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android混淆签名（下）/">Android混淆签名(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android混淆签名（上）/">Android混淆签名(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/我收集的一些开源项目/">我收集的一些开源项目</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Git常用命令/">Git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo博客基于主题Yelee-yelog-添加文章分类/">Hexo博客基于主题Yelee(yelog) 添加文章分类</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo博客基于主题Yelee-yelog-添加“标签云”和“关于我”菜单项页面/">Hexo博客基于主题Yelee(yelog) 添加“标签云”和“关于我”菜单项页面</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Html5-PPT/">Html5 PPT</a></li><li class="post-list-item"><a class="post-list-link" href="/article/如何在Github-Pages搭建个人独立主页？/">如何在Github Pages搭建个人独立主页？</a></li><li class="post-list-item"><a class="post-list-link" href="/article/我是如何用hexo搭建github-pages/">我是如何用hexo搭建github pages</a></li><li class="post-list-item"><a class="post-list-link" href="/article/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+
+<!--gitment 评论-->
+
+  <div class="comments" id="comments">
+  
+	<!--汉化-->
+    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+	<script src="https://billts.site/js/gitment.js"></script>
+	<!--原型-->
+	<!--
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js" type="text/javascript"></script>
+	-->
+	
+      <div id="gitmentContainer" style="margin-bottom: -19px;"></div>
+     
+      <style>
+        .gitment-container a {
+          border: none;
+        }
+        .comments {
+          margin: 60px 0 0;padding: 0 60px;
+        }
+		@media screen and (max-width:1040px) {
+		   .comments {
+			  padding: 0 30px;
+			}
+		}
+		/**gitment 默认样式覆盖*/
+		.gitment-comment-header{background-color: #ffffff00 !important;}
+		.gitment-editor-main::before, .gitment-comment-main::before{border-right-color: #7EA4CA !important;}
+      </style>
+     
+      <script type="text/javascript">
+        var gitment = new Gitment({
+			  id: 'Android混淆签名(上)',
+			  title: 'Android混淆签名(上)',
+			  owner: 'Sogrey',
+			  repo: 'Sogrey.github.io',
+			  oauth: {
+				client_id: '582650733e15427a208c',
+				client_secret: '95db82d5f7b8c46a86b82a969e3c59dd4d7f6be1',
+			  },
+        })
+        gitment.render('gitmentContainer')
+      </script>
+    
+  </div>
+
+<!--gitment 评论 end-->
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 <i class="fa fa-heart animated infinite pulse"></i><a href="https://sogrey.github.io" target="_blank" title="我是一个小帅哥！^_^  https://github.com/Sogrey">Sogrey</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 3;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+             categories: ".article-category a, a.tag-list-link", 
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 敬请下次光临~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 欢迎光临~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+  <!-- 动态背景 -->
+  <!--<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="120" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>-->
+  <script type="text/javascript" src="/js/canvas-nest.min.js"></script>
+</body>
+</html>
