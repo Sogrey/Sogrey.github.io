@@ -1,0 +1,2 @@
+# Sogrey.github.io
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2466442d6e0a45e2ba1e86f9ab31d3f6)](https://app.codacy.com/app/Sogrey/Sogrey.github.io?utm_source=github.com&utm_medium=referral&utm_content=Sogrey/Sogrey.github.io&utm_campaign=Badge_Grade_Settings)
