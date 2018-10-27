@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Sogrey" />
+
+
+
+<meta name="description" content="在此收集看过的有用的有趣的Android技术知识，以备重阅。">
+<meta name="keywords" content="Android,技术文章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="技术文章之Android">
+<meta property="og:url" content="https://sogrey.github.io/article/技术文章之Android/index.html">
+<meta property="og:site_name" content="Sogrey">
+<meta property="og:description" content="在此收集看过的有用的有趣的Android技术知识，以备重阅。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-05-22T08:38:29.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="技术文章之Android">
+<meta name="twitter:description" content="在此收集看过的有用的有趣的Android技术知识，以备重阅。">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Sogrey" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>技术文章之Android | Sogrey</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/Sogrey.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Sogrey</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">必须努力，付出不亚于任何人努力</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="on" autocorrect="true" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+            
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/logs/">更新日志</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:408270653@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/1766036691" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/Sogrey" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/sogrey" title="知乎"></a>
+                            
+                                <a class="fa 简书" href="http://www.jianshu.com/u/9ede1ff4ccfb" title="简书"></a>
+                            
+                                <a class="fa CSDN" href="http://blog.csdn.net/sogrey" title="CSDN"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/sogrey" title="Coding"></a>
+                            
+                                <a class="fa LinkedIn" href="https://cn.linkedin.com/in/sogrey" title="LinkedIn"></a>
+                            
+                                <a class="fa LOFTER" href="http://sogrey.lofter.com/" title="LOFTER"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-pages/">Github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitment/">Gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo建站填坑/">Hexo建站填坑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html5/">Html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JCenter/">JCenter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JNI/">JNI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KSoap2/">KSoap2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Md5/">Md5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PPT/">PPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS-code/">VS code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebApp/">WebApp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webp/">Webp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webservice/">Webservice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webview/">Webview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yelee/">Yelee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apk混淆/">apk混淆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dex/">dex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icon-font字体图标/">icon font字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar/">jar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/marquee/">marquee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yelog/">yelog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/“关于我”/">“关于我”</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/“标签云”/">“标签云”</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地址与经纬度/">地址与经纬度</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/居中/">居中</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序/">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/手记/">手记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术文章/">技术文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文章分类/">文章分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂记/">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度-api/">百度 api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/签名/">签名</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://pan.baidu.com/s/1hr2PiG8">芝麻开门</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/JavaDocs/">JavaDoc</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/notes/">notes</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/html-css-js-demos/">html-css-js-demos</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Kotlin-Notes/">Kotlin-学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/WebTools/index.html">Web开发常用工具</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">必须努力，付出不亚于任何人努力</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Sogrey</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/Sogrey.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Sogrey</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">必须努力，付出不亚于任何人努力</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/logs/">更新日志</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:408270653@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1766036691" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/Sogrey" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/sogrey" title="知乎"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/9ede1ff4ccfb" title="简书"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/sogrey" title="CSDN"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/sogrey" title="Coding"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/sogrey" title="LinkedIn"></a>
+                            
+                                <a class="fa LOFTER" target="_blank" href="http://sogrey.lofter.com/" title="LOFTER"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-技术文章之Android" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/article/技术文章之Android/" class="article-date">
+      <time datetime="2017-02-12T12:04:54.000Z" itemprop="datePublished">2017-02-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      技术文章之Android
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/技术文章/">技术文章</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术文章/">技术文章</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>在此收集看过的有用的有趣的Android技术知识，以备重阅。</p>
+<a id="more"></a>
+<ol>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822025&amp;idx=1&amp;sn=c01dbe2a685b6919a7029b822347fa61&amp;chksm=80b78117b7c00801b74405beb6431ac7039b6d0dac724466bbb317f2b1294cbdd75edfdfd906&amp;mpshare=1&amp;scene=23&amp;srcid=0210LJTe593ujVJxnpSAYrBY#rd" target="_blank" rel="noopener">Android Camera使用总结与那些坑</a></li>
+<li><a href="http://m.blog.csdn.net/article/details?id=54694260" target="_blank" rel="noopener">微信Android热更新Tinker使用详解（by 星空武哥)</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434612&amp;idx=1&amp;sn=ae6678d8a14d3a9359e9251aeb051db4&amp;chksm=f128870fc65f0e192424e33716021c4cc1efa2e83ccaf3e7a89f485c84e945af87a00961c34f&amp;mpshare=1&amp;scene=23&amp;srcid=0208k9ZqJq9mC2xUiubNDNNM#rd" target="_blank" rel="noopener">【精品】仿网易云音乐播放界面</a></li>
+<li><a href="https://github.com/aa112901/remusic" target="_blank" rel="noopener">仿网易云音乐 安卓版</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&amp;mid=2247483928&amp;idx=1&amp;sn=7859e0057d4f484c5598341d6d1bae9b&amp;chksm=e95b9b8ede2c129893512aa7c9abcb964ccc7252f250d5983d1b9d26a604de040636ed2ac3e1&amp;mpshare=1&amp;scene=23&amp;srcid=0208MdlVaNt4CsqTBTfAqoQO#rd" target="_blank" rel="noopener">实践！业余时间做的一款阅读类App （MVP + RxJava + Retrofit）</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822023&amp;idx=1&amp;sn=252e5053e9ad949638b98fc53b99b091&amp;chksm=80b78119b7c0080f7b1f12f54ccfaf344a9f89b32fde7e16a5bf166b11d5faadde21880b893d&amp;mpshare=1&amp;scene=23&amp;srcid=0208WcZEfaGjR6M7yiRoYtCi#rd" target="_blank" rel="noopener">Android 提高代码质量 之 多种检测方案</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650821994&amp;idx=1&amp;sn=265ea44d9db97a18c334d948fc0846aa&amp;chksm=80b781f4b7c008e2bfcdde084f74e8e6ff8cb70b21b641fafccb7b5fb330cb5752adb1a802b3&amp;mpshare=1&amp;scene=23&amp;srcid=0207nptfmHEZp4TCraikagZP#rd" target="_blank" rel="noopener">Android 使用WindowManager实现悬浮窗及源码解析</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434523&amp;idx=1&amp;sn=234b79fe60af1d564d806dc2356c554b&amp;chksm=f1288760c65f0e768b4604914c87a0fe21b1836b5fd0b7827a90e2c12251245384ad81a00686&amp;mpshare=1&amp;scene=23&amp;srcid=0124nmSx66kXM9I47T7HAoRR#rd" target="_blank" rel="noopener">【重磅】支付宝使用的开源组件总结！</a></li>
+<li><a href="http://mp.weixin.qq.com/s/d9KYCnccwR4EqSWGzNpgaQ" target="_blank" rel="noopener">Android View相关核心知识问答</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434652&amp;idx=1&amp;sn=da0ceda73595e5cb931abad7e51dbe62&amp;chksm=f12887e7c65f0ef1c086784e9ae77a7d9bd82daa6ba0302cebf307577ebd06fd3e0d9e37e87a&amp;mpshare=1&amp;scene=23&amp;srcid=0214krfLUHbvJekl3snlIYUG#rd" target="_blank" rel="noopener">2017年,身为Android开发的你必须要掌握的热门开源框架</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&amp;mid=2247483943&amp;idx=1&amp;sn=513e35f410a80b65d476d8e0740989be&amp;chksm=e95b9bb1de2c12a7e1d823407e5e52c8725a30139c3eff35423f4e755de0ed84e69b7aee62ec&amp;mpshare=1&amp;scene=23&amp;srcid=02139FATY6IN8m20sSgXL3IN#rd" target="_blank" rel="noopener">Android冷启动实现APP秒开</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&amp;mid=2247483947&amp;idx=1&amp;sn=8c78d6d59503588c1244db8a87f3cb62&amp;chksm=e95b9bbdde2c12ab852485fe39a6c595edb199edef44b0057520c4697f1d5ccf26a7bc197e72&amp;mpshare=1&amp;scene=23&amp;srcid=0215gfKQ1v0KnyIyxICz4HCY#rd" target="_blank" rel="noopener">高仿钉钉和小米的日历控件，很实用</a></li>
+<li><a href="http://www.android100.org/html/201406/08/21147.html" target="_blank" rel="noopener">Android相对布局属性全集</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&amp;mid=2247483974&amp;idx=1&amp;sn=c88299b9c458521db9e7ba4863f90d52&amp;chksm=e95b9bd0de2c12c6f8270a4fcc8185ec2dbef320410a0e11c81bea965166c9802d10e6247d68&amp;mpshare=1&amp;scene=23&amp;srcid=0217d3Q9uP53NlhF3dOqCYU6#rd" target="_blank" rel="noopener">编译时间从33.8秒降到4.5秒我只多做了一件事</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434682&amp;idx=1&amp;sn=5b277d151a18a6bd1521c1af452e3e3f&amp;chksm=f12887c1c65f0ed70cee86fbde5c1f63ffe292fec72225225d070c0a14ecb3c3855e91f29f07&amp;mpshare=1&amp;scene=23&amp;srcid=02196O2Lh5ZhtH28pduwF9kf#rd" target="_blank" rel="noopener">全面了解Android Notification</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822072&amp;idx=1&amp;sn=82e36025a1e37b8cbb68e6f86dd08698&amp;chksm=80b78126b7c008300d2d1ce0300adf008e53b278f24da4ea3a4b90fafa74b174e91a8ffb7964&amp;mpshare=1&amp;scene=23&amp;srcid=0219HbeYoHrNTclXl5GhxjWK#rd" target="_blank" rel="noopener">Android 6.0 自定义文本选择操作 咕咚翻译的体验优化</a></li>
+<li><a href="http://mp.weixin.qq.com/s/EGM6SLe_5VthIrzMzkVPqg" target="_blank" rel="noopener">什么？IOS的专利？Android也能流畅实现毛玻璃效果(高斯模糊)效果</a></li>
+<li><a href="http://mp.weixin.qq.com/s/H9v0YeXoZ5YAmmraEA9aaQ" target="_blank" rel="noopener">一种快速毛玻璃虚化效果实现</a></li>
+<li><a href="http://wetest.qq.com/lab/view/288.html?from=adsout_qqtips_past2_288&amp;sessionUserType=BFT.PARAMS.211332.TASKID&amp;ADUIN=408270653&amp;ADSESSION=1487902007&amp;ADTAG=CLIENT.QQ.5515_.0&amp;ADPUBNO=26657" target="_blank" rel="noopener">深度了解Android 7.0 ，你准备好了吗？</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822149&amp;idx=1&amp;sn=170f91c7a8f3142e5e0753edeef6ba77&amp;chksm=80b7829bb7c00b8d866e6d622df7fea71ef435baf23e0809dd573aaa08ebd849b87e6b000796&amp;mpshare=1&amp;scene=23&amp;srcid=022678v7owLVNhctiGQnwGi7#rd" target="_blank" rel="noopener">Android 广播相关的都在这儿</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&amp;mid=2247484019&amp;idx=1&amp;sn=dc0ebf85da6556b1f6703119be215fea&amp;chksm=e95b9be5de2c12f321b79f13841d4f1f86a7e5a878ba895f85c83d21735823d4f7c4f98dbb19&amp;mpshare=1&amp;scene=23&amp;srcid=0227hRB6ZnIY0blZltECJFAu#rd" target="_blank" rel="noopener">Android ADB命令?这一次我再也不死记了!</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822191&amp;idx=1&amp;sn=3a4280242d79af3df35501b397fedfa1&amp;chksm=80b782b1b7c00ba786c6a7bf09a1107e85bde35d3902b084457436ba46dd269b9f9ab99614ea&amp;mpshare=1&amp;scene=23&amp;srcid=0227Urwy034GuHMR70kKc1UF#rd" target="_blank" rel="noopener">Android 系统自带DownloadManager详解</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434751&amp;idx=1&amp;sn=4154b06e059e17a983053a2c4806c24c&amp;chksm=f1288784c65f0e92a443a4112c1f808db72a8595b8ba0cae9d36c661e9bb830e554b0ff87664&amp;mpshare=1&amp;scene=23&amp;srcid=02271fuPd78L1MUQFhlJugdG#rd" target="_blank" rel="noopener">Android Camera使用总结与那些坑</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI0NTcxNTg5Mg==&amp;mid=2247483968&amp;idx=1&amp;sn=b3ea4e058af219d8f9a8994c21569676&amp;chksm=e94b049bde3c8d8d52572a0a07ee0739b3a1df53f76871d8befa3589466579fbe27d0cd7feda&amp;mpshare=1&amp;scene=23&amp;srcid=0228IyWTXDV2f0l97TK2RUb2#rd" target="_blank" rel="noopener">开源许可协议了解这些就够了</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434795&amp;idx=1&amp;sn=fcbed3a22bce615e77b0945b0b54859a&amp;chksm=f1288650c65f0f4612dd770566d961430ff63dfe5b84ccf66393fa0719ceb422955532aab091&amp;mpshare=1&amp;scene=23&amp;srcid=0304wcDitruVFMCQYf4KSjLf#rd" target="_blank" rel="noopener">【高端】天猫 Android UI 框架项目Tangram</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&amp;mid=2247484054&amp;idx=1&amp;sn=febcfe56632f43a46f7a6d8e240b2123&amp;chksm=e95b9b00de2c12165be5bbb3c4811e47e15631bad84a336ac6f5f8558ff8941ba934a845331b&amp;mpshare=1&amp;scene=23&amp;srcid=0304cbEFWsCc3LU1whZl8aWz#rd" target="_blank" rel="noopener">通过这篇文章，我找到了工作！一款优雅的App开源项目-iDaily</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&amp;mid=2247484060&amp;idx=1&amp;sn=737571b872e0c90f26fd2f2990a872ee&amp;chksm=e95b9b0ade2c121c56ae3c60d80f03c4caf098f9a0abf374c065be01156091ad5b7bbdf50ee2&amp;mpshare=1&amp;scene=23&amp;srcid=0306XrVWaYnrXJZmyptsvxkJ#rd" target="_blank" rel="noopener">Android卸载监听之后访问后台或者弹出一个网页</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822215&amp;idx=1&amp;sn=964d9f9c951044e572cccb8846330d25&amp;chksm=80b782d9b7c00bcf9533d0ea5085d449083d014d6aa585817610e4d1b17fe89922eca7deb6c7&amp;mpshare=1&amp;scene=23&amp;srcid=0305DLBdpq9zXDPxMe54AHfY#rd" target="_blank" rel="noopener">Android插件化框架系列之类加载器</a></li>
+<li><a href="http://www.jianshu.com/p/d17af84711a1?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener">Android网络框架选择（Volley、OkHttp、Retrofit）</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650238755&amp;idx=1&amp;sn=b4f3b351a3c8f440b538db58e67fb46d&amp;chksm=88639e4cbf14175af6f4c27549951d718938e7f874215e765a480a1b89a0dafc6dc47bdb3954&amp;mpshare=1&amp;scene=23&amp;srcid=0304DLO87Ua9ORpyRpssnnmB#rd" target="_blank" rel="noopener">如何用一周时间开发一款Android APP并在Google Play上线</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434801&amp;idx=1&amp;sn=b44f08dcba949cf0b78b5adc93bc8989&amp;chksm=f128864ac65f0f5c264a2ef7a202f3526fe7131ab2ec4f50f21f92076ea84e8ac0d9cbc9a3cc&amp;mpshare=1&amp;scene=23&amp;srcid=0305tDFmvzNh6f1Je9W7ODBT#rd" target="_blank" rel="noopener">安居客Android项目架构演进</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434590&amp;idx=1&amp;sn=61e8db6d4f732136764eb4e988a9276f&amp;chksm=f1288725c65f0e334175a43ac03166ff39efa14935e67ca9044d8b367c18cc777a23c02cfcaa&amp;mpshare=1&amp;scene=23&amp;srcid=0207WjJj6tVhQhmzAZajVHKO#rd" target="_blank" rel="noopener">android多图选择器 图片/视频 单选or多选，以及视频录制</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822225&amp;idx=1&amp;sn=09177524a9e51bd049b1d042339863ec&amp;chksm=80b782cfb7c00bd9ea3933f812c66770bd00af87c78691ad45650cd017d5d35347af30781e85&amp;mpshare=1&amp;scene=23&amp;srcid=0305uuFF1GyOVIPJwYy34JKh#rd" target="_blank" rel="noopener">【源码】 Android 不要错过的7个完整项目学习</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650238794&amp;idx=1&amp;sn=f105f8100d62a202f5695f9496425063&amp;chksm=88639e25bf1417330f0ffb1cf6c10ea07359ff25774313fac5addfb25541f7969d1d178e17cc&amp;mpshare=1&amp;scene=23&amp;srcid=0307BnnrQkjyfXWtDKaSKey9#rd" target="_blank" rel="noopener">LitePal 1.5.0版本发布，你想要的都在这里</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&amp;mid=2247484068&amp;idx=1&amp;sn=b77a4e7be6ee2d6aede46c07fa737022&amp;chksm=e95b9b32de2c1224116281ab3877f3ab0c36d3c220315d5eec2a85cd01d20a0e6ac218cc3944&amp;mpshare=1&amp;scene=23&amp;srcid=0307ndVEUZCfBiJnTzU3JBg3#rd" target="_blank" rel="noopener">比QQ更炫酷的’选项弹窗’动画</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434805&amp;idx=1&amp;sn=c1eaf9d6be0259c1cb9eb632e981e61f&amp;chksm=f128864ec65f0f580eb49217bb5703401f0fbb42b5accec992d3b71a6eed570a2962f0ef1e94&amp;mpshare=1&amp;scene=23&amp;srcid=0307oCu1pFbVmXM5ndunyITW#rd" target="_blank" rel="noopener">【推荐】Android APK 瘦身实践</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822272&amp;idx=1&amp;sn=a1d7956dd8437d4bb28e47fab814a7ed&amp;chksm=80b7821eb7c00b08eb8de256529a7cbd153ca1064612eef88fe912ba9ecb11763baacc279ccb&amp;mpshare=1&amp;scene=23&amp;srcid=0307yjSaM4ItKqIYSfO5CJo6#rd" target="_blank" rel="noopener">Android性能优化系列之内存优化</a></li>
+<li><a href="https://github.com/m511386374/PopWin_MeiTuan" target="_blank" rel="noopener">仿美团做的一个下拉选择页，类似于电商app中筛选距离的下拉菜单</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&amp;mid=2247484070&amp;idx=1&amp;sn=483e54aa85354e05dc7a8d441d9232f0&amp;chksm=e95b9b30de2c12260cf2b87d5a13fa43609c1f6be5a2898f31f14b40e2113b8df136ba1ee6dc&amp;mpshare=1&amp;scene=23&amp;srcid=0308J2PpZ44c8mIKXUyOYilp#rd" target="_blank" rel="noopener">让我们聊一聊安卓应用角标那些事儿</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650238800&amp;idx=1&amp;sn=edf37925bc998ccb9d69912bb1f2cd2d&amp;chksm=88639e3fbf141729a6a02d8feda0e12bea97aa17e6482d22e1d8b7b6cf0ed92889239549acee&amp;mpshare=1&amp;scene=23&amp;srcid=0308iEgd2AIR7rE3o2UuT9zh#rd" target="_blank" rel="noopener">使用OKHttp3实现下载(断点续传、显示进度)</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650821993&amp;idx=1&amp;sn=550a90e30a398bbb652ecd65209b62e2&amp;chksm=80b781f7b7c008e17d9f5a59542f46329d28cbcd2ec075d4c2d44784f789135166a4e1949303&amp;mpshare=1&amp;scene=23&amp;srcid=0309ud57QhmmrCPBrhPxoRQh#rd" target="_blank" rel="noopener">Android 热修复 Tinker接入及源码浅析</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822276&amp;idx=1&amp;sn=b19704a9d25b266d108de13cba5b5cfe&amp;chksm=80b7821ab7c00b0cfe2c2da31fdfffede56f9aef82b85254083ec4db3e8f6aa445c96ab01de5&amp;mpshare=1&amp;scene=23&amp;srcid=0309NLJ1O9vIzz9yMzUguTPx#rd" target="_blank" rel="noopener">Android 热修复 Tinker 源码分析之DexDiff / DexPatch</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650238826&amp;idx=1&amp;sn=294d91d9a190ea56822696994f8a04b0&amp;chksm=88639e05bf1417137f364037bb35a8fcc120679c92b924cfabffa7011199d8ac8bba69a25194&amp;mpshare=1&amp;scene=23&amp;srcid=0309gYGHZFr1g8ICrQkRhStN#rd" target="_blank" rel="noopener">一看你就懂，Java中的ClassLoader详解</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822284&amp;idx=1&amp;sn=d6b30ab442f417cbd992e784945c7799&amp;chksm=80b78212b7c00b049243a474933e7a3f356c8b6fca1e8d67a9fcf654cef095c0c28f6a51e31c&amp;mpshare=1&amp;scene=23&amp;srcid=0310u9IxkQdQ6ESusrp1BHEY#rd" target="_blank" rel="noopener">Android性能优化系列之App启动优化</a></li>
+<li><a href="http://www.jianshu.com/p/2cbf5bf3842e?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener">Android自定义dialog</a></li>
+<li><a href="http://www.jianshu.com/p/a7e58fab4ff1?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener">优雅的使用MVP+RxJava+Retrofit框架</a></li>
+<li><a href="http://www.jianshu.com/p/bc68e763c7a2?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener">Android数据库框架 - LitePal学习笔记</a></li>
+<li><a href="http://www.jianshu.com/p/5eac94143bd6?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener">插件式换肤框架搭建 - 资源加载源码分析</a></li>
+<li><a href="http://www.jianshu.com/p/af7c0585dd5b?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener">Android主题换肤 无缝切换</a></li>
+<li><a href="http://www.jianshu.com/p/a9b86b792c8c?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener">Android知识点之悬浮通知栏</a></li>
+<li><a href="http://www.jianshu.com/p/57c454e126a3?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener">基于Rxjava+Retrofit+Okhttp+LeanCloud的完整项目（段子手），供大家学习与交流</a></li>
+<li><a href="http://ms.csdn.net/geek/185623" target="_blank" rel="noopener">Android开发时，那些相见恨晚的工具或网站！</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650238877&amp;idx=1&amp;sn=fe65084035413c0c730c0f34b0781287&amp;chksm=88639ef2bf1417e44203de6887fc1607b2ccf4d00e79ce8775b5c375e846a223ac270f14558e&amp;mpshare=1&amp;scene=23&amp;srcid=0315ElX9ZknRnJoSVPHBzXeR#rd" target="_blank" rel="noopener">Android Design Support Library使用详解</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822312&amp;idx=1&amp;sn=b93cbf8185d9bc696e59d2b8187fb94d&amp;chksm=80b78236b7c00b20cbc226dfcb507e8c4f08350de2e86ecf773b505fdc1bf74837b422c86ad1&amp;mpshare=1&amp;scene=23&amp;srcid=0315GGaZpsO2ZNdkjc7vXFn9#rd" target="_blank" rel="noopener">Android进阶系列之Support Annotation Library使用详解</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434848&amp;idx=1&amp;sn=4c6ff5ffcda212d65dfa92174be4cc79&amp;chksm=f128861bc65f0f0dc1ab7f1a25ff9e6d6e72acb7e057a6fb3b9be83c3bb08881f3ec0b03604c&amp;mpshare=1&amp;scene=23&amp;srcid=0315oQ0Gwuf9mXVYmn5kRNbl#rd" target="_blank" rel="noopener">【满满干货】android阿里面试题锦集</a></li>
+<li><a href="https://segmentfault.com/a/1190000008608758" target="_blank" rel="noopener">最全面的 Material Design 学习资料</a></li>
+<li><a href="http://blog.csdn.net/briblue/article/details/54973413" target="_blank" rel="noopener">一看你就懂，超详细java中的ClassLoader详解</a></li>
+<li><a href="http://www.jianshu.com/p/1fecc80cbd59?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener">如何做个依赖库让别人依赖使用</a></li>
+<li><a href="http://www.jianshu.com/p/e1d2cc82e756?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener">Android实现底部对话框BottomDialog</a></li>
+<li><a href="http://www.jianshu.com/p/0b4854aae105?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener">Android中图片压缩方案详解</a></li>
+<li><a href="http://www.jianshu.com/p/932568ed31af?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener">Android修改状态栏颜色全方位教程</a></li>
+<li><a href="http://www.jianshu.com/p/3dc0d1291374?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener">github 开源库</a></li>
+<li><a href="http://www.jianshu.com/p/023098e98695?utm_campaign=haruki&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qq" target="_blank" rel="noopener">Toolbar 结合 SearchView实现搜索功能(具备历史记录)</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434858&amp;idx=1&amp;sn=d39e50b16b600d0269cfb8162f17cbc7&amp;chksm=f1288611c65f0f07ac5fdd31a41618ef4cc9ad27193a8caeb464ba1065a73830c989f2b2601d&amp;mpshare=1&amp;scene=23&amp;srcid=0320Q6yLuwAztSFAycB1q9d4#rd" target="_blank" rel="noopener">一种快速毛玻璃虚化效果实现</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822338&amp;idx=1&amp;sn=ee45104f78f00101545ea7b0bba56723&amp;chksm=80b7825cb7c00b4aa37d8ef244745600edba4ab3308d7e4a39f2a2476058affde850db3ccf79&amp;mpshare=1&amp;scene=23&amp;srcid=0320Lo0ecvzwMUuSdpKPyXiK#rd" target="_blank" rel="noopener">Android进阶系列之源码分析AlertDialog建造者模式</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650238917&amp;idx=1&amp;sn=d13fceb5aab551258c64f6aa9e03b9ff&amp;chksm=88639eaabf1417bc470ef3c4240b6b78388959dfb2911f4e4b7e341798a42bdc33151a83dedc&amp;mpshare=1&amp;scene=23&amp;srcid=03204AulbIxfz4IKrX1kQOBO#rd" target="_blank" rel="noopener">onConfigurationChanged方法介绍及问题解决</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822379&amp;idx=1&amp;sn=8dce68bad2a32ebd001e99fcc3a18290" target="_blank" rel="noopener">Android自定义键盘之汉字键盘</a></li>
+<li><a href="http://mp.weixin.qq.com/s/rJ3TawFf6ww_7lfmQzxu5w" target="_blank" rel="noopener">Android 自己动手生成 Apk 了解Apk生成的种种细节</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&amp;mid=2247484101&amp;idx=1&amp;sn=76c0ec3cc5a59ef915f48567c652119d&amp;chksm=e95b9b53de2c1245b4bafe92838c3149a1727b5e618bcd130a6ecbff2cb0c08afcb39ba3a0bc&amp;mpshare=1&amp;scene=23&amp;srcid=0322eu6kQou0f9CPlvifthTU#rd" target="_blank" rel="noopener">Android可伸缩布局－FlexboxLayout(支持RecyclerView集成)</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&amp;mid=2247484095&amp;idx=1&amp;sn=6b067abe805ef665a072480b74aedb04&amp;chksm=e95b9b29de2c123fa33ea267b33a303322fbc645dbbe2014af3e4cc75c33128f9a457583ff76&amp;mpshare=1&amp;scene=23&amp;srcid=03228zmCyFG3jQRoISkAdlQI#rd" target="_blank" rel="noopener">Android鬼点子-又来了一个LoadingBar</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650239018&amp;idx=1&amp;sn=0c81c2ea6a75ca3a4565df750ad8b2e6&amp;chksm=88638145bf1408530bc5722871b6a6d44a1da0175642cc2ce834b6c6b203bfaa3d42fb6b851a&amp;mpshare=1&amp;scene=23&amp;srcid=0329uXeCBJMtEF8WjAIFlllz#rd" target="_blank" rel="noopener">Android通过蓝牙获取通讯录</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650238967&amp;idx=1&amp;sn=0b6bdee06eb94672c2924ac7ad8f2cb2&amp;chksm=88639e98bf14178edce676d2130279ce6db22a16f5f82a569be11a6d7ab6b901c5ee3d927dd5&amp;mpshare=1&amp;scene=23&amp;srcid=0329lTadyUoqpLO68rGcfH6b#rd" target="_blank" rel="noopener">一篇文章带你搞懂DEX文件的结构</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822456&amp;idx=1&amp;sn=10c554676ce9cd0efb35bfda8e70c10f&amp;chksm=80b783a6b7c00ab049e2e38b4913f54d672c3e74cda01ec79b1afa1c0ff6d618222a62f90b93&amp;mpshare=1&amp;scene=23&amp;srcid=0329WofZiPagJsXq3O513hiC#rd" target="_blank" rel="noopener">Android 加快apk的构建速度，如何把编译时间从130秒降到17秒</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434963&amp;idx=1&amp;sn=b52ecf27ce25ac4c0c4509fd96dd98cc&amp;chksm=f12886a8c65f0fbe824134fa59b04da8a2d945c051ae800f8b44eddeb6487cff81434d2da58d&amp;mpshare=1&amp;scene=23&amp;srcid=0329QNcaH7J2e9o1ehpth6To#rd" target="_blank" rel="noopener">【深度总结】一个APP从启动到主页面显示经历了哪些过程？</a></li>
+<li><a href="http://www.jianshu.com/p/0555b8c1d26a" target="_blank" rel="noopener">Android使用矢量图（SVG, VectorDrawable）实践篇</a></li>
+<li><a href="http://www.jianshu.com/p/72494773aace" target="_blank" rel="noopener">Android开发人员不得不收集的代码(持续更新中)</a></li>
+<li><a href="http://www.jianshu.com/p/b806d014162c" target="_blank" rel="noopener">重撸工具类之LogUtils</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650239012&amp;idx=1&amp;sn=b811e0eec443d5d3f8e9863d95be0cea&amp;chksm=8863814bbf14085ddad6c6beae2293ccd5be8e38ccf926b958953361a0f34071a1e9c8b63183&amp;mpshare=1&amp;scene=23&amp;srcid=03297EZLFKWDr2xTeNrHk7y1#rd" target="_blank" rel="noopener">Android使用记录访问权限</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650239036&amp;idx=1&amp;sn=cdde2a1f6125c8f3d780eff8c8e36076&amp;chksm=88638153bf1408455d5c56f0778d40ba9d4448a1e68ef0bf889c4a99699353e3e4ad99f95398&amp;mpshare=1&amp;scene=23&amp;srcid=0329f83Rxux9IvwfrBODq1h9#rd" target="_blank" rel="noopener">Android7.0适配</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650822398&amp;idx=1&amp;sn=736d183aa5b95d2222e502bc9dc33ba5&amp;chksm=80b78260b7c00b76f3d30a17ded3e30c26993832173c42192d205250a21789011bf4da0cb29b&amp;mpshare=1&amp;scene=23&amp;srcid=0329qoB2w0IgSlGSIWV7mX5F#rd" target="_blank" rel="noopener">Android实战自定义控件 仿华为天气预报UI</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650238931&amp;idx=1&amp;sn=ff6d7701f342f0ef455193f8dca1a5e8&amp;chksm=88639ebcbf1417aa266ea74bfeb63a2a72975eee6cd6cea81ed92094eee716850cede4b0abb7&amp;mpshare=1&amp;scene=23&amp;srcid=0329bcamATCy4gFCNi2RA8pX#rd" target="_blank" rel="noopener">开始新的系列，Glide的基本用法</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&amp;mid=2651434956&amp;idx=1&amp;sn=73192dbef2b117cf5a66432ac9d8b23e&amp;chksm=f12886b7c65f0fa103b8aa4757fc60d3692bb62f6234c2e47b6c4e8c4d488b9a1f2f47a53960&amp;mpshare=1&amp;scene=23&amp;srcid=0329kTsFO8aK85CNYRi2g7Dn#rd" target="_blank" rel="noopener">【MIUI动效】Android：会呼吸的悬浮气泡</a></li>
+<li><a href="http://blog.csdn.net/jiangwei0910410003/article/details/61618945" target="_blank" rel="noopener">Android安全防护之旅—带你把Apk混淆成中文语言代码</a></li>
+<li><a href="http://www.open-open.com/lib/view/open1411443332703.html" target="_blank" rel="noopener">收集android上开源的酷炫的交互动画和视觉效果</a></li>
+<li><a href="http://www.open-open.com/doc/view/bc7ac26ff24b491492d2698807c6dc86" target="_blank" rel="noopener">animation动画详解 - v1.0.pdf</a></li>
+<li><a href="http://www.open-open.com/lib/view/open1328063267889.html" target="_blank" rel="noopener">上百个Android开源项目分享</a></li>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&amp;mid=2650823035&amp;idx=1&amp;sn=2db4eea9eb569bf375f847f36b1229fa" target="_blank" rel="noopener">学习Kotlin吗？</a></li>
+<li><a href="https://www.kotlincn.net/" target="_blank" rel="noopener">kotlin中文站-有学习文档</a></li>
+<li><a href="https://kymjs.com/column/kotlin.html" target="_blank" rel="noopener">Kotlin 一门强大的语言</a></li>
+<li><a href="https://github.com/enbandari/Kotlin-Tutorials" target="_blank" rel="noopener">Kotlin从入门到『放弃』系列 视频教程</a></li>
+<li><a href="https://github.com/githubwing/GankClient-Kotlin" target="_blank" rel="noopener">一个Kotlin实战项目GankClient-Kotlin</a></li>
+</ol>
+<p><em>会持续更新…</em></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/article/技术文章之Android/">技术文章之Android</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
+        <p><span>发布时间:</span>2017-02-12, 20:04:54</p>
+        <p><span>最后更新:</span>2017-05-22, 16:38:29</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/article/技术文章之Android/" title="技术文章之Android">https://sogrey.github.io/article/技术文章之Android/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/技术文章之Android/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/article/技术文章之Html（CSS-JS）/">
+                    技术文章之Html（CSS，JS）
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/article/web-app相关整理/">
+                    web app相关整理
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"技术文章之Android　| Sogrey　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="article/技术文章之Android/" data-title="技术文章之Android" data-url="https://sogrey.github.io/article/技术文章之Android/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"sogrey"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/article/技术文章之Html（CSS-JS）/" title="上一篇: 技术文章之Html（CSS，JS）">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/article/web-app相关整理/" title="下一篇: web app相关整理">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/article/Android 动态调用外部jar&dex/">Android 动态调用外部jar/dex</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JNI Md5加密生成so文件/">JNI Md5加密生成so文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/PE装机，开机设置启动项快捷键/">pe装机，开机设置启动项快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/article/VS-code-插件/">VS code 插件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/遍历Map的四种方法/">遍历Map的四种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/15种CSS居中方式/">15种CSS居中方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/利用百度URL-API实现地址-经纬度互相转换/">利用百度URL API实现地址与经纬度互相转换</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android获取view宽高的三种方式/">Android获取view宽高的三种方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-TextView属性android-ellipsize-marquee不生效的解决办法/">Android中TextView属性ellipsize=marquee不生效的解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/关于Android程序使用KSoap2调用Webservice运行不成功的问题/">关于Android程序使用KSoap2调用Webservice运行不成功的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo-添加-Gitment-评论/">Hexo 添加 Gitment 评论</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-Webview-内容自适应高度/">Android Webview 内容自适应高度</a></li><li class="post-list-item"><a class="post-list-link" href="/article/java实现定时任务的三种方法/">java实现定时任务的三种方法(收集)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Java读取文件夹大小的6种方法（收集）/">Java读取文件夹大小的6种方法（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/json转树状结构（收集）/">json转树状结构（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/一行  JavaScript 代码（收集）/">一行  JavaScript 代码（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo建站过程中遇到的问题（填坑）/">Hexo建站过程中遇到的问题（填坑篇）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-library-发布到-JCenter/">Android library 发布到 JCenter</a></li><li class="post-list-item"><a class="post-list-link" href="/article/正则表达式匹配汇集/">正则表达式匹配汇集</a></li><li class="post-list-item"><a class="post-list-link" href="/article/技术文章之Html（CSS-JS）/">技术文章之Html（CSS，JS）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/技术文章之Android/">技术文章之Android</a></li><li class="post-list-item"><a class="post-list-link" href="/article/web-app相关整理/">web app相关整理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/微信小程序初印象【整理】/">微信小程序初印象【整理】</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Webp的探究之路/">Webp的探究之路</a></li><li class="post-list-item"><a class="post-list-link" href="/article/android中使用icon-fonts字体图标/">android中使用icon fonts字体图标</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android混淆签名（下）/">Android混淆签名(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android混淆签名（上）/">Android混淆签名(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/我收集的一些开源项目/">我收集的一些开源项目</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Git常用命令/">Git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo博客基于主题Yelee-yelog-添加文章分类/">Hexo博客基于主题Yelee(yelog) 添加文章分类</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo博客基于主题Yelee-yelog-添加“标签云”和“关于我”菜单项页面/">Hexo博客基于主题Yelee(yelog) 添加“标签云”和“关于我”菜单项页面</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Html5-PPT/">Html5 PPT</a></li><li class="post-list-item"><a class="post-list-link" href="/article/如何在Github-Pages搭建个人独立主页？/">如何在Github Pages搭建个人独立主页？</a></li><li class="post-list-item"><a class="post-list-link" href="/article/我是如何用hexo搭建github-pages/">我是如何用hexo搭建github pages</a></li><li class="post-list-item"><a class="post-list-link" href="/article/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+
+<!--gitment 评论-->
+
+  <div class="comments" id="comments">
+  
+	<!--汉化-->
+    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+	<script src="https://billts.site/js/gitment.js"></script>
+	<!--原型-->
+	<!--
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js" type="text/javascript"></script>
+	-->
+	
+      <div id="gitmentContainer" style="margin-bottom: -19px;"></div>
+     
+      <style>
+        .gitment-container a {
+          border: none;
+        }
+        .comments {
+          margin: 60px 0 0;padding: 0 60px;
+        }
+		@media screen and (max-width:1040px) {
+		   .comments {
+			  padding: 0 30px;
+			}
+		}
+		/**gitment 默认样式覆盖*/
+		.gitment-comment-header{background-color: #ffffff00 !important;}
+		.gitment-editor-main::before, .gitment-comment-main::before{border-right-color: #7EA4CA !important;}
+      </style>
+     
+      <script type="text/javascript">
+        var gitment = new Gitment({
+			  id: '技术文章之Android',
+			  title: '技术文章之Android',
+			  owner: 'Sogrey',
+			  repo: 'Sogrey.github.io',
+			  oauth: {
+				client_id: '582650733e15427a208c',
+				client_secret: '95db82d5f7b8c46a86b82a969e3c59dd4d7f6be1',
+			  },
+        })
+        gitment.render('gitmentContainer')
+      </script>
+    
+  </div>
+
+<!--gitment 评论 end-->
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 <i class="fa fa-heart animated infinite pulse"></i><a href="https://sogrey.github.io" target="_blank" title="我是一个小帅哥！^_^  https://github.com/Sogrey">Sogrey</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 3;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+             categories: ".article-category a, a.tag-list-link", 
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 敬请下次光临~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 欢迎光临~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+  <!-- 动态背景 -->
+  <!--<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="120" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>-->
+  <script type="text/javascript" src="/js/canvas-nest.min.js"></script>
+</body>
+</html>

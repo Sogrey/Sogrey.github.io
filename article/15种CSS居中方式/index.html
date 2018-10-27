@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Sogrey" />
+
+
+
+<meta name="description" content="简言CSS居中是前端工程师经常要面对的问题，也是基本技能之一。今天有时间把CSS居中的方案汇编整理了一下，目前包括水平居中，垂直居中及水平垂直居中方案共15种。如有漏掉的，还会陆续的补充进来，算做是一个备忘录吧。">
+<meta name="keywords" content="css,居中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="15种CSS居中方式">
+<meta property="og:url" content="https://sogrey.github.io/article/15种CSS居中方式/index.html">
+<meta property="og:site_name" content="Sogrey">
+<meta property="og:description" content="简言CSS居中是前端工程师经常要面对的问题，也是基本技能之一。今天有时间把CSS居中的方案汇编整理了一下，目前包括水平居中，垂直居中及水平垂直居中方案共15种。如有漏掉的，还会陆续的补充进来，算做是一个备忘录吧。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-29T16:20:55.181Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="15种CSS居中方式">
+<meta name="twitter:description" content="简言CSS居中是前端工程师经常要面对的问题，也是基本技能之一。今天有时间把CSS居中的方案汇编整理了一下，目前包括水平居中，垂直居中及水平垂直居中方案共15种。如有漏掉的，还会陆续的补充进来，算做是一个备忘录吧。">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Sogrey" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>15种CSS居中方式 | Sogrey</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/Sogrey.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Sogrey</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">必须努力，付出不亚于任何人努力</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="on" autocorrect="true" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+            
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/logs/">更新日志</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:408270653@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/1766036691" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/Sogrey" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/sogrey" title="知乎"></a>
+                            
+                                <a class="fa 简书" href="http://www.jianshu.com/u/9ede1ff4ccfb" title="简书"></a>
+                            
+                                <a class="fa CSDN" href="http://blog.csdn.net/sogrey" title="CSDN"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/sogrey" title="Coding"></a>
+                            
+                                <a class="fa LinkedIn" href="https://cn.linkedin.com/in/sogrey" title="LinkedIn"></a>
+                            
+                                <a class="fa LOFTER" href="http://sogrey.lofter.com/" title="LOFTER"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-pages/">Github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitment/">Gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo建站填坑/">Hexo建站填坑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html5/">Html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JCenter/">JCenter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JNI/">JNI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KSoap2/">KSoap2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Md5/">Md5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PPT/">PPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS-code/">VS code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebApp/">WebApp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webp/">Webp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webservice/">Webservice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webview/">Webview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yelee/">Yelee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apk混淆/">apk混淆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dex/">dex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icon-font字体图标/">icon font字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar/">jar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/marquee/">marquee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yelog/">yelog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/“关于我”/">“关于我”</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/“标签云”/">“标签云”</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地址与经纬度/">地址与经纬度</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/居中/">居中</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序/">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/手记/">手记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术文章/">技术文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文章分类/">文章分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂记/">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度-api/">百度 api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/签名/">签名</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://pan.baidu.com/s/1hr2PiG8">芝麻开门</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/JavaDocs/">JavaDoc</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/notes/">notes</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/html-css-js-demos/">html-css-js-demos</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Kotlin-Notes/">Kotlin-学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/WebTools/index.html">Web开发常用工具</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">必须努力，付出不亚于任何人努力</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Sogrey</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/Sogrey.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Sogrey</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">必须努力，付出不亚于任何人努力</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/logs/">更新日志</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:408270653@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1766036691" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/Sogrey" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/sogrey" title="知乎"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/9ede1ff4ccfb" title="简书"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/sogrey" title="CSDN"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/sogrey" title="Coding"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/sogrey" title="LinkedIn"></a>
+                            
+                                <a class="fa LOFTER" target="_blank" href="http://sogrey.lofter.com/" title="LOFTER"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-15种CSS居中方式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/article/15种CSS居中方式/" class="article-date">
+      <time datetime="2018-03-29T16:05:49.000Z" itemprop="datePublished">2018-03-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      15种CSS居中方式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/css/">css</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/居中/">居中</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="简言"><a href="#简言" class="headerlink" title="简言"></a>简言</h1><p>CSS居中是前端工程师经常要面对的问题，也是基本技能之一。今天有时间把CSS居中的方案汇编整理了一下，目前包括水平居中，垂直居中及水平垂直居中方案共15种。如有漏掉的，还会陆续的补充进来，算做是一个备忘录吧。</p>
+<a id="more"></a>
+<h1 id="1-水平居中"><a href="#1-水平居中" class="headerlink" title="1 水平居中"></a>1 水平居中</h1><h2 id="1-1-内联元素水平居中"><a href="#1-1-内联元素水平居中" class="headerlink" title="1.1 内联元素水平居中"></a>1.1 内联元素水平居中</h2><p>利用 text-align: center 可以实现在块级元素内部的内联元素水平居中。此方法对内联元素(inline), 内联块(inline-block), 内联表(inline-table), inline-flex元素水平居中都有效。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center-text</span> &#123;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/57" target="_blank" rel="noopener">演示代码</a></p>
+<h2 id="1-2-块级元素水平居中"><a href="#1-2-块级元素水平居中" class="headerlink" title="1.2 块级元素水平居中"></a>1.2 块级元素水平居中</h2><p>通过把固定宽度块级元素的margin-left和margin-right设成auto，就可以使块级元素水平居中。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center-block</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/58" target="_blank" rel="noopener">演示代码</a></p>
+<h2 id="1-3-多块级元素水平居中"><a href="#1-3-多块级元素水平居中" class="headerlink" title="1.3 多块级元素水平居中"></a>1.3 多块级元素水平居中</h2><h3 id="1-3-1-利用inline-block"><a href="#1-3-1-利用inline-block" class="headerlink" title="1.3.1 利用inline-block"></a>1.3.1 利用inline-block</h3><p>如果一行中有两个或两个以上的块级元素，通过设置块级元素的显示类型为inline-block和父容器的text-align属性从而使多块级元素水平居中。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.inline-block</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/59" target="_blank" rel="noopener">演示代码</a></p>
+<h3 id="1-3-2-利用display-flex"><a href="#1-3-2-利用display-flex" class="headerlink" title="1.3.2 利用display: flex"></a>1.3.2 利用display: flex</h3><p>利用弹性布局(flex)，实现水平居中，其中justify-content 用于设置弹性盒子元素在主轴（横轴）方向上的对齐方式，本例中设置子元素水平居中显示。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-center</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/60" target="_blank" rel="noopener">演示代码</a></p>
+<h1 id="2-垂直居中"><a href="#2-垂直居中" class="headerlink" title="2 垂直居中"></a>2 垂直居中</h1><h2 id="2-1-单行内联-inline-元素垂直居中"><a href="#2-1-单行内联-inline-元素垂直居中" class="headerlink" title="2.1 单行内联(inline-)元素垂直居中"></a>2.1 单行内联(inline-)元素垂直居中</h2><p>通过设置内联元素的高度(height)和行高(line-height)相等，从而使元素垂直居中。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#v-box</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">120px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">120px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/61" target="_blank" rel="noopener">演示代码</a></p>
+<h2 id="2-2-多行元素垂直居中"><a href="#2-2-多行元素垂直居中" class="headerlink" title="2.2 多行元素垂直居中"></a>2.2 多行元素垂直居中</h2><h3 id="2-2-1-利用表布局（table）"><a href="#2-2-1-利用表布局（table）" class="headerlink" title="2.2.1 利用表布局（table）"></a>2.2.1 利用表布局（table）</h3><p>利用表布局的vertical-align: middle可以实现子元素的垂直居中。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center-table</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.v-cell</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: table-cell;</span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/62" target="_blank" rel="noopener">演示代码</a></p>
+<h3 id="2-2-2-利用flex布局（flex）"><a href="#2-2-2-利用flex布局（flex）" class="headerlink" title="2.2.2 利用flex布局（flex）"></a>2.2.2 利用flex布局（flex）</h3><p>利用flex布局实现垂直居中，其中flex-direction: column定义主轴方向为纵向。因为flex布局是CSS3中定义，在较老的浏览器存在兼容性问题。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center-flex</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex-direction</span>: column;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/63" target="_blank" rel="noopener">演示代码</a></p>
+<h3 id="2-2-3-利用“精灵元素”"><a href="#2-2-3-利用“精灵元素”" class="headerlink" title="2.2.3 利用“精灵元素”"></a>2.2.3 利用“精灵元素”</h3><p>利用“精灵元素”(ghost element)技术实现垂直居中，即在父容器内放一个100%高度的伪元素，让文本和伪元素垂直对齐，从而达到垂直居中的目的。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ghost-center</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.ghost-center</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">" "</span>;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">1%</span>;</span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.ghost-center</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">20rem</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/64" target="_blank" rel="noopener">演示代码</a></p>
+<h2 id="2-3-块级元素垂直居中"><a href="#2-3-块级元素垂直居中" class="headerlink" title="2.3 块级元素垂直居中"></a>2.3 块级元素垂直居中</h2><h3 id="2-3-1-固定高度的块级元素"><a href="#2-3-1-固定高度的块级元素" class="headerlink" title="2.3.1 固定高度的块级元素"></a>2.3.1 固定高度的块级元素</h3><p>我们知道居中元素的高度和宽度，垂直居中问题就很简单。通过绝对定位元素距离顶部50%，并设置margin-top向上偏移元素高度的一半，就可以实现垂直居中了。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: -<span class="number">50px</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/65" target="_blank" rel="noopener">演示代码</a></p>
+<h3 id="2-3-2-未知高度的块级元素"><a href="#2-3-2-未知高度的块级元素" class="headerlink" title="2.3.2 未知高度的块级元素"></a>2.3.2 未知高度的块级元素</h3><p>当垂直居中的元素的高度和宽度未知时，我们可以借助CSS3中的transform属性向Y轴反向偏移50%的方法实现垂直居中。但是部分浏览器存在兼容性的问题。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">&#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/66" target="_blank" rel="noopener">演示代码</a></p>
+<h1 id="3-水平垂直居中"><a href="#3-水平垂直居中" class="headerlink" title="3 水平垂直居中"></a>3 水平垂直居中</h1><h2 id="3-1-固定宽高元素水平垂直居中"><a href="#3-1-固定宽高元素水平垂直居中" class="headerlink" title="3.1 固定宽高元素水平垂直居中"></a>3.1 固定宽高元素水平垂直居中</h2><p>通过margin平移元素整体宽度的一半，使元素水平垂直居中。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">margin</span>: -<span class="number">70px</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">170px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/67" target="_blank" rel="noopener">演示代码</a></p>
+<h2 id="3-2-未知宽高元素水平垂直居中"><a href="#3-2-未知宽高元素水平垂直居中" class="headerlink" title="3.2 未知宽高元素水平垂直居中"></a>3.2 未知宽高元素水平垂直居中</h2><p>利用2D变换，在水平和垂直两个方向都向反向平移宽高的一半，从而使元素水平垂直居中。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/68" target="_blank" rel="noopener">演示代码</a></p>
+<h2 id="3-3-利用flex布局"><a href="#3-3-利用flex布局" class="headerlink" title="3.3 利用flex布局"></a>3.3 利用flex布局</h2><p>利用flex布局，其中justify-content 用于设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式；而align-items属性定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/69" target="_blank" rel="noopener">演示代码</a></p>
+<h2 id="3-4-利用grid布局"><a href="#3-4-利用grid布局" class="headerlink" title="3.4 利用grid布局"></a>3.4 利用grid布局</h2><p>利用grid实现水平垂直居中，兼容性较差，不推荐。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">140px</span>;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123; </span><br><span class="line">  <span class="attribute">margin</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/70" target="_blank" rel="noopener">演示代码</a></p>
+<h2 id="3-5-屏幕上水平垂直居中"><a href="#3-5-屏幕上水平垂直居中" class="headerlink" title="3.5 屏幕上水平垂直居中"></a>3.5 屏幕上水平垂直居中</h2><p>屏幕上水平垂直居中十分常用，常规的登录及注册页面都需要用到。要保证较好的兼容性，还需要用到表布局。</p>
+<p>核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.outer</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.middle</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: table-cell;</span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inner</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: auto;</span><br><span class="line">    <span class="attribute">margin-right</span>: auto; </span><br><span class="line">    <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.42du.cn/run/10" target="_blank" rel="noopener">演示代码</a></p>
+<p>来源：<a href="https://segmentfault.com/a/1190000013966650?utm_source=weekly&amp;utm_medium=email&amp;utm_campaign=email_weekly" target="_blank" rel="noopener">https://segmentfault.com/a/1190000013966650?utm_source=weekly&amp;utm_medium=email&amp;utm_campaign=email_weekly</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/article/15种CSS居中方式/">15种CSS居中方式</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
+        <p><span>发布时间:</span>2018-03-30, 00:05:49</p>
+        <p><span>最后更新:</span>2018-03-30, 00:20:55</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/article/15种CSS居中方式/" title="15种CSS居中方式">https://sogrey.github.io/article/15种CSS居中方式/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/15种CSS居中方式/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/article/遍历Map的四种方法/">
+                    遍历Map的四种方法
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/article/利用百度URL-API实现地址-经纬度互相转换/">
+                    利用百度URL API实现地址与经纬度互相转换
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简言"><span class="toc-text">简言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-水平居中"><span class="toc-text">1 水平居中</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-内联元素水平居中"><span class="toc-text">1.1 内联元素水平居中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-块级元素水平居中"><span class="toc-text">1.2 块级元素水平居中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-多块级元素水平居中"><span class="toc-text">1.3 多块级元素水平居中</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-利用inline-block"><span class="toc-text">1.3.1 利用inline-block</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-利用display-flex"><span class="toc-text">1.3.2 利用display: flex</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-垂直居中"><span class="toc-text">2 垂直居中</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-单行内联-inline-元素垂直居中"><span class="toc-text">2.1 单行内联(inline-)元素垂直居中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-多行元素垂直居中"><span class="toc-text">2.2 多行元素垂直居中</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-利用表布局（table）"><span class="toc-text">2.2.1 利用表布局（table）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-利用flex布局（flex）"><span class="toc-text">2.2.2 利用flex布局（flex）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-利用“精灵元素”"><span class="toc-text">2.2.3 利用“精灵元素”</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-块级元素垂直居中"><span class="toc-text">2.3 块级元素垂直居中</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-固定高度的块级元素"><span class="toc-text">2.3.1 固定高度的块级元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-未知高度的块级元素"><span class="toc-text">2.3.2 未知高度的块级元素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-水平垂直居中"><span class="toc-text">3 水平垂直居中</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-固定宽高元素水平垂直居中"><span class="toc-text">3.1 固定宽高元素水平垂直居中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-未知宽高元素水平垂直居中"><span class="toc-text">3.2 未知宽高元素水平垂直居中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-利用flex布局"><span class="toc-text">3.3 利用flex布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-利用grid布局"><span class="toc-text">3.4 利用grid布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-屏幕上水平垂直居中"><span class="toc-text">3.5 屏幕上水平垂直居中</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"15种CSS居中方式　| Sogrey　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="article/15种CSS居中方式/" data-title="15种CSS居中方式" data-url="https://sogrey.github.io/article/15种CSS居中方式/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"sogrey"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/article/遍历Map的四种方法/" title="上一篇: 遍历Map的四种方法">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/article/利用百度URL-API实现地址-经纬度互相转换/" title="下一篇: 利用百度URL API实现地址与经纬度互相转换">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/article/Android 动态调用外部jar&dex/">Android 动态调用外部jar/dex</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JNI Md5加密生成so文件/">JNI Md5加密生成so文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/PE装机，开机设置启动项快捷键/">pe装机，开机设置启动项快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/article/VS-code-插件/">VS code 插件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/遍历Map的四种方法/">遍历Map的四种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/15种CSS居中方式/">15种CSS居中方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/利用百度URL-API实现地址-经纬度互相转换/">利用百度URL API实现地址与经纬度互相转换</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android获取view宽高的三种方式/">Android获取view宽高的三种方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-TextView属性android-ellipsize-marquee不生效的解决办法/">Android中TextView属性ellipsize=marquee不生效的解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/关于Android程序使用KSoap2调用Webservice运行不成功的问题/">关于Android程序使用KSoap2调用Webservice运行不成功的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo-添加-Gitment-评论/">Hexo 添加 Gitment 评论</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-Webview-内容自适应高度/">Android Webview 内容自适应高度</a></li><li class="post-list-item"><a class="post-list-link" href="/article/java实现定时任务的三种方法/">java实现定时任务的三种方法(收集)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Java读取文件夹大小的6种方法（收集）/">Java读取文件夹大小的6种方法（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/json转树状结构（收集）/">json转树状结构（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/一行  JavaScript 代码（收集）/">一行  JavaScript 代码（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo建站过程中遇到的问题（填坑）/">Hexo建站过程中遇到的问题（填坑篇）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-library-发布到-JCenter/">Android library 发布到 JCenter</a></li><li class="post-list-item"><a class="post-list-link" href="/article/正则表达式匹配汇集/">正则表达式匹配汇集</a></li><li class="post-list-item"><a class="post-list-link" href="/article/技术文章之Html（CSS-JS）/">技术文章之Html（CSS，JS）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/技术文章之Android/">技术文章之Android</a></li><li class="post-list-item"><a class="post-list-link" href="/article/web-app相关整理/">web app相关整理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/微信小程序初印象【整理】/">微信小程序初印象【整理】</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Webp的探究之路/">Webp的探究之路</a></li><li class="post-list-item"><a class="post-list-link" href="/article/android中使用icon-fonts字体图标/">android中使用icon fonts字体图标</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android混淆签名（下）/">Android混淆签名(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android混淆签名（上）/">Android混淆签名(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/我收集的一些开源项目/">我收集的一些开源项目</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Git常用命令/">Git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo博客基于主题Yelee-yelog-添加文章分类/">Hexo博客基于主题Yelee(yelog) 添加文章分类</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo博客基于主题Yelee-yelog-添加“标签云”和“关于我”菜单项页面/">Hexo博客基于主题Yelee(yelog) 添加“标签云”和“关于我”菜单项页面</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Html5-PPT/">Html5 PPT</a></li><li class="post-list-item"><a class="post-list-link" href="/article/如何在Github-Pages搭建个人独立主页？/">如何在Github Pages搭建个人独立主页？</a></li><li class="post-list-item"><a class="post-list-link" href="/article/我是如何用hexo搭建github-pages/">我是如何用hexo搭建github pages</a></li><li class="post-list-item"><a class="post-list-link" href="/article/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+
+<!--gitment 评论-->
+
+  <div class="comments" id="comments">
+  
+	<!--汉化-->
+    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+	<script src="https://billts.site/js/gitment.js"></script>
+	<!--原型-->
+	<!--
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js" type="text/javascript"></script>
+	-->
+	
+      <div id="gitmentContainer" style="margin-bottom: -19px;"></div>
+     
+      <style>
+        .gitment-container a {
+          border: none;
+        }
+        .comments {
+          margin: 60px 0 0;padding: 0 60px;
+        }
+		@media screen and (max-width:1040px) {
+		   .comments {
+			  padding: 0 30px;
+			}
+		}
+		/**gitment 默认样式覆盖*/
+		.gitment-comment-header{background-color: #ffffff00 !important;}
+		.gitment-editor-main::before, .gitment-comment-main::before{border-right-color: #7EA4CA !important;}
+      </style>
+     
+      <script type="text/javascript">
+        var gitment = new Gitment({
+			  id: '15种CSS居中方式',
+			  title: '15种CSS居中方式',
+			  owner: 'Sogrey',
+			  repo: 'Sogrey.github.io',
+			  oauth: {
+				client_id: '582650733e15427a208c',
+				client_secret: '95db82d5f7b8c46a86b82a969e3c59dd4d7f6be1',
+			  },
+        })
+        gitment.render('gitmentContainer')
+      </script>
+    
+  </div>
+
+<!--gitment 评论 end-->
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 <i class="fa fa-heart animated infinite pulse"></i><a href="https://sogrey.github.io" target="_blank" title="我是一个小帅哥！^_^  https://github.com/Sogrey">Sogrey</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 3;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+             categories: ".article-category a, a.tag-list-link", 
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 敬请下次光临~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 欢迎光临~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+  <!-- 动态背景 -->
+  <!--<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="120" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>-->
+  <script type="text/javascript" src="/js/canvas-nest.min.js"></script>
+</body>
+</html>
