@@ -163,20 +163,6 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/tags/Hexo/</loc>
-        <lastmod>2018-07-06T07:27:55.296Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/tags/Gitment/</loc>
-        <lastmod>2018-07-06T07:27:55.296Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://sogrey.github.io/tags/jar/</loc>
         <lastmod>2018-09-02T04:34:18.188Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -326,6 +312,20 @@
     <url>
         <loc>https://sogrey.github.io/tags/VS-code/</loc>
         <lastmod>2018-10-25T02:33:13.137Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/tags/Hexo/</loc>
+        <lastmod>2018-10-27T07:35:59.766Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/tags/Gitment/</loc>
+        <lastmod>2018-10-27T07:35:59.766Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
