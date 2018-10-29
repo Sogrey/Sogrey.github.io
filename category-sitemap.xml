@@ -112,13 +112,6 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/categories/Android/</loc>
-        <lastmod>2018-10-19T01:37:57.465Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://sogrey.github.io/categories/VS-code/</loc>
         <lastmod>2018-10-25T02:33:13.137Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -128,6 +121,13 @@
     <url>
         <loc>https://sogrey.github.io/categories/Gitment/</loc>
         <lastmod>2018-10-27T09:02:25.757Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/categories/Android/</loc>
+        <lastmod>2018-10-29T03:06:50.916Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
