@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Sogrey" />
+
+
+
+<meta name="description" content="JNI Md5加密生成so文件 IDE工具:Android Studio编译环境:JDK1.8+Android SDK+NDK">
+<meta name="keywords" content="JNI,Md5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JNI Md5加密生成so文件">
+<meta property="og:url" content="https://sogrey.github.io/article/JNI Md5加密生成so文件/index.html">
+<meta property="og:site_name" content="Sogrey">
+<meta property="og:description" content="JNI Md5加密生成so文件 IDE工具:Android Studio编译环境:JDK1.8+Android SDK+NDK">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/新建项目-Android-jni-md5.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/选择c++Support.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/项目目录结构.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180803161827.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM—20180803164015.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180803164408.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180803164549.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM截图20180803165042.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180803165959.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180803170704.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180803225817.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180804002050.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180804003217.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180804003613.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180804004506.jpg">
+<meta property="og:updated_time" content="2018-09-02T04:34:38.662Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JNI Md5加密生成so文件">
+<meta name="twitter:description" content="JNI Md5加密生成so文件 IDE工具:Android Studio编译环境:JDK1.8+Android SDK+NDK">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/新建项目-Android-jni-md5.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Sogrey" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>JNI Md5加密生成so文件 | Sogrey</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/Sogrey.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Sogrey</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">必须努力，付出不亚于任何人努力</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="on" autocorrect="true" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+            
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/logs/">更新日志</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:408270653@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/1766036691" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/Sogrey" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/sogrey" title="知乎"></a>
+                            
+                                <a class="fa 简书" href="http://www.jianshu.com/u/9ede1ff4ccfb" title="简书"></a>
+                            
+                                <a class="fa CSDN" href="http://blog.csdn.net/sogrey" title="CSDN"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/sogrey" title="Coding"></a>
+                            
+                                <a class="fa LinkedIn" href="https://cn.linkedin.com/in/sogrey" title="LinkedIn"></a>
+                            
+                                <a class="fa LOFTER" href="http://sogrey.lofter.com/" title="LOFTER"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-pages/">Github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitment/">Gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/">HEXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo建站填坑/">Hexo建站填坑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html5/">Html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JCenter/">JCenter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JNI/">JNI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KSoap2/">KSoap2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Md5/">Md5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PPT/">PPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS-code/">VS code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebApp/">WebApp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webp/">Webp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webservice/">Webservice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webview/">Webview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yelee/">Yelee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apk混淆/">apk混淆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dex/">dex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icon-font字体图标/">icon font字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar/">jar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/marquee/">marquee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yelog/">yelog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/“关于我”/">“关于我”</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/“标签云”/">“标签云”</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地址与经纬度/">地址与经纬度</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/居中/">居中</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序/">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/手记/">手记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术文章/">技术文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文章分类/">文章分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂记/">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度-api/">百度 api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/签名/">签名</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://pan.baidu.com/s/1hr2PiG8">芝麻开门</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/JavaDocs/">JavaDoc</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/notes/">notes</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/html-css-js-demos/">html-css-js-demos</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Kotlin-Notes/">Kotlin-学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Flutter-Dart-Notes/">Flutter、Dart学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/WebTools/index.html">Web开发常用工具</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">必须努力，付出不亚于任何人努力</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Sogrey</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/Sogrey.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Sogrey</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">必须努力，付出不亚于任何人努力</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/logs/">更新日志</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:408270653@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1766036691" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/Sogrey" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/sogrey" title="知乎"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/9ede1ff4ccfb" title="简书"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/sogrey" title="CSDN"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/sogrey" title="Coding"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/sogrey" title="LinkedIn"></a>
+                            
+                                <a class="fa LOFTER" target="_blank" href="http://sogrey.lofter.com/" title="LOFTER"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-JNI Md5加密生成so文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/article/JNI Md5加密生成so文件/" class="article-date">
+      <time datetime="2018-07-25T12:39:13.000Z" itemprop="datePublished">2018-07-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JNI Md5加密生成so文件
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JNI/">JNI</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JNI/">JNI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Md5/">Md5</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>JNI Md5加密生成so文件</p>
+<p>IDE工具:Android Studio<br>编译环境:JDK1.8+Android SDK+NDK</p>
+<a id="more"></a>
+<h2 id="1-新建项目"><a href="#1-新建项目" class="headerlink" title="1 新建项目"></a>1 新建项目</h2><p><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/新建项目-Android-jni-md5.jpg" alt=""></p>
+<p>选中“Include C++ support”,一直“Next”.<br><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/选择c++Support.jpg" alt=""></p>
+<p>等待项目构建完成后<br><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/项目目录结构.jpg" alt=""></p>
+<p>看到 <code>java</code>包同级有个<code>cpp</code>的包就是存放c++代码的。</p>
+<p>而里<code>native-lib.cpp</code>的代码很简单，就是打印出一句“Hello from C++”:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;jni.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span></span><br><span class="line">JNIEXPORT jstring</span><br><span class="line"></span><br><span class="line">JNICALL</span><br><span class="line">Java_sogrey_android_1jni_1md5_MainActivity_stringFromJNI(</span><br><span class="line">        JNIEnv *env,</span><br><span class="line">        jobject <span class="comment">/* this */</span>) &#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">string</span> hello = <span class="string">"Hello from C++"</span>;</span><br><span class="line">    <span class="keyword">return</span> env-&gt;NewStringUTF(hello.c_str());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行一下：<br><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180803161827.jpg" alt=""></p>
+<p>这就表示我们的C++环境正常，可以开始写我们自己的代码了。</p>
+<h2 id="2-新建Jni工具类"><a href="#2-新建Jni工具类" class="headerlink" title="2 新建Jni工具类"></a>2 新建Jni工具类</h2><p>新建一个<code>JNIUtils.java</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sogrey.android_jni_md5;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by Sogrey on 2018/8/3.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JNIUtils</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Used to load the 'native-lib' library on application startup.</span></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.loadLibrary(<span class="string">"native-lib"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * A native method that is implemented by the 'native-lib' native library,</span></span><br><span class="line"><span class="comment">     * which is packaged with this application.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">native</span> String <span class="title">stringFromJNI</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>把<code>MainActivity.java</code>中的相关代码删掉</p>
+<blockquote>
+<p>tv.setText(stringFromJNI());</p>
+</blockquote>
+<p>也改成</p>
+<blockquote>
+<p>tv.setText(new JNIUtils().stringFromJNI());</p>
+</blockquote>
+<h2 id="3-生成-h文件-编写cpp文件"><a href="#3-生成-h文件-编写cpp文件" class="headerlink" title="3 生成.h文件,编写cpp文件"></a>3 生成.h文件,编写cpp文件</h2><p>Android studio的Terminal中依次执行命令：</p>
+<blockquote>
+<p>cd app/src/main/java<br>javah -jni sogrey.android_jni_md5.JNIUtils</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM—20180803164015.jpg" alt=""></p>
+<p>将生成的<code>sogrey_android_jni_md5_JNIUtils.h</code>头文件剪贴到<code>cpp</code>包下，并复制一份重命名为<code>sogrey_android_jni_md5_JNIUtils.cpp</code>.<br><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180803164408.jpg" alt=""></p>
+<p>编辑复制的<code>.cpp</code>文件，删掉多余代码只留下需要我们实现的那个方法,加上返回方法体，并导入之前的<code>.h</code>文件<br><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180803164549.jpg" alt=""></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"sogrey_android_jni_md5_JNIUtils.h"</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Class:     sogrey_android_jni_md5_JNIUtils</span></span><br><span class="line"><span class="comment"> * Method:    stringFromJNI</span></span><br><span class="line"><span class="comment"> * Signature: ()Ljava/lang/String;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">JNIEXPORT jstring JNICALL Java_sogrey_android_1jni_1md5_JNIUtils_stringFromJNI</span><br><span class="line">        (JNIEnv *env, jobject obj)&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>方法需要返回<code>jstring</code>,可以参照之前<code>native-lib.cpp</code>里的代码实现，引入提示需要导入<code>string</code>:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM截图20180803165042.jpg" alt=""></p>
+<p>则最终代码就是：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"sogrey_android_jni_md5_JNIUtils.h"</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Class:     sogrey_android_jni_md5_JNIUtils</span></span><br><span class="line"><span class="comment"> * Method:    stringFromJNI</span></span><br><span class="line"><span class="comment"> * Signature: ()Ljava/lang/String;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">JNIEXPORT jstring JNICALL Java_sogrey_android_1jni_1md5_JNIUtils_stringFromJNI</span><br><span class="line">        (JNIEnv *env, jobject obj)&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">string</span> hello = <span class="string">"Hello from C++"</span>;</span><br><span class="line">    <span class="keyword">return</span> env-&gt;NewStringUTF(hello.c_str());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-修改CMakeLists-txt文件"><a href="#4-修改CMakeLists-txt文件" class="headerlink" title="4 修改CMakeLists.txt文件"></a>4 修改<code>CMakeLists.txt</code>文件</h2><p>我们刚刚添加了一个新的c++文件，现将它加到CMakeLists中，刚才的<code>native-lib.cpp</code>已经没有用了，注掉它<br><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180803165959.jpg" alt=""></p>
+<p>重新编译运行看会不会得到和之前一样的结果。（结果是一样的）<br>在<code>build</code>&gt;<code>intermediates</code>&gt;<code>cmake</code>&gt;<code>debug</code>&gt;<code>obj</code>下就能找到生成的.so文件了<br><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180803170704.jpg" alt=""></p>
+<h2 id="5-添加getMd5-String-的native方法"><a href="#5-添加getMd5-String-的native方法" class="headerlink" title="5 添加getMd5(String)的native方法"></a>5 添加<code>getMd5(String)</code>的native方法</h2><p>在<code>JNIUtils.java</code>中添加下面native方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取指定字符串md5值</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> content 要md5加密的字符串</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> md5加密串</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> String <span class="title">getMd5</span><span class="params">(String content)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>重复第三步操作。或者熟练了直接在<code>sogrey_android_jni_md5_JNIUtils.h</code>文件中添加：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Class:     sogrey_android_jni_md5_JNIUtils</span></span><br><span class="line"><span class="comment"> * Method:    getMd5</span></span><br><span class="line"><span class="comment"> * Signature: (Ljava/lang/String;)Ljava/lang/String;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">JNIEXPORT jstring JNICALL Java_sogrey_android_1jni_1md5_JNIUtils_getMd5</span><br><span class="line">        (JNIEnv *, jobject, jstring);</span><br></pre></td></tr></table></figure></p>
+<p>同样，需要在<code>sogrey_android_jni_md5_JNIUtils.cpp</code>中去实现它：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Class:     sogrey_android_jni_md5_JNIUtils</span></span><br><span class="line"><span class="comment"> * Method:    getMd5</span></span><br><span class="line"><span class="comment"> * Signature: (Ljava/lang/String;)Ljava/lang/String;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">JNIEXPORT jstring JNICALL Java_sogrey_android_1jni_1md5_JNIUtils_getMd5</span><br><span class="line">        (JNIEnv *env, jobject obj, jstring str)&#123;</span><br><span class="line">    <span class="comment">//TODO 实现方法逻辑</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="6-实现MD5加密"><a href="#6-实现MD5加密" class="headerlink" title="6 实现MD5加密"></a>6 实现MD5加密</h2><p>md5的加密方法网上很多，这里给出一个c++实现的[<a href="https://github.com/Sogrey/AndroidJniMD5/blob/master/app/src/main/cpp/MD5.cpp" target="_blank" rel="noopener">MD5.cpp</a>,<a href="https://github.com/Sogrey/AndroidJniMD5/blob/master/app/src/main/cpp/MD5.h" target="_blank" rel="noopener">MD5.h</a>].直接将两个文件引入到cpp包下，<br>在<code>sogrey_android_jni_md5_JNIUtils.cpp</code>引入</p>
+<blockquote>
+<p>#include “MD5.h”</p>
+</blockquote>
+<p>则<code>getMD5</code>方法实现：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Class:     sogrey_android_jni_md5_JNIUtils</span></span><br><span class="line"><span class="comment"> * Method:    getMd5</span></span><br><span class="line"><span class="comment"> * Signature: (Ljava/lang/String;)Ljava/lang/String;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">JNIEXPORT jstring JNICALL Java_sogrey_android_1jni_1md5_JNIUtils_getMd5</span><br><span class="line">        (JNIEnv *env, jobject obj, jstring str) &#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *originStr;</span><br><span class="line">    <span class="comment">//将jstring转化成char *类型</span></span><br><span class="line">    originStr = env-&gt;GetStringUTFChars(str,JNI_FALSE);</span><br><span class="line">    MD5 md5 = MD5(originStr);</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">string</span> md5Result = md5.hexdigest();</span><br><span class="line"><span class="comment">//    //将char *类型转化成jstring返回给Java层</span></span><br><span class="line">    <span class="keyword">return</span> env-&gt;NewStringUTF(md5Result.c_str());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中：JNI_FALSE 是个宏定义表示 jboolean false<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> JNI_FALSE 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> JNI_TRUE 1</span></span><br></pre></td></tr></table></figure></p>
+<p>运行一把，得到md5字符串<br><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180803225817.jpg" alt=""></p>
+<h2 id="7-生成-so文件"><a href="#7-生成-so文件" class="headerlink" title="7 生成.so文件"></a>7 生成.so文件</h2><p>在cmake.txt中添加</p>
+<pre><code>#设置生成的so动态库最后输出的路径
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../jniLibs/${ANDROID_ABI})
+</code></pre><p>用来指定生成的so文件存储路径，点击<code>build</code>&gt;<code>Make project</code>,看到在<code>jniLibs</code>文件夹下生成支持4中不同内核的so文件。<br><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180804002050.jpg" alt=""></p>
+<p>想要配置指定内核平台，修改<code>Module</code>下的<code>build.gradle</code>中的<code>android</code>&gt;<code>defaultConfig</code> 添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">externalNativeBuild &#123;</span><br><span class="line">            cmake &#123;</span><br><span class="line">                cppFlags &quot;&quot;</span><br><span class="line">                abiFilters &quot;arm64-v8a&quot;,&quot;armeabi-v7a&quot;,&quot;x86&quot;,&quot;x86_64&quot;</span><br><span class="line">//Error:ABIs [armeabi] are not supported for platform. Supported ABIs are [armeabi-v7a, arm64-v8a, x86, x86_64].</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="8-修改库名称"><a href="#8-修改库名称" class="headerlink" title="8 修改库名称"></a>8 修改库名称</h2><p>默认生成的so库名称是<code>native-lib</code>,怎么修改为自定义的名称呢。</p>
+<p>首先，修改<code>CMakeLists.txt</code>内容：修改<code>add_library</code>和<code>target_link_libraries</code>第一个参数为我们想自定定义的名称，比如<code>md5Lib</code><br><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180804003217.jpg" alt=""></p>
+<p>同样需要修改<code>JNIUtils.java</code>中<code>System.loadLibrary(String)</code>的参数为上面我们自定义的名称<code>md5Lib</code><br><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180804003613.jpg" alt=""></p>
+<p>重新点击<code>build</code>&gt;<code>Make project</code>,看到在<code>jniLibs</code>文件夹下生成新的so文件。<br><img src="https://raw.githubusercontent.com/Sogrey/AndroidJniMD5/master/screenshot/TIM-20180804004506.jpg" alt=""></p>
+<p>项目源码地址<a href="https://github.com/Sogrey/AndroidJniMD5" target="_blank" rel="noopener">github</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/article/JNI Md5加密生成so文件/">JNI Md5加密生成so文件</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
+        <p><span>发布时间:</span>2018-07-25, 20:39:13</p>
+        <p><span>最后更新:</span>2018-09-02, 12:34:38</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/article/JNI Md5加密生成so文件/" title="JNI Md5加密生成so文件">https://sogrey.github.io/article/JNI Md5加密生成so文件/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/JNI Md5加密生成so文件/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/article/Android 动态调用外部jar&dex/">
+                    Android 动态调用外部jar/dex
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/article/PE装机，开机设置启动项快捷键/">
+                    pe装机，开机设置启动项快捷键
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-新建项目"><span class="toc-text">1 新建项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-新建Jni工具类"><span class="toc-text">2 新建Jni工具类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-生成-h文件-编写cpp文件"><span class="toc-text">3 生成.h文件,编写cpp文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-修改CMakeLists-txt文件"><span class="toc-text">4 修改CMakeLists.txt文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-添加getMd5-String-的native方法"><span class="toc-text">5 添加getMd5(String)的native方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-实现MD5加密"><span class="toc-text">6 实现MD5加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-生成-so文件"><span class="toc-text">7 生成.so文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-修改库名称"><span class="toc-text">8 修改库名称</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"JNI Md5加密生成so文件　| Sogrey　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="article/JNI Md5加密生成so文件/" data-title="JNI Md5加密生成so文件" data-url="https://sogrey.github.io/article/JNI Md5加密生成so文件/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"sogrey"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/article/Android 动态调用外部jar&dex/" title="上一篇: Android 动态调用外部jar/dex">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/article/PE装机，开机设置启动项快捷键/" title="下一篇: pe装机，开机设置启动项快捷键">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/article/Android 动态调用外部jar&dex/">Android 动态调用外部jar/dex</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JNI Md5加密生成so文件/">JNI Md5加密生成so文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/PE装机，开机设置启动项快捷键/">pe装机，开机设置启动项快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/article/VS-code-插件/">VS code 插件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/遍历Map的四种方法/">遍历Map的四种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/15种CSS居中方式/">15种CSS居中方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/利用百度URL-API实现地址-经纬度互相转换/">利用百度URL API实现地址与经纬度互相转换</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android获取view宽高的三种方式/">Android获取view宽高的三种方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-TextView属性android-ellipsize-marquee不生效的解决办法/">Android中TextView属性ellipsize=marquee不生效的解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/关于Android程序使用KSoap2调用Webservice运行不成功的问题/">关于Android程序使用KSoap2调用Webservice运行不成功的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo-添加-Gitment-评论/">Hexo 添加 Gitment 评论</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-Webview-内容自适应高度/">Android Webview 内容自适应高度</a></li><li class="post-list-item"><a class="post-list-link" href="/article/java实现定时任务的三种方法/">java实现定时任务的三种方法(收集)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Java读取文件夹大小的6种方法（收集）/">Java读取文件夹大小的6种方法（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/json转树状结构（收集）/">json转树状结构（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/一行  JavaScript 代码（收集）/">一行  JavaScript 代码（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo建站过程中遇到的问题（填坑）/">Hexo建站过程中遇到的问题（填坑篇）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-library-发布到-JCenter/">Android library 发布到 JCenter</a></li><li class="post-list-item"><a class="post-list-link" href="/article/正则表达式匹配汇集/">正则表达式匹配汇集</a></li><li class="post-list-item"><a class="post-list-link" href="/article/技术文章之Html（CSS-JS）/">技术文章之Html（CSS，JS）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/技术文章之Android/">技术文章之Android</a></li><li class="post-list-item"><a class="post-list-link" href="/article/web-app相关整理/">web app相关整理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/微信小程序初印象【整理】/">微信小程序初印象【整理】</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Webp的探究之路/">Webp的探究之路</a></li><li class="post-list-item"><a class="post-list-link" href="/article/android中使用icon-fonts字体图标/">android中使用icon fonts字体图标</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android混淆签名（上）/">Android混淆签名(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android混淆签名（下）/">Android混淆签名(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/我收集的一些开源项目/">我收集的一些开源项目</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Git常用命令/">Git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo博客基于主题Yelee-yelog-添加文章分类/">Hexo博客基于主题Yelee(yelog) 添加文章分类</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo博客基于主题Yelee-yelog-添加“标签云”和“关于我”菜单项页面/">Hexo博客基于主题Yelee(yelog) 添加“标签云”和“关于我”菜单项页面</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Html5-PPT/">Html5 PPT</a></li><li class="post-list-item"><a class="post-list-link" href="/article/如何在Github-Pages搭建个人独立主页？/">如何在Github Pages搭建个人独立主页？</a></li><li class="post-list-item"><a class="post-list-link" href="/article/我是如何用hexo搭建github-pages/">我是如何用hexo搭建github pages</a></li><li class="post-list-item"><a class="post-list-link" href="/article/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+
+<!--gitment 评论-->
+
+  <div class="comments" id="comments">
+  
+	<!--汉化-->
+    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+	<script src="https://billts.site/js/gitment.js"></script>
+	<!--原型-->
+	<!--
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js" type="text/javascript"></script>
+	-->
+	
+      <div id="gitmentContainer" style="margin-bottom: -19px;"></div>
+     
+      <style>
+        .gitment-container a {
+          border: none;
+        }
+        .comments {
+          margin: 60px 0 0;padding: 0 60px;
+        }
+		@media screen and (max-width:1040px) {
+		   .comments {
+			  padding: 0 30px;
+			}
+		}
+		/**gitment 默认样式覆盖*/
+		.gitment-comment-header{background-color: #ffffff00 !important;}
+		.gitment-editor-main::before, .gitment-comment-main::before{border-right-color: #7EA4CA !important;}
+      </style>
+     
+      <script type="text/javascript">
+        var gitment = new Gitment({
+			  id: 'JNI Md5加密生成so文件',
+			  title: 'JNI Md5加密生成so文件',
+			  owner: 'Sogrey',
+			  repo: 'Sogrey.github.io',
+			  oauth: {
+				client_id: '582650733e15427a208c',
+				client_secret: 'd33a2a845fa25544ba0406168c9b42fc0f34acae'
+			  }
+        })
+        gitment.render('gitmentContainer')
+      </script>
+    
+  </div>
+
+<!--gitment 评论 end-->
+
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 <i class="fa fa-heart animated infinite pulse"></i><a href="https://sogrey.github.io" target="_blank" title="我是一个小帅哥！^_^  https://github.com/Sogrey">Sogrey</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <!-- <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span> -->
+
+                    <span id="busuanzi_container_site_pv">
+                        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <!-- <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span> -->
+
+                    <span id="busuanzi_container_page_pv">
+                        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+                      </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 3;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+             categories: ".article-category a, a.tag-list-link", 
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 敬请下次光临~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 欢迎光临~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<!--已过期-->
+<!-- <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  </div>
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+  <!-- 动态背景 -->
+  <!--<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="120" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>-->
+  <script type="text/javascript" src="/js/canvas-nest.min.js"></script>
+</body>
+</html>
