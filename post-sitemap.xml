@@ -7,8 +7,24 @@
     </url>
 
     <url>
+        <loc>https://sogrey.github.io/article/hexo%E6%B7%BB%E5%8A%A0Aplayer%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</loc>
+        <lastmod>2018-11-23T04:16:16.844Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/article/Android%E7%89%88%E6%9C%AC%E5%92%8CAPI-Level%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB/</loc>
+        <lastmod>2018-11-23T04:15:48.887Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://sogrey.github.io/article/Flutter%20%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/</loc>
-        <lastmod>2018-11-17T06:01:46.666Z</lastmod>
+        <lastmod>2018-11-17T07:46:15.895Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

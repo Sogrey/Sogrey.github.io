@@ -126,15 +126,22 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/categories/Android/</loc>
-        <lastmod>2018-11-07T09:23:33.217Z</lastmod>
+        <loc>https://sogrey.github.io/categories/Flutter/</loc>
+        <lastmod>2018-11-17T07:46:15.895Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/categories/Flutter/</loc>
-        <lastmod>2018-11-17T06:01:46.666Z</lastmod>
+        <loc>https://sogrey.github.io/categories/Android/</loc>
+        <lastmod>2018-11-23T04:15:48.887Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/categories/Hexo/</loc>
+        <lastmod>2018-11-23T04:16:16.844Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
