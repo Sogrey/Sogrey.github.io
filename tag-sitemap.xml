@@ -149,13 +149,6 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/tags/Java/</loc>
-        <lastmod>2018-04-04T03:44:51.980Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://sogrey.github.io/tags/Map/</loc>
         <lastmod>2018-04-04T03:44:51.980Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -296,6 +289,13 @@
     </url>
 
     <url>
+        <loc>https://sogrey.github.io/tags/Hexo/</loc>
+        <lastmod>2018-10-27T09:02:25.757Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://sogrey.github.io/tags/Gitment/</loc>
         <lastmod>2018-10-27T09:02:25.757Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -325,21 +325,21 @@
 
     <url>
         <loc>https://sogrey.github.io/tags/Android/</loc>
-        <lastmod>2018-11-23T04:15:48.887Z</lastmod>
+        <lastmod>2018-12-17T09:32:00.503Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/tags/Hexo/</loc>
-        <lastmod>2018-11-23T04:16:16.844Z</lastmod>
+        <loc>https://sogrey.github.io/tags/Java/</loc>
+        <lastmod>2018-12-20T05:24:14.902Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/tags/Aplayer/</loc>
-        <lastmod>2018-11-23T04:16:16.844Z</lastmod>
+        <loc>https://sogrey.github.io/tags/Json/</loc>
+        <lastmod>2018-12-20T05:24:14.902Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="自从入驻github越来越喜欢Git了，自然也就离不开使用各种git命令来克隆提交代码了，当然git像svn一样，也有小乌龟窗口可视化程序TortoiseGit，需要的可自行下载。 这节把一些常用的git命令整理下，也方便以后查阅使用。 转载自：常用 Git 命令清单，非常感谢阮一峰的这篇文章。  一般来说，日常使用只要记住下图6个命令，就可以了。但是熟练使用，恐怕要记住60～100个命令。 几">
-<meta name="keywords" content="git">
+<meta name="description" content="Java对象在转json的时候，如果对象里面有属性值为null的话，那么在json序列化的时候要不要序列出来呢？  1 fastjsonfastJson在转换java对象为json的时候，默认是不序列化null值对应的key的也就是说当对象里面的属性为空的时候，在转换成json时，不序列化那些为null值的属性 123456789101112131415161718192021222324252">
+<meta name="keywords" content="Java,Json">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git常用命令">
-<meta property="og:url" content="https://sogrey.github.io/article/Git常用命令/index.html">
+<meta property="og:title" content="Java对象转json时空值(null)处理">
+<meta property="og:url" content="https://sogrey.github.io/article/Java对象转json时空值-null-处理/index.html">
 <meta property="og:site_name" content="Sogrey">
-<meta property="og:description" content="自从入驻github越来越喜欢Git了，自然也就离不开使用各种git命令来克隆提交代码了，当然git像svn一样，也有小乌龟窗口可视化程序TortoiseGit，需要的可自行下载。 这节把一些常用的git命令整理下，也方便以后查阅使用。 转载自：常用 Git 命令清单，非常感谢阮一峰的这篇文章。  一般来说，日常使用只要记住下图6个命令，就可以了。但是熟练使用，恐怕要记住60～100个命令。 几">
+<meta property="og:description" content="Java对象在转json的时候，如果对象里面有属性值为null的话，那么在json序列化的时候要不要序列出来呢？  1 fastjsonfastJson在转换java对象为json的时候，默认是不序列化null值对应的key的也就是说当对象里面的属性为空的时候，在转换成json时，不序列化那些为null值的属性 123456789101112131415161718192021222324252">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png">
-<meta property="og:updated_time" content="2017-01-12T10:30:57.632Z">
+<meta property="og:updated_time" content="2018-12-20T05:24:14.902Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git常用命令">
-<meta name="twitter:description" content="自从入驻github越来越喜欢Git了，自然也就离不开使用各种git命令来克隆提交代码了，当然git像svn一样，也有小乌龟窗口可视化程序TortoiseGit，需要的可自行下载。 这节把一些常用的git命令整理下，也方便以后查阅使用。 转载自：常用 Git 命令清单，非常感谢阮一峰的这篇文章。  一般来说，日常使用只要记住下图6个命令，就可以了。但是熟练使用，恐怕要记住60～100个命令。 几">
-<meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png">
+<meta name="twitter:title" content="Java对象转json时空值(null)处理">
+<meta name="twitter:description" content="Java对象在转json的时候，如果对象里面有属性值为null的话，那么在json序列化的时候要不要序列出来呢？  1 fastjsonfastJson在转换java对象为json的时候，默认是不序列化null值对应的key的也就是说当对象里面的属性为空的时候，在转换成json时，不序列化那些为null值的属性 123456789101112131415161718192021222324252">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -60,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Git常用命令 | Sogrey</title>
+<title>Java对象转json时空值(null)处理 | Sogrey</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -319,11 +317,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Git常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Java对象转json时空值-null-处理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/article/Git常用命令/" class="article-date">
-      <time datetime="2017-01-12T07:56:21.000Z" itemprop="datePublished">2017-01-12</time>
+      <a href="/article/Java对象转json时空值-null-处理/" class="article-date">
+      <time datetime="2018-12-20T01:33:23.000Z" itemprop="datePublished">2018-12-20</time>
 </a>
 
 
@@ -338,7 +336,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Git常用命令
+      Java对象转json时空值(null)处理
     </h1>
   
 
@@ -347,13 +345,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Git/">Git</a>
+    <a class="article-category-link" href="/categories/Json/">Json</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Json/">Json</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -364,266 +362,18 @@
       
           
         <blockquote>
-<p>自从入驻github越来越喜欢Git了，自然也就离不开使用各种git命令来克隆提交代码了，当然git像svn一样，也有小乌龟窗口可视化程序<a href="https://tortoisegit.org/" target="_blank" rel="noopener">TortoiseGit</a>，需要的可自行下载。</p>
-<p>这节把一些常用的git命令整理下，也方便以后查阅使用。</p>
-<p>转载自：<a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener">常用 Git 命令清单</a>，非常感谢阮一峰的这篇文章。</p>
+<p>Java对象在转json的时候，如果对象里面有属性值为null的话，那么在json序列化的时候要不要序列出来呢？</p>
 </blockquote>
-<p>一般来说，日常使用只要记住下图6个命令，就可以了。但是熟练使用，恐怕要记住60～100个命令。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png" alt="Git常用6个命令"></p>
-<p>几个专用名词的译名如下。</p>
-<ul>
-<li>Workspace：工作区</li>
-<li>Index / Stage：暂存区</li>
-<li>Repository：仓库区（或本地仓库）</li>
-<li>Remote：远程仓库</li>
-</ul>
-<a id="more"></a>
-<h1 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h1><pre><code># 在当前目录新建一个Git代码库
-$ git init
-
-# 新建一个目录，将其初始化为Git代码库
-$ git init [project-name]
-
-# 下载一个项目和它的整个代码历史
-$ git clone [url]
-</code></pre><h1 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h1><p>Git的设置文件为.gitconfig，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
-<pre><code># 显示当前的Git配置
-$ git config --list
-
-# 编辑Git配置文件
-$ git config -e [--global]
-
-# 设置提交代码时的用户信息
-$ git config [--global] user.name &quot;[name]&quot;
-$ git config [--global] user.email &quot;[email address]&quot;
-</code></pre><h1 id="三、增加-删除文件"><a href="#三、增加-删除文件" class="headerlink" title="三、增加/删除文件"></a>三、增加/删除文件</h1><pre><code># 添加指定文件到暂存区
-$ git add [file1] [file2] ...
-
-# 添加指定目录到暂存区，包括子目录
-$ git add [dir]
-
-# 添加当前目录的所有文件到暂存区
-$ git add .
-
-# 添加每个变化前，都会要求确认
-# 对于同一个文件的多处变化，可以实现分次提交
-$ git add -p
-
-# 删除工作区文件，并且将这次删除放入暂存区
-$ git rm [file1] [file2] ...
-
-# 停止追踪指定文件，但该文件会保留在工作区
-$ git rm --cached [file]
-
-# 改名文件，并且将这个改名放入暂存区
-$ git mv [file-original] [file-renamed]
-</code></pre><h1 id="四、代码提交"><a href="#四、代码提交" class="headerlink" title="四、代码提交"></a>四、代码提交</h1><pre><code># 提交暂存区到仓库区
-$ git commit -m [message]
-
-# 提交暂存区的指定文件到仓库区
-$ git commit [file1] [file2] ... -m [message]
-
-# 提交工作区自上次commit之后的变化，直接到仓库区
-$ git commit -a
-
-# 提交时显示所有diff信息
-$ git commit -v
-
-# 使用一次新的commit，替代上一次提交
-# 如果代码没有任何新变化，则用来改写上一次commit的提交信息
-$ git commit --amend -m [message]
-
-# 重做上一次commit，并包括指定文件的新变化
-$ git commit --amend [file1] [file2] ...
-</code></pre><h1 id="五、分支"><a href="#五、分支" class="headerlink" title="五、分支"></a>五、分支</h1><pre><code># 列出所有本地分支
-$ git branch
-
-# 列出所有远程分支
-$ git branch -r
-
-# 列出所有本地分支和远程分支
-$ git branch -a
-
-# 新建一个分支，但依然停留在当前分支
-$ git branch [branch-name]
-
-# 新建一个分支，并切换到该分支
-$ git checkout -b [branch]
-
-# 新建一个分支，指向指定commit
-$ git branch [branch] [commit]
-
-# 新建一个分支，与指定的远程分支建立追踪关系
-$ git branch --track [branch] [remote-branch]
-
-# 切换到指定分支，并更新工作区
-$ git checkout [branch-name]
-
-# 切换到上一个分支
-$ git checkout -
-
-# 建立追踪关系，在现有分支与指定的远程分支之间
-$ git branch --set-upstream [branch] [remote-branch]
-
-# 合并指定分支到当前分支
-$ git merge [branch]
-
-# 选择一个commit，合并进当前分支
-$ git cherry-pick [commit]
-
-# 删除分支
-$ git branch -d [branch-name]
-
-# 删除远程分支
-$ git push origin --delete [branch-name]
-$ git branch -dr [remote/branch]
-</code></pre><h1 id="六、标签"><a href="#六、标签" class="headerlink" title="六、标签"></a>六、标签</h1><pre><code># 列出所有tag
-$ git tag
-
-# 新建一个tag在当前commit
-$ git tag [tag]
-
-# 新建一个tag在指定commit
-$ git tag [tag] [commit]
-
-# 删除本地tag
-$ git tag -d [tag]
-
-# 删除远程tag
-$ git push origin :refs/tags/[tagName]
-
-# 查看tag信息
-$ git show [tag]
-
-# 提交指定tag
-$ git push [remote] [tag]
-
-# 提交所有tag
-$ git push [remote] --tags
-
-# 新建一个分支，指向某个tag
-$ git checkout -b [branch] [tag]
-</code></pre><h1 id="七、查看信息"><a href="#七、查看信息" class="headerlink" title="七、查看信息"></a>七、查看信息</h1><pre><code># 显示有变更的文件
-$ git status
-
-# 显示当前分支的版本历史
-$ git log
-
-# 显示commit历史，以及每次commit发生变更的文件
-$ git log --stat
-
-# 搜索提交历史，根据关键词
-$ git log -S [keyword]
-
-# 显示某个commit之后的所有变动，每个commit占据一行
-$ git log [tag] HEAD --pretty=format:%s
-
-# 显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件
-$ git log [tag] HEAD --grep feature
-
-# 显示某个文件的版本历史，包括文件改名
-$ git log --follow [file]
-$ git whatchanged [file]
-
-# 显示指定文件相关的每一次diff
-$ git log -p [file]
-
-# 显示过去5次提交
-$ git log -5 --pretty --oneline
-
-# 显示所有提交过的用户，按提交次数排序
-$ git shortlog -sn
-
-# 显示指定文件是什么人在什么时间修改过
-$ git blame [file]
-
-# 显示暂存区和工作区的差异
-$ git diff
-
-# 显示暂存区和上一个commit的差异
-$ git diff --cached [file]
-
-# 显示工作区与当前分支最新commit之间的差异
-$ git diff HEAD
-
-# 显示两次提交之间的差异
-$ git diff [first-branch]...[second-branch]
-
-# 显示今天你写了多少行代码
-$ git diff --shortstat &quot;@{0 day ago}&quot;
-
-# 显示某次提交的元数据和内容变化
-$ git show [commit]
-
-# 显示某次提交发生变化的文件
-$ git show --name-only [commit]
-
-# 显示某次提交时，某个文件的内容
-$ git show [commit]:[filename]
-
-# 显示当前分支的最近几次提交
-$ git reflog
-</code></pre><h1 id="八、远程同步"><a href="#八、远程同步" class="headerlink" title="八、远程同步"></a>八、远程同步</h1><pre><code># 下载远程仓库的所有变动
-$ git fetch [remote]
-
-# 显示所有远程仓库
-$ git remote -v
-
-# 显示某个远程仓库的信息
-$ git remote show [remote]
-
-# 增加一个新的远程仓库，并命名
-$ git remote add [shortname] [url]
-
-# 取回远程仓库的变化，并与本地分支合并
-$ git pull [remote] [branch]
-
-# 上传本地指定分支到远程仓库
-$ git push [remote] [branch]
-
-# 强行推送当前分支到远程仓库，即使有冲突
-$ git push [remote] --force
-
-# 推送所有分支到远程仓库
-$ git push [remote] --all
-</code></pre><h1 id="九、撤销"><a href="#九、撤销" class="headerlink" title="九、撤销"></a>九、撤销</h1><pre><code># 恢复暂存区的指定文件到工作区
-$ git checkout [file]
-
-# 恢复某个commit的指定文件到暂存区和工作区
-$ git checkout [commit] [file]
-
-# 恢复暂存区的所有文件到工作区
-$ git checkout .
-
-# 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变
-$ git reset [file]
-
-# 重置暂存区与工作区，与上一次commit保持一致
-$ git reset --hard
-
-# 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变
-$ git reset [commit]
-
-# 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致
-$ git reset --hard [commit]
-
-# 重置当前HEAD为指定commit，但保持暂存区和工作区不变
-$ git reset --keep [commit]
-
-# 新建一个commit，用来撤销指定commit
-# 后者的所有变化都将被前者抵消，并且应用到当前分支
-$ git revert [commit]
-
-# 暂时将未提交的变化移除，稍后再移入
-$ git stash
-$ git stash pop
-</code></pre><h1 id="十、其他"><a href="#十、其他" class="headerlink" title="十、其他"></a>十、其他</h1><pre><code># 生成一个可供发布的压缩包
-$ git archive
-</code></pre><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
-<li><a href="http://gitref.org/creating/" target="_blank" rel="noopener">Git Reference</a></li>
-<li><a href="http://www.cnblogs.com/mengdd/p/4153773.html" target="_blank" rel="noopener">Git常用命令总结</a></li>
-<li><a href="http://blog.csdn.net/dengsilinming/article/details/8000622" target="_blank" rel="noopener">Git 常用命令大全</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener">常用 Git 命令清单</a></li>
-</ul>
+<h2 id="1-fastjson"><a href="#1-fastjson" class="headerlink" title="1 fastjson"></a>1 fastjson</h2><p>fastJson在转换java对象为json的时候，默认是不序列化null值对应的key的也就是说当对象里面的属性为空的时候，在转换成json时，不序列化那些为null值的属性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.sogrey.java2Json;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> top.sogrey.java2Json.bean.User;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSONObject;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.serializer.SerializerFeature;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * fastjson 版本是 1.2.54</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Administrator</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">fastjsonDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> args</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		User user = <span class="keyword">new</span> User();</span><br><span class="line">		user.setUserName(<span class="string">"Sogrey"</span>);</span><br><span class="line">		String str = JSONObject.toJSONString(user);<span class="comment">// fastjson默认转换是不序列化null值对应的key的</span></span><br><span class="line">		System.out.println(str);</span><br><span class="line">		<span class="comment">// 输出结果是：&#123;"age":0,"userName":"Sogrey"&#125;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是如果想把null对应的key序列化出来呢？ </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果需要序列化null对应的key</span></span><br><span class="line">str = JSONObject</span><br><span class="line">		.toJSONString(</span><br><span class="line">				user,</span><br><span class="line">				<span class="keyword">new</span> SerializerFeature[] &#123; SerializerFeature.WriteMapNullValue &#125;);</span><br><span class="line">System.out.println(str);</span><br><span class="line"><span class="comment">// 输出结果是： &#123;"age":0,"job":null,"userName":"Sogrey"&#125;</span></span><br></pre></td></tr></table></figure>
+<p>想字符类型字段如果为null,转换输出为”“,而非null ，需要多加一个参数：WriteNullStringAsEmpty</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 想字符类型字段如果为null,转换输出为"",而非null ，需要多加一个参数：WriteNullStringAsEmpty</span></span><br><span class="line">str = JSONObject.toJSONString(user, <span class="keyword">new</span> SerializerFeature[] &#123;</span><br><span class="line">		SerializerFeature.WriteMapNullValue,</span><br><span class="line">		SerializerFeature.WriteNullStringAsEmpty &#125;);</span><br><span class="line">System.out.println(str);</span><br><span class="line"><span class="comment">//输出结果是：&#123;"age":0,"job":"","userName":"Sogrey"&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-Gson"><a href="#2-Gson" class="headerlink" title="2  Gson"></a>2  Gson</h2><p> gson和fastjson一样，默认是不序列化null值对应的key的</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.sogrey.java2Json;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.gson.Gson;</span><br><span class="line"><span class="keyword">import</span> com.google.gson.GsonBuilder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> top.sogrey.java2Json.bean.User;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GsonDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> args</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		User user = <span class="keyword">new</span> User();</span><br><span class="line">		user.setUserName(<span class="string">"Sogrey"</span>);</span><br><span class="line">		Gson g = <span class="keyword">new</span> GsonBuilder().create();</span><br><span class="line">		String str = g.toJson(user);</span><br><span class="line">		System.out.println(str);</span><br><span class="line">		<span class="comment">// &#123;"userName":"Sogrey","age":0&#125;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 若是想序列化null值对应的key，只需要将以上创建代码改成以下代码就行：<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">new</span> GsonBuilder().serializeNulls().create();</span><br><span class="line">str = g.toJson(user);</span><br><span class="line">System.out.println(str);</span><br><span class="line"><span class="comment">// &#123;"userName":"Sogrey","age":0,"job":null&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/Sogrey/JavaBean2Json" target="_blank" rel="noopener">github</a></p>
 
       
     </div>
@@ -632,13 +382,13 @@ $ git archive
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/article/Git常用命令/">Git常用命令</a></p>
+        <p><span>本文标题:</span><a href="/article/Java对象转json时空值-null-处理/">Java对象转json时空值(null)处理</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
-        <p><span>发布时间:</span>2017-01-12, 15:56:21</p>
-        <p><span>最后更新:</span>2017-01-12, 18:30:57</p>
+        <p><span>发布时间:</span>2018-12-20, 09:33:23</p>
+        <p><span>最后更新:</span>2018-12-20, 13:24:14</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/article/Git常用命令/" title="Git常用命令">https://sogrey.github.io/article/Git常用命令/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/Git常用命令/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/article/Java对象转json时空值-null-处理/" title="Java对象转json时空值(null)处理">https://sogrey.github.io/article/Java对象转json时空值-null-处理/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/Java对象转json时空值-null-处理/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -650,16 +400,10 @@ $ git archive
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/article/我收集的一些开源项目/">
-                    我收集的一些开源项目
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/article/Hexo博客基于主题Yelee-yelog-添加文章分类/">
-                    Hexo博客基于主题Yelee(yelog) 添加文章分类
+                <a href="/article/Android版本和API-Level对应关系/">
+                    Android版本和API Level对应关系
                 </a>
             </div>
         
@@ -671,7 +415,7 @@ $ git archive
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、新建代码库"><span class="toc-text">一、新建代码库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、配置"><span class="toc-text">二、配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、增加-删除文件"><span class="toc-text">三、增加/删除文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、代码提交"><span class="toc-text">四、代码提交</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、分支"><span class="toc-text">五、分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、标签"><span class="toc-text">六、标签</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、查看信息"><span class="toc-text">七、查看信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、远程同步"><span class="toc-text">八、远程同步</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、撤销"><span class="toc-text">九、撤销</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十、其他"><span class="toc-text">十、其他</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-fastjson"><span class="toc-text">1 fastjson</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Gson"><span class="toc-text">2  Gson</span></a></li></ol>
         
     </div>
     <style>
@@ -707,7 +451,7 @@ $ git archive
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Git常用命令　| Sogrey　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Java对象转json时空值(null)处理　| Sogrey　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -723,7 +467,7 @@ $ git archive
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="article/Git常用命令/" data-title="Git常用命令" data-url="https://sogrey.github.io/article/Git常用命令/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="article/Java对象转json时空值-null-处理/" data-title="Java对象转json时空值(null)处理" data-url="https://sogrey.github.io/article/Java对象转json时空值-null-处理/"></div>
     <script>
         var duoshuoQuery = {short_name:"sogrey"};
         var loadComment = function(){
@@ -746,15 +490,13 @@ $ git archive
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/article/我收集的一些开源项目/" title="上一篇: 我收集的一些开源项目">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/article/Hexo博客基于主题Yelee-yelog-添加文章分类/" title="下一篇: Hexo博客基于主题Yelee(yelog) 添加文章分类">
+            <a href="/article/Android版本和API-Level对应关系/" title="下一篇: Android版本和API Level对应关系">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -804,8 +546,8 @@ $ git archive
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Git常用命令',
-			  title: 'Git常用命令',
+			  id: 'Java对象转json时空值(null)处理',
+			  title: 'Java对象转json时空值(null)处理',
 			  owner: 'Sogrey',
 			  repo: 'Sogrey.github.io',
 			  oauth: {
