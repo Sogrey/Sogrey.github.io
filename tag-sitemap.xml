@@ -282,13 +282,6 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/tags/VS-code/</loc>
-        <lastmod>2018-10-25T02:33:13.137Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://sogrey.github.io/tags/Hexo/</loc>
         <lastmod>2018-10-27T09:02:25.757Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -324,36 +317,43 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/tags/Java/</loc>
-        <lastmod>2018-12-20T05:24:14.902Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/tags/Json/</loc>
-        <lastmod>2018-12-20T05:24:14.902Z</lastmod>
+        <loc>https://sogrey.github.io/tags/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE/</loc>
+        <lastmod>2019-01-07T04:17:29.329Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://sogrey.github.io/tags/Android/</loc>
-        <lastmod>2018-12-22T06:53:52.249Z</lastmod>
+        <lastmod>2019-01-15T07:41:12.694Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://sogrey.github.io/tags/Activity/</loc>
-        <lastmod>2018-12-22T06:53:52.249Z</lastmod>
+        <lastmod>2019-01-15T07:41:12.694Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/tags/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE/</loc>
-        <lastmod>2019-01-07T04:17:29.329Z</lastmod>
+        <loc>https://sogrey.github.io/tags/Java/</loc>
+        <lastmod>2019-01-15T07:43:32.292Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/tags/Json/</loc>
+        <lastmod>2019-01-15T07:43:32.292Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/tags/VS-code/</loc>
+        <lastmod>2019-01-15T07:44:39.187Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
