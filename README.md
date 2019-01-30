@@ -1,6 +1,6 @@
 # Sogrey.github.io
 
-![](https://sogrey.github.io/img/logo.svg)
+[![](https://sogrey.github.io/img/logo.svg)](https://sogrey.github.io/)
 
 Sogrey's github pages
 

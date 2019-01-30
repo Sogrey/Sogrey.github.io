@@ -353,7 +353,14 @@
 
     <url>
         <loc>https://sogrey.github.io/tags/VS-code/</loc>
-        <lastmod>2019-01-15T07:44:39.187Z</lastmod>
+        <lastmod>2019-01-17T05:21:15.609Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</loc>
+        <lastmod>2019-01-30T05:09:52.836Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
