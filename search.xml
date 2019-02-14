@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>使用 npm 安装 gitbook</title>
+      <link href="/article/%E4%BD%BF%E7%94%A8-npm-%E5%AE%89%E8%A3%85-gitbook/"/>
+      <url>/article/%E4%BD%BF%E7%94%A8-npm-%E5%AE%89%E8%A3%85-gitbook/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="本地通过npm安装Gitbook命令行工具"><a href="#本地通过npm安装Gitbook命令行工具" class="headerlink" title="本地通过npm安装Gitbook命令行工具"></a>本地通过<code>npm</code>安装<code>Gitbook</code>命令行工具</h2><p>安装 <code>node.js</code>就不说了，去<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">官网</a>找到对应平台安装包安装即可。</p><p>安装好<code>node.js</code>执行下面命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install gitbook-cli -g</span><br></pre></td></tr></table></figure><p>其中 <a href="https://www.npmjs.com/package/gitbook-cli" target="_blank" rel="noopener">gitbook-cli</a> 是 gitbook 的一个命令行工具, 通过它可以在电脑上安装和管理 gitbook 的多个版本. </p><p>有时会因为权限不足报错，可提升权限安装：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install gitbook-cli -g</span><br></pre></td></tr></table></figure><p>安装完毕，是的，安装结束了。</p><p>检查一下是否安装成功,执行：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook -V</span><br></pre></td></tr></table></figure><p>查看当前安装的gitbook版本，此命令会默认同时安装 GitBook，正常输出则安装成功。</p><h2 id="Gitbook创建及使用"><a href="#Gitbook创建及使用" class="headerlink" title="Gitbook创建及使用"></a>Gitbook创建及使用</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>打开指定目录，执行：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gitbook init</span><br></pre></td></tr></table></figure><p>会自动生成两个必要的文件 README.md 和 SUMMARY.md。 </p><ul><li><strong>README.md</strong>: 书的介绍文字，如前言、简介，在章节中也可做为章节的简介。</li><li><strong>SUMMARY.md</strong>: 定制书籍的章节结构和顺序。</li></ul><blockquote><p>README.md 和 SUMMARY.md 是 GitBook 制作电子书的必要文件，可用 gitbook init 命令自动生成。 </p></blockquote><h2 id="编辑书籍目录"><a href="#编辑书籍目录" class="headerlink" title="编辑书籍目录"></a>编辑书籍目录</h2><p>GitBook 使用 <code>SUMMARY.md</code> 文件作为书籍的目录结构，可以用来制作书籍目录。</p><p>使用缩进表示目录层级结构。</p><p>编辑<code>SUMMARY.md</code>:</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># Summary</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">* </span>[<span class="string">Introduction</span>](<span class="link">README.md</span>)</span><br><span class="line"><span class="bullet">* </span>[<span class="string">Part I</span>](<span class="link">part1/README.md</span>)</span><br><span class="line"><span class="code">    * [Writing is nice](part1/writing.md)</span></span><br><span class="line"><span class="code">    * [GitBook is nice](part1/gitbook.md)</span></span><br><span class="line"><span class="bullet">* </span>[<span class="string">Part II</span>](<span class="link">part2/README.md</span>)</span><br><span class="line"><span class="code">    * [We love feedback](part2/feedback_please.md)</span></span><br><span class="line"><span class="code">    * [Better tools for authors](part2/better_tools.md)</span></span><br></pre></td></tr></table></figure><blockquote><p>记得编辑完保存后执行 <code>gitbook init</code>来自动生成md文件。</p></blockquote><h3 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h3><p>执行命令 gitbook serve ，会在当前目录生成一个<code>_book</code>的目录，gitbook 会启动一个 4000 端口用于预览。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gitbook serve</span><br></pre></td></tr></table></figure><p>你可以你的浏览器中打开这个网址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a> 预览电子书效果。 </p><h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>执行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gitbook build</span><br></pre></td></tr></table></figure><p>会在书籍的文件夹中生成一个 _book 文件夹, 里面的内容即为生成的 html 文件. 我们可以使用下面命令来生成网页而不开启服务器。 </p><p>到此一个简单的book就建好了。为了更好的体验可以配置需要的插件，请自行百度，配置不是必需的。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Gitbook </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> node.js </tag>
+            
+            <tag> npm </tag>
+            
+            <tag> gitbook </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>再见2018，你好2019</title>
       <link href="/article/%E5%86%8D%E8%A7%812018%EF%BC%8C%E4%BD%A0%E5%A5%BD2019/"/>
       <url>/article/%E5%86%8D%E8%A7%812018%EF%BC%8C%E4%BD%A0%E5%A5%BD2019/</url>
