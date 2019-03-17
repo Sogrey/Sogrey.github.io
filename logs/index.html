@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="此处记录本站的主题和网站配置更新和修改以备忘，不包含发布新文章、修改文章。 我们的目标是自己DIY主题  2017-01-13   序号 修改内容 描述 文件位置     1 toc-top=378px-&amp;gt;toc-top=308px 修改主题yelog左边个人信息栏文章目录高度 themes\yelog\source\css\_variables.styl line:73    2017-">
+<meta name="description" content="此处记录本站的主题和网站配置更新和修改以备忘，不包含发布新文章、修改文章。 我们的目标是自己DIY主题  2018-11-02   序号 修改内容 描述 文件位置     1 [第一步]需将after-footer.ejs文件里 &amp;lt;script async src=&amp;quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.m">
 <meta property="og:type" content="website">
 <meta property="og:title" content="网站更新日志">
 <meta property="og:url" content="https://sogrey.github.io/logs/index.html">
 <meta property="og:site_name" content="Sogrey">
-<meta property="og:description" content="此处记录本站的主题和网站配置更新和修改以备忘，不包含发布新文章、修改文章。 我们的目标是自己DIY主题  2017-01-13   序号 修改内容 描述 文件位置     1 toc-top=378px-&amp;gt;toc-top=308px 修改主题yelog左边个人信息栏文章目录高度 themes\yelog\source\css\_variables.styl line:73    2017-">
+<meta property="og:description" content="此处记录本站的主题和网站配置更新和修改以备忘，不包含发布新文章、修改文章。 我们的目标是自己DIY主题  2018-11-02   序号 修改内容 描述 文件位置     1 [第一步]需将after-footer.ejs文件里 &amp;lt;script async src=&amp;quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.m">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-02T06:02:02.454Z">
+<meta property="og:updated_time" content="2019-03-17T15:30:24.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网站更新日志">
-<meta name="twitter:description" content="此处记录本站的主题和网站配置更新和修改以备忘，不包含发布新文章、修改文章。 我们的目标是自己DIY主题  2017-01-13   序号 修改内容 描述 文件位置     1 toc-top=378px-&amp;gt;toc-top=308px 修改主题yelog左边个人信息栏文章目录高度 themes\yelog\source\css\_variables.styl line:73    2017-">
+<meta name="twitter:description" content="此处记录本站的主题和网站配置更新和修改以备忘，不包含发布新文章、修改文章。 我们的目标是自己DIY主题  2018-11-02   序号 修改内容 描述 文件位置     1 [第一步]需将after-footer.ejs文件里 &amp;lt;script async src=&amp;quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.m">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -377,6 +377,24 @@
 <p>此处记录本站的主题和网站配置更新和修改以备忘，不包含发布新文章、修改文章。</p>
 <p><strong>我们的目标是自己DIY主题</strong></p>
 </blockquote>
+<h2 id="2018-11-02"><a href="#2018-11-02" class="headerlink" title="2018-11-02"></a>2018-11-02</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>修改内容</th>
+<th>描述</th>
+<th>文件位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>[第一步]需将<code>after-footer.ejs</code>文件里 <code>&lt;script async src=&quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code> 修改为 <code>&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code> ,[第二步]修改<code>footer.ejs</code> 参见 <a href="https://github.com/yscoder/hexo-theme-indigo/issues/430" target="_blank" rel="noopener">issues</a>,<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener">不蒜子</a>,[第三步]配置主题下<code>_config.yml</code>: <code>visit_counter:  on: true  site_visit: true  page_visit: true</code>(注意缩进格式)</td>
+<td>不蒜子域名过期了</td>
+<td><code>themes\yelog\layout\_partial\after-footer.ejs</code>和<code>themes\yelog\layout\_partial\footer.ejs</code>,<code>themes\_config.yml</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="2017-01-13"><a href="#2017-01-13" class="headerlink" title="2017-01-13"></a>2017-01-13</h2><table>
 <thead>
 <tr>
@@ -428,24 +446,6 @@
 <td><a href="https://github.com/PaicHyperionDev/hexo-generator-search" target="_blank" rel="noopener">hexo-generator-search</a>;<br> <code>yelog\_config.yml line:232</code>处 <code>search.on</code>: false -&gt; true;</td>
 <td>站点增加搜索功能</td>
 <td><code>yelog\_config.yml line:232</code>,<code>themes\yelog\layout\_partial\left-col.ejs line:15-22</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="2018-11-02"><a href="#2018-11-02" class="headerlink" title="2018-11-02"></a>2018-11-02</h2><table>
-<thead>
-<tr>
-<th>序号</th>
-<th>修改内容</th>
-<th>描述</th>
-<th>文件位置</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>[第一步]需将<code>after-footer.ejs</code>文件里 <code>&lt;script async src=&quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code> 修改为 <code>&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code> ,[第二步]修改<code>footer.ejs</code> 参见 <a href="https://github.com/yscoder/hexo-theme-indigo/issues/430" target="_blank" rel="noopener">issues</a>,<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener">不蒜子</a>,[第三步]配置主题下<code>_config.yml</code>: <code>visit_counter:  on: true  site_visit: true  page_visit: true</code>(注意缩进格式)</td>
-<td>不蒜子域名过期了</td>
-<td><code>themes\yelog\layout\_partial\after-footer.ejs</code>和<code>themes\yelog\layout\_partial\footer.ejs</code>,<code>themes\_config.yml</code></td>
 </tr>
 </tbody>
 </table>
