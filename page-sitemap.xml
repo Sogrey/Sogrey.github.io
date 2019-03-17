@@ -7,6 +7,13 @@
     </url>
     
     <url>
+        <loc>https://sogrey.github.io/about/</loc>
+        <lastmod>2019-03-17T15:05:22.076Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://sogrey.github.io/logs/</loc>
         <lastmod>2018-11-02T06:02:02.454Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -16,13 +23,6 @@
     <url>
         <loc>https://sogrey.github.io/categories/</loc>
         <lastmod>2017-01-11T18:38:06.591Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://sogrey.github.io/about/</loc>
-        <lastmod>2017-01-11T12:30:56.528Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
