@@ -23,13 +23,6 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
-        <lastmod>2017-08-12T08:52:47.104Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://sogrey.github.io/tags/JavaScript/</loc>
         <lastmod>2017-12-09T13:24:28.032Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -65,13 +58,6 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/tags/%E6%89%8B%E8%AE%B0/</loc>
-        <lastmod>2018-03-10T07:06:55.742Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://sogrey.github.io/tags/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/</loc>
         <lastmod>2018-03-11T16:19:21.095Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -87,13 +73,6 @@
 
     <url>
         <loc>https://sogrey.github.io/tags/CSS/</loc>
-        <lastmod>2018-03-11T16:19:21.095Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/tags/JS/</loc>
         <lastmod>2018-03-11T16:19:21.095Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -410,6 +389,27 @@
     <url>
         <loc>https://sogrey.github.io/tags/%E5%89%8D%E7%AB%AF/</loc>
         <lastmod>2019-03-17T15:01:36.864Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/tags/%E6%89%8B%E8%AE%B0/</loc>
+        <lastmod>2019-03-18T03:03:05.358Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+        <lastmod>2019-03-18T03:03:05.358Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/tags/JS/</loc>
+        <lastmod>2019-03-18T07:46:02.277Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

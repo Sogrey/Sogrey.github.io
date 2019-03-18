@@ -326,6 +326,82 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-JS中apply-与call-的区别" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/article/JS中apply-与call-的区别/" class="article-date">
+      <time datetime="2019-03-18T07:44:49.000Z" itemprop="datePublished">2019-03-18</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/JS中apply-与call-的区别/">JS中apply()与call()的区别</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="JS中apply-与call-的区别"><a href="#JS中apply-与call-的区别" class="headerlink" title="JS中apply()与call()的区别"></a>JS中apply()与call()的区别</h1><p>JavaScript中的每一个Function对象都有一个apply()方法和一个call()方法，它们的语法分别为： </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*apply()方法*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>.<span class="title">apply</span>(<span class="params">thisObj[, argArray]</span>)</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">/*<span class="title">call</span>(<span class="params"></span>)方法*/</span></span><br><span class="line"><span class="function"><span class="title">function</span>.<span class="title">call</span>(<span class="params">thisObj[, arg1[, arg2[, [,...argN]]]]</span>);</span></span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JS/">JS</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/article/JS中apply-与call-的区别/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+
+
+  
     <article id="post-前端调试之把玩console" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1198,81 +1274,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-
-
-  
-    <article id="post-Flutter 路由跳转" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/article/Flutter 路由跳转/" class="article-date">
-      <time datetime="2018-11-17T06:01:21.000Z" itemprop="datePublished">2018-11-17</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/Flutter 路由跳转/">Flutter 路由跳转</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="静态路由"><a href="#静态路由" class="headerlink" title="静态路由"></a>静态路由</h3><h4 id="1-注册"><a href="#1-注册" class="headerlink" title="1. 注册"></a>1. 注册</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MaterialApp(</span><br><span class="line">      title: <span class="string">'Flutter 示例'</span>,</span><br><span class="line">      theme: <span class="keyword">new</span> ThemeData(</span><br><span class="line">        primarySwatch: Colors.blue,</span><br><span class="line">      ),</span><br><span class="line">      home: <span class="keyword">new</span> MyHomePage(title: <span class="string">'Flutter 示例主页'</span>),</span><br><span class="line">      routes: &#123; <span class="comment">//静态注册路由，不能传递参数</span></span><br><span class="line">        <span class="string">"SecondPage"</span>: (BuildContext context) =&gt; <span class="keyword">new</span> Second()</span><br><span class="line">      &#125;,</span><br><span class="line"><span class="comment">//      routes: &lt;String, WidgetBuilder&gt;&#123;</span></span><br><span class="line"><span class="comment">//        // 这里可以定义静态路由，不能传递参数</span></span><br><span class="line"><span class="comment">//        '/router/second': (_) =&gt; new Second(),</span></span><br><span class="line"><span class="comment">//      &#125;,</span></span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
-<h4 id="2-使用"><a href="#2-使用" class="headerlink" title="2. 使用"></a>2. 使用</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">///这种路由的缺点是不能传递参数。</span></span><br><span class="line">Navigator.pushNamed(context, <span class="string">"SecondPage"</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h3><h4 id="有参跳转"><a href="#有参跳转" class="headerlink" title="有参跳转"></a>有参跳转</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//跳转到新的 页面我们需要调用 navigator.push方法  -</span></span><br><span class="line">Navigator.push(context,</span><br><span class="line"><span class="keyword">new</span> MaterialPageRoute(</span><br><span class="line">    builder: (BuildContext context) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Second(title: <span class="string">"第二个页面"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<h4 id="无参跳转"><a href="#无参跳转" class="headerlink" title="无参跳转"></a>无参跳转</h4><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//跳转到新的 页面我们需要调用 navigator.push方法  -</span></span><br><span class="line">Navigator.push(</span><br><span class="line">    context,</span><br><span class="line">    <span class="keyword">new</span> MaterialPageRoute(</span><br><span class="line">        builder: (context) =&gt; <span class="keyword">new</span> Second()</span><br><span class="line">    )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/Sogrey/flutter-demos/blob/master/flutter_route/apks/app-release.apk?raw=true" target="_blank" rel="noopener">apk</a>，<a href="https://github.com/Sogrey/flutter-demos/tree/master/flutter_route" target="_blank" rel="noopener">github</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Flutter/">Flutter</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flutter/">Flutter</a></li></ul>
     </div>
 
       

@@ -35,13 +35,6 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
-        <lastmod>2017-08-12T08:52:47.104Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://sogrey.github.io/categories/JavaScript/</loc>
         <lastmod>2017-12-09T13:24:28.032Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -177,6 +170,20 @@
     <url>
         <loc>https://sogrey.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
         <lastmod>2019-03-17T15:01:36.864Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+        <lastmod>2019-03-18T03:03:05.358Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/categories/JS/</loc>
+        <lastmod>2019-03-18T07:46:02.277Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
