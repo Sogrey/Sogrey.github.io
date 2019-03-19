@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sogrey.github.io/"/>
-  <updated>2019-03-19T03:32:52.089Z</updated>
+  <updated>2019-03-19T03:47:28.017Z</updated>
   <id>https://sogrey.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>端口被占用,干掉它</title>
+    <title>端口被占用，干掉它</title>
     <link href="https://sogrey.github.io/article/%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8-%E5%B9%B2%E6%8E%89%E5%AE%83/"/>
     <id>https://sogrey.github.io/article/端口被占用-干掉它/</id>
     <published>2019-03-19T03:18:22.000Z</published>
-    <updated>2019-03-19T03:32:52.089Z</updated>
+    <updated>2019-03-19T03:47:28.017Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这个问题遇到过好几次，起初是在开发Android是adb端口被占用，就连360都曾占用过；特此记录：</p><p>这次是 <code>35729</code> 被占用了，看操作：</p><p><strong>1 . 查看占用端口的进程PID</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano|findstr 35729  <span class="comment"># 35729是我这边被占用的端口，你根据自己的情况下而定。</span></span><br></pre></td></tr></table></figure><p>输出如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">E:\workspace\VSCode\three.js\Three.js-start (master -&gt; origin)</span><br><span class="line">λ netstat -ano|findstr 35729</span><br><span class="line">  TCP    0.0.0.0:35729          0.0.0.0:0              LISTENING       8084</span><br><span class="line">  TCP    [::]:35729             [::]:0                 LISTENING       8084</span><br><span class="line">  TCP    [::1]:10082            [::1]:35729            ESTABLISHED     10804</span><br><span class="line">  TCP    [::1]:35729            [::1]:10082            ESTABLISHED     8084</span><br></pre></td></tr></table></figure></p><p><strong>2 .  看到 <code>35729</code> 端口的 PID 是 <code>8084</code>,通过PID查看所有进程,看看谁在作祟</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasklist /<span class="keyword">fi</span> <span class="string">"PID eq 8084"</span></span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">E:\workspace\VSCode\three.js\Three.js-start (master -&gt; origin)</span><br><span class="line">λ tasklist /<span class="keyword">fi</span> <span class="string">"PID eq 8084"</span></span><br><span class="line"></span><br><span class="line">映像名称                       PID 会话名              会话<span class="comment">#       内存使用</span></span><br><span class="line">========================= ======== ================ =========== ============</span><br><span class="line">node.exe                     8084  Console                    1     98,516 K</span><br></pre></td></tr></table></figure><p><strong>3 . PID，干掉它：</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /pid 8084 /f</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">E:\workspace\VSCode\three.js\Three.js-start (master -&gt; origin)</span><br><span class="line">λ taskkill /pid 8084 /f</span><br><span class="line">成功: 已终止 PID 为 8084 的进程。</span><br></pre></td></tr></table></figure><p>完工。</p><p>最初发布在 <a href="http://blog.sina.com.cn/s/blog_694394d30102wgxg.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_694394d30102wgxg.html</a> </p>]]></content>
     
