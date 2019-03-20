@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Sogrey">
 <meta property="og:description" content="Console 对象用于 JavaScript 调试。 JavaScript 原生中默认是没有 Console 对象,这是宿主对象（也就是游览器）提供的内置对象。 用于访问调试控制台, 在不同的浏览器里效果可能不同。 Console 对象常见的两个用途：  显示网页代码运行时的错误信息。 提供了一个命令行接口，用来与网页代码互动。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-18T14:47:56.444Z">
+<meta property="og:updated_time" content="2019-03-19T07:07:23.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端调试之把玩console">
 <meta name="twitter:description" content="Console 对象用于 JavaScript 调试。 JavaScript 原生中默认是没有 Console 对象,这是宿主对象（也就是游览器）提供的内置对象。 用于访问调试控制台, 在不同的浏览器里效果可能不同。 Console 对象常见的两个用途：  显示网页代码运行时的错误信息。 提供了一个命令行接口，用来与网页代码互动。">
@@ -388,6 +388,11 @@
 <h3 id="timeEnd"><a href="#timeEnd" class="headerlink" title="timeEnd()"></a>timeEnd()</h3><p>计时结束<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.time(<span class="string">'计时器1'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">100</span>; j++) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'计时器1'</span>);</span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'计时器2'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">1000</span>; j++) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'计时器2'</span>);</span><br></pre></td></tr></table></figure></p>
 <h3 id="trace"><a href="#trace" class="headerlink" title="trace()"></a>trace()</h3><p>追踪函数的调用过程<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">d</span>(<span class="params">a</span>) </span>&#123; </span><br><span class="line">  <span class="built_in">console</span>.trace();</span><br><span class="line">  <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params">a</span>) </span>&#123; </span><br><span class="line">  <span class="keyword">return</span> c(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params">a</span>) </span>&#123; </span><br><span class="line">  <span class="keyword">return</span> d(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = b(<span class="string">'123'</span>);</span><br></pre></td></tr></table></figure></p>
 <h3 id="warn"><a href="#warn" class="headerlink" title="warn()"></a>warn()</h3><p>输出警告信息<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.warn(<span class="string">"警告"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>最后附上 console 的正则匹配，若有提议欢迎留言。</p>
+<p><code>console.(clear|log|info|error|warn|groupEnd|group|dirxml|dir|assert|timeEnd|time|profileEnd|profile|count|table)([\(][^\)]+[\)]|[\(][\)])</code></p>
+<blockquote>
+<p>如果参数中包含括弧可能会匹配不准。</p>
+</blockquote>
 <p><a href="http://www.runoob.com/w3cnote/javascript-console-object.html" target="_blank" rel="noopener">http://www.runoob.com/w3cnote/javascript-console-object.html</a></p>
 <p><a href="https://www.cnblogs.com/alantao/p/5859358.html" target="_blank" rel="noopener">https://www.cnblogs.com/alantao/p/5859358.html</a></p>
 
@@ -401,7 +406,7 @@
         <p><span>本文标题:</span><a href="/article/前端调试之把玩console/">前端调试之把玩console</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
         <p><span>发布时间:</span>2019-03-15, 12:02:58</p>
-        <p><span>最后更新:</span>2019-03-18, 22:47:56</p>
+        <p><span>最后更新:</span>2019-03-19, 15:07:23</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/article/前端调试之把玩console/" title="前端调试之把玩console">https://sogrey.github.io/article/前端调试之把玩console/</a>
             <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/前端调试之把玩console/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
