@@ -147,13 +147,6 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/categories/Gitbook/</loc>
-        <lastmod>2019-02-14T04:26:56.297Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://sogrey.github.io/categories/Flutter/</loc>
         <lastmod>2019-02-23T06:20:48.474Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -191,6 +184,13 @@
     <url>
         <loc>https://sogrey.github.io/categories/you-get/</loc>
         <lastmod>2019-03-20T13:56:10.621Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/categories/Gitbook/</loc>
+        <lastmod>2019-03-21T10:39:58.109Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

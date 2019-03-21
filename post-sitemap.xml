@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://sogrey.github.io/article/%E4%BD%BF%E7%94%A8-npm-%E5%AE%89%E8%A3%85-gitbook/</loc>
+        <lastmod>2019-03-21T10:39:58.109Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://sogrey.github.io/article/you-get/</loc>
         <lastmod>2019-03-20T13:56:10.621Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,14 +57,6 @@
     <url>
         <loc>https://sogrey.github.io/article/%E2%80%9C-%E8%AF%97%E6%AD%8C-%E5%8D%83%E5%8F%A4%E5%B2%90%E5%B1%B1/</loc>
         <lastmod>2019-02-23T06:20:48.474Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/article/%E4%BD%BF%E7%94%A8-npm-%E5%AE%89%E8%A3%85-gitbook/</loc>
-        <lastmod>2019-02-14T04:26:56.297Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
