@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="Java对象在转json的时候，如果对象里面有属性值为null的话，那么在json序列化的时候要不要序列出来呢？">
-<meta name="keywords" content="Java,Json">
+<meta name="description" content="一般我们在调试javascript代码时常用的调试方法有：console日志和借助浏览器断点调试。 今遇到要调试node.js。Nodejs提供了一个内建调试器来帮助开发者调试应用程序。想要开启调试器我们需要在代码中加入debugger标签，当Nodejs执行到debugger标签时会自动暂停（debugger标签相当于在代码中开启一个断点）。 先看下个命令的 说明： Stepping  cont">
+<meta name="keywords" content="node.js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java对象转json时空值(null)处理">
-<meta property="og:url" content="https://sogrey.github.io/article/Java对象转json时空值-null-处理/index.html">
+<meta property="og:title" content="node.js调试">
+<meta property="og:url" content="https://sogrey.github.io/article/node-js调试/index.html">
 <meta property="og:site_name" content="Sogrey">
-<meta property="og:description" content="Java对象在转json的时候，如果对象里面有属性值为null的话，那么在json序列化的时候要不要序列出来呢？">
+<meta property="og:description" content="一般我们在调试javascript代码时常用的调试方法有：console日志和借助浏览器断点调试。 今遇到要调试node.js。Nodejs提供了一个内建调试器来帮助开发者调试应用程序。想要开启调试器我们需要在代码中加入debugger标签，当Nodejs执行到debugger标签时会自动暂停（debugger标签相当于在代码中开启一个断点）。 先看下个命令的 说明： Stepping  cont">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-15T07:43:32.292Z">
+<meta property="og:updated_time" content="2019-03-22T10:50:27.423Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java对象转json时空值(null)处理">
-<meta name="twitter:description" content="Java对象在转json的时候，如果对象里面有属性值为null的话，那么在json序列化的时候要不要序列出来呢？">
+<meta name="twitter:title" content="node.js调试">
+<meta name="twitter:description" content="一般我们在调试javascript代码时常用的调试方法有：console日志和借助浏览器断点调试。 今遇到要调试node.js。Nodejs提供了一个内建调试器来帮助开发者调试应用程序。想要开启调试器我们需要在代码中加入debugger标签，当Nodejs执行到debugger标签时会自动暂停（debugger标签相当于在代码中开启一个断点）。 先看下个命令的 说明： Stepping  cont">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Java对象转json时空值(null)处理 | Sogrey</title>
+<title>node.js调试 | Sogrey</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -319,11 +319,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Java对象转json时空值-null-处理" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-node-js调试" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/article/Java对象转json时空值-null-处理/" class="article-date">
-      <time datetime="2018-12-20T01:33:23.000Z" itemprop="datePublished">2018-12-20</time>
+      <a href="/article/node-js调试/" class="article-date">
+      <time datetime="2019-03-22T02:23:20.000Z" itemprop="datePublished">2019-03-22</time>
 </a>
 
 
@@ -338,7 +338,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Java对象转json时空值(null)处理
+      node.js调试
     </h1>
   
 
@@ -347,13 +347,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Json/">Json</a>
+    <a class="article-category-link" href="/categories/node/">node</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Json/">Json</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -363,20 +363,48 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <blockquote>
-<p>Java对象在转json的时候，如果对象里面有属性值为null的话，那么在json序列化的时候要不要序列出来呢？</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="1-fastjson"><a href="#1-fastjson" class="headerlink" title="1 fastjson"></a>1 fastjson</h2><p>fastJson在转换java对象为json的时候，默认是不序列化null值对应的key的也就是说当对象里面的属性为空的时候，在转换成json时，不序列化那些为null值的属性</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.sogrey.java2Json;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> top.sogrey.java2Json.bean.User;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSONObject;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.serializer.SerializerFeature;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * fastjson 版本是 1.2.54</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Administrator</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">fastjsonDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> args</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		User user = <span class="keyword">new</span> User();</span><br><span class="line">		user.setUserName(<span class="string">"Sogrey"</span>);</span><br><span class="line">		String str = JSONObject.toJSONString(user);<span class="comment">// fastjson默认转换是不序列化null值对应的key的</span></span><br><span class="line">		System.out.println(str);</span><br><span class="line">		<span class="comment">// 输出结果是：&#123;"age":0,"userName":"Sogrey"&#125;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>但是如果想把null对应的key序列化出来呢？ </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果需要序列化null对应的key</span></span><br><span class="line">str = JSONObject</span><br><span class="line">		.toJSONString(</span><br><span class="line">				user,</span><br><span class="line">				<span class="keyword">new</span> SerializerFeature[] &#123; SerializerFeature.WriteMapNullValue &#125;);</span><br><span class="line">System.out.println(str);</span><br><span class="line"><span class="comment">// 输出结果是： &#123;"age":0,"job":null,"userName":"Sogrey"&#125;</span></span><br></pre></td></tr></table></figure>
-<p>想字符类型字段如果为null,转换输出为”“,而非null ，需要多加一个参数：WriteNullStringAsEmpty</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 想字符类型字段如果为null,转换输出为"",而非null ，需要多加一个参数：WriteNullStringAsEmpty</span></span><br><span class="line">str = JSONObject.toJSONString(user, <span class="keyword">new</span> SerializerFeature[] &#123;</span><br><span class="line">		SerializerFeature.WriteMapNullValue,</span><br><span class="line">		SerializerFeature.WriteNullStringAsEmpty &#125;);</span><br><span class="line">System.out.println(str);</span><br><span class="line"><span class="comment">//输出结果是：&#123;"age":0,"job":"","userName":"Sogrey"&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-Gson"><a href="#2-Gson" class="headerlink" title="2  Gson"></a>2  Gson</h2><p> gson和fastjson一样，默认是不序列化null值对应的key的</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.sogrey.java2Json;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.gson.Gson;</span><br><span class="line"><span class="keyword">import</span> com.google.gson.GsonBuilder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> top.sogrey.java2Json.bean.User;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GsonDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> args</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		User user = <span class="keyword">new</span> User();</span><br><span class="line">		user.setUserName(<span class="string">"Sogrey"</span>);</span><br><span class="line">		Gson g = <span class="keyword">new</span> GsonBuilder().create();</span><br><span class="line">		String str = g.toJson(user);</span><br><span class="line">		System.out.println(str);</span><br><span class="line">		<span class="comment">// &#123;"userName":"Sogrey","age":0&#125;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 若是想序列化null值对应的key，只需要将以上创建代码改成以下代码就行：<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">new</span> GsonBuilder().serializeNulls().create();</span><br><span class="line">str = g.toJson(user);</span><br><span class="line">System.out.println(str);</span><br><span class="line"><span class="comment">// &#123;"userName":"Sogrey","age":0,"job":null&#125;</span></span><br></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/Sogrey/JavaBean2Json" target="_blank" rel="noopener">github</a></p>
+        <p>一般我们在调试javascript代码时常用的调试方法有：console日志和借助浏览器断点调试。</p>
+<p>今遇到要调试node.js。Nodejs提供了一个内建调试器来帮助开发者调试应用程序。想要开启调试器我们需要在代码中加入debugger标签，当Nodejs执行到debugger标签时会自动暂停（debugger标签相当于在代码中开启一个断点）。</p>
+<p>先看下个命令的 说明：</p>
+<p><strong>Stepping</strong></p>
+<ul>
+<li><code>cont</code>, <code>c</code> - Continue execution 继续执行,直到遇到下一个断点</li>
+<li><code>next</code>, <code>n</code> - Step next 单步执行</li>
+<li><code>step</code>, <code>s</code> - Step in 单步执行并进入函数</li>
+<li><code>out</code>, <code>o</code> - Step out 从函数中步出</li>
+<li><code>pause</code> - Pause running code (like pause button in Developer Tools)</li>
+</ul>
+<p><strong>Breakpoints</strong></p>
+<ul>
+<li><code>setBreakpoint()</code>, <code>sb()</code> - Set breakpoint on current line 当前行设置断点</li>
+<li><code>setBreakpoint(line)</code>, <code>sb(line)</code> - Set breakpoint on specific line 在特定行上设置断点</li>
+<li><code>setBreakpoint(&#39;fn()&#39;)</code>, <code>sb(...)</code> - Set breakpoint on a first statement in functions body 在函数f的第一行设置断点</li>
+<li><code>setBreakpoint(&#39;script.js&#39;, 1)</code>, <code>sb(...)</code> - Set breakpoint on first line of <code>script.js</code> 在 script.js 的第20行设置断点</li>
+<li><code>clearBreakpoint(&#39;script.js&#39;, 1)</code>, <code>cb(...)</code> - Clear breakpoint in <code>script.js</code> on line 1 清除所有断点</li>
+</ul>
+<p><strong>Information</strong></p>
+<ul>
+<li><code>backtrace</code>, <code>bt</code> - Print backtrace of current execution frame 显示当前的调用栈</li>
+<li><code>list(5)</code> - List scripts source code with 5 line context (5 lines before and after) 显示当前执行到的前后5行代码</li>
+<li><code>watch(expr)</code> - Add expression to watch list 把表达式 expr 加入监视列表</li>
+<li><code>unwatch(expr)</code> - Remove expression from watch list 把表达式 expr 从监视列表移除</li>
+<li><code>watchers</code> - List all watchers and their values (automatically listed on each breakpoint) 显示监视列表中所有的表达式和值</li>
+<li><code>repl</code> - Open debugger’s repl for evaluation in debugging script’s context 在当前上下文打开即时求值环境</li>
+<li><code>exec expr</code> - Execute an expression in debugging script’s context 在调试脚本的上下文中执行表达式</li>
+</ul>
+<p><strong>Execution control</strong></p>
+<ul>
+<li><code>run</code> - Run script (automatically runs on debugger’s start) 执行脚本,在第一行暂停</li>
+<li><code>restart</code> - Restart script 重新执行脚本</li>
+<li><code>kill</code> - Kill script 终止当前执行的脚本</li>
+</ul>
+<p><strong>Various</strong></p>
+<ul>
+<li><code>scripts</code> - List all loaded scripts 显示当前已加载的所有脚本</li>
+<li><code>version</code> - Display V8’s version 显示v8版本</li>
+</ul>
+<p>参考网站：<a href="https://nodejs.org/api/debugger.html" target="_blank" rel="noopener">https://nodejs.org/api/debugger.html</a></p>
+<p><a href="https://www.cnblogs.com/axl234/p/6504336.htm" target="_blank" rel="noopener">https://www.cnblogs.com/axl234/p/6504336.htm</a></p>
 
       
     </div>
@@ -385,13 +413,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/article/Java对象转json时空值-null-处理/">Java对象转json时空值(null)处理</a></p>
+        <p><span>本文标题:</span><a href="/article/node-js调试/">node.js调试</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
-        <p><span>发布时间:</span>2018-12-20, 09:33:23</p>
-        <p><span>最后更新:</span>2019-01-15, 15:43:32</p>
+        <p><span>发布时间:</span>2019-03-22, 10:23:20</p>
+        <p><span>最后更新:</span>2019-03-22, 18:50:27</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/article/Java对象转json时空值-null-处理/" title="Java对象转json时空值(null)处理">https://sogrey.github.io/article/Java对象转json时空值-null-处理/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/Java对象转json时空值-null-处理/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/article/node-js调试/" title="node.js调试">https://sogrey.github.io/article/node-js调试/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/node-js调试/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -403,16 +431,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/article/Activity启动模式-lauchMode/">
-                    Activity启动模式(lauchMode)
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/article/Android版本和API-Level对应关系/">
-                    Android版本和API Level对应关系
+                <a href="/article/端口被占用-干掉它/">
+                    端口被占用，干掉它
                 </a>
             </div>
         
@@ -424,7 +446,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-fastjson"><span class="toc-text">1 fastjson</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Gson"><span class="toc-text">2  Gson</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -455,15 +477,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/article/Activity启动模式-lauchMode/" title="上一篇: Activity启动模式(lauchMode)">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/article/Android版本和API-Level对应关系/" title="下一篇: Android版本和API Level对应关系">
+            <a href="/article/端口被占用-干掉它/" title="下一篇: 端口被占用，干掉它">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -513,8 +533,8 @@
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Java对象转json时空值(null)处理',
-			  title: 'Java对象转json时空值(null)处理',
+			  id: 'node.js调试',
+			  title: 'node.js调试',
 			  owner: 'Sogrey',
 			  repo: 'Sogrey.github.io',
 			  oauth: {

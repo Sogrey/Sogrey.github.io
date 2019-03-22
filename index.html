@@ -326,6 +326,118 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-node-js调试" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/article/node-js调试/" class="article-date">
+      <time datetime="2019-03-22T02:23:20.000Z" itemprop="datePublished">2019-03-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/node-js调试/">node.js调试</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>一般我们在调试javascript代码时常用的调试方法有：console日志和借助浏览器断点调试。</p>
+<p>今遇到要调试node.js。Nodejs提供了一个内建调试器来帮助开发者调试应用程序。想要开启调试器我们需要在代码中加入debugger标签，当Nodejs执行到debugger标签时会自动暂停（debugger标签相当于在代码中开启一个断点）。</p>
+<p>先看下个命令的 说明：</p>
+<p><strong>Stepping</strong></p>
+<ul>
+<li><code>cont</code>, <code>c</code> - Continue execution 继续执行,直到遇到下一个断点</li>
+<li><code>next</code>, <code>n</code> - Step next 单步执行</li>
+<li><code>step</code>, <code>s</code> - Step in 单步执行并进入函数</li>
+<li><code>out</code>, <code>o</code> - Step out 从函数中步出</li>
+<li><code>pause</code> - Pause running code (like pause button in Developer Tools)</li>
+</ul>
+<p><strong>Breakpoints</strong></p>
+<ul>
+<li><code>setBreakpoint()</code>, <code>sb()</code> - Set breakpoint on current line 当前行设置断点</li>
+<li><code>setBreakpoint(line)</code>, <code>sb(line)</code> - Set breakpoint on specific line 在特定行上设置断点</li>
+<li><code>setBreakpoint(&#39;fn()&#39;)</code>, <code>sb(...)</code> - Set breakpoint on a first statement in functions body 在函数f的第一行设置断点</li>
+<li><code>setBreakpoint(&#39;script.js&#39;, 1)</code>, <code>sb(...)</code> - Set breakpoint on first line of <code>script.js</code> 在 script.js 的第20行设置断点</li>
+<li><code>clearBreakpoint(&#39;script.js&#39;, 1)</code>, <code>cb(...)</code> - Clear breakpoint in <code>script.js</code> on line 1 清除所有断点</li>
+</ul>
+<p><strong>Information</strong></p>
+<ul>
+<li><code>backtrace</code>, <code>bt</code> - Print backtrace of current execution frame 显示当前的调用栈</li>
+<li><code>list(5)</code> - List scripts source code with 5 line context (5 lines before and after) 显示当前执行到的前后5行代码</li>
+<li><code>watch(expr)</code> - Add expression to watch list 把表达式 expr 加入监视列表</li>
+<li><code>unwatch(expr)</code> - Remove expression from watch list 把表达式 expr 从监视列表移除</li>
+<li><code>watchers</code> - List all watchers and their values (automatically listed on each breakpoint) 显示监视列表中所有的表达式和值</li>
+<li><code>repl</code> - Open debugger’s repl for evaluation in debugging script’s context 在当前上下文打开即时求值环境</li>
+<li><code>exec expr</code> - Execute an expression in debugging script’s context 在调试脚本的上下文中执行表达式</li>
+</ul>
+<p><strong>Execution control</strong></p>
+<ul>
+<li><code>run</code> - Run script (automatically runs on debugger’s start) 执行脚本,在第一行暂停</li>
+<li><code>restart</code> - Restart script 重新执行脚本</li>
+<li><code>kill</code> - Kill script 终止当前执行的脚本</li>
+</ul>
+<p><strong>Various</strong></p>
+<ul>
+<li><code>scripts</code> - List all loaded scripts 显示当前已加载的所有脚本</li>
+<li><code>version</code> - Display V8’s version 显示v8版本</li>
+</ul>
+<p>参考网站：<a href="https://nodejs.org/api/debugger.html" target="_blank" rel="noopener">https://nodejs.org/api/debugger.html</a></p>
+<p><a href="https://www.cnblogs.com/axl234/p/6504336.htm" target="_blank" rel="noopener">https://www.cnblogs.com/axl234/p/6504336.htm</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/node/">node</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+
+
+  
     <article id="post-端口被占用-干掉它" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1013,83 +1125,6 @@
       
         <p class="article-more-link">
           <a href="/article/Activity启动模式-lauchMode/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-
-
-  
-    <article id="post-Java对象转json时空值-null-处理" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/article/Java对象转json时空值-null-处理/" class="article-date">
-      <time datetime="2018-12-20T01:33:23.000Z" itemprop="datePublished">2018-12-20</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/Java对象转json时空值-null-处理/">Java对象转json时空值(null)处理</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p>Java对象在转json的时候，如果对象里面有属性值为null的话，那么在json序列化的时候要不要序列出来呢？</p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Json/">Json</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Json/">Json</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/article/Java对象转json时空值-null-处理/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

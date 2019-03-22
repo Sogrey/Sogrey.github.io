@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>node.js调试</title>
+      <link href="/article/node-js%E8%B0%83%E8%AF%95/"/>
+      <url>/article/node-js%E8%B0%83%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>一般我们在调试javascript代码时常用的调试方法有：console日志和借助浏览器断点调试。</p><p>今遇到要调试node.js。Nodejs提供了一个内建调试器来帮助开发者调试应用程序。想要开启调试器我们需要在代码中加入debugger标签，当Nodejs执行到debugger标签时会自动暂停（debugger标签相当于在代码中开启一个断点）。</p><p>先看下个命令的 说明：</p><p><strong>Stepping</strong></p><ul><li><code>cont</code>, <code>c</code> - Continue execution 继续执行,直到遇到下一个断点</li><li><code>next</code>, <code>n</code> - Step next 单步执行</li><li><code>step</code>, <code>s</code> - Step in 单步执行并进入函数</li><li><code>out</code>, <code>o</code> - Step out 从函数中步出</li><li><code>pause</code> - Pause running code (like pause button in Developer Tools)</li></ul><p><strong>Breakpoints</strong></p><ul><li><code>setBreakpoint()</code>, <code>sb()</code> - Set breakpoint on current line 当前行设置断点</li><li><code>setBreakpoint(line)</code>, <code>sb(line)</code> - Set breakpoint on specific line 在特定行上设置断点</li><li><code>setBreakpoint(&#39;fn()&#39;)</code>, <code>sb(...)</code> - Set breakpoint on a first statement in functions body 在函数f的第一行设置断点</li><li><code>setBreakpoint(&#39;script.js&#39;, 1)</code>, <code>sb(...)</code> - Set breakpoint on first line of <code>script.js</code> 在 script.js 的第20行设置断点</li><li><code>clearBreakpoint(&#39;script.js&#39;, 1)</code>, <code>cb(...)</code> - Clear breakpoint in <code>script.js</code> on line 1 清除所有断点</li></ul><p><strong>Information</strong></p><ul><li><code>backtrace</code>, <code>bt</code> - Print backtrace of current execution frame 显示当前的调用栈</li><li><code>list(5)</code> - List scripts source code with 5 line context (5 lines before and after) 显示当前执行到的前后5行代码</li><li><code>watch(expr)</code> - Add expression to watch list 把表达式 expr 加入监视列表</li><li><code>unwatch(expr)</code> - Remove expression from watch list 把表达式 expr 从监视列表移除</li><li><code>watchers</code> - List all watchers and their values (automatically listed on each breakpoint) 显示监视列表中所有的表达式和值</li><li><code>repl</code> - Open debugger’s repl for evaluation in debugging script’s context 在当前上下文打开即时求值环境</li><li><code>exec expr</code> - Execute an expression in debugging script’s context 在调试脚本的上下文中执行表达式</li></ul><p><strong>Execution control</strong></p><ul><li><code>run</code> - Run script (automatically runs on debugger’s start) 执行脚本,在第一行暂停</li><li><code>restart</code> - Restart script 重新执行脚本</li><li><code>kill</code> - Kill script 终止当前执行的脚本</li></ul><p><strong>Various</strong></p><ul><li><code>scripts</code> - List all loaded scripts 显示当前已加载的所有脚本</li><li><code>version</code> - Display V8’s version 显示v8版本</li></ul><p>参考网站：<a href="https://nodejs.org/api/debugger.html" target="_blank" rel="noopener">https://nodejs.org/api/debugger.html</a></p><p><a href="https://www.cnblogs.com/axl234/p/6504336.htm" target="_blank" rel="noopener">https://www.cnblogs.com/axl234/p/6504336.htm</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> node </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> node.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>端口被占用，干掉它</title>
       <link href="/article/%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8-%E5%B9%B2%E6%8E%89%E5%AE%83/"/>
       <url>/article/%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8-%E5%B9%B2%E6%8E%89%E5%AE%83/</url>
@@ -830,9 +853,9 @@
       
         <tags>
             
-            <tag> 手记 </tag>
-            
             <tag> PPT </tag>
+            
+            <tag> 手记 </tag>
             
             <tag> WebApp </tag>
             
@@ -857,9 +880,9 @@
       
         <tags>
             
-            <tag> 手记 </tag>
-            
             <tag> PPT </tag>
+            
+            <tag> 手记 </tag>
             
             <tag> 微信小程序 </tag>
             

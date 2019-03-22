@@ -401,22 +401,22 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/tags/node-js/</loc>
-        <lastmod>2019-03-21T10:39:58.109Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://sogrey.github.io/tags/npm/</loc>
-        <lastmod>2019-03-21T10:39:58.109Z</lastmod>
+        <lastmod>2019-03-21T10:45:02.897Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://sogrey.github.io/tags/gitbook/</loc>
-        <lastmod>2019-03-21T10:39:58.109Z</lastmod>
+        <lastmod>2019-03-21T10:45:02.897Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/tags/node-js/</loc>
+        <lastmod>2019-03-22T10:50:27.423Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
