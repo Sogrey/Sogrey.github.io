@@ -1,0 +1,49 @@
+<!--gitment 评论-->
+<% if (!index) { %>
+  <div class="comments" id="comments">
+  
+	<!--汉化-->
+    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+	<script src="https://billts.site/js/gitment.js"></script>
+	<!--原型-->
+	<!--
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js" type="text/javascript"></script>
+	-->
+	
+      <div id="gitmentContainer" style="margin-bottom: -19px;"></div>
+     
+      <style>
+        .gitment-container a {
+          border: none;
+        }
+        .comments {
+          margin: 60px 0 0;padding: 0 60px;
+        }
+		@media screen and (max-width:1040px) {
+		   .comments {
+			  padding: 0 30px;
+			}
+		}
+		/**gitment 默认样式覆盖*/
+		.gitment-comment-header{background-color: #ffffff00 !important;}
+		.gitment-editor-main::before, .gitment-comment-main::before{border-right-color: #7EA4CA !important;}
+      </style>
+     
+      <script type="text/javascript">
+        var gitment = new Gitment({
+			  id: '<%= page.title %>',
+			  title: '<%= page.title %>',
+			  owner: '<%= theme.gitment.owner %>',
+			  repo: '<%= theme.gitment.repo %>',
+			  oauth: {
+				client_id: '<%= theme.gitment.ClientID %>',
+				client_secret: '<%= theme.gitment.ClientSecret %>'
+			  }
+        })
+        gitment.render('gitmentContainer')
+      </script>
+    
+  </div>
+<% } %>
+<!--gitment 评论 end-->
