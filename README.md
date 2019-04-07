@@ -25,7 +25,7 @@ Sogrey's github pages
 - 2. 初始化 hexo :
 
      ``` bash
-     npm install hexo --save
+     npm install
      ```
 
      

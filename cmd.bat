@@ -32,6 +32,11 @@ start hexo g
 goto start
 
 :s
+copy E:\workspace\github\sogrey\sogrey.github.io\404.html E:\workspace\github\sogrey\sogrey.github.io\public\404.html
+copy E:\workspace\github\sogrey\sogrey.github.io\baidu_verify_hTO3FZGPz7.html E:\workspace\github\sogrey\sogrey.github.io\public\baidu_verify_hTO3FZGPz7.html
+copy E:\workspace\github\sogrey\sogrey.github.io\README.md E:\workspace\github\sogrey\sogrey.github.io\public\README.md
+copy E:\workspace\github\sogrey\sogrey.github.io\weichat.html E:\workspace\github\sogrey\sogrey.github.io\public\about\weichat.html
+copy E:\workspace\github\sogrey\sogrey.github.io\sogrey.html E:\workspace\github\sogrey\sogrey.github.io\public\about\sogrey.html
 start hexo s
 goto start
 
