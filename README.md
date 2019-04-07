@@ -27,6 +27,6 @@ Sogrey's github pages
      ``` bash
      npm install
      ```
-
+- 3. 剩下的交给 `cmd.bat` 吧。
      
 
