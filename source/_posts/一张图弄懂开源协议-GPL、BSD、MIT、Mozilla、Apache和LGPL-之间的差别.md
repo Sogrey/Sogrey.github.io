@@ -11,7 +11,7 @@ toc: true
 
 一张 [阮大神](http://www.ruanyifeng.com/)的图秒懂各大开源协议差异
 
-![](https://sogrey.github.io/pics/bg2011050101.png)
+![](https://sogrey.github.io/GithubPagePics/imgs/bg2011050101.png)
 
 
 

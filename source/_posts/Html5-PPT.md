@@ -8,5 +8,5 @@ categories: Html5
 
 &gt;&gt;&gt;&gt;&gt;[国际点此预览](https://sogrey.github.io/Html5-ppt/)&lt;&lt;&lt;&lt;&lt;
 
-![Html5-ppt](https://sogrey.github.io/pics/2017-01-09_221733.jpg)
-![Html5-ppt](https://sogrey.github.io/pics/2017-01-09_221804.jpg)
+![Html5-ppt](https://sogrey.github.io/GithubPagePics/imgs/2017-01-09_221733.jpg)
+![Html5-ppt](https://sogrey.github.io/GithubPagePics/imgs/2017-01-09_221804.jpg)

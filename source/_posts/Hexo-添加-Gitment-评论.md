@@ -19,17 +19,17 @@ toc: true
 
 [点击此处](https://github.com/settings/applications/new) 来注册一个新的 OAuth Application。其他内容可以随意填写，但要确保填入正确的 callback URL（一般是评论页面对应的域名，比如我的就是 `https://sogrey.github.io/`）。
 
-![注册Gitment OAuth Application](https://sogrey.github.io/pics/注册Gitment OAuth Application.png)
+![注册Gitment OAuth Application](https://sogrey.github.io/GithubPagePics/imgs/注册Gitment OAuth Application.png)
 
 你会得到一个 client ID 和一个 client secret，这个将被用于之后的用户登录。
 
-![Gitment ClientId](https://sogrey.github.io/pics/Gitment ClientId.png)
+![Gitment ClientId](https://sogrey.github.io/GithubPagePics/imgs/Gitment ClientId.png)
 
 后面如果想查找之前注册的Gitment ClientId，在GitHub点击`Settings`>`Developer settings` 即[developers](https://github.com/settings/developers)
 
-![查找Gitment ClientId](https://sogrey.github.io/pics/查找Gitment ClientId.png)
+![查找Gitment ClientId](https://sogrey.github.io/GithubPagePics/imgs/查找Gitment ClientId.png)
 
-![查找Gitment ClientId](https://sogrey.github.io/pics/查找Gitment ClientId2.png)
+![查找Gitment ClientId](https://sogrey.github.io/GithubPagePics/imgs/查找Gitment ClientId2.png)
 
 ## 2 安装Gitment插件
 
@@ -180,8 +180,8 @@ toc: true
 	即可。来源：https://github.com/imsun/gitment/issues/104
 
 7 Gitment出现在文章列表上
-  
-![Gitment出现在文章列表上](https://sogrey.github.io/pics/Gitment出现在文章列表上.png)
+
+![Gitment出现在文章列表上](https://sogrey.github.io/GithubPagePics/imgs/Gitment出现在文章列表上.png)
 
 解决办法是为上面添加在文章页面上的那一大段代码 添加 下面代码将其包裹在内：
 
@@ -243,13 +243,13 @@ toc: true
 
 [Error: Bad credentials#145](https://github.com/imsun/gitment/issues/145)
 
-![](https://sogrey.github.io/pics/Error%20Bad%20credentials.jpg)
+![](https://sogrey.github.io/GithubPagePics/imgs/Error%20Bad%20credentials.jpg)
 
 解决：
 
 我在[Settings](https://github.com/settings/profile)/[Developer settings](https://github.com/settings/developers)的`OAuth Apps`中找到我们授权的应用，重新生产秘钥，重新配置就好了。
-![](https://sogrey.github.io/pics/OAuth%20Apps.jpg)
-![](https://sogrey.github.io/pics/OAuth%20Apps2.jpg)
+![](https://sogrey.github.io/GithubPagePics/imgs/OAuth%20Apps.jpg)
+![](https://sogrey.github.io/GithubPagePics/imgs/OAuth%20Apps2.jpg)
 重新配置 theme 下的 _config.yml 文件
-![](https://sogrey.github.io/pics/gitment_config.jpg)
+![](https://sogrey.github.io/GithubPagePics/imgs/gitment_config.jpg)
 

@@ -9,30 +9,29 @@ tags: [Android,JCenter,maven]
 
 > 上传到  JitPack 可参考[这篇](http://www.jianshu.com/p/1fecc80cbd59?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq)
 
-
 <!-- more -->
 
 ## 注册bintray账号
 
 JCenter是bintray旗下中央仓库，先在[bintray的官网](https://bintray.com/ "bintray官网")注册一个账号，为方便起见也可以使用github账号登录。
 
-![bintray的官网注册登录](https://sogrey.github.io/pics/sogrey_2017-03-10_011207.jpg)
+![bintray的官网注册登录](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-10_011207.jpg)
 
 用于开源分发可点击For Open Source Distribution [Sign Up Here](https://bintray.com/signup/oss)注册/登录。
 
-![bintray的官网注册登录](https://sogrey.github.io/pics/sogrey_2017-03-10_012113.jpg)
+![bintray的官网注册登录](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-10_012113.jpg)
 
 注册/登录成功后进入个人中心：
 
-![bintray个人中心](https://sogrey.github.io/pics/sogrey_2017-03-10_012509.jpg)
+![bintray个人中心](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-10_012509.jpg)
 
 到此注册bintray账号的准备工作就做完了，下面我们准备一个将要发布的库项目Android Studio项目。
 
 另：顺便做点准备工作，在bintray个人中心获取API KEY（地址是：[https://bintray.com/profile/edit](https://bintray.com/profile/edit "https://bintray.com/profile/edit")），也可以在个人中心点击`Edit`或鼠标移到右上角你的用户名出弹出菜单点击`Edit Profile`,跳到下面页面：
 
-![Edit Profile](https://sogrey.github.io/pics/sogrey_2017-03-10_015247_1.jpg)
+![Edit Profile](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-10_015247_1.jpg)
 
-![查看API Key](https://sogrey.github.io/pics/sogrey_2017-03-10_015849.jpg)
+![查看API Key](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-10_015849.jpg)
 
 点击① API KEY --> ② 复制API KEY，以备后用。
 
@@ -40,7 +39,7 @@ JCenter是bintray旗下中央仓库，先在[bintray的官网](https://bintray.c
 
 我准备的android项目是九宫手势图案的自定义View。先来看下项目整体结构：
 
-![项目整体结构](https://sogrey.github.io/pics/sogrey_2017-03-10_013513.jpg)
+![项目整体结构](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-10_013513.jpg)
 
 其中，lock9viewlib 这个库Module就是我们将要发布的开源库。下面就准备发布前的一系列设置吧。
 
@@ -67,7 +66,7 @@ JCenter是bintray旗下中央仓库，先在[bintray的官网](https://bintray.c
 
 	apply plugin: 'com.android.library'
 	apply plugin: 'com.novoda.bintray-release'//添加
-	
+
 
 	//添加
 	publish {
@@ -91,19 +90,19 @@ compile 'org.sogrey:lock9view:0.0.1'
 
 ### 3.在添加新的Maven库（已有请路过）
 
-![添加新的Maven库](https://sogrey.github.io/pics/sogrey_2017-03-09_111642.jpg)
+![添加新的Maven库](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-09_111642.jpg)
 
 点击 `Add New Repository` 添加，
 
-![Add New Repository](https://sogrey.github.io/pics/sogrey_2017-03-10_022138.jpg)
+![Add New Repository](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-10_022138.jpg)
 
 添加成功，进入如下页面：
 
-![添加仓库成功](https://sogrey.github.io/pics/sogrey_2017-03-10_022524.jpg)
+![添加仓库成功](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-10_022524.jpg)
 
 点击 `Add New Package`,添加一个新的包
 
-![添加一个新的包](https://sogrey.github.io/pics/sogrey_2017-03-10_022802.jpg)
+![添加一个新的包](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-10_022802.jpg)
 
 
 
@@ -123,11 +122,11 @@ win OS:则没有前面的 `./` ：
 其中`username`用你的bintray用户名替换，`xxxxxxxxxxxxxxxxxxxxxx`用之前拿到的 API KEY 来替换。
 该命令可在Android studio自带的 `Terminal` 执行：
 
-![Terminal执行命令](https://sogrey.github.io/pics/sogrey_2017-03-09_113608_1.jpg)
+![Terminal执行命令](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-09_113608_1.jpg)
 
 第一次执行时会下载一堆 .pom 和 .jar,耐心等待。直到出现 `BUILD SUCCESSFUL` 就ok了。
 
-![BUILD SUCCESSFUL](https://sogrey.github.io/pics/sogrey_2017-03-09_211916.jpg)
+![BUILD SUCCESSFUL](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-09_211916.jpg)
 
 ### 5.添加到JCenter
 
@@ -135,15 +134,15 @@ win OS:则没有前面的 `./` ：
 
 compile 'org.sogrey:lock9view:0.0.1'
 
-![Add to JCenter](https://sogrey.github.io/pics/sogrey_2017-03-10_023802.jpg)
+![Add to JCenter](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-10_023802.jpg)
 
 审核通过后，上图中的  `Add to JCenter` 的按钮就消失了。
 
-![](https://sogrey.github.io/pics/sogrey_2017-03-10_093202.jpg)
+![](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-10_093202.jpg)
 
 点击 `Jcenter` 可查看到以项目名称artifactId `lock9view` 过滤查到的项目，目前有两个，左边是咱们自己上传的。
 
-![查看JCenter项目](https://sogrey.github.io/pics/sogrey_2017-03-10_093356.jpg)
+![查看JCenter项目](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-10_093356.jpg)
 
 ### 6.在Android项目中compile
 
@@ -154,7 +153,7 @@ compile 'org.sogrey:lock9view:0.0.1'
 
 重新运行示例项目，成功。
 
-![运行示例项目](https://sogrey.github.io/pics/sogrey_2017-03-10_094240.jpg)
+![运行示例项目](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-10_094240.jpg)
 
 
 ## 更新已发布的库
@@ -195,11 +194,11 @@ win OS:则没有前面的 `./` ：
 
 如下图:
 
-![错误：编码GBK的不可映射字符](https://sogrey.github.io/pics/sogrey_2017-03-09_125938.jpg)
+![错误：编码GBK的不可映射字符](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-09_125938.jpg)
 
 很明显是因为我们项目中有中文注释编码是 GBK，在生成 javadoc 时出错，需要改为 "utf-8" ,android  studio中 File -> settings -> Editor -> File Encodings
 
-![android  studio中 File -> settings -> Editor -> File Encodings](https://sogrey.github.io/pics/sogrey_2017-03-10_095102.jpg)
+![android  studio中 File -> settings -> Editor -> File Encodings](https://sogrey.github.io/GithubPagePics/imgs/sogrey_2017-03-10_095102.jpg)
 
 同时可设置项目的build.gradle:
 

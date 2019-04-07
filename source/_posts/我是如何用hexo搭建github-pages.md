@@ -36,10 +36,10 @@ Hexo 安装好了之后，就开始进行建站。cmd打开终端 cd 到指定�
 	hexo init
 	npm install
 
-![git Bash命令](https://sogrey.github.io/pics/2017-01-09_151319.png)
-![git Bash命令](https://sogrey.github.io/pics/2017-01-09_161000.jpg)
+![git Bash命令](https://sogrey.github.io/GithubPagePics/imgs/2017-01-09_151319.png)
+![git Bash命令](https://sogrey.github.io/GithubPagePics/imgs/2017-01-09_161000.jpg)
 完成之后会在D盘会创建一个Hexo目录
-![Hexo目录](https://sogrey.github.io/pics/2017-01-09_161345.jpg)
+![Hexo目录](https://sogrey.github.io/GithubPagePics/imgs/2017-01-09_161345.jpg)
 建站可参考[建站|Hexo](https://hexo.io/zh-cn/docs/setup.html)
 
 **特别提示：如何与 Github pages 进行关联:**
@@ -59,9 +59,9 @@ Hexo 安装好了之后，就开始进行建站。cmd打开终端 cd 到指定�
 	hexo clean
 	hexo g #作用同 hexo generate
 	hexo s #作用同 hexo server
-![Hexo 本地发布](https://sogrey.github.io/pics/2017-01-09_161613.jpg)
+![Hexo 本地发布](https://sogrey.github.io/GithubPagePics/imgs/2017-01-09_161613.jpg)
 命令详解，`hexo clean`是清除缓存，`hexo g`是生成本地发布文件夹，`hexo s`启动本地服务并发布，发布成功之后浏览器查看[http://localhost:4000/](http://localhost:4000/)
-![Hexo 本地发布](https://sogrey.github.io/pics/2017-01-09_161808.jpg)
+![Hexo 本地发布](https://sogrey.github.io/GithubPagePics/imgs/2017-01-09_161808.jpg)
 
 如需停止本地服务，命令行按 `ctrl+c`
 
@@ -81,7 +81,7 @@ Hexo 命令参考[官方文档](https://hexo.io/zh-cn/docs/commands.html)
 > SSL certificate problem: unable to get local issuer certificate
 >
 > 可以 先执行`git config --global http.sslVerfiy false` 
-    
+
 
 到此，就可以到github pages去查看上传的页面了。Good lock!
 

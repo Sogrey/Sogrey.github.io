@@ -10,7 +10,7 @@ categories: HEXO博客
 > 
 > 经过前两篇我已经搭建好了一个简单的HEXO博客，目前使用的是主题是`yelog`,`yelog`是基于`yelee`修改而来，在页面的左半边是博主的信息，中间部分有个菜单，依次是`主页`、`所有文章`、`标签云`和`关于我`，博客搭建起来的时候`主页`和`所有文章`已经生效可以直接使用了，至于`标签云`和`关于我`这两个页面还并未创建，这节就来创建它们。
 
-![yelog Menu](https://sogrey.github.io/pics/2017-01-11_171158.jpg)
+![yelog Menu](https://sogrey.github.io/GithubPagePics/imgs/2017-01-11_171158.jpg)
 
 <!-- more -->
 
@@ -59,7 +59,7 @@ categories: HEXO博客
 
 这样标签云页面已经创建好了，部署试一下：
 
-![标签云页面](https://sogrey.github.io/pics/2017-01-11_180103.jpg)
+![标签云页面](https://sogrey.github.io/GithubPagePics/imgs/2017-01-11_180103.jpg)
 
 # 3 创建`关于我`页面
 创建`关于我`页面和`标签云`页面步骤一样；输入命令：
@@ -77,7 +77,7 @@ categories: HEXO博客
 
 部署，预览页面：
 
-![关于我](https://sogrey.github.io/pics/2017-01-11_180604.jpg)
+![关于我](https://sogrey.github.io/GithubPagePics/imgs/2017-01-11_180604.jpg)
 
 到此两个页面都已创建完成，可以发布到github或coding了。另外我自己添加了[更新日志](https://sogrey.github.io/logs/)页面，有兴趣的也可以自己创建一个，方法与上面创建`关于我`一样。
 

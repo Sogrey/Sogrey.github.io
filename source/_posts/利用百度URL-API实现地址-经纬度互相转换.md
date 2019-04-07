@@ -25,7 +25,7 @@ http://api.map.baidu.com/geocoder/v2/?address=西安市&output=json&mcode=70:FE:
 * ak 是你在百度申请的应用的key
 
 
-![百度应用ak.png](https://sogrey.github.io/pics/百度应用ak.png)
+![百度应用ak.png](https://sogrey.github.io/GithubPagePics/imgs/百度应用ak.png)
 
 
 返回：
@@ -158,4 +158,4 @@ renderReverse&&renderReverse({
 API是免费的，但有使用上限。上面接口的使用指南可查看。
 
 
-![百度api使用限制.png](https://sogrey.github.io/pics/百度api使用限制.png)
+![百度api使用限制.png](https://sogrey.github.io/GithubPagePics/imgs/百度api使用限制.png)

@@ -8,7 +8,7 @@ categories: HEXO博客
 > [Hexo博客基于主题Yelee(yelog) 添加“标签云”和“关于我”菜单项页面](https://sogrey.github.io/article/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E4%BA%8E%E4%B8%BB%E9%A2%98Yelee-yelog-%E6%B7%BB%E5%8A%A0%E2%80%9C%E6%A0%87%E7%AD%BE%E4%BA%91%E2%80%9D%E5%92%8C%E2%80%9C%E5%85%B3%E4%BA%8E%E6%88%91%E2%80%9D%E8%8F%9C%E5%8D%95%E9%A1%B9%E9%A1%B5%E9%9D%A2/)
 > 
 > 经过上一节，我已经添加了“标签云”和“关于我”等页面，但是回到标签云页面，我们看到页面上显示`已有0个分类，共计10个标签`，那么这个文章分类该怎么添加?这就是这节要讲的，也算是对上一篇的补充。
-> ![标签云页面](https://sogrey.github.io/pics/2017-01-11_180103.jpg)
+> ![标签云页面](https://sogrey.github.io/GithubPagePics/imgs/2017-01-11_180103.jpg)
 
 <!-- more -->
 
@@ -61,6 +61,6 @@ categories: HEXO博客
 > 注：文章标签可以添加多个，分类却只能有一个，设置多个只有第一个生效。
 
 此时文章列表上就多了文章分类了，也可以再到`标签云`页面查看：
-![分类](https://sogrey.github.io/pics/2017-01-12_110538.jpg)
+![分类](https://sogrey.github.io/GithubPagePics/imgs/2017-01-12_110538.jpg)
 
 Good luck!

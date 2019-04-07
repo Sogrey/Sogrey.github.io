@@ -58,7 +58,7 @@ categories: Android
       3. 对设计的要求更高，不同icon可能拥有不同的边距，这时要切换icon时还要设置大小 
       4. 由于边距的存在可能存在无法填满控件的情况 
       5. 无法在Android studio中进行实时预览
-      
+
 iconfont对于客户端应用来说有很多便捷：
 
       1. 自由变化大小
@@ -74,45 +74,48 @@ icon font字体文件来源很多，我这里列出两个（在文章尾[参考#
 # 4 在Android项目中使用
 ## 4.1 新建Android项目
 打开Android studio新建一个Android项目，我新建一个包名为`org.sogrey.iconfont.demo`的应用，具体新建步骤就不赘述了。另再新建一个Module包名为`org.sogrey.iconfont`的库应用，结构如下：
-![新建Android项目](https://sogrey.github.io/pics/2017-01-17_001301.jpg)
+![新建Android项目](https://sogrey.github.io/GithubPagePics/imgs/2017-01-17_001301.jpg)
+
 ## 4.2 在库应用中引入`.ttf`字体
 在库应用中引入`.ttf`字体，放在`assets`文件夹下，新建java类`IconFontTextView`继承自`android.widget.TextView`,结构如下：
 
-![在库应用中引入`.ttf`字体](https://sogrey.github.io/pics/2017-01-17_002541.jpg)
+![在库应用中引入`.ttf`字体](https://sogrey.github.io/GithubPagePics/imgs/2017-01-17_002541.jpg)
 
 IconFontTextView.java代码：
 
-	package org.sogrey.iconfont;
-	
-	import android.content.Context;
-	import android.graphics.Typeface;
-	import android.util.AttributeSet;
-	import android.widget.TextView;
+```java
+package org.sogrey.iconfont;
 
-	/**
-	 * 适用于fontawesome的字体TextView
-	 * Created by Sogrey on 2017/1/17.
-	 */
-	
-	public class IconFontTextView extends TextView {
-	    public IconFontTextView(Context context) {
-	        this(context,null);
-	    }
-	
-	    public IconFontTextView(Context context, AttributeSet attrs) {
-	        this(context, attrs,0);
-	    }
-	
-	    public IconFontTextView(Context context, AttributeSet attrs, int defStyleAttr) {
-	        super(context, attrs, defStyleAttr);
-	        init(context, attrs, defStyleAttr);
-	    }
-	
-	    private void init(Context context, AttributeSet attrs, int defStyleAttr) {
-	        Typeface iconfont = Typeface.createFromAsset(context.getAssets(), "fontawesome-webfont.ttf");
-	        this.setTypeface(iconfont);
-	    }
-	}
+import android.content.Context;
+import android.graphics.Typeface;
+import android.util.AttributeSet;
+import android.widget.TextView;
+
+/**
+ * 适用于fontawesome的字体TextView
+ * Created by Sogrey on 2017/1/17.
+ */
+
+public class IconFontTextView extends TextView {
+    public IconFontTextView(Context context) {
+        this(context,null);
+    }
+
+    public IconFontTextView(Context context, AttributeSet attrs) {
+        this(context, attrs,0);
+    }
+
+    public IconFontTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(context, attrs, defStyleAttr);
+    }
+
+    private void init(Context context, AttributeSet attrs, int defStyleAttr) {
+        Typeface iconfont = Typeface.createFromAsset(context.getAssets(), "fontawesome-webfont.ttf");
+        this.setTypeface(iconfont);
+    }
+}
+```
 
 ## 4.3 在Application中使用
 下面就正式来使用icon font了，在app的build.gradle中引用刚刚的IconFont库：
@@ -121,25 +124,27 @@ IconFontTextView.java代码：
 
 activity_main.xml布局中放几个`IconFontTextView`,其string属性设置为以`&#`开头的字符串，以通讯录图标为例:
 
-![通讯录图标icon font](https://sogrey.github.io/pics/2017-01-17_003852.jpg)
+![通讯录图标icon font](https://sogrey.github.io/GithubPagePics/imgs/2017-01-17_003852.jpg)
 
 前面的图标就是最终要实现的效果，`fa-address-book`用在html标签的class类属性中，而我们要用的是后面放括弧中的`&#xf2b9;`。
 
 xml布局文件：
 
-    <org.sogrey.iconfont.IconFontTextView
-        android:id="@+id/text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="&#xf2b9; 通讯录" />
+```xml
+<org.sogrey.iconfont.IconFontTextView
+    android:id="@+id/text1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="&#xf2b9; 通讯录" />
+```
 
 编译运行即可看到效果。
 
-![运行效果](https://sogrey.github.io/pics/2017-01-17_005941.jpg)
+![运行效果](https://sogrey.github.io/GithubPagePics/imgs/2017-01-17_005941.jpg)
 
 预览一下全部图标：
 
-![预览一下全部图标](https://sogrey.github.io/pics/2017-01-17_010816.jpg)
+![预览一下全部图标](https://sogrey.github.io/GithubPagePics/imgs/2017-01-17_010816.jpg)
 
 附：在[https://icomoon.io/app](https://icomoon.io/app)可定制你需要的图标打包成字体文件下载引用，具体方法可参考[如何在Android使用图标字体？](http://blog.csdn.net/ruihanchen/article/details/50032841)。
 
