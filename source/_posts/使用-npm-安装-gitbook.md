@@ -15,7 +15,7 @@ toc: true
 
 安装 `node.js`就不说了，去[官网](https://nodejs.org/en/download/)找到对应平台安装包安装即可。
 
-安装好`node.js`执行下面命令：
+安装好`node.js`，在终端命令行中执行下面命令：
 
 ``` bash
 $ npm install gitbook-cli -g

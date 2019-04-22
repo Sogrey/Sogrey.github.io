@@ -92,7 +92,22 @@ console.info("runoob")
 ``` js
 console.log("runoob")
 ```
+常见的占位符 `%o` (这是字母o，不是0)，它接受对象，`%s` 接受字符串，`%d` 表示小数或整数。
+
+``` js
+console.log('I like %s but I do not like %s.', 'Skittles', 'pus');
+```
+
+另一个有趣的是 `%c`，这可能与你所想不太相同，它实际上是CSS值的占位符。使用%c占位符时，对应的后面的参数必须是CSS语句，用来对输出内容进行CSS渲染。常见的输出方式有两种：`文字样式、图片输出`。
+
+``` js
+console.log('I am a %cbutton', 'color: white; background-color: orange; padding: 2px 5px; border-radius: 2px');
+```
+
+
+
 ### table() 
+
 将复合类型的数据转为表格显示。                      
 ``` js 
 var arr= [ 
