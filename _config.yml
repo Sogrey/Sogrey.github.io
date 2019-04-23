@@ -99,7 +99,7 @@ theme: yelog
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://sogrey:s0712090114@github.com/Sogrey/Sogrey.github.io.git
+  repository: https://github.com/Sogrey/Sogrey.github.io.git
   branch: master
 #RSS订阅
 plugin:
