@@ -30,6 +30,7 @@ if %lc%==q goto e
 pause
 
 :init
+start npm install -g hexo-cli
 start npm install
 goto start
 
