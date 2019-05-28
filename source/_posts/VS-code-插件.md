@@ -8,6 +8,9 @@ toc: true
 ---
 
 VS CODE 插件收集
+
+> <https://sogrey.github.io/Plug-in/>
+
 <!-- more -->
 
 * 1. live-server 编辑浏览html网页
