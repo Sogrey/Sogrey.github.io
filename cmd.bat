@@ -3,13 +3,13 @@ COLOR 2
 title Sogrey.github.io
 mode con cols=35 lines=30
 :start
-echo ~
-echo ~
+echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 echo HEXO 编译发布程序 
 echo %DATE% %TIME%
 echo by：Sogrey
 echo https://sogrey.github.io/
-echo ~
+echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 echo 请选择：
 echo =================================
 echo 【0】 初始化
