@@ -9,7 +9,7 @@ toc: true
 
 VS CODE 插件收集
 
-> <https://sogrey.github.io/Plug-in/>
+> 已整理到：<https://sogrey.github.io/Plug-in/>
 
 <!-- more -->
 
