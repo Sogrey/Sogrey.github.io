@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>https://sogrey.github.io/tags/Android/</loc>
+        <lastmod>2019-10-11T01:50:53.450Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://sogrey.github.io/tags/VS-code/</loc>
         <lastmod>2019-06-11T04:54:24.429Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -109,13 +116,6 @@
 
     <url>
         <loc>https://sogrey.github.io/tags/JCenter/</loc>
-        <lastmod>2019-04-07T09:34:15.769Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/tags/Android/</loc>
         <lastmod>2019-04-07T09:34:15.769Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

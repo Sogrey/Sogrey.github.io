@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://sogrey.github.io/article/Android%E7%89%88%E6%9C%AC%E5%92%8CAPI-Level%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB/</loc>
+        <lastmod>2019-10-11T01:50:53.450Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://sogrey.github.io/article/VS-code-%E6%8F%92%E4%BB%B6/</loc>
         <lastmod>2019-06-11T04:54:24.429Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -218,14 +226,6 @@
     <url>
         <loc>https://sogrey.github.io/article/Activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F-lauchMode/</loc>
         <lastmod>2019-01-15T07:41:12.694Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/article/Android%E7%89%88%E6%9C%AC%E5%92%8CAPI-Level%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB/</loc>
-        <lastmod>2018-12-17T09:32:00.503Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

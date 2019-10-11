@@ -8,6 +8,13 @@
     </url>
 
     <url>
+        <loc>https://sogrey.github.io/categories/Android/</loc>
+        <lastmod>2019-10-11T01:50:53.450Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://sogrey.github.io/categories/VS-code/</loc>
         <lastmod>2019-06-11T04:54:24.429Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -66,13 +73,6 @@
     <url>
         <loc>https://sogrey.github.io/categories/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE/</loc>
         <lastmod>2019-04-07T09:37:29.492Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/categories/Android/</loc>
-        <lastmod>2019-04-07T09:34:15.769Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
