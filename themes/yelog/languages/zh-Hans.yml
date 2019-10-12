@@ -1,9 +1,14 @@
 # zh-Hans: Chinese (Simplified) 大陆简体
 index:
   menu: 菜单
-  tags: 标签
+  home: 主页
+  archives: 所有文章
+  tags: 标签云
   friends: 友情链接
   about: 关于我
+  logs: 更新日志
+  playlist: 歌单
+  license: License
   more: 阅读全文
   copy: 复制
 

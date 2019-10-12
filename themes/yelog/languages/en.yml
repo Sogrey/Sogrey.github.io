@@ -1,9 +1,14 @@
 # en: English
 index:
   menu: Menu
+  home: Home
+  archives: Archives
   tags: Tags
   friends: Friends
   about: About Me
+  logs: Logs
+  playlist: Playlist
+  license: License
   more: more
   copy: Copy
 
