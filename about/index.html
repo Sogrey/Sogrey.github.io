@@ -273,7 +273,8 @@
 <!--aplayer-->
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-<div id="aplayer" style="position:absolute;left:0;bottom:0;"></div>
+<style>.aplayer.aplayer-fixed .aplayer-body{width: 270px;max-width: 270px !important;}.aplayer .aplayer-body {width: 280px;}</style>
+<div id="aplayer" style="position:fixed;left:0;bottom:0;"></div>
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
 <script>  
@@ -289,7 +290,8 @@
     mutex: true, //互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
     lrcType: 3, //歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式）
     volume: 0.7, //默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
-    fixed: false, //吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
+    fixed: false,
+    mini:false, 	//吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
     audio: [{
         name: '我和我的祖国',
         artist: '中央乐团合唱团',

@@ -3075,3 +3075,6 @@ body {
   background: #4d4d4d;
   font-size: 0.8em;
 }
+#header .switch-area {
+  margin-bottom: 100px;
+}
