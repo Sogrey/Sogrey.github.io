@@ -3077,4 +3077,6 @@ body {
 }
 #header .switch-area {
   margin-bottom: 100px;
+  width: 120%;
+  margin-left: -10%;
 }
