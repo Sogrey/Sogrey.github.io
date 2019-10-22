@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://sogrey.github.io/article/VS-code-%E6%8F%92%E4%BB%B6/</loc>
+        <lastmod>2019-10-21T04:14:06.761Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://sogrey.github.io/article/%E2%80%9C-%E8%AF%97%E6%AD%8C-%E5%8D%83%E5%8F%A4%E5%B2%90%E5%B1%B1/</loc>
         <lastmod>2019-10-12T16:27:31.851Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -18,14 +26,6 @@
     <url>
         <loc>https://sogrey.github.io/article/Android%E7%89%88%E6%9C%AC%E5%92%8CAPI-Level%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB/</loc>
         <lastmod>2019-10-11T01:50:53.450Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/article/VS-code-%E6%8F%92%E4%BB%B6/</loc>
-        <lastmod>2019-06-11T04:54:24.429Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
