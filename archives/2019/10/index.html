@@ -15,18 +15,16 @@
 
 
 
-<meta name="description" content="Android TextView实现文字跑马灯效果有两种办法： 1、 TextView的Text值赋值后不更改，很多帖子上说如下写法就可以生效： 123456789101112&amp;lt;TextView    android:id=&quot;@+id/music_name_tv&quot;    android:layout_width=&quot;match_parent&quot;    android:layout_height=">
-<meta name="keywords" content="Android,marquee">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Android中TextView属性ellipsize=marquee不生效的解决办法">
-<meta property="og:url" content="https://sogrey.github.io/article/Android-TextView属性android-ellipsize-marquee不生效的解决办法/index.html">
+<meta name="description" content="必须努力，付出不亚于任何人努力">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sogrey">
+<meta property="og:url" content="https://sogrey.github.io/archives/2019/10/index.html">
 <meta property="og:site_name" content="Sogrey">
-<meta property="og:description" content="Android TextView实现文字跑马灯效果有两种办法： 1、 TextView的Text值赋值后不更改，很多帖子上说如下写法就可以生效： 123456789101112&amp;lt;TextView    android:id=&quot;@+id/music_name_tv&quot;    android:layout_width=&quot;match_parent&quot;    android:layout_height=">
+<meta property="og:description" content="必须努力，付出不亚于任何人努力">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-26T16:10:29.559Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android中TextView属性ellipsize=marquee不生效的解决办法">
-<meta name="twitter:description" content="Android TextView实现文字跑马灯效果有两种办法： 1、 TextView的Text值赋值后不更改，很多帖子上说如下写法就可以生效： 123456789101112&amp;lt;TextView    android:id=&quot;@+id/music_name_tv&quot;    android:layout_width=&quot;match_parent&quot;    android:layout_height=">
+<meta name="twitter:title" content="Sogrey">
+<meta name="twitter:description" content="必须努力，付出不亚于任何人努力">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Android中TextView属性ellipsize=marquee不生效的解决办法 | Sogrey</title>
+<title>Archives: 2019/10 | Sogrey</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -68,8 +66,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
-        isArchive: false,
+        isPost: false,
+        isArchive: true,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -382,208 +380,59 @@
     </div>
     <link class="menu-list" tags="标签云" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-Android-TextView属性android-ellipsize-marquee不生效的解决办法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/article/Android-TextView属性android-ellipsize-marquee不生效的解决办法/" class="article-date">
-      <time datetime="2018-03-26T10:35:54.000Z" itemprop="datePublished">2018-03-26</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/article/Android-Studio开发组件化App遇到的问题/" class="archive-article-date">
+      <time datetime="2019-10-30T03:38:40.000Z" itemprop="datePublished">10-30</time>
 </a>
 
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Android中TextView属性ellipsize=marquee不生效的解决办法
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/article/Android-Studio开发组件化App遇到的问题/">Android Studio开发组件化App遇到的问题</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
+        <div class="article-info info-on-archive">
+          
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/Android/">Android</a>
     </div>
 
 
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/marquee/">marquee</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
           
-        <p>Android TextView实现文字跑马灯效果有两种办法：</p>
-<p>1、 TextView的Text值赋值后不更改，很多帖子上说如下写法就可以生效：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">"@+id/music_name_tv"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:ellipsize</span>=<span class="string">"marquee"</span>   【必须】</span></span><br><span class="line"><span class="tag">    <span class="attr">android:focusable</span>=<span class="string">"true"</span>      【必须】</span></span><br><span class="line"><span class="tag">    <span class="attr">android:focusableInTouchMode</span>=<span class="string">"true"</span> 【必须】</span></span><br><span class="line"><span class="tag">    <span class="attr">android:lines</span>=<span class="string">"1"</span>              【必须】</span></span><br><span class="line"><span class="tag">    <span class="attr">android:text</span>=<span class="string">"我的中国心我的中国心我的中国心我的中国心我的中国心我的中国心我的中国心我的中国心我的中国心xxxx"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:textColor</span>=<span class="string">"@color/colorAccent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:textSize</span>=<span class="string">"15sp"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>2、 TextView的文字动态赋值，这个时候直接写在布局Xml里面已经不生效了，需要先给TextView赋值，然后再在代码里面重新把属性设置一遍(亲试可行)：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setTextMarquee</span><span class="params">(TextView textView)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (textView != <span class="keyword">null</span>) &#123;</span><br><span class="line">          textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);</span><br><span class="line">          textView.setSingleLine(<span class="keyword">true</span>);</span><br><span class="line">          textView.setSelected(<span class="keyword">true</span>);</span><br><span class="line">          textView.setFocusable(<span class="keyword">true</span>);</span><br><span class="line">          textView.setFocusableInTouchMode(<span class="keyword">true</span>);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>建议第二种。</p>
-
-      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
     </div>
-    
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/article/Android-TextView属性android-ellipsize-marquee不生效的解决办法/">Android中TextView属性ellipsize=marquee不生效的解决办法</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
-        <p><span>发布时间:</span>2018-03-26, 18:35:54</p>
-        <p><span>最后更新:</span>2018-03-27, 00:10:29</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/article/Android-TextView属性android-ellipsize-marquee不生效的解决办法/" title="Android中TextView属性ellipsize=marquee不生效的解决办法">https://sogrey.github.io/article/Android-TextView属性android-ellipsize-marquee不生效的解决办法/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/Android-TextView属性android-ellipsize-marquee不生效的解决办法/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/article/Android获取view宽高的三种方式/">
-                    Android获取view宽高的三种方式
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/article/关于Android程序使用KSoap2调用Webservice运行不成功的问题/">
-                    关于Android程序使用KSoap2调用Webservice运行不成功的问题
-                </a>
-            </div>
-        
-    </nav>
-
-  
 </article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-
-
-    
-
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/article/Android获取view宽高的三种方式/" title="上一篇: Android获取view宽高的三种方式">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/article/关于Android程序使用KSoap2调用Webservice运行不成功的问题/" title="下一篇: 关于Android程序使用KSoap2调用Webservice运行不成功的问题">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/article/Android-Studio开发组件化App遇到的问题/">Android Studio开发组件化App遇到的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/git-clone-解决Permission-Denied-publickey-问题/">git clone 解决Permission Denied (publickey)问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/node-js调试/">node.js调试</a></li><li class="post-list-item"><a class="post-list-link" href="/article/端口被占用-干掉它/">端口被占用，干掉它</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JS中apply-与call-的区别/">JS中apply()与call()的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/前端调试之把玩console/">前端调试之把玩console</a></li><li class="post-list-item"><a class="post-list-link" href="/article/you-get/">下载神器 you-get</a></li><li class="post-list-item"><a class="post-list-link" href="/article/“-诗歌-千古岐山/">[诗歌]千古岐山</a></li><li class="post-list-item"><a class="post-list-link" href="/article/使用-npm-安装-gitbook/">使用 npm 安装 gitbook</a></li><li class="post-list-item"><a class="post-list-link" href="/article/再见2018，你好2019/">再见2018，你好2019</a></li><li class="post-list-item"><a class="post-list-link" href="/article/一张图弄懂开源协议-GPL、BSD、MIT、Mozilla、Apache和LGPL-之间的差别/">一张图弄懂开源协议-GPL、BSD、MIT、Mozilla、Apache和LGPL 之间的差别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Activity启动模式-lauchMode/">Activity启动模式(lauchMode)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Java对象转json时空值-null-处理/">Java对象转json时空值(null)处理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android版本和API-Level对应关系/">Android版本和API Level对应关系</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Flutter 路由跳转/">Flutter 路由跳转</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android 动态调用外部jar&dex/">Android 动态调用外部jar/dex</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JNI Md5加密生成so文件/">JNI Md5加密生成so文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/PE装机，开机设置启动项快捷键/">pe装机，开机设置启动项快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/article/VS-code-插件/">VS code 插件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/遍历Map的四种方法/">遍历Map的四种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/15种CSS居中方式/">15种CSS居中方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/利用百度URL-API实现地址-经纬度互相转换/">利用百度URL API实现地址与经纬度互相转换</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android获取view宽高的三种方式/">Android获取view宽高的三种方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-TextView属性android-ellipsize-marquee不生效的解决办法/">Android中TextView属性ellipsize=marquee不生效的解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/关于Android程序使用KSoap2调用Webservice运行不成功的问题/">关于Android程序使用KSoap2调用Webservice运行不成功的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo-添加-Gitment-评论/">Hexo 添加 Gitment 评论</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-Webview-内容自适应高度/">Android Webview 内容自适应高度</a></li><li class="post-list-item"><a class="post-list-link" href="/article/java实现定时任务的三种方法/">java实现定时任务的三种方法(收集)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Java读取文件夹大小的6种方法（收集）/">Java读取文件夹大小的6种方法（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/json转树状结构（收集）/">json转树状结构（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/一行  JavaScript 代码（收集）/">一行  JavaScript 代码（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo建站过程中遇到的问题（填坑）/">Hexo建站过程中遇到的问题（填坑篇）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-library-发布到-JCenter/">Android library 发布到 JCenter</a></li><li class="post-list-item"><a class="post-list-link" href="/article/正则表达式匹配汇集/">正则表达式匹配汇集</a></li><li class="post-list-item"><a class="post-list-link" href="/article/技术文章之Html（CSS-JS）/">技术文章之Html（CSS，JS）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/技术文章之Android/">技术文章之Android</a></li><li class="post-list-item"><a class="post-list-link" href="/article/web-app相关整理/">web app相关整理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/微信小程序初印象【整理】/">微信小程序初印象【整理】</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Webp的探究之路/">Webp的探究之路</a></li><li class="post-list-item"><a class="post-list-link" href="/article/android中使用icon-fonts字体图标/">android中使用icon fonts字体图标</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android混淆签名（上）/">Android混淆签名(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android混淆签名（下）/">Android混淆签名(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/我收集的一些开源项目/">我收集的一些开源项目</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Git常用命令/">Git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo博客基于主题Yelee-yelog-添加文章分类/">Hexo博客基于主题Yelee(yelog) 添加文章分类</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo博客基于主题Yelee-yelog-添加“标签云”和“关于我”菜单项页面/">Hexo博客基于主题Yelee(yelog) 添加“标签云”和“关于我”菜单项页面</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Html5-PPT/">Html5 PPT</a></li><li class="post-list-item"><a class="post-list-link" href="/article/如何在Github-Pages搭建个人独立主页？/">如何在Github Pages搭建个人独立主页？</a></li><li class="post-list-item"><a class="post-list-link" href="/article/我是如何用hexo搭建github-pages/">我是如何用hexo搭建github pages</a></li><li class="post-list-item"><a class="post-list-link" href="/article/hello-world/">Hello World</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
-
-
-<!--gitment 评论-->
-
-  <div class="comments" id="comments">
   
-	<!--汉化-->
-    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-	<script src="https://billts.site/js/gitment.js"></script>
-	<!--原型-->
-	<!--
-	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js" type="text/javascript"></script>
-	-->
-	
-      <div id="gitmentContainer" style="margin-bottom: -19px;"></div>
-     
-      <style>
-        .gitment-container a {
-          border: none;
-        }
-        .comments {
-          margin: 60px 0 0;padding: 0 60px;
-        }
-		@media screen and (max-width:1040px) {
-		   .comments {
-			  padding: 0 30px;
-			}
-		}
-		/**gitment 默认样式覆盖*/
-		.gitment-comment-header{background-color: #ffffff00 !important;}
-		.gitment-editor-main::before, .gitment-comment-main::before{border-right-color: #7EA4CA !important;}
-      </style>
-     
-      <script type="text/javascript">
-        var gitment = new Gitment({
-			  id: 'Android中TextView属性ellipsize=marquee不生效的解决办法',
-			  title: 'Android中TextView属性ellipsize=marquee不生效的解决办法',
-			  owner: 'Sogrey',
-			  repo: 'Sogrey.github.io',
-			  oauth: {
-				client_id: '582650733e15427a208c',
-				client_secret: 'd33a2a845fa25544ba0406168c9b42fc0f34acae'
-			  }
-        })
-        gitment.render('gitmentContainer')
-      </script>
+  
+    </div></section>
+  
+
     
-  </div>
-
-<!--gitment 评论 end-->
-
 
 </div>
       <footer id="footer">
