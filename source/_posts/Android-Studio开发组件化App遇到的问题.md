@@ -27,7 +27,7 @@ Then try to build the application again.
 
 Click on the button:`Sync Project with Gradle Files`
 
-### Solution 3 (help me)
+### Solution 3 (helpful for me)
 
 1- close the project
 
@@ -38,3 +38,10 @@ Click on the button:`Sync Project with Gradle Files`
 4- delete all `.iml` files
 
 5- open `Android Studio` IDE and import the project
+
+|                                                              |      |      |
+| ------------------------------------------------------------ | ---- | ---- |
+| ![](https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/Sync-Project-with-Gradle-Files-1.jpg) | ![](https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/Sync-Project-with-Gradle-Files-2.jpg)     | ![](https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/Sync-Project-with-Gradle-Files-3.jpg)     |
+
+
+
