@@ -15,21 +15,21 @@
 
 
 
-<meta name="description" content="由于项目需求，需要开发组件化App，开发过程中遇到些问题，特此记录，以防再遇。 Q1 Compilation is not supported for following modules: module1, module2, module3. Unfortunately you can’t have non-Gradle Java modules and Android-Gradle module">
+<meta name="description" content="由于项目需求，需要开发组件化App，开发过程中遇到些问题，特此记录，以防再遇。 Q1 Compilation is not supported for following modules Compilation is not supported for following modules: module1, module2, module3. Unfortunately you can’t hav">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android Studio开发组件化App遇到的问题">
 <meta property="og:url" content="https://sogrey.github.io/article/Android-Studio开发组件化App遇到的问题/index.html">
 <meta property="og:site_name" content="Sogrey">
-<meta property="og:description" content="由于项目需求，需要开发组件化App，开发过程中遇到些问题，特此记录，以防再遇。 Q1 Compilation is not supported for following modules: module1, module2, module3. Unfortunately you can’t have non-Gradle Java modules and Android-Gradle module">
+<meta property="og:description" content="由于项目需求，需要开发组件化App，开发过程中遇到些问题，特此记录，以防再遇。 Q1 Compilation is not supported for following modules Compilation is not supported for following modules: module1, module2, module3. Unfortunately you can’t hav">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/Sync-Project-with-Gradle-Files-1.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/Sync-Project-with-Gradle-Files-2.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/Sync-Project-with-Gradle-Files-3.jpg">
-<meta property="og:updated_time" content="2019-11-22T12:45:07.867Z">
+<meta property="og:updated_time" content="2019-11-22T12:52:16.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Studio开发组件化App遇到的问题">
-<meta name="twitter:description" content="由于项目需求，需要开发组件化App，开发过程中遇到些问题，特此记录，以防再遇。 Q1 Compilation is not supported for following modules: module1, module2, module3. Unfortunately you can’t have non-Gradle Java modules and Android-Gradle module">
+<meta name="twitter:description" content="由于项目需求，需要开发组件化App，开发过程中遇到些问题，特此记录，以防再遇。 Q1 Compilation is not supported for following modules Compilation is not supported for following modules: module1, module2, module3. Unfortunately you can’t hav">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/Sync-Project-with-Gradle-Files-1.jpg">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -435,7 +435,7 @@
       
           
         <p>由于项目需求，需要开发组件化App，开发过程中遇到些问题，特此记录，以防再遇。</p>
-<h2 id="Q1"><a href="#Q1" class="headerlink" title="Q1"></a>Q1</h2><blockquote>
+<h2 id="Q1-Compilation-is-not-supported-for-following-modules"><a href="#Q1-Compilation-is-not-supported-for-following-modules" class="headerlink" title="Q1 Compilation is not supported for following modules"></a>Q1 Compilation is not supported for following modules</h2><blockquote>
 <p>Compilation is not supported for following modules: module1, module2, module3. Unfortunately you can’t have non-Gradle Java modules and Android-Gradle modules in one project.</p>
 </blockquote>
 <p>提示以上信息，当然其中的<code>module1, module2, module3</code>是我举例，实际会报告项目中的<code>mudule</code>的名字。</p>
@@ -464,22 +464,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="Q2"><a href="#Q2" class="headerlink" title="Q2"></a>Q2</h2><blockquote>
-<p>依赖重复问题</p>
-</blockquote>
-<p>一般组件化项目会有一个<code>baselibrary</code>的基础依赖库，基础组件中的依赖jar包,不能使用<code>implementation</code>,要使用<code>api</code>,比如Gson:</p>
+<h2 id="Q2-依赖重复问题"><a href="#Q2-依赖重复问题" class="headerlink" title="Q2  依赖重复问题"></a>Q2  依赖重复问题</h2><p>一般组件化项目会有一个<code>baselibrary</code>的基础依赖库，基础组件中的依赖jar包,不能使用<code>implementation</code>,要使用<code>api</code>,比如Gson:</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">api <span class="string">'com.google.code.gson:gson:2.8.2'</span></span><br></pre></td></tr></table></figure>
-<h2 id="Q3"><a href="#Q3" class="headerlink" title="Q3"></a>Q3</h2><blockquote>
-<p>运行后手机上出现多个icon</p>
-</blockquote>
-<p>所有可能成为library的组件,都要改集成运行时的清单文件,否则还是会出问题</p>
+<h2 id="Q3-运行后手机上出现多个icon"><a href="#Q3-运行后手机上出现多个icon" class="headerlink" title="Q3  运行后手机上出现多个icon"></a>Q3  运行后手机上出现多个icon</h2><p>所有可能成为library的组件,都要改集成运行时的清单文件,否则还是会出问题</p>
 <p>参考<a href="https://blog.csdn.net/u010899138/article/details/53516400" target="_blank" rel="noopener">这里</a></p>
-<h2 id="Q4"><a href="#Q4" class="headerlink" title="Q4"></a>Q4</h2><blockquote>
-<p>依赖库版本号统一</p>
-</blockquote>
-<p>参考<a href="https://blog.csdn.net/gao_chun/article/details/58105089" target="_blank" rel="noopener">这里</a></p>
-<h2 id="Q5"><a href="#Q5" class="headerlink" title="Q5"></a>Q5</h2><p>多个ModuleApplication共存问题</p>
-<blockquote>
+<h2 id="Q4-依赖库版本号统一"><a href="#Q4-依赖库版本号统一" class="headerlink" title="Q4 依赖库版本号统一"></a>Q4 依赖库版本号统一</h2><p>参考<a href="https://blog.csdn.net/gao_chun/article/details/58105089" target="_blank" rel="noopener">这里</a></p>
+<h2 id="Q5-多个ModuleApplication共存问题"><a href="#Q5-多个ModuleApplication共存问题" class="headerlink" title="Q5 多个ModuleApplication共存问题"></a>Q5 多个ModuleApplication共存问题</h2><blockquote>
 <p>Execution failed for task ‘:app:processDebugManifest’.<br>Manifest merger failed : Attribute application@name value=(com.baseres.BaseApplication) from AndroidManifest.xml:8:9-51<br>   is also present at [:carcomponent] AndroidManifest.xml:14:9-55 value=(com.carcomponent.CarApplication).<br>   Suggestion: add ‘tools:replace=”android:name”‘ to <application> element at AndroidManifest.xml:7:5-24:19 to override.</application></p>
 </blockquote>
 <p>自定义 Application 需要声明在 AndroidManifest.xml 中。其次，每个 Module 都有该清单文件，但是最终的 APK 文件只能包含一个。因此，在构建应用时，Gradle 构建会将所有清单文件合并到一个封装到 APK 的清单文件中。</p>
@@ -497,7 +487,7 @@
         <p><span>本文标题:</span><a href="/article/Android-Studio开发组件化App遇到的问题/">Android Studio开发组件化App遇到的问题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
         <p><span>发布时间:</span>2019-10-30, 11:38:40</p>
-        <p><span>最后更新:</span>2019-11-22, 20:45:07</p>
+        <p><span>最后更新:</span>2019-11-22, 20:52:16</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/article/Android-Studio开发组件化App遇到的问题/" title="Android Studio开发组件化App遇到的问题">https://sogrey.github.io/article/Android-Studio开发组件化App遇到的问题/</a>
             <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/Android-Studio开发组件化App遇到的问题/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -527,7 +517,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Q1"><span class="toc-text">Q1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution-1"><span class="toc-text">Solution 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution-2"><span class="toc-text">Solution 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution-3-helpful-for-me"><span class="toc-text">Solution 3 (helpful for me)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q2"><span class="toc-text">Q2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q3"><span class="toc-text">Q3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q4"><span class="toc-text">Q4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q5"><span class="toc-text">Q5</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Q1-Compilation-is-not-supported-for-following-modules"><span class="toc-text">Q1 Compilation is not supported for following modules</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution-1"><span class="toc-text">Solution 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution-2"><span class="toc-text">Solution 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Solution-3-helpful-for-me"><span class="toc-text">Solution 3 (helpful for me)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q2-依赖重复问题"><span class="toc-text">Q2  依赖重复问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q3-运行后手机上出现多个icon"><span class="toc-text">Q3  运行后手机上出现多个icon</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q4-依赖库版本号统一"><span class="toc-text">Q4 依赖库版本号统一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q5-多个ModuleApplication共存问题"><span class="toc-text">Q5 多个ModuleApplication共存问题</span></a></li></ol>
         
     </div>
     <style>
