@@ -11,7 +11,7 @@ toc: true
 
 
 
-## Q1
+## Q1 Compilation is not supported for following modules
 
 > Compilation is not supported for following modules: module1, module2, module3. Unfortunately you can't have non-Gradle Java modules and Android-Gradle modules in one project.
 
@@ -45,9 +45,7 @@ Click on the button:`Sync Project with Gradle Files`
 | ------------------------------------------------------------ | ---- | ---- |
 | ![](https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/Sync-Project-with-Gradle-Files-1.jpg) | ![](https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/Sync-Project-with-Gradle-Files-2.jpg)     | ![](https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/Sync-Project-with-Gradle-Files-3.jpg)     |
 
-## Q2 
-
-> 依赖重复问题
+## Q2  依赖重复问题
 
 一般组件化项目会有一个`baselibrary`的基础依赖库，基础组件中的依赖jar包,不能使用`implementation`,要使用`api`,比如Gson:
 
@@ -55,23 +53,18 @@ Click on the button:`Sync Project with Gradle Files`
 api 'com.google.code.gson:gson:2.8.2'
 ```
 
-## Q3 
+## Q3  运行后手机上出现多个icon
 
-> 运行后手机上出现多个icon
 
 所有可能成为library的组件,都要改集成运行时的清单文件,否则还是会出问题
 
 参考[这里](https://blog.csdn.net/u010899138/article/details/53516400)
 
-## Q4
-
-> 依赖库版本号统一
+## Q4 依赖库版本号统一
 
 参考[这里](https://blog.csdn.net/gao_chun/article/details/58105089)
 
-## Q5
-
-多个ModuleApplication共存问题
+## Q5 多个ModuleApplication共存问题
 
 > Execution failed for task ':app:processDebugManifest'.
 > Manifest merger failed : Attribute application@name value=(com.baseres.BaseApplication) from AndroidManifest.xml:8:9-51
@@ -85,9 +78,3 @@ api 'com.google.code.gson:gson:2.8.2'
 `App Module` > `Library Module`
 
 参考[这里](https://www.jianshu.com/p/5ccc545596d4)
-
-
-
-
-
-
