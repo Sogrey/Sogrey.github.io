@@ -66,10 +66,10 @@ api 'com.google.code.gson:gson:2.8.2'
 
 ## Q5 多个ModuleApplication共存问题
 
-> Execution failed for task ':app:processDebugManifest'.
+> Execution failed for task `:app:processDebugManifest`.
 > Manifest merger failed : Attribute application@name value=(com.baseres.BaseApplication) from AndroidManifest.xml:8:9-51
 >    is also present at [:carcomponent] AndroidManifest.xml:14:9-55 value=(com.carcomponent.CarApplication).
->    Suggestion: add 'tools:replace="android:name"' to <application> element at AndroidManifest.xml:7:5-24:19 to override.
+>    Suggestion: add `tools:replace="android:name"` to `<application>` element at AndroidManifest.xml:7:5-24:19 to override.
 
 自定义 Application 需要声明在 AndroidManifest.xml 中。其次，每个 Module 都有该清单文件，但是最终的 APK 文件只能包含一个。因此，在构建应用时，Gradle 构建会将所有清单文件合并到一个封装到 APK 的清单文件中。
 

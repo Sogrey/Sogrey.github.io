@@ -44,6 +44,7 @@ copy baidu_verify_hTO3FZGPz7.html public\baidu_verify_hTO3FZGPz7.html
 copy README-master.md public\README.md
 copy weichat.html public\about\weichat.html
 copy sogrey.html public\about\sogrey.html
+copy mit.html public\about\mit.html
 start hexo s
 goto start
 
@@ -53,6 +54,7 @@ copy baidu_verify_hTO3FZGPz7.html public\baidu_verify_hTO3FZGPz7.html
 copy README-master.md public\README.md
 copy weichat.html public\about\weichat.html
 copy sogrey.html public\about\sogrey.html
+copy mit.html public\about\mit.html
 start hexo d
 goto start
 
