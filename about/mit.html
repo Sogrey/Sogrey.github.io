@@ -42,7 +42,7 @@ a:active { color:white; }
 <article>
 <img id="gravatar" style="width: 80px;" src="source/img/logo/sogrey-rectangle-black-xl.png" onerror="javascript:this.src='../img/logo/sogrey-rectangle-black-xl.png';"/>
 <h1>The MIT License (MIT)</h1>
-<p>Copyright © 2013-2019 Sogrey &lt;<a href="https://sogrey.github.io">https://sogrey.github.io</a>&gt;</p>
+<p>Copyright © 2013-<span id="thisYear"></span> Sogrey &lt;<a href="https://sogrey.github.io">https://sogrey.github.io</a>&gt;</p>
   
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the “Software”), to deal
@@ -65,7 +65,10 @@ THE SOFTWARE.</p>
 <footer>
 <p><a href="https://sogrey.github.io/">@Sogrey</a></p>
 </footer>
-
+<script>
+    var tYear = new Date().getFullYear();
+    var thisYear = document.getElementById("thisYear");
+    thisYear.innerText = tYear;
 </script>
 
 </body>
