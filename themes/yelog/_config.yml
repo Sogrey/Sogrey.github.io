@@ -13,7 +13,7 @@ menu:
   关于我: /about/
   更新日志: /logs/
   #playlist: /playlist/
-  license: https://sogrey.github.io/about/mit.html
+  license: /about/mit.html
 
 # Link to your avatar | 填写头像地址
 avatar: /img/Sogrey.png
@@ -202,7 +202,7 @@ tagcloud: true
 # Blogroll, Link exchange | 友情链接
 friends:
   Hexo: https://hexo.io
-  GitHub: https://pages.github.com/
+  旅行者归来: https://cjj-sal.github.io
   MOxFIVE: http://moxfive.xyz/
   芝麻开门: http://pan.baidu.com/s/1hr2PiG8
   JavaDoc: https://sogrey.github.io/JavaDocs/
@@ -218,7 +218,7 @@ friends:
   前端技术面试题: https://sogrey.github.io/Web-QA/
   优质博文/公众号文章: https://sogrey.github.io/blogs/
   插件收集: https://sogrey.github.io/Plug-in/
-  MIT: https://output.jsbin.com/penilap
+  MIT: https://sogrey.github.io/about/mit.html
   
 #friends: false
 
