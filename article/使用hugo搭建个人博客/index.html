@@ -23,12 +23,12 @@
 <meta property="og:site_name" content="Sogrey">
 <meta property="og:description" content="之前使用Hexo(https://sogrey.github.io/ github)和jekyll(http://sogrey.gitee.io/ github)搭建过个人博客，这次选择Hugo试试。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/sogrey-hugo-site.jpg">
-<meta property="og:updated_time" content="2019-12-05T01:39:02.843Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/sogrey-hugo-site.jpg">
+<meta property="og:updated_time" content="2019-12-05T01:57:39.245Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用hugo搭建个人博客">
 <meta name="twitter:description" content="之前使用Hexo(https://sogrey.github.io/ github)和jekyll(http://sogrey.gitee.io/ github)搭建过个人博客，这次选择Hugo试试。">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/sogrey-hugo-site.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/sogrey-hugo-site.jpg">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -453,7 +453,7 @@
 <h3 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h3><p>在站点目录下执行以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hugo new HelloWorld.md</span><br><span class="line">G:\workspace\github\sogrey\hugo\HugoSite\content\HelloWorld.md created</span><br></pre></td></tr></table></figure>
 <p>创建第一篇文章<code>HelloWorld</code>。</p>
-<p>打开<code>HelloWorld.md</code>（该文件位于 blog/content/about.md目录下）文件进行编辑，我是用的编辑器是<a href="http://typora.io/" target="_blank" rel="noopener">typora</a>。</p>
+<p>打开<code>HelloWorld.md</code>（该文件位于 <code>HugoSite/content/</code>目录下）文件进行编辑，我是用的编辑器是<a href="http://typora.io/" target="_blank" rel="noopener">typora</a>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &quot;HelloWorld&quot;</span><br><span class="line">date: 2019-12-04T23:39:58+08:00</span><br><span class="line">tags = [&quot;Hugo&quot;]</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"># Hello World</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这里使用markdown来编写文章</p>
@@ -463,7 +463,7 @@
 <p>修改了baseURL，并增加了publishDir。publishDir的修改是因为：当在content目录下添加了.md文件后，需要执行<code>hugo -t &lt;主题名&gt;</code>来用hugo把发布用的目录编译出来，而默认的编译目录名为<code>publish</code>。</p>
 <h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><p>Hugo themes：<a href="https://themes.gohugo.io/" target="_blank" rel="noopener">https://themes.gohugo.io/</a></p>
 <p>你可以到上面的网站中挑选你喜欢的主题。然后，根据指引找到<code>github</code>项目地址进行下载。</p>
-<p>我这里选择<a href="https://themes.gohugo.io/hyde/" target="_blank" rel="noopener">hyde</a> (<a href="https://github.com/spf13/hyde" target="_blank" rel="noopener">github</a>),把主题通过git克隆或直接下载到本地。放到 <code>…/blog/themes/</code>目录下,执行：</p>
+<p>我这里选择<a href="https://themes.gohugo.io/hyde/" target="_blank" rel="noopener">hyde</a> (<a href="https://github.com/spf13/hyde" target="_blank" rel="noopener">github</a>),把主题通过git克隆或直接下载到本地。放到 <code>HugoSite/themes/</code>目录下,执行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/spf13/hyde.git</span><br></pre></td></tr></table></figure>
 <p>在“config.toml”文件中指定“hyde”作为默认主题。只需添加行:</p>
 <figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme</span> = <span class="string">"hyde"</span></span><br></pre></td></tr></table></figure>
@@ -472,7 +472,7 @@
 <h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2><p>执行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ hugo server</span><br><span class="line">Building sites …</span><br><span class="line">                   | EN</span><br><span class="line">+------------------+----+</span><br><span class="line">  Pages            |  8</span><br><span class="line">  Paginator pages  |  0</span><br><span class="line">  Non-page files   |  0</span><br><span class="line">  Static files     |  6</span><br><span class="line">  Processed images |  0</span><br><span class="line">  Aliases          |  0</span><br><span class="line">  Sitemaps         |  1</span><br><span class="line">  Cleaned          |  0</span><br><span class="line"></span><br><span class="line">Built <span class="keyword">in</span> 5 ms</span><br><span class="line">Watching <span class="keyword">for</span> changes <span class="keyword">in</span> G:\workspace\github\sogrey\hugo\HugoSite\&#123;archetypes,content,data,layouts,static,themes&#125;</span><br><span class="line">Watching <span class="keyword">for</span> config changes <span class="keyword">in</span> G:\workspace\github\sogrey\hugo\HugoSite\config.toml</span><br><span class="line">Environment: <span class="string">"development"</span></span><br><span class="line">Serving pages from memory</span><br><span class="line">Running <span class="keyword">in</span> Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender</span><br><span class="line">Web Server is available at http://localhost:1313/HugoSite/ (<span class="built_in">bind</span> address 127.0.0.1)</span><br><span class="line">Press Ctrl+C to stop</span><br></pre></td></tr></table></figure>
 <p>访问<code>http://localhost:1313/HugoSite/</code></p>
-<p><img src="https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/sogrey-hugo-site.jpg" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/sogrey-hugo-site.jpg" alt></p>
 <p>站点就搭建好了。</p>
 <h2 id="上传部署到GitHub"><a href="#上传部署到GitHub" class="headerlink" title="上传部署到GitHub"></a>上传部署到GitHub</h2><p>在github上新建仓库，我这里命名为<a href="https://github.com/Sogrey/HugoSite" target="_blank" rel="noopener"><code>HugoSite</code></a>。</p>
 <p>执行：</p>
@@ -493,7 +493,7 @@
         <p><span>本文标题:</span><a href="/article/使用hugo搭建个人博客/">使用hugo搭建个人博客</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
         <p><span>发布时间:</span>2019-12-04, 22:56:16</p>
-        <p><span>最后更新:</span>2019-12-05, 09:39:02</p>
+        <p><span>最后更新:</span>2019-12-05, 09:57:39</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/article/使用hugo搭建个人博客/" title="使用hugo搭建个人博客">https://sogrey.github.io/article/使用hugo搭建个人博客/</a>
             <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/使用hugo搭建个人博客/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
