@@ -351,3 +351,4 @@ To https://github.com/Sogrey/HugoSite.git
 /g/workspace/github/sogrey/hugo/HugoSite
 ```
 
+访问发布后的[站点](https://sogrey.github.io/HugoSite/);
