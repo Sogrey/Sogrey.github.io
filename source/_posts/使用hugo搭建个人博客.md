@@ -91,7 +91,7 @@ G:\workspace\github\sogrey\hugo\HugoSite\content\HelloWorld.md created
 
 创建第一篇文章`HelloWorld`。
 
-打开`HelloWorld.md`（该文件位于 blog/content/about.md目录下）文件进行编辑，我是用的编辑器是[typora](http://typora.io/)。
+打开`HelloWorld.md`（该文件位于 `HugoSite/content/`目录下）文件进行编辑，我是用的编辑器是[typora](http://typora.io/)。
 
 ``` 
 ---
@@ -131,7 +131,7 @@ Hugo themes：https://themes.gohugo.io/
 
 你可以到上面的网站中挑选你喜欢的主题。然后，根据指引找到`github`项目地址进行下载。
 
-我这里选择[hyde](https://themes.gohugo.io/hyde/) ([github](https://github.com/spf13/hyde)),把主题通过git克隆或直接下载到本地。放到 `…/blog/themes/`目录下,执行：
+我这里选择[hyde](https://themes.gohugo.io/hyde/) ([github](https://github.com/spf13/hyde)),把主题通过git克隆或直接下载到本地。放到 `HugoSite/themes/`目录下,执行：
 
 ``` bash
 $ cd themes/
@@ -197,7 +197,7 @@ Press Ctrl+C to stop
 
 访问`http://localhost:1313/HugoSite/`
 
-![](https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/sogrey-hugo-site.jpg)
+![](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/sogrey-hugo-site.jpg)
 
 站点就搭建好了。
 
