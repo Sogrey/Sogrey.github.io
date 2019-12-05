@@ -1,7 +1,6 @@
 var SogreyJs = (function(){
 
 	var clearConsole = function(){
-        console.clear();
         try {
             window.console && window.console.clear && console.clear();
             window.console && window.console.log && console.log('%c %c\nWelcome to%c\nSogrey\'s Blog\n%chttps://sogrey.github.io \n',
