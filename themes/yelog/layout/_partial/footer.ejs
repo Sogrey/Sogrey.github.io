@@ -2,6 +2,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
+                <a href="https://sogrey.github.io/about/mit.html" target="_blank" title="MIT License">MIT</a> 
                 <i class="fa fa-copyright"></i> 
                 <% if (theme.since && !isNaN(theme.since) && theme.since < date(new Date(), 'YYYY')) { %><%- theme.since%>-<% } %><%= date(new Date(), 'YYYY') %> <i class="fa fa-heart animated infinite pulse"></i><a href="https://sogrey.github.io" target="_blank" title="<%= __('sogrey.describe') %>  <%= __('sogrey.github') %>"><%= config.author || config.title %></a><i class="fa fa-heart animated infinite pulse"></i>
             </div>

@@ -7,7 +7,7 @@ comments: true
 toc: true
 ---
 
-之前使用[`Hexo`](https://hexo.io/)([`https://sogrey.github.io/`](https://sogrey.github.io/) [github](https://github.com/Sogrey/Sogrey.github.io))和[`jekyll`](http://jekyllcn.com/)(http://sogrey.gitee.io/ [github](https://gitee.com/Sogrey/Sogrey))搭建过个人博客，这次选择`Hugo`试试。
+之前使用[`Hexo`](https://hexo.io/)([https://sogrey.github.io/](https://sogrey.github.io/) [github](https://github.com/Sogrey/Sogrey.github.io))和[`jekyll`](http://jekyllcn.com/)(http://sogrey.gitee.io/ [github](https://gitee.com/Sogrey/Sogrey))搭建过个人博客，这次选择`Hugo`试试。
 
 <!-- more -->
 

@@ -42,6 +42,7 @@ goto start
 copy 404.html public\404.html
 copy baidu_verify_hTO3FZGPz7.html public\baidu_verify_hTO3FZGPz7.html
 copy README-master.md public\README.md
+copy LICENSE public\LICENSE
 copy weichat.html public\about\weichat.html
 copy sogrey.html public\about\sogrey.html
 copy mit.html public\about\mit.html
@@ -52,6 +53,7 @@ goto start
 copy 404.html public\404.html
 copy baidu_verify_hTO3FZGPz7.html public\baidu_verify_hTO3FZGPz7.html
 copy README-master.md public\README.md
+copy LICENSE public\LICENSE
 copy weichat.html public\about\weichat.html
 copy sogrey.html public\about\sogrey.html
 copy mit.html public\about\mit.html
