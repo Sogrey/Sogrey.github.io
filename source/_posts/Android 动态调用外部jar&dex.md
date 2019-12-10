@@ -13,6 +13,8 @@ toc: true
 
 <!-- more -->
 
+
+
 ## 创建项目
 
 跟往常一样，创建android studio 项目，其中包含两个app Module和两个library Module，目前都是空项目。如下图：
