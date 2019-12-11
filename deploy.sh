@@ -21,14 +21,14 @@ echo -e "\033[32;40m [1/4] \033[0m init..."
 # npm install -g vuepress
 # npm audit fix
 
-echo -e "\033[32;40m [2/4] \033[0m commit 2 master:source branch"
+echo -e "\033[32;40m [2/4] \033[0m commit 2 source branch"
 
 git init
 git add -A
 git commit -m 'deploy source'
 
 # 如果你想要部署到 https://USERNAME.github.io
-git push -f https://github.com/Sogrey/Sogrey.github.io.git master:source
+git push -f https://github.com/Sogrey/Sogrey.github.io.git source
 
 echo -e "\033[32;40m [3/4] \033[0m Building static files"
 # 生成静态文件
