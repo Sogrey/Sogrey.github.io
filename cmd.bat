@@ -5,7 +5,7 @@ mode con cols=35 lines=30
 :start
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-echo HEXO 编译发布程序 
+echo HEXO 编译发布程序
 echo %DATE% %TIME%
 echo by：Sogrey
 echo https://sogrey.github.io/
@@ -18,15 +18,15 @@ echo 【2】 hexo s
 echo 【3】 hexo d
 echo 【q】 exit
 echo =================================
-echo. 
+echo.
 echo 请输入执行的批处理命令序号。
-echo. 
+echo.
 set /p lc= ★命令★：
 if %lc%==0 goto init
 if %lc%==1 goto g
 if %lc%==2 goto s
 if %lc%==3 goto d
-if %lc%==q goto e 
+if %lc%==q goto e
 pause
 
 :init
@@ -60,5 +60,5 @@ copy mit.html public\about\mit.html
 start hexo d
 goto start
 
-:e 
-exit 
+:e
+exit
