@@ -28,7 +28,7 @@ git add -A
 git commit -m 'deploy source'
 
 # 如果你想要部署到 https://USERNAME.github.io
-git push -f https://github.com/Sogrey/Sogrey.github.io.git source
+git push -f https://github.com/Sogrey/Sogrey.github.io.git dev:source
 
 echo -e "\033[32;40m [3/4] \033[0m Building static files"
 # 生成静态文件
