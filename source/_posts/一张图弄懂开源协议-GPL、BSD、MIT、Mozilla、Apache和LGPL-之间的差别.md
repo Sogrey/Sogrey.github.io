@@ -13,7 +13,7 @@ toc: true
 
 ![](https://sogrey.github.io/GithubPagePics/imgs/bg2011050101.png)
 
-另一张来自[phodal/licenses](https://github.com/phodal/licenses)
+另一张来自[https://phodal.github.io/licenses/](https://phodal.github.io/licenses/)
 
 ![](https://phodal.github.io/licenses/license.svg)
 
