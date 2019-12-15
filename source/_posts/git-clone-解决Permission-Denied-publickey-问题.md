@@ -78,9 +78,9 @@ Enter same passphrase again:
 
 ## 参考：
 
-<https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys>
+- <https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys>
 
-<https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key>
+- <https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key>
 
-[github结合TortoiseGit使用sshkey，无需输入账号和密码](https://www.cnblogs.com/chucklu/p/4056499.html)
+- [github结合TortoiseGit使用sshkey，无需输入账号和密码](https://www.cnblogs.com/chucklu/p/4056499.html)
 

@@ -114,7 +114,7 @@ Error: ENOENT: no such file or directory, stat 'E:\workspace\引擎\3DEngine华�
 
 报错如上，解决办法可尝试修改文件：`C:\Users\{用户名}\.gitbook\versions\{版本号}\lib\output\website\copyPluginAssets.js`的112行（我的版本是`3.2.3`）:
 
-![1553164553736](https://sogrey.github.io/GithubPagePics/imgs/1553164553736.png)
+![1553164553736](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/1553164553736.png)
 
 注释掉 
 

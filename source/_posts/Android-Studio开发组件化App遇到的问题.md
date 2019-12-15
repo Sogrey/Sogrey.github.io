@@ -43,7 +43,7 @@ Click on the button:`Sync Project with Gradle Files`
 
 |                                                              |      |      |
 | ------------------------------------------------------------ | ---- | ---- |
-| ![](https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/Sync-Project-with-Gradle-Files-1.jpg) | ![](https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/Sync-Project-with-Gradle-Files-2.jpg)     | ![](https://raw.githubusercontent.com/Sogrey/GithubPagePics/master/imgs/Sync-Project-with-Gradle-Files-3.jpg)     |
+| ![](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/Sync-Project-with-Gradle-Files-1.jpg) | ![](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/Sync-Project-with-Gradle-Files-2.jpg)     | ![](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/Sync-Project-with-Gradle-Files-3.jpg)     |
 
 ## Q2  依赖重复问题
 

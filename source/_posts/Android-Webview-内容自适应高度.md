@@ -6,15 +6,15 @@ tags: [Android,Webview]
 ---
 
 ``` java
-        webview.setWebViewClient(new WebViewClient() {
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                webview.loadUrl("javascript:App.resize(document.getElementById('chatsDataList').scrollHeight)");
-                super.onPageFinished(view, url);
-            }
-        });
-        webview.addJavascriptInterface(this, "App");
-        webview.loadUrl("http://localhost:" + Constant.port + "/pages/indexCharts.html");
+ webview.setWebViewClient(new WebViewClient() {
+     @Override
+     public void onPageFinished(WebView view, String url) {
+     webview.loadUrl("javascript:App.resize(document.getElementById('chatsDataList').scrollHeight)");
+         super.onPageFinished(view, url);
+     }
+ });
+ webview.addJavascriptInterface(this, "App");
+ webview.loadUrl("http://localhost:" + Constant.port + "/pages/indexCharts.html");
 ```
 ``` java
     @JavascriptInterface

@@ -74,12 +74,12 @@ icon font字体文件来源很多，我这里列出两个（在文章尾[参考#
 # 4 在Android项目中使用
 ## 4.1 新建Android项目
 打开Android studio新建一个Android项目，我新建一个包名为`org.sogrey.iconfont.demo`的应用，具体新建步骤就不赘述了。另再新建一个Module包名为`org.sogrey.iconfont`的库应用，结构如下：
-![新建Android项目](https://sogrey.github.io/GithubPagePics/imgs/2017-01-17_001301.jpg)
+![新建Android项目](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/2017-01-17_001301.jpg)
 
 ## 4.2 在库应用中引入`.ttf`字体
 在库应用中引入`.ttf`字体，放在`assets`文件夹下，新建java类`IconFontTextView`继承自`android.widget.TextView`,结构如下：
 
-![在库应用中引入`.ttf`字体](https://sogrey.github.io/GithubPagePics/imgs/2017-01-17_002541.jpg)
+![在库应用中引入`.ttf`字体](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/2017-01-17_002541.jpg)
 
 IconFontTextView.java代码：
 
@@ -124,7 +124,7 @@ public class IconFontTextView extends TextView {
 
 activity_main.xml布局中放几个`IconFontTextView`,其string属性设置为以`&#`开头的字符串，以通讯录图标为例:
 
-![通讯录图标icon font](https://sogrey.github.io/GithubPagePics/imgs/2017-01-17_003852.jpg)
+![通讯录图标icon font](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/2017-01-17_003852.jpg)
 
 前面的图标就是最终要实现的效果，`fa-address-book`用在html标签的class类属性中，而我们要用的是后面放括弧中的`&#xf2b9;`。
 
@@ -140,11 +140,11 @@ xml布局文件：
 
 编译运行即可看到效果。
 
-![运行效果](https://sogrey.github.io/GithubPagePics/imgs/2017-01-17_005941.jpg)
+![运行效果](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/2017-01-17_005941.jpg)
 
 预览一下全部图标：
 
-![预览一下全部图标](https://sogrey.github.io/GithubPagePics/imgs/2017-01-17_010816.jpg)
+![预览一下全部图标](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/2017-01-17_010816.jpg)
 
 附：在[https://icomoon.io/app](https://icomoon.io/app)可定制你需要的图标打包成字体文件下载引用，具体方法可参考[如何在Android使用图标字体？](http://blog.csdn.net/ruihanchen/article/details/50032841)。
 
