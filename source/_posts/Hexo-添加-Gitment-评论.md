@@ -133,28 +133,28 @@ toc: true
 
 ## Gitment坑点小结 部分出自[iHTCboy](https://www.jianshu.com/p/57afa4844aaa)
 
-1 `owner: 'Your GitHub ID'`
+**1 `owner: 'Your GitHub ID'`**
 
 	owner: '你的 GitHub ID',
 	可以是你的GitHub用户名，也可以是github id，建议直接用GitHub用户名就可以。
 
-2 `repo: 'The repo to store comments`
+**2 `repo: 'The repo to store comments`**
 
 	repo: '存储评论的 github repo'
 	这个是你要存储评论内容的仓库名，可以与博客下的仓库，也可以新建一个仓库专门存储评论内容的。
 
-3 `Error: Not Found问题`
+**3 `Error: Not Found问题`**
 
 	owner或者repo配置错误了，注意名字和仓库名字的大小写。
 
-4 `Error: Comments Not Initialized`
+**4 `Error: Comments Not Initialized`**
 
 	在注册OAuth Application这个步骤中，给Authorization callback URL指定的地址错了
 	还没有在该页面的Gitment评论区登陆GitHub账号
 
 如果还是不行，可以参考另一个情况 [Error: Comments Not Initialized · Issue #95 · imsun/gitment](https://link.jianshu.com/?t=https%3A%2F%2Fgithub.com%2Fimsun%2Fgitment%2Fissues%2F95)
 
-5 `Error：validation failed`
+**5 `Error：validation failed`**
 
 	issue的标签label有长度限制！labels的最大长度限制是50个字符。
 	id: '页面 ID', // 可选。默认为 location.href
@@ -171,7 +171,7 @@ toc: true
 	
 	id: '<%= page.date %>'
 
-6 gitment的汉化
+**6 gitment的汉化**
 
 	只需到模板里将原来定义CSS和JS的那两行改成：
 	
@@ -179,7 +179,7 @@ toc: true
 	<script src="https://billts.site/js/gitment.js"></script>
 	即可。来源：https://github.com/imsun/gitment/issues/104
 
-7 Gitment出现在文章列表上
+**7 Gitment出现在文章列表上**
 
 ![Gitment出现在文章列表上](https://sogrey.github.io/GithubPagePics/imgs/Gitment出现在文章列表上.png)
 
@@ -237,7 +237,7 @@ toc: true
 	<!--gitment 评论 end-->
 ```
 
-8 Error: Bad credentials
+**8 Error: Bad credentials**
 
 此类错误一般原因是填写授权`Client ID`或`Client Secret`时有误，请确认是否正确，我这里出现，之前是好的，因换了系统重新配置提交后就这样了。F12 查看到gitment.js 有两个 401.定位应该是授权问题。
 
@@ -253,3 +253,12 @@ toc: true
 重新配置 theme 下的 _config.yml 文件
 ![](https://sogrey.github.io/GithubPagePics/imgs/gitment_config.jpg)
 
+**9 绑定了新域名后评论系统登录异常**
+
+最近刚刚申请了一个`.top`域名，用来解析本站[`sogtey.github.io`](https://sogrey.github.io) -> [`https://sogrey.top/`](https://sogrey.top/)。由此也引来一些问题，不是什么大问题，就是我们的域名变了，而我们在GitHub的[`Developers srttings`](https://github.com/settings/developers) `OAuth Apps`里注册的还是`sogrey.github.io`。这就导致评论系统无法登陆，因为`Authorization callback URL`已经不匹配了。
+
+解决方案：
+
+将`Homepage URL`以及`Authorization callback URL`改为我们新域名地址（[`https://sogrey.top/`](https://sogrey.top/)）即可。
+
+记得点击`Update application`按钮保存更新。
