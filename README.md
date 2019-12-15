@@ -26,6 +26,7 @@ Sogrey's github pages
      ``` bash
      npm install
      ```
-- 3. 剩下的交给 `cmd.bat` 吧。
+- 3. 剩下的交给 `cmd.bat` 吧(需要全局安装Hexo)。
+- 4. 除了`cmd.bat`,也可以使用`npm start`预览和`npm run deploy`发布。
      
 
