@@ -46,6 +46,7 @@ copy LICENSE public\LICENSE
 copy weichat.html public\about\weichat.html
 copy sogrey.html public\about\sogrey.html
 copy mit.html public\about\mit.html
+copy apache2.0.html public\about\apache2.0.html
 start hexo s
 goto start
 
@@ -57,6 +58,7 @@ copy LICENSE public\LICENSE
 copy weichat.html public\about\weichat.html
 copy sogrey.html public\about\sogrey.html
 copy mit.html public\about\mit.html
+copy apache2.0.html public\about\apache2.0.html
 start hexo d
 goto start
 

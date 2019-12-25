@@ -24,6 +24,7 @@ cp LICENSE public\\LICENSE
 cp weichat.html public\\about\\weichat.html
 cp sogrey.html public\\about\\sogrey.html
 cp mit.html public\\about\\mit.html
+cp apache2.0.html public\\about\\apache2.0.html
 
 hexo d
 
