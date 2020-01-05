@@ -170,6 +170,15 @@ toc: true
 	最后，我用文章的时间，这样长度是保证在50个字符内，完美解决！（避免了文章每次更新标题或路径时，会重新创建一个issue评论的问题。）
 	
 	id: '<%= page.date %>'
+**5-1 `Error：validation failed` 另一种**
+
+刚新建了一篇文章，初始化评论时控制台报错：
+
+```
+Failed to load resource: the server responded with a status of 422 (Unprocessable Entity)
+```
+
+因为我使用文章名作为label，查错过程就不细说了，并不是上面第五点的原因，这个原因太坑了，就是因为我新建文章标题中包含英文半角的`,`开始确定是因为label的问题，在排除50字符限制之后，实在无法，就直接新建label，提示无效，惊呆了我都，尝试更换标点符号为中文`，`这次成功新建label。然后修改文章名，重新提交成功初始化。特此记录。
 
 **6 gitment的汉化**
 

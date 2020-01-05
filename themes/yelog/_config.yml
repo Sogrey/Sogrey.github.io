@@ -129,7 +129,7 @@ gitment:
   owner: Sogrey
   repo: Sogrey.github.io
   ClientID: 582650733e15427a208c
-  ClientSecret: d33a2a845fa25544ba0406168c9b42fc0f34acae
+  ClientSecret: f8bdd2fe8aa5e0942fa4adf0df0fa2bc98df297d
   # lazy: false
 
 
