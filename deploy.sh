@@ -15,6 +15,7 @@ echo -e '\033[32;40m
  
 '
 
+echo -e "\033[32;40m [1/2] \033[0m Compile..."
 hexo g
 
 cp 404.html public\\404.html
@@ -26,6 +27,7 @@ cp sogrey.html public\\about\\sogrey.html
 cp mit.html public\\about\\mit.html
 cp apache2.0.html public\\about\\apache2.0.html
 
+echo -e "\033[32;40m [2/2] \033[0m Deploy..."
 hexo d
 
 echo -e "\033[32;40m done \033[0m "
