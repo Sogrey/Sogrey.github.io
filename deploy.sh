@@ -14,6 +14,11 @@ echo -e '\033[32;40m
  (__) .github.io(__)    (__)__)   (__)  (__) (__) (__)  \_) (__)  
  
 '
+echo -e "\033[32;40m [2/4] \033[0m commit 2 dev branch"
+
+git init
+git add -A
+git commit -m 'deploy dev'
 
 echo -e "\033[32;40m [1/2] \033[0m Compile..."
 hexo g
