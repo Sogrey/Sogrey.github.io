@@ -17,7 +17,6 @@ toc: true
 
 ![](https://phodal.github.io/licenses/license.svg)
 
-
 ## 哪种开源许可证下的软件可以用于商业
 
 **Apache License 2.0**
