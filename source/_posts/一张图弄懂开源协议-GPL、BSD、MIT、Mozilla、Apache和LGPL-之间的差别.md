@@ -54,7 +54,6 @@ toc: true
 **要点：**商业软件可以使用，也可以修改EPL协议的代码，但要承担代码产生的侵权责任。
 
 
-
 1. [阮一峰的网络日志](http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html)
 2. [phodal/licenses](https://github.com/phodal/licenses)
 3. [[哪种开源许可证下的软件可以用于商业](https://www.cnblogs.com/etangyushan/p/4224075.html)](https://www.cnblogs.com/etangyushan/p/4224075.html)
