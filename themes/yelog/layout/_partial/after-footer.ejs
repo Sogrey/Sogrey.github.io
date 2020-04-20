@@ -1,7 +1,7 @@
 <% if (theme.github_widget){ %>
     <%- js('js/GithubRepoWidget') %>
 <% } %>
-<script data-main="<%-config.root%>js/main.js" src="<%- theme.CDN.require %>"></script>
+<script data-main="<%=theme.root_url%>/js/main.js" src="<%- theme.CDN.require %>"></script>
 <%- partial('_partial/background') %>
 <%- partial('comments/count-comment') %>
 <%- partial('google-analytics') %>
