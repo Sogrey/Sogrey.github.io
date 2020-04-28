@@ -21,6 +21,7 @@ ES6 原生提供了 Promise 对象。
 
 ## promise 之前如何异步操作
 
+
 ## promise 如何异步操作
 
 > 使用回调函数存在的问题在于他剥夺了我们使用 `return` 和 `throw` 这些关键字的能力。而 Promise 很好地解决了这一切。
