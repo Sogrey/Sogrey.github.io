@@ -5,10 +5,7 @@ tags: [JavaScript,JS,Promise]
 categories: JavaScript
 comments: true
 toc: true
---- 
-
-
-# Js之Promise
+---
 
 ## promise是什么？
 
@@ -18,6 +15,8 @@ toc: true
 - 多个异步等待合并便于解决
 
 ES6 原生提供了 Promise 对象。
+
+<!-- more -->
 
 ## promise 之前如何异步操作
 
@@ -57,17 +56,6 @@ let  promise = new Promise((resolve,reject) => {
    从pending变为fulfilled
    从pending变为rejected。
    这两种情况只要发生，状态就凝固了，不会再变了。
-
-
-
-作者：王云飞_小四_wyunfei
-链接：https://www.jianshu.com/p/1b63a13c2701
-来源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
-
-
-
 
 
 
