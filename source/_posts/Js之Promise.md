@@ -49,7 +49,6 @@ let  promise = new Promise((resolve,reject) => {
 - Promise对象的状态改变，只有两种可能：<br>   从pending变为fulfilled<br>   从pending变为rejected。<br>   这两种情况只要发生，状态就凝固了，不会再变了。
 
 
-
 ## 参考
 
-- [**Promise** - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [**Promise** - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)  aq
