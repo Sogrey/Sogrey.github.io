@@ -51,4 +51,7 @@ let  promise = new Promise((resolve,reject) => {
 
 ## 参考
 
-- [**Promise** - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)  aq
+- [**Promise** - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [Javascript 中的神器——Promise](https://www.jianshu.com/p/063f7e490e9a)
+- [Promise @廖雪峰](https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544)
+- [promise @王云飞_小四_wyunfei](https://www.jianshu.com/p/1b63a13c2701)
