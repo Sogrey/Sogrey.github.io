@@ -20,6 +20,32 @@ ES6 原生提供了 Promise 对象。
 
 ## promise 之前如何异步操作
 
+### 1. 事件监听
+
+``` js
+document.getElementById('#start').addEventListener('click', start, false);
+function start() {
+  // 响应事件，进行相应的操作
+}
+// jquery on 监听
+$('#start').on('click', start)
+```
+
+### 2. 回调
+
+``` js
+// 比较常见的有ajax
+$.ajax('http://www.wyunfei.com/', {
+ success (res) {
+   // 这里可以监听res返回的数据做回调逻辑的处理
+ }
+})
+
+// 或者在页面加载完毕后回调
+$(function() {
+ // 页面结构加载完成，做回调逻辑处理
+})
+```
 
 ## promise 如何异步操作
 
