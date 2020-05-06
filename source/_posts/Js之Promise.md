@@ -35,7 +35,7 @@ $('#start').on('click', start)
 
 ``` js
 // 比较常见的有ajax
-$.ajax('http://www.wyunfei.com/', {
+$.ajax('http://www.wysite.com/', {
  success (res) {
    // 这里可以监听res返回的数据做回调逻辑的处理
  }
