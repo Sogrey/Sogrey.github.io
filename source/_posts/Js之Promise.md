@@ -47,6 +47,15 @@ $(function() {
 })
 ```
 
+**异步回调的问题**：
+
+- 之前处理异步是通过纯粹的回调函数的形式进行处理
+- 很容易进入到回调地狱中，剥夺了函数return的能力
+- 问题可以解决，但是难以读懂，维护困难
+- 稍有不慎就会踏入回调地狱 - 嵌套层次深，不好维护
+
+
+
 ## promise 如何异步操作
 
 > 使用回调函数存在的问题在于他剥夺了我们使用 `return` 和 `throw` 这些关键字的能力。而 Promise 很好地解决了这一切。
@@ -81,3 +90,4 @@ let  promise = new Promise((resolve,reject) => {
 - [Javascript 中的神器——Promise](https://www.jianshu.com/p/063f7e490e9a)
 - [Promise @廖雪峰](https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544)
 - [promise @王云飞_小四_wyunfei](https://www.jianshu.com/p/1b63a13c2701)
+- [ES6 Promise用法小结](https://blog.csdn.net/qq_34645412/article/details/81170576)
