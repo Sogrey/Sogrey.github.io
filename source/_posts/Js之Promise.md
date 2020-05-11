@@ -83,6 +83,12 @@ let  promise = new Promise((resolve,reject) => {
 
 3. Promise对象的状态改变，只有两种可能：<br>   从pending变为fulfilled<br>   从pending变为rejected。<br>   这两种情况只要发生，状态就凝固了，不会再变了。如果改变已经发生了，你再对Promise对象添加回调函数，也会立即得到这个结果。这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。
 
+## promise api
+
+reject的用法
+
+
+
 
 ## 参考
 
