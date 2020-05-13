@@ -85,8 +85,20 @@ let  promise = new Promise((resolve,reject) => {
 
 ## promise api
 
-reject的用法
+- romise.resolve()
 
+- Promise.reject()
+
+- Promise.prototype.then()
+
+- Promise.prototype.catch()
+
+- Promise.all() // 所有的完成
+
+``` js
+var p = Promise.all([p1,p2,p3]);
+```
+- Promise.race() // 竞速，完成一个即可
 
 
 
