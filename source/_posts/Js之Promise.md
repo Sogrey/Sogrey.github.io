@@ -109,3 +109,4 @@ var p = Promise.all([p1,p2,p3]);
 - [Promise @廖雪峰](https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544)
 - [promise @王云飞_小四_wyunfei](https://www.jianshu.com/p/1b63a13c2701)
 - [ES6 Promise用法小结](https://blog.csdn.net/qq_34645412/article/details/81170576)
+- [从0到1掌握Promise](https://zhuanlan.zhihu.com/p/146895201)
