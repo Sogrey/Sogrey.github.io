@@ -46,3 +46,11 @@ toc: true
 ![如何完全卸载CAD](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/TIM-20200726082817.png)
 
 再关闭注册表，现在再重装就能装上了。
+
+## 安装异常
+
+### 安装CAD时，提示bai1603错误
+
+1. 删除安装程序，找到一下路径`C:\Program Files (x86)\Common Files\Autodesk Shared\AdskLicensing`，然后以管理员身份运行duUNINSTALL.EXE程序，删除软件,重试。
+
+2. 如果还存在以上问题，以管理员身份运行命令窗口，然后输入命令`C:\Program Files(x86)\Common Files\Autodesk Shared\AdskLicensing\Current\AdskLicensingService\AdskLicensingService.exe` 重新安装软件，再试，建议下载最新的安装包
