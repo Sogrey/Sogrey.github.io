@@ -51,6 +51,8 @@ toc: true
 
 ### 安装CAD时，提示bai1603错误
 
+![安装CAD时，提示bai1603错误](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/autocad-error-1603.png)
+
 1. 删除安装程序，找到一下路径`C:\Program Files (x86)\Common Files\Autodesk Shared\AdskLicensing`，然后以管理员身份运行duUNINSTALL.EXE程序，删除软件,重试。
 
 2. 如果还存在以上问题，以管理员身份运行命令窗口，然后输入命令`C:\Program Files(x86)\Common Files\Autodesk Shared\AdskLicensing\Current\AdskLicensingService\AdskLicensingService.exe` 重新安装软件，再试，建议下载最新的安装包
