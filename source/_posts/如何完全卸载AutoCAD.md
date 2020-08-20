@@ -49,9 +49,9 @@ toc: true
 
 ## 安装异常
 
-### 安装CAD时，提示bai1603错误
+### 安装CAD时，提示1603错误
 
-![安装CAD时，提示bai1603错误](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/autocad-error-1603.png)
+![安装CAD时，提示1603错误](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/autocad-error-1603.png)
 
 1. 删除安装程序，找到一下路径`C:\Program Files (x86)\Common Files\Autodesk Shared\AdskLicensing`，然后以管理员身份运行duUNINSTALL.EXE程序，删除软件,重试。
 
