@@ -9,6 +9,8 @@ toc: true
 
 最近开发CAD图纸相关，卸载重装AutoCAD时遇装不上了，提示是已安装。这是因为上一次卸载后没有清理干净。
 
+<!--more-->
+
 ## 如何完全卸载AutoCAD
 
 先说明我的操作系统是 `window 10 专业版`，安装的CAD版本是 `AutoCAD 2020简体中文版`。
@@ -56,3 +58,15 @@ toc: true
 1. 删除安装程序，找到一下路径`C:\Program Files (x86)\Common Files\Autodesk Shared\AdskLicensing`，然后以管理员身份运行duUNINSTALL.EXE程序，删除软件,重试。
 
 2. 如果还存在以上问题，以管理员身份运行命令窗口，然后输入命令`C:\Program Files(x86)\Common Files\Autodesk Shared\AdskLicensing\Current\AdskLicensingService\AdskLicensingService.exe` 重新安装软件，再试，建议下载最新的安装包
+
+### Cad 界面出现乱码
+
+如图：
+
+![CAD界面乱码](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/CAD界面乱码.png)
+
+解决方案：
+
+找到AutoCAD安装目录跟目下的Fonts文件夹，该文件夹存放的就是字体了，在该文件夹下找到simsun.ttc字体删除就好了。
+
+![CAD界面乱码](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/CAD界面乱码修复.png)
