@@ -69,4 +69,4 @@ toc: true
 
 找到AutoCAD安装目录跟目下的Fonts文件夹，该文件夹存放的就是字体了，在该文件夹下找到simsun.ttc字体删除就好了。
 
-![CAD界面乱码](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/CAD界面乱码修复.png)
+![CAD界面乱码修复](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/CAD界面乱码修复.png)
