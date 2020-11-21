@@ -18,17 +18,17 @@ toc: true
 
 通过 `in` 限定符，您可以将搜索限制为仓库名称`name`、仓库说明`description`、自述文件内容`readme`或这些的任意组合。如果省略此限定符，则只搜索仓库名称和说明。
 
-| 限定符            | 示例                                                         |
-| :---------------- | :----------------------------------------------------------- |
-| `in:name`         | **sogrey in:name** 匹配其名称中含有 "sogrey" 的仓库。        |
-| `in:description`  | **sogrey in:name,description** 匹配其名称或说明中含有 "sogrey" 的仓库。 |
-| `in:readme`       | **sogrey in:readme** 匹配其自述文件中提及 "sogrey" 的仓库。  |
+| 限定符           | 示例                                                         |
+| :--------------- | :----------------------------------------------------------- |
+| `in:name`        | **sogrey in:name** 匹配其名称中含有 "sogrey" 的仓库。        |
+| `in:description` | **sogrey in:name,description** 匹配其名称或说明中含有 "sogrey" 的仓库。 |
+| `in:readme`      | **sogrey in:readme** 匹配其自述文件中提及 "sogrey" 的仓库。  |
 
 也可以直接搜索指定仓库：
 
-| 限定符            | 示例                                                         |
-| `repo:owner/name` | **repo:sogrey/sogrey** 匹配特定仓库名称。              |
-
+| 限定符            | 示例                                      |
+| ----------------- | ----------------------------------------- |
+| `repo:owner/name` | **repo:sogrey/sogrey** 匹配特定仓库名称。 |
 ### 在用户或组织的仓库内搜索
 
 要在特定用户或组织拥有的所有仓库中搜索，您可以使用 `user` 或 `org` 限定符。
@@ -139,17 +139,70 @@ toc: true
 
 ### 按文件内容或文件路径搜索
 
+使用 `in` 限定符，您可以将搜索限制为源代码文件的内容、文件路径或两者。如果省略此限定符，则只搜索文件内容。
+
+| 限定符    | 示例                                                         |
+| :-------- | :----------------------------------------------------------- |
+| `in:file` | **octocat in:file** 匹配文件内容中出现 "octocat" 的代码。    |
+| `in:path` | **octocat in:path** 匹配文件路径中出现 "octocat" 的代码。    |
+|           | **octocat in:file,path** 匹配文件内容或文件路径中出现 "octocat" 的代码。 |
+
 ### 在用户或组织的仓库内搜索
+
+要在特定用户或组织拥有的所有仓库中搜索代码，您可以使用 `user` 或 `org` 限定符。要在特定仓库中搜索代码，您可以使用 `repo` 限定符。
+
+| 限定符                       | 示例                                                         |
+| :--------------------------- | :----------------------------------------------------------- |
+| `user:*USERNAME*`            | **user:defunkt extension:rb** 匹配来自 @defunkt、以 *.rb* 结尾的代码。 |
+| `org:*ORGNAME*`              | **org:github extension:js** 匹配来自 GitHub、以 *.js* 结尾的代码。 |
+| `repo:*USERNAME/REPOSITORY*` | **repo:mozilla/shumway extension:as** 匹配来自 @mozilla 的 shumway 项目、以 *.as* 结尾的代码。 |
 
 ### 按文件位置搜索
 
+可使用 `path` 限定符搜索仓库中特定位置显示的源代码。使用 `path:/` 可搜索位于仓库根目录级别的文件。或者，指定目录名称或目录路径以搜索位于该命令或其任何子目录中的文件。
+
+| 限定符                     | 示例                                                         |
+| :------------------------- | :----------------------------------------------------------- |
+| `path:/`                   | **octocat filename:readme path:/** 匹配位于仓库根目录级别且含有 "octocat" 字样的 *readme* 文件。 |
+| `path:*DIRECTORY*`         | **form path:cgi-bin language:perl** 匹配位于 *cgi-bin* 目录或其任何子目录中且含有 "form" 字样的 Perl 文件。 |
+| `path:*PATH/TO/DIRECTORY*` | **console path:app/public language:javascript** 匹配 *app/public* 目录或其任何子目录（即使其位于 *app/public/js/form-validators* 中）中且含有 "console" 字样的 JavaScript 文件。 |
+
 ### 按语言搜索
+
+可以基于所编写的语言搜索代码。
+
+| 限定符                | 示例                                                         |
+| :-------------------- | :----------------------------------------------------------- |
+| `language:*LANGUAGE*` | **element language:xml size:100** 匹配标记为 XML 且恰好有 100 个字节的并含有 "element" 字样的代码。 |
+|                       | **display language:scss** 匹配标记为 SCSS 且含有 "display" 字样的代码。 |
+|                       | **org:mozilla language:markdown** 匹配标记为 Markdown 且来自所有 @mozilla 仓库的代码。 |
 
 ### 按文件大小搜索
 
+可以使用 `size` 限定符基于代码所在文件的大小搜索源代码。`size` 限定符使用大于、小于和范围限定符基于在其中找到代码的文件的字节大小来过滤结果。
+
+| 限定符     | 示例                                                         |
+| :--------- | :----------------------------------------------------------- |
+| `size:*n*` | **function size:>10000 language:python** 匹配含有 "function" 字样、以 Python 编写、位于大于 10 KB 的文件中的代码。 |
+
 ### 按文件名搜索
 
+`filename` 限定符匹配具有特定文件名的代码文件。您还可以使用文件查找器在仓库中查找文件。更多信息请参阅“在 GitHub 上查找文件”。
+
+| 限定符                | 示例                                                         |
+| :-------------------- | :----------------------------------------------------------- |
+| `filename:*FILENAME*` | **filename:linguist** 匹配名为 "linguist" 的文件。           |
+|                       | **filename:.vimrc commands** 匹配含有 "commands" 字样的 *.vimrc* 文件。 |
+|                       | **filename:test_helper path:test language:ruby** 匹配 *test* 目录内名为 *test_helper* 的 Ruby 文件。 |
+
 ### 按文件扩展名搜索
+
+`extension` 限定符匹配具有特定文件扩展名的代码文件。
+
+| 限定符                  | 示例                                                         |
+| :---------------------- | :----------------------------------------------------------- |
+| `extension:*EXTENSION*` | **form path:cgi-bin extension:pm** 匹配含有 "form" 字样、位于 *cgi-bin* 下且具有 *.pm* 文件扩展名的代码。 |
+|                         | **icon size:>200000 extension:css** 匹配大于 200 KB、以 .css 结尾且含有 "icon" 字样的文件。 |
 
 ## github官方高级搜索页面
 
