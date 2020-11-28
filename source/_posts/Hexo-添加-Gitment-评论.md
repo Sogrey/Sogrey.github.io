@@ -1,5 +1,5 @@
 ---
-title: Hexo 添加 Gitment 评论
+title: Hexo 添加 Gitment/Gitalk 评论
 date: 2018-03-11 22:53:19
 tags: [Hexo,Gitment]
 categories: Gitment
@@ -7,9 +7,11 @@ comments: true
 toc: true
 ---
 
-由于之前使用的多说停用了，不得不另找其他评论插件就看到了 Gitment,源码在这 [github](https://github.com/imsun/gitment)。
+由于之前使用的多说停用了，不得不另找其他评论插件就看到了 [Gitment](https://github.com/imsun/gitment)/[Gitalk](https://github.com/gitalk/gitalk)。
 
 话不多说，直接开整。
+
+先以Gitment为例，Gitalk的设置很类似。
 
 <!-- more -->
 
@@ -271,3 +273,13 @@ Failed to load resource: the server responded with a status of 422 (Unprocessabl
 将`Homepage URL`以及`Authorization callback URL`改为我们新域名地址（[`https://sogrey.top/`](https://sogrey.top/)）即可。
 
 记得点击`Update application`按钮保存更新。
+
+## 7. 由于gitment域名过期，无奈切换到gitalk
+
+上面我们设置gitment时，创建了一个[gitment.ejs](https://github.com/Sogrey/Sogrey.github.io/blob/dev/themes/yelog/layout/_partial/gitment.ejs),由于gitment服务器域名过期无法授权，现切换到[gitalk.ejs](https://github.com/Sogrey/Sogrey.github.io/blob/dev/themes/yelog/layout/_partial/gitalk.ejs)。
+
+幸好这两款插件配置很相近，设置gitalk也很顺利，本站源码查看[gitalk.ejs](https://github.com/Sogrey/Sogrey.github.io/blob/dev/themes/yelog/layout/_partial/gitalk.ejs)。
+
+**但有一点需要注意**，先前gitment创建的issues的label是包含`gitment`的，而gitalk创建的却是`gitalk`,为了能重新使用之前旧的issues，可将issues的label中的`gitment`换成`gitalk`。所幸的是github的issues支持批量操作：
+
+![gitment2gitalk](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/gitment2gitalk.png)
