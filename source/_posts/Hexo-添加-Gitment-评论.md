@@ -1,7 +1,7 @@
 ---
-title: Hexo 添加 Gitment/Gitalk 评论
+title: Hexo 添加 Gitment 评论
 date: 2018-03-11 22:53:19
-tags: [Hexo,Gitment]
+tags: [Hexo,Gitment,Gitalk]
 categories: Gitment
 comments: true
 toc: true
