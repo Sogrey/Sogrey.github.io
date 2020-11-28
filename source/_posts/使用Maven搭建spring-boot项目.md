@@ -15,6 +15,8 @@ toc: true
 
 MyEclipse 和 JDK 的下载安装就不细说了，自行百度，一带而过。
 
+<!--more-->
+
 ## MyEclipse使用Maven搭建spring boot项目
 
 1. `File`->`New`->`Project`->`Maven Project`
@@ -42,7 +44,16 @@ MyEclipse 和 JDK 的下载安装就不细说了，自行百度，一带而过�
 
    ![create-spring-boot-by-ME](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/create-spring-boot-by-ME5.png)
 
-到此，一个简单的Spring boot项目就搭建完了。
+## Eclipse暂时通过Spring Initializr官网快速构建spring boot工程
+
+1. 使用浏览器打开： http://start.spring.io
+1. 填写项目相关信息，选取依赖，然后生成项目
+1. 解压项目，在Eclipse导入Maven工程
+
+
+![create-spring-boot-by-Spring-Initializr](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/create-spring-boot-by-Spring-Initializr.png)
+
+到此，一个简单的Spring boot web项目就初步搭建了，要想运行起来还需加入Spring boot，[下节](/article/使用Maven搭建spring-boot项目（下）/)安排。
 
 ## 解决一些异常
 
@@ -61,13 +72,3 @@ MyEclipse 和 JDK 的下载安装就不细说了，自行百度，一带而过�
    ![create-spring-boot-by-ME](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/create-spring-boot-by-ME9.png)
 
 
-
-
-## Eclipse暂时通过Spring Initializr官网快速构建spring boot工程
-
-1. 使用浏览器打开： http://start.spring.io
-1. 填写项目相关信息，选取依赖，然后生成项目
-1. 解压项目，在Eclipse导入Maven工程
-
-
-![create-spring-boot-by-Spring-Initializr](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/create-spring-boot-by-Spring-Initializr.png)
