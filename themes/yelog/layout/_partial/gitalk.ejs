@@ -1,0 +1,23 @@
+<!--gitment 评论-->
+<% if (!index) { %>
+    <div id="gitalk-container"></div>
+
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+    <script>
+    var gitalk = new Gitalk({        
+        id: '<%= page.title %>',
+        title: '<%= page.title %>',
+        owner: '<%= theme.gitment.owner %>',        
+        admin: ['<%= theme.gitment.owner %>'],
+        repo: '<%= theme.gitment.repo %>',
+        clientID: '<%= theme.gitment.ClientID %>',
+        clientSecret: '<%= theme.gitment.ClientSecret %>',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+      
+      gitalk.render('gitalk-container')
+    </script>
+<% } %>
+<!--gitment 评论 end-->
