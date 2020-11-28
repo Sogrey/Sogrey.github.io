@@ -2,6 +2,20 @@
 <% if (!index) { %>
     <div id="gitalk-container"></div>
 
+    <style>
+        .gitalk-container{
+            margin: 60px 0 0;padding: 0 60px;
+        }
+        .gitalk-container a {
+          border: none;
+        }
+		@media screen and (max-width:1040px) {
+            .gitalk-container{
+                padding: 0 30px;
+            }
+		}
+    </style>
+
     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
     <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
