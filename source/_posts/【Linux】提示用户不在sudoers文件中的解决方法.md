@@ -11,6 +11,9 @@ toc: true
 
 <!--more-->
 
+工具：Oracle VM VirtualBox
+系统：Ubantu
+
 1. 切换到root用户权限
 
 ``` bash
