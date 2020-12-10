@@ -303,6 +303,7 @@ $ ls -lh demo.txt
 
 ## 参考
 
+
 - [在 Linux 上创建文件的 10 个方法](https://linux.cn/article-10549-1.html)
 - [在Linux上创建一个特定大小的文件](https://www.2daygeek.com/create-a-file-in-specific-certain-size-linux/)
 
