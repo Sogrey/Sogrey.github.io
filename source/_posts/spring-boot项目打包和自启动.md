@@ -54,6 +54,8 @@ java -jar myProject.jar
 
 ## 添加到系统自启动
 
+### Windows
+
 准备工具：[winsw](https://github.com/winsw/winsw/releases),是一个可以将任何应用程序注册成服务的软件
 
 1. 将下载的`WinSW.NET4.exe`与springboot项目打包的jar包（比如:`myProject.jar`）放在同一个文件夹中，并将`WinSW.NET4.exe`重命名为与jar文件同名,比如：`myProject.exe`。
@@ -108,3 +110,44 @@ java -jar myProject.jar
    net stop myProjectServiceName
    myProject.exe uninstall
    ```
+### Linux
+
+1. 开启后台自执行
+
+命令： `nohup` 详细文档说明可参考[Linux nohup 命令](https://www.runoob.com/linux/linux-comm-nohup.html)
+
+语法格式:
+
+``` bash
+ nohup Command [ Arg … ] [　& ]
+```
+例如：
+
+``` bash
+nohup java -jar myProject.jar &
+```
+在终端如果看到以下输出说明运行成功：
+``` bash
+appending output to nohup.out
+```
+
+2. 停止运行
+
+先使用以下命令查找到 nohup 运行脚本到 PID，然后使用 kill 命令来删除
+
+``` bash
+ps -aux | grep "myProject.jar"
+```
+参数说明：
+
+- `a` : 显示所有程序
+- `u` : 以用户为主的格式来显示
+- `x` : 显示所有程序，不区分终端机
+
+另外也可以使用 `ps -def | grep "myProject.jar"` 命令来查找。
+
+找到 PID 后，就可以使用 kill PID 来删除。
+``` bash
+kill -9  进程号PID
+```
+
