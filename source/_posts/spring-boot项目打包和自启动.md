@@ -131,7 +131,7 @@ nohup java -jar myProject.jar &
 appending output to nohup.out
 ```
 
-2. 停止运行
+2. 停止运行,杀死进程
 
 先使用以下命令查找到 nohup 运行脚本到 PID，然后使用 kill 命令来删除
 
@@ -146,7 +146,7 @@ ps -aux | grep "myProject.jar"
 
 另外也可以使用 `ps -def | grep "myProject.jar"` 命令来查找。
 
-找到 PID 后，就可以使用 kill PID 来删除。
+找到 PID 后，就可以使用 [kill](https://www.runoob.com/linux/linux-comm-kill.html) PID 来删除。
 ``` bash
 kill -9  进程号PID
 ```

@@ -60,3 +60,9 @@ deb是debian发行版的软件包，而ubuntu是基于debian 发行的所以可�
 - `-W` 确认压缩文件的正确性
 
 
+## 参考
+
+- [Linux tar.gz、tar、bz2、zip 等解压缩、压缩命令详解](https://www.runoob.com/w3cnote/linux-tar-gz.html)
+- [linux tar 解压命令总结](https://blog.csdn.net/imyang2007/article/details/7634470)
+- [Linux：linux下解压*压缩tar.xz、tar、tar.gz、tar.bz2、tar.Z、rar、zip、war等文件方法](https://www.cnblogs.com/nhdlb/p/11568991.html)
+- [wget命令](https://man.linuxde.net/wget)
