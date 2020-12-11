@@ -2,7 +2,7 @@
 title: spring-boot项目打包和自启动
 date: 2020-11-30 15:04:27
 tags: [Java,Spring boot,Maven,Myeclipse,winsw]
-categories: Spring boot
+categories: Java
 comments: true
 toc: true
 ---
