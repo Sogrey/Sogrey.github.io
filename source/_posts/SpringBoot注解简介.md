@@ -6,7 +6,14 @@ categories: Java
 comments: true
 toc: true
 ---
+使用注解的优势：
 
+1. 采用纯java代码，不在需要配置繁杂的xml文件
+2. 在配置中也可享受面向对象带来的好处
+3. 类型安全对重构可以提供良好的支持
+4. 减少复杂配置文件的同时亦能享受到springIoC容器提供的功能
+
+<!--more-->
 ## 一、注解(annotations)列表
 
 1、@SpringBootApplication
