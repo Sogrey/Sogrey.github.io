@@ -16,40 +16,40 @@ toc: true
 <!--more-->
 ## 一、注解(annotations)列表
 
-1、@SpringBootApplication
+1、`@SpringBootApplication`
 
 包含了`@ComponentScan`、`@Configuration`和`@EnableAutoConfiguration`注解。
 其中`@ComponentScan`让`Spring Boot`扫描到`Configuration`类并把它加入到程序上下文。
 
-2、@ComponentScan
+2、`@ComponentScan`
 
 组件扫描，可自动发现和装配一些`Bean`。
 
-3、@Configuration
+3、`@Configuration`
 
 等同于`Spring`的`XML`配置文件；使用`Java`代码可以检查类型安全。
 
-4、@EnableAutoConfiguration
+4、`@EnableAutoConfiguration`
 
 自动配置
 
-5、@RestController
+5、`@RestController`
 
 该注解是`@Controller`和`@ResponseBody`的合集,表示这是个控制器`Bean`,并且是将函数的返回值直接填入`HTTP`响应体中,是`REST`风格的控制器。
 
-6、@Autowired
+6、`@Autowired`
 
 自动导入。
 
-7、@PathVariable
+7、`@PathVariable`
 
 获取参数。
 
-8、@JsonBackReference
+8、`@JsonBackReference`
 
 解决嵌套外链问题。
 
-9、@RepositoryRestResourcepublic
+9、`@RepositoryRestResourcepublic`
 
 配合spring-boot-starter-data-rest使用。
 
