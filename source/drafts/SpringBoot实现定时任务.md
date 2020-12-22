@@ -19,6 +19,15 @@ Spring 3.0 版本之后自带定时任务，提供了@EnableScheduling注解和@
 
 ## 基于注解（@Scheduled）
 
+@Scheduled注解和@EnableScheduling注解的使用
+基于注解@Scheduled默认为单线程，开启多个任务时，任务的执行时机会受上一个任务执行时间的影响。
+
+@EnableScheduling注解： 在配置类上使用，开启计划任务的支持（类上）。
+
+@Scheduled注解： 来声明这是一个任务，包括 cron，fixDelay，fixRate 等类型（方法上，需先开启计划任务的支持）。
+
+Scheduled 源码：
+
 ``` java
 /*
  * Copyright 2002-2018 the original author or authors.
