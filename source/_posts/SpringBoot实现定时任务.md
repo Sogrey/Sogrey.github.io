@@ -70,7 +70,7 @@ public class ScheduleTask {
 定时任务，当前时刻： 2020-12-23 23:38:00
 ```
 
-### `1@Scheduled`注解参数
+### `@Scheduled`注解参数
 
 先来看下 Scheduled 源码：
 
@@ -315,5 +315,4 @@ cron 表达式语法：
 ## 参考
 
 - [SpringBoot使用@Scheduled注解实现定时任务](https://blog.csdn.net/pan_junbiao/article/details/109399280)
-
 - [Cron表达式的详细用法](https://www.jianshu.com/p/e9ce1a7e1ed1)
