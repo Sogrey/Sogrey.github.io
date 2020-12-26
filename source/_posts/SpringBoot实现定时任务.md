@@ -308,6 +308,48 @@ cron 表达式语法：
 
 ## 基于接口SchedulingConfigurer
 
+Spring 中，创建定时任务除了使用`@Scheduled` 注解外，还可以使用 `SchedulingConfigurer`。
+
+`@Schedule` 注解有一个缺点，其定时的时间不能动态的改变，而基于 `SchedulingConfigurer` 接口的方式可以做到。`SchedulingConfigurer` 接口可以实现在`@Configuration` 类上，同时不要忘了，还需要`@EnableScheduling` 注解的支持。
+
+该接口的实现方法如下：
+``` java
+public void configureTasks(ScheduledTaskRegistrar taskRegistrar)
+```
+方法包含定时任务，延时任务，基于 `Cron` 表达式的任务，以及 `Trigger` 触发的任务。
+
+下面演示了使用方法。
+``` java
+@Configuration
+@ComponentScan(value = "com.learn")
+@EnableScheduling
+public class Config implements SchedulingConfigurer {
+	@Override
+	public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
+		taskRegistrar.addFixedRateTask(() -> System.out.println("执行定时任务1: " + new Date()), 1000);
+		TriggerTask triggrtTask = new TriggerTask( // 任务内容.拉姆达表达式
+				() -> {System.out.println("执行定时任务2: " + new Date());},
+				// 设置触发器，这里是一个拉姆达表达式，传入的TriggerContext类型，返回的是Date类型
+				triggerContext -> {
+					// 2.3 返回执行周期(Date)
+					return new CronTrigger("*/2 * * * * ?").nextExecutionTime(triggerContext);
+				});
+ 
+		taskRegistrar.addTriggerTask(triggrtTask);
+	}
+}
+```
+默认的，`SchedulingConfigurer` 使用的也是单线程的方式，如果需要配置多线程，则需要指定 `PoolSize`，加入如下代码即可：
+``` java
+@Override
+	public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
+		ThreadPoolTaskScheduler taskScheduler = new ThreadPoolTaskScheduler();
+		taskScheduler.setPoolSize(10);
+		taskScheduler.initialize();
+		taskRegistrar.setTaskScheduler(taskScheduler);
+	}
+```
+动态修改定时规则
 
 ## 基于注解设定多线程定时任务
 

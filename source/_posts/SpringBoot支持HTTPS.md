@@ -61,7 +61,7 @@ server.ssl.keyAlias:spring
 
 配置完成后就启动可以启动项目了。
 
-部署完成后使用工具：[SSL证书验证,SSL检测安装工具](https://link.zhihu.com/?target=https%3A//infinisign.com/tools/sslcheck/%3Flang%3Dcn) 来检查SSL是否部署成功。
+部署完成后使用工具：[SSL证书验证,SSL检测安装工具](https://infinisign.com/tools/sslcheck/?lang=cn) 来检查SSL是否部署成功。
 
 ## 配置好Https兼容http
 
