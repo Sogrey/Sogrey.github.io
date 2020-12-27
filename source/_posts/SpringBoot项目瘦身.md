@@ -78,7 +78,7 @@ Maven install
 
 ![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Springboot-lib-size2.png)
 
-这是将之前分离出来的lib目录与不含lib的jar放在同一目录下,最终目录结构如下：
+这时将之前分离出来的lib目录与不含lib的jar放在同一目录下,最终目录结构如下：
 
 最终目录文件结构是：
 ```
