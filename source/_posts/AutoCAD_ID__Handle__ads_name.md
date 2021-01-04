@@ -31,5 +31,3 @@ toc: true
 5. 从 AcDbObject 到AcDbHandle ：AcDbObject::getAcDbHandle().
 6. 从 ads_name 到 AcDbObjectId ：使用全局函数 acdbGetObjectId()。
 7. 从 AcDbObjectId 到 ads_name ：使用全局函数 acdbGetAdsName()。
-
- 
