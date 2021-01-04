@@ -25,11 +25,11 @@ toc: true
 ## ID、指针、句柄和 ads_name 之间具有下面的转换关系：
 
 1. 从 AcDbObjectId 到AcDbObject对象:acdbOpenAcDbObject() 或者 acdbOpenObject() 。
-2. 从AcDbObject对象到 AcDbObjectId ：所有的数据库常驻对象都继承自 AcDbObjectId 函数能获得所指向对象的 ID。
-3. 从AcDbHandle到 AcDbObjectId ： AcDbDatabase::getAcDbObjectId();
-4. 从 AcDbObjectId 到AcDbHandle：AcDbObjectId::handle() 。
-5. 从AcDbObject到AcDbHandle：AcDbObject::getAcDbHandle().
+2. 从 AcDbObject 对象到 AcDbObjectId ：所有的数据库常驻对象都继承自 AcDbObjectId 函数能获得所指向对象的 ID。
+3. 从AcDbHandle 到 AcDbObjectId ： AcDbDatabase::getAcDbObjectId();
+4. 从 AcDbObjectId 到AcDbHandle ：AcDbObjectId::handle() 。
+5. 从 AcDbObject 到AcDbHandle ：AcDbObject::getAcDbHandle().
 6. 从 ads_name 到 AcDbObjectId ：使用全局函数 acdbGetObjectId()。
-7. 从 AcDbObjectId到 ads_name：使用全局函数 acdbGetAdsName()。
+7. 从 AcDbObjectId 到 ads_name ：使用全局函数 acdbGetAdsName()。
 
  
