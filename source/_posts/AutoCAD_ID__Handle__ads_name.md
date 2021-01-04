@@ -1,7 +1,7 @@
 ---
 title: AutoCAD_ID、指针、句柄和ads_name的区别
 date: 2021-01-04 22:30:10
-tags: [AutoCad,Cad]
+tags: [Cad,AutoCad]
 categories: AutoCad
 comments: true
 toc: true
