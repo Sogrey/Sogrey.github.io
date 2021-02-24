@@ -11,6 +11,8 @@ toc: true
 
 <!--more-->
 
+转自：[Promise.all和Promise.allSettled的区别](https://segmentfault.com/a/1190000023413699)
+
 ## 解决Promise.all的痛点
 
 当需要处理多个Promise并行时，大多数情况下Promise.all用起来是非常顺手的，比如下面这样
@@ -106,4 +108,3 @@ Promise.allSettled是对Promise.all的一种补充，当面对多个promise并�
 
 
 
-转自：[Promise.all和Promise.allSettled的区别](https://segmentfault.com/a/1190000023413699)
