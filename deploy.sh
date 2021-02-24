@@ -35,7 +35,7 @@ cp apache2.0.html public\\about\\apache2.0.html
 
 echo -e "\033[32;40m [3/3] \033[0m Deploy..."
 # hexo d
-cp -r public/* .deploy_git/
+cp -r public/* .deploy_git/ # -r 包含子目录
 
 cd .deploy_git/
 git init
