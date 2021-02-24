@@ -11,7 +11,6 @@ toc: true
 
 <!--more-->
 
-
 转自：[Promise.all和Promise.allSettled的区别](https://segmentfault.com/a/1190000023413699)
 
 ## 解决Promise.all的痛点
