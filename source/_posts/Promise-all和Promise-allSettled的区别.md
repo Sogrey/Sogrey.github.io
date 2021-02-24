@@ -74,7 +74,7 @@ Promise.allSettled(promises).then(values=>console.log(values))
 
 因此，当用Promise.allSettled时，我们只需专注在then语句里，当有promise被异常打断时，我们依然能妥善处理那些已经成功了的promise，不必全部重来。
 
-### 当前大环境对Promise.allSettled的支持
+## 当前大环境对Promise.allSettled的支持
 
 nodejs从[v12.9.0](https://nodejs.org/en/blog/release/v12.9.0/)开始加入了对Promise.allSettled的支持，主流浏览器们也各自在2019年发布的版本中支持了此方法，这意味着你已经可以放心大胆的使用了。
 
