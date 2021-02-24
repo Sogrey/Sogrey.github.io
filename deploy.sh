@@ -34,6 +34,14 @@ cp mit.html public\\about\\mit.html
 cp apache2.0.html public\\about\\apache2.0.html
 
 echo -e "\033[32;40m [3/3] \033[0m Deploy..."
-hexo d
+# hexo d
+cp public/* .deploy_git/
+
+cd .deploy_git/
+git init
+git add -A
+git commit -m 'deploy gh-pages'
+
+git push -f https://github.com/Sogrey/Sogrey.github.io.git master
 
 echo -e "\033[32;40m done \033[0m "
