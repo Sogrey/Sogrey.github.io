@@ -77,7 +77,9 @@ Promise.allSettled(promises).then(values=>console.log(values))
 
 nodejs从[v12.9.0](https://nodejs.org/en/blog/release/v12.9.0/)开始加入了对Promise.allSettled的支持，主流浏览器们也各自在2019年发布的版本中支持了此方法，这意味着你已经可以放心大胆的使用了。
 
-[![promise-allsettled.png](https://image-static.segmentfault.com/292/869/2928695017-5f20c43ed364c_articlex)](https://caniuse.com/?search=Promise.allSettled)
+![promise-allsettled.png](https://image-static.segmentfault.com/292/869/2928695017-5f20c43ed364c_articlex)
+
+[点此查询](https://caniuse.com/?search=Promise.allSettled)
 
 对于那些不支持此方法的环境，你可以直接引用开源社区中实现了此方法的npm包：
 
