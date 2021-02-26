@@ -90,7 +90,7 @@ nodejs从[v12.9.0](https://nodejs.org/en/blog/release/v12.9.0/)开始加入了�
 
 或者，你可以直接基于Promise.all写一个polyfill，给你的项目打上补丁：
 
-```
+``` js
 if (Promise && !Promise.allSettled) {
   Promise.allSettled = function (promises) {
     return Promise.all(promises.map(function (promise) {
