@@ -107,5 +107,3 @@ if (Promise && !Promise.allSettled) {
 ## 结语
 
 `Promise.allSettled`是`对Promise.all`的一种补充，当面对多个promise并行时，它额外提供了一种处理方式，解决了当多个promise并行时reject的出现会伴随着其他promise数据丢失的问题。
-
-
