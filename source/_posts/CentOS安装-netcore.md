@@ -43,8 +43,6 @@ sudo yum remove -y dotnet-*
 
 ```
 
- 
-
 ## 参考
 
 - [https://www.microsoft.com/net/download/linux-package-manager/centos/sdk-current](https://www.microsoft.com/net/download/linux-package-manager/centos/sdk-current)
