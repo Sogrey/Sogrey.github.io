@@ -22,8 +22,6 @@ dotnet --info
 
 ## 安装.Net Core SDK
 ``` bash
-sudo rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
-sudo yum update -y
 sudo yum install -y dotnet-sdk-2.1
 dotnet --version
 
@@ -32,8 +30,6 @@ dotnet --version
 
 ## 安装Asp.Net Core
 ``` bash
-sudo rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
-sudo yum update -y
 sudo yum install -y aspnetcore-runtime-2.1
 dotnet --info
 
