@@ -24,7 +24,6 @@ echo "What's your name?"
 read PERSON
 echo "Hello, $PERSON"
 ```
-
 ## sh/bash执行Bash脚本
 
 ``` bash
