@@ -79,7 +79,6 @@ github上克隆：`git clone https://github.com/yanncam/UnSHc.git`，文件夹la
 
 `./unshc.sh -h`查看使用方法，笔者使用sample里面的例程测试可以。但是笔者觉得这个工具意义不大，除非知道二级制文件是使用shc来编译的，不然反编译出来也不成功。反编译UnSHc对于开发人员来说作用不大。
 
-
 ## 参考
 
 - [如何让shell脚本变成可执行文件](https://www.jianshu.com/p/69ce43a5c355)
