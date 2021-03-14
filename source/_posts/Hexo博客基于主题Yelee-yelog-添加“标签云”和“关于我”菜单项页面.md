@@ -14,7 +14,6 @@ categories: HEXO博客
 
 <!-- more -->
 
-
 # 1 设置主题配置文件
 
 在主题配置文件`themes\yelog\_config.yml`里找到`menu`,如下：
