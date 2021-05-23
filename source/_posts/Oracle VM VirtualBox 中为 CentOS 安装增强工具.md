@@ -142,7 +142,6 @@ Press Return to close this window...
 
 在终端依次执行，注意需要root权限执行，替换`<VERSION>` 为你当前安装的增强工具版本号，前面截图中有标识`6.1.20`。
 
-
 完成后，再一次移除虚拟盘，重新挂载安装：
 
 ``` bash
