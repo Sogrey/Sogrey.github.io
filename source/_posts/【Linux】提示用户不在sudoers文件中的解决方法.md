@@ -12,7 +12,7 @@ toc: true
 <!--more-->
 
 工具：Oracle VM VirtualBox
-系统：Ubantu
+系统：CentOS,Huawei Eulor OS(基于CentOS)
 
 1. 切换到root用户权限
 
