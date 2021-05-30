@@ -55,7 +55,6 @@ user    ALL=(ALL)       ALL
     　　　 :w   保存文件，不退出vi命令
     　　　 :wq  保存文件，退出vi命令
 
-
 4.保存退出后恢复`/etc/sudoers`的访问权限为`440`
 
 ``` bash
