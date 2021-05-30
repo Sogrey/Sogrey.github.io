@@ -14,14 +14,14 @@ toc: true
 工具：Oracle VM VirtualBox
 系统：CentOS,Huawei Eulor OS(基于CentOS)
 
-1. 切换到root用户权限
+1.切换到root用户权限
 
 ``` bash
 su root
 密码 #输入密码，密码不可见
 ```
 
-2. 查看`/etc/sudoers`文件权限，通常是只读权限，修改为可写权限
+2.查看`/etc/sudoers`文件权限，通常是只读权限，修改为可写权限
 
 ``` bash
 ls -l /etc/sudoers # 查看文件权限
@@ -31,7 +31,7 @@ ls -l /etc/sudoers # 再次查看文件权限
 -rwxrwxrwx. 1 root root 4030 9月  25 00:57 /etc/sudoers #r读 w写 现在是可写状态
 ```
 
-3. 执行`vi`命令，编辑`/etc/sudoers`文件，添加要提升权限的用户；
+3.执行`vi`命令，编辑`/etc/sudoers`文件，添加要提升权限的用户；
 
 ``` bash 
 vi ./etc/sudoers
@@ -56,7 +56,7 @@ user    ALL=(ALL)       ALL
     　　　 :wq  保存文件，退出vi命令
 
 
-4. 保存退出后恢复`/etc/sudoers`的访问权限为`440`
+4.保存退出后恢复`/etc/sudoers`的访问权限为`440`
 
 ``` bash
 chmod 440 /etc/sudoers # 恢复只读
