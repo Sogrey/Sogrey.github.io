@@ -72,4 +72,3 @@ ls -l /etc/sudoers # 查看文件读写状态
 ## 参考
 
 - [Linux：设置文件和文件夹的读写权限](https://blog.csdn.net/mouday/article/details/88758437)
-
