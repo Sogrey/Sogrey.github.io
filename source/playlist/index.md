@@ -1,7 +1,7 @@
 ---
 title: 歌单
 date: 2019-10-12 21:05:36
-type: "playlist"
+# type: "playlist"
 ---
 
 
