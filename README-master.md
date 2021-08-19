@@ -1,6 +1,6 @@
 # Sogrey.github.io
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/25e687edd21c4730a2d30acca3fc4734)](https://www.codacy.com/app/Sogrey/Sogrey.github.io?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Sogrey/Sogrey.github.io&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a2d2fc74a5f44ffdaa84f923434e85d1)](https://www.codacy.com/gh/Sogrey/Sogrey.github.io/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Sogrey/Sogrey.github.io&amp;utm_campaign=Badge_Grade)
 
 [![](https://sogrey.github.io/img/logo/sogrey.github.io.svg)](https://sogrey.github.io/)
 
