@@ -7,7 +7,9 @@ comments: true
 toc: true
 ---
 
+Linux上安装JDK,动手记录不迷路。
 
+<!--more-->
 
 ## 安装JDK
 
