@@ -13,7 +13,7 @@ Sogrey's github pages
 - 1. 克隆源码
 
      ``` bash
-     git clone -b dev https://github.com/Sogrey/Sogrey.github.io.git
+     git clone -b dev git@github.com:Sogrey/Sogrey.github.io.git
      ```
 
      克隆`clone`·`dev`分支的源码。
