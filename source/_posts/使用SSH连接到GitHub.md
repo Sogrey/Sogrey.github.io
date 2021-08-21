@@ -173,7 +173,7 @@ origin为仓库名，后面接的是ssh仓库地址。
 
 ![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Create%20SSH%20key%20by%20PuTTY%20Key%20Generator.png)
 
-PuTTYgen工具窗口先不要关闭，将框中显示的公钥复制下来依照[之前提到的](#为你的github账号添加SSH key)添加到github的ssh。
+PuTTYgen工具窗口先不要关闭，将框中显示的公钥复制下来依照[之前提到的](#为你的github账号添加SSH-key)添加到github的ssh。
 
 点击PuTTYgen工具窗口`Save private key`保存一个`.ppk`文件，适当命名找个目录存档。
 
