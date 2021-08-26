@@ -19,7 +19,7 @@ echo -e "\033[32;40m [1/3] \033[0m commit 2 dev branch"
 git init
 git add -A
 git commit -m 'deploy dev'
-git push -f https://github.com/Sogrey/Sogrey.github.io.git dev
+git push -f git@github.com:Sogrey/Sogrey.github.io.git dev
 
 echo -e "\033[32;40m [2/3] \033[0m Compile..."
 hexo g
@@ -42,6 +42,6 @@ git init
 git add -A
 git commit -m 'deploy gh-pages'
 
-git push -f https://github.com/Sogrey/Sogrey.github.io.git master
+git push -f git@github.com:Sogrey/Sogrey.github.io.git master
 
 echo -e "\033[32;40m done \033[0m "
