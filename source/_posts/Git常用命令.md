@@ -308,7 +308,6 @@ $ git remote add origin [remote]
 $ git remote add origin [remote]
 ```
 
-
 # 参考
 
 * [Git Reference](http://gitref.org/creating/)
