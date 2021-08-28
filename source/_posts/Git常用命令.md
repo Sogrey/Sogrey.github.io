@@ -306,6 +306,15 @@ $ git remote add origin [remote]
 
 # 如果未设置过git远程地址
 $ git remote add origin [remote]
+
+# 克隆项目
+$ git clone -v --progress [remote] [localDir]
+
+# 拉取更新
+$ git pull -v --progress "origin"
+
+# 提交更新
+$ git push --progress "origin" master:master
 ```
 
 # 参考
