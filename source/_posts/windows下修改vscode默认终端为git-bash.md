@@ -18,7 +18,7 @@ toc: true
 
 ![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/vscode-git-bash-01.png)
 
-## 点击VSCode左下角的齿轮，展开点击[设置]
+点击VSCode左下角的齿轮，展开点击[设置]
 
 ![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/vscode-git-bash-02.png)
 
