@@ -57,3 +57,6 @@ toc: true
 
 ![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/vscode-git-bash-05.png)
 
+终于我的`Bash`脚本又飞起来了。
+
+![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/vscode-git-bash-06.png)
