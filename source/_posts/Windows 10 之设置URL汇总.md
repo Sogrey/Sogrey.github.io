@@ -30,7 +30,7 @@ toc: true
 | 设备蓝牙               | `ms-settings:bluetooth`                            |<a class="a-win" href="ms-settings:bluetooth">设备蓝牙</a>|
 | 已连接设备             | `ms-settings:connecteddevices`                     |<a class="a-win" href="ms-settings:connecteddevices">已连接设备</a>|
 | 鼠标和触摸版           | `ms-settings:mousetouchpad`                        |<a class="a-win" href="ms-settings:mousetouchpad">鼠标和触摸版</a>|
-| 网络与互联网电源和睡眠 | `ms-settings:powersleep`                           |<a class="a-win" href="ms-settings:powersleep">网络与互联网电源和睡眠</a>|
+| 电源和睡眠 | `ms-settings:powersleep`                           |<a class="a-win" href="ms-settings:powersleep">电源和睡眠</a>|
 | 飞行模式               | `ms-settings:network-airplanemode`                 |<a class="a-win" href="ms-settings:network-airplanemode">飞行模式</a>|
 | 拨号网络               | `ms-settings:network-dialup`                       |<a class="a-win" href="ms-settings:network-dialup">拨号网络</a>|
 | 以太网                 | `ms-settings:network-ethernet`                     |<a class="a-win" href="ms-settings:network-ethernet">以太网</a>|
@@ -57,7 +57,7 @@ toc: true
 | 无线电收发器           | `ms-settings:privacy-radios`                       |<a class="a-win" href="ms-settings:privacy-radios">无线电收发器</a>|
 | 语音、默迹书写和键入   | `ms-settings:privacy-speechtyping`                 |<a class="a-win" href="ms-settings:privacy-speechtyping">语音、默迹书写和键入</a>|
 | 相机                   | `ms-settings:privacy-webcam`                       |<a class="a-win" href="ms-settings:privacy-webcam">相机</a>|
-| 更新和安全Windows更新  | `ms-settings:easeofaccess-closedcaptioning`        |<a class="a-win" href="ms-settings:easeofaccess-closedcaptioning">更新和安全Windows更新</a>|
+| 隐藏式字幕  | `ms-settings:easeofaccess-closedcaptioning`        |<a class="a-win" href="ms-settings:easeofaccess-closedcaptioning">隐藏式字幕</a>|
 | 高对比度               | `ms-settings:easeofaccess-highcontrast`            |<a class="a-win" href="ms-settings:easeofaccess-highcontrast">高对比度</a>|
 | 放大镜                 | `ms-settings:easeofaccess-magnifier`               |<a class="a-win" href="ms-settings:easeofaccess-magnifier">放大镜</a>|
 | 讲述人                 | `ms-settings:easeofaccess-narrator`                |<a class="a-win" href="ms-settings:easeofaccess-narrator">讲述人</a>|
