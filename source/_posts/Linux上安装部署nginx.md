@@ -106,3 +106,4 @@ systemctl stop firewalld.service
 ## 参考
 
 - [LINUX安装nginx详细步骤](https://blog.csdn.net/t8116189520/article/details/81909574)
+- [Linux 安装Nginx详细图解教程](https://blog.csdn.net/grhlove123/article/details/47834673)
