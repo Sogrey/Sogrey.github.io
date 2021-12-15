@@ -7,6 +7,10 @@ comments: true
 toc: true
 ---
 
+本文主要给大家介绍了关于利用JS对iframe父子（内外）页面进行操作的方法.
+
+<!--more-->
+
 ## 1. 获得iframe的window对象
 
 存在跨域访问限制。
