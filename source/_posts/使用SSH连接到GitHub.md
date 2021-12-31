@@ -181,6 +181,12 @@ PuTTYgen工具窗口先不要关闭，将框中显示的公钥复制下来依照
 
 ![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Add%20ppk%20file%20into%20Pageant%20Key%20List.png)
 
+## 异常处理
+
+### 1. git报错ssh: connect to host github.com port 22: Connection timed out
+
+参考[这里](https://blog.csdn.net/nightwishh/article/details/99647545)成功解决
+
 ## 参考
 
 - [使用SSH 连接到 GitHub - GitHub Docs](https://docs.github.com/cn/github/authenticating-to-github/connecting-to-github-with-ssh)
