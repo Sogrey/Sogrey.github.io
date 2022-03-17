@@ -154,7 +154,7 @@ Bye
 D:\Programs\mysql-8.0.23-winx64\bin>
 ```
 
-## 3. Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+## 3. Loading class `com.mysql.jdbc.Driver`. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver`. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
 
 因为连接mysql8版本的数据库需要新的驱动.
 ``` bash
