@@ -153,3 +153,43 @@ Bye
 
 D:\Programs\mysql-8.0.23-winx64\bin>
 ```
+
+## 3. Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+
+因为连接mysql8版本的数据库需要新的驱动.
+``` bash
+# spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+```
+
+## 4. MySQL Workbench 连接不上mysql问题
+
+![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/MySQL%20Workbench%20%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8Amysql%E9%97%AE%E9%A2%98-1.png)
+
+![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/MySQL%20Workbench%20%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8Amysql%E9%97%AE%E9%A2%98-2.png)
+
+![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/MySQL%20Workbench%20%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8Amysql%E9%97%AE%E9%A2%98-3.png)
+
+加入host的范围
+
+``` sql
+mysql> update user set host = '%' where user = 'root';
+
+mysql> select user,host from mysql.user;
++------------------+-----------+
+| user             | host      |
++------------------+-----------+
+| root             | %         |
+| mysql.infoschema | localhost |
+| mysql.session    | localhost |
+| mysql.sys        | localhost |
++------------------+-----------+
+4 rows in set (0.00 sec)
+
+mysql>  flush privileges;
+Query OK, 0 rows affected (0.01 sec)
+```
+
+终于成功。记得权限类的要`flush privileges`!
+
+![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/MySQL%20Workbench%20%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8Amysql%E9%97%AE%E9%A2%98-4.png)
