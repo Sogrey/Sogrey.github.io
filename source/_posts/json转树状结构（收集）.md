@@ -5,6 +5,10 @@ date: 2017-12-09 10:48:07
 tags: [JavaScript,JSON]
 ---
 
+> 后话： 现有新的实现方案，基于java8 Stream ，不妨看下？
+>
+> [使用java8中Stream轻松遍历树形结构](https://sogrey.top/article/%E4%BD%BF%E7%94%A8java8%E4%B8%ADStream%E8%BD%BB%E6%9D%BE%E9%81%8D%E5%8E%86%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84/)
+
 一切都源于项目需求。近期web项目中需要这样的功能：将json数据转为树级结构，json的数据结构如下：
 
 ``` javascript
