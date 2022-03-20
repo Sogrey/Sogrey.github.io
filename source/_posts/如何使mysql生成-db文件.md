@@ -9,7 +9,9 @@ toc: true
 
 ## 1. 下载sqllite数据库
 
-在本机中安装sqlite数据库。下载地址为（[http://www.sqlite.org/download.html](http://www.sqlite.org/download.html)）。加载完成后解压并添加到环境变量`path`中，`cmd`输入`sqlite3`，会有提示SQLite version等等的提示，表示安装成功；
+在本机中安装sqlite数据库。下载地址为（[http://www.sqlite.org/download.html](http://www.sqlite.org/download.html)）。windows下载[sqlite-tools-win32-x86-3380100.zip](https://www.sqlite.org/2022/sqlite-tools-win32-x86-3380100.zip)
+
+加载完成后解压并添加到环境变量`path`中，`cmd`输入`sqlite3`，会有提示SQLite version等等的提示，表示安装成功；
 
 ``` cmd
 Microsoft Windows [版本 10.0.19043.1586]
