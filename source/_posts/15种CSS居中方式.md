@@ -1,7 +1,7 @@
 ---
 title: 15种CSS居中方式
 date: 2018-03-30 00:05:49
-tags: [css,居中]
+tags: [css]
 categories: css
 comments: true
 toc: true
