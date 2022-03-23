@@ -1,6 +1,7 @@
 ---
 title: Hexo博客基于主题Yelee(yelog) 添加文章分类
 date: 2017-01-12 10:22:08
+author: Sogrey
 tags: [HEXO,Yelee,yelog,文章分类]
 categories: HEXO博客
 ---

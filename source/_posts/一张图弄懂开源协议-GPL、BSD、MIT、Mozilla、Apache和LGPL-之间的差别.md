@@ -2,6 +2,7 @@
 title: 一张图弄懂开源协议-GPL、BSD、MIT、Mozilla、Apache和LGPL 之间的差别
 date: 2019-01-07 12:12:44
 tags: [开源协议]
+author: Sogrey
 categories: 开源协议
 comments: true
 toc: true

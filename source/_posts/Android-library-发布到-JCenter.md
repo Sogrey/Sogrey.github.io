@@ -2,6 +2,7 @@
 title: Android library 发布到 JCenter
 categories: Android
 date: 2017-03-09 10:49:49
+author: Sogrey
 tags: [Android,JCenter,maven]
 ---
 

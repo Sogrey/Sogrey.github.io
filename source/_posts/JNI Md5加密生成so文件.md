@@ -2,6 +2,7 @@
 title: JNI Md5加密生成so文件
 date: 2018-07-25 20:39:13
 tags: [JNI,Md5]
+author: Sogrey
 categories: JNI
 comments: true
 toc: true

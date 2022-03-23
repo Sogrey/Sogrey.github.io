@@ -1,5 +1,6 @@
 ---
 title: Linux中让shell脚本变成可执行文件
+author: Sogrey
 date: 2021-03-07 00:36:36
 tags: [Linux,shell]
 categories: Linux

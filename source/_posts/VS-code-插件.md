@@ -1,5 +1,6 @@
 ---
 title: VS code 插件
+author: Sogrey
 date: 2018-07-04 19:09:34
 tags: [VS code]
 categories: VS code

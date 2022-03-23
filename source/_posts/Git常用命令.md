@@ -2,6 +2,7 @@
 title: Git常用命令
 date: 2017-01-12 15:56:21
 tags: git
+author: Sogrey
 categories: Git
 ---
 

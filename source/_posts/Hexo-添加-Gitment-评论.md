@@ -1,6 +1,7 @@
 ---
 title: Hexo 添加 Gitment 评论
 date: 2018-03-11 22:53:19
+author: Sogrey
 tags: [Hexo,Gitment,Gitalk]
 categories: Gitment
 comments: true

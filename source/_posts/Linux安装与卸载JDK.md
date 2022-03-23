@@ -1,5 +1,6 @@
 ---
 title: Linux安装与卸载JDK
+author: Sogrey
 date: 2021-08-19 21:14:03
 tags: [Linux,JDK]
 categories: Linux

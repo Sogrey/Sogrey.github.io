@@ -1,6 +1,7 @@
 ---
 title: 使用hugo搭建个人博客
 date: 2019-12-04 22:56:16
+author: Sogrey
 tags: [hugo]
 categories: Hugo
 comments: true

@@ -1,6 +1,7 @@
 ---
 title: Hexo博客基于主题Yelee(yelog) 添加“标签云”和“关于我”菜单项页面
 date: 2017-01-11 17:00:30
+author: Sogrey
 tags: [HEXO,Yelee,yelog,标签云]
 categories: HEXO博客
 ---

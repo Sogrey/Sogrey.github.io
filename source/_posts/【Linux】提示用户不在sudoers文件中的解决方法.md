@@ -1,6 +1,7 @@
 ---
 title: 【Linux】提示用户不在sudoers文件中的解决方法
 date: 2020-12-07 10:20:58
+author: Sogrey
 tags: [Linux,sudo,sudoers]
 categories: Linux
 comments: true

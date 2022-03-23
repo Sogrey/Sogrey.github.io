@@ -1,5 +1,6 @@
 ---
 title: SpringBoot支持HTTPS
+author: Sogrey
 date: 2020-12-17 00:01:15
 tags: [Java,Spring boot]
 categories: Java

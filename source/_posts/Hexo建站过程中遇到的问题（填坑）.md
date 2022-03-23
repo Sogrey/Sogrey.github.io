@@ -1,6 +1,7 @@
 ---
 title: Hexo建站过程中遇到的问题（填坑篇）
 categories: Hexo建站填坑
+author: Sogrey
 date: 2017-08-12 17:34:17
 tags: [Hexo建站填坑,手记]
 ---

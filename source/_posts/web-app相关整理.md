@@ -1,5 +1,6 @@
 ---
 title: web app相关整理
+author: Sogrey
 categories: WebApp
 date: 2017-01-18 23:28:24
 tags: [WebApp,手记,PPT]

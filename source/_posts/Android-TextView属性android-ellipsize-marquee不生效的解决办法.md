@@ -2,6 +2,7 @@
 title: 'Android中TextView属性ellipsize=marquee不生效的解决办法'
 date: 2018-03-26 18:35:54
 tags: [Android,marquee]
+author: Sogrey
 categories: Android
 comments: true
 toc: true

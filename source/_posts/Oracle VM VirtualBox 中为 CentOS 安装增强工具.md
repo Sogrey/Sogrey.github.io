@@ -1,6 +1,7 @@
 ---
 layout: oracle
 title: Oracle VM VirtualBox 中为 CentOS 安装增强工具
+author: Sogrey
 date: 2021-05-23 00:26:09
 tags: [VirtualBox,CentOS]
 categories: 虚拟机

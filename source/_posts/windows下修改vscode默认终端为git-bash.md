@@ -1,5 +1,6 @@
 ---
 title: windows下修改vscode默认终端为git bash
+author: Sogrey
 date: 2021-09-13 23:31:20
 tags: [VSCode,Git,Bash]
 categories: VSCode

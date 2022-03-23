@@ -1,6 +1,7 @@
 ---
 title: 使用 npm 安装 gitbook
 date: 2019-02-14 09:50:14
+author: Sogrey
 tags: [node.js,npm,gitbook]
 categories: Gitbook
 comments: true

@@ -1,6 +1,7 @@
 ---
 title: 如何在Github Pages搭建个人独立主页？
 date: 2017-01-09 09:58:38
+author: Sogrey
 tags: [Github pages,git]
 toc: true
 categories: HEXO博客

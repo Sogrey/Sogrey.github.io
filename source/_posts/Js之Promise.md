@@ -1,5 +1,6 @@
 ---
 title: Js之Promise
+author: Sogrey
 date: 2020-04-28 10:14:21
 tags: [JavaScript,JS,Promise]
 categories: JavaScript

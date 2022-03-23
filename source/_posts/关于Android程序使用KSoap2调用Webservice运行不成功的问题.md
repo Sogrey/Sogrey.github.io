@@ -3,6 +3,7 @@ title: 关于Android程序使用KSoap2调用Webservice运行不成功的问题
 date: 2018-03-26 18:30:11
 tags: [Android,KSoap2,Webservice]
 categories: Android
+author: Sogrey
 comments: true
 toc: true
 ---

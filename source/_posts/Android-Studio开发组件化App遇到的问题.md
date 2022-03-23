@@ -1,6 +1,7 @@
 ---
 title: Android Studio开发组件化App遇到的问题
 date: 2019-10-30 11:38:40
+author: Sogrey
 tags: [Android]
 categories: Android
 comments: true

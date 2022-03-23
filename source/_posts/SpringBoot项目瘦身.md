@@ -1,5 +1,6 @@
 ---
 title: Spring Boot 项目瘦身
+author: Sogrey
 date: 2020-12-26 23:22:55
 tags: [Java,Spring boot]
 categories: Java

@@ -1,5 +1,6 @@
 ---
 title: pe装机，开机设置启动项快捷键
+author: Sogrey
 date: 2018-07-18 22:30:03
 tags: [装机,PE,重装系统]
 categories: 装机

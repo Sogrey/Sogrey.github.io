@@ -1,5 +1,6 @@
 ---
 title: Linux上安装部署nginx
+author: Sogrey
 date: 2021-12-02 21:17:24
 tags: [Linux,nginx]
 categories: Linux

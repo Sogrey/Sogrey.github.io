@@ -1,6 +1,7 @@
 ---
 title: 玩转Windows子系统Linux之准备工作
 date: 2021-09-09 20:57:52
+author: Sogrey
 tags: [WSL,Windows,Linux]
 categories: Linux
 comments: true

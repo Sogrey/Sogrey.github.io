@@ -1,5 +1,6 @@
 ---
 title: JS中apply()与call()的区别
+author: Sogrey
 date: 2019-03-18 15:44:49
 tags: [JS]
 categories: JS

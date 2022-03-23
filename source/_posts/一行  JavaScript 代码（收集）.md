@@ -1,6 +1,7 @@
 ---
 title: 一行  JavaScript 代码（收集）
 categories: JavaScript
+author: Sogrey
 date: 2017-10-16 10:31:07
 tags: [JavaScript]
 ---

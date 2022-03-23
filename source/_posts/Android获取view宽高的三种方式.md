@@ -1,6 +1,7 @@
 ---
 title: Android获取view宽高的三种方式
 date: 2018-03-26 23:30:27
+author: Sogrey
 tags: [Android]
 categories: Android
 comments: true

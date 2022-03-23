@@ -4,6 +4,7 @@ date: 2022-03-20 12:52:01
 tags: [Mysql,sqlite]
 categories: Mysql
 comments: true
+author: Sogrey
 toc: true
 ---
 

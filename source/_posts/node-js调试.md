@@ -1,8 +1,9 @@
 ---
 title: node.js调试
+author: Sogrey
 date: 2019-03-22 10:23:20
 tags: [node.js]
-categories: node
+categories: node.js
 comments: true
 toc: true
 ---

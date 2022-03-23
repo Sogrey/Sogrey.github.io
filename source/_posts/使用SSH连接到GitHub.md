@@ -1,6 +1,7 @@
 ---
 title: 使用SSH连接到GitHub
 date: 2021-08-21 20:50:49
+author: Sogrey
 tags: [Github,SSH]
 categories: SSH
 comments: true

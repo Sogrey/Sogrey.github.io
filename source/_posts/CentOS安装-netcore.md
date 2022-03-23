@@ -1,6 +1,7 @@
 ---
 title: CentOS安装.netcore
 date: 2021-03-04 20:49:28
+author: Sogrey
 tags: [Linux,CentOS,.netcore]
 categories: Linux
 comments: true

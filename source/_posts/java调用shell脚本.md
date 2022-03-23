@@ -2,6 +2,7 @@
 title: java调用shell脚本
 date: 2020-12-28 17:12:48
 categories: Java
+author: Sogrey
 tags: [Java,shell]
 comments: true
 toc: true

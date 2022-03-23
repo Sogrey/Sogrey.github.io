@@ -1,6 +1,7 @@
 ---
 title: Activity启动模式(lauchMode)
 date: 2018-12-22 13:59:21
+author: Sogrey
 tags: [Android,Activity]
 categories: Android
 comments: true

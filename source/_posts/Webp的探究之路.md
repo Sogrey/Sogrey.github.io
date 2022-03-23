@@ -1,5 +1,6 @@
 ---
 title: Webp的探究之路
+author: Sogrey
 categories: Webp
 date: 2017-01-17 23:48:03
 tags: [Webp]

@@ -1,6 +1,7 @@
 ---
 title: git clone 解决Permission Denied (publickey)问题
 date: 2019-04-22 17:35:45
+author: Sogrey
 tags: [git]
 categories: Git
 comments: true

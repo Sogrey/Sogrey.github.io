@@ -2,6 +2,7 @@
 title: Java对象转json时空值(null)处理
 date: 2018-12-20 09:33:23
 tags: [Java,Json]
+author: Sogrey
 categories: Java
 comments: true
 toc: true

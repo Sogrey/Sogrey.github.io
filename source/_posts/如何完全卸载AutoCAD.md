@@ -2,6 +2,7 @@
 title: 如何完全卸载AutoCAD
 date: 2020-07-26 07:26:18
 tags: [软件,AutoCAD]
+author: Sogrey
 categories: 软件
 comments: true
 toc: true

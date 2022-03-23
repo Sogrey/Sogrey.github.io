@@ -1,5 +1,6 @@
 ---
 title: Mysql踩坑记
+author: Sogrey
 date: 2021-04-10 23:49:48
 tags: [Mysql,踩坑记]
 categories: Mysql

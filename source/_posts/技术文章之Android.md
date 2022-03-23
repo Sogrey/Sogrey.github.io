@@ -2,6 +2,7 @@
 title: 技术文章之Android
 categories: 技术文章
 date: 2017-02-12 20:04:54
+author: Sogrey
 tags: [技术文章,Android]
 ---
 

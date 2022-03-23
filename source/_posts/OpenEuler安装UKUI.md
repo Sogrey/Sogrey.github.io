@@ -1,5 +1,6 @@
 ---
 title: OpenEuler安装UKUI
+author: Sogrey
 date: 2021-09-28 21:15:03
 tags: [Linux,OpenEuler,UKUI]
 categories: Linux

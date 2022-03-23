@@ -1,5 +1,6 @@
 ---
 title: Promise.all和Promise.allSettled的区别
+author: Sogrey
 date: 2021-02-24 23:33:53
 tags: [JS,Promise]
 categories: JS

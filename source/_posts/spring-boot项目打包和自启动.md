@@ -1,5 +1,6 @@
 ---
 title: spring-boot项目打包和自启动
+author: Sogrey
 date: 2020-11-30 15:04:27
 tags: [Java,Spring boot,Maven,Myeclipse,winsw]
 categories: Java

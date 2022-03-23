@@ -1,6 +1,7 @@
 ---
 title: 玩转Windows子系统Linux之安装Kali Linux
 date: 2021-09-09 21:29:58
+author: Sogrey
 tags: [WSL,Windows,Linux]
 categories: Linux
 comments: true

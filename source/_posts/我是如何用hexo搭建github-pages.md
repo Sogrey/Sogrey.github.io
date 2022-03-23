@@ -1,6 +1,7 @@
 ---
 title: 我是如何用hexo搭建github pages
 date: 2017-01-08 20:53:05
+author: Sogrey
 tags: [HEXO,Github pages]
 categories: HEXO博客
 ---

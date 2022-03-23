@@ -1,5 +1,6 @@
 ---
 title: Linux下安装软件
+author: Sogrey
 date: 2020-12-05 13:47:33
 tags: [Linux,deb,rpm]
 categories: Linux

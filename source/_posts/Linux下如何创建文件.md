@@ -1,5 +1,6 @@
 ---
 title: Linux下如何创建文件
+author: Sogrey
 date: 2020-12-10 15:48:11
 tags: [Linux]
 categories: Linux
