@@ -12,7 +12,7 @@ toc: true
 
 <!--more-->
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Springboot-lib-size.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FSpringboot-lib-size.png)
 
 ## 分离出lib依赖三方库
 
@@ -77,7 +77,7 @@ Maven install
 ```
 再次执行打包命令得到不带lib的jar包，大小才98k.
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Springboot-lib-size2.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FSpringboot-lib-size2.png)
 
 这时将之前分离出来的lib目录与不含lib的jar放在同一目录下,最终目录结构如下：
 
@@ -95,7 +95,7 @@ Maven install
 $ java -Dloader.path=lib -jar SpringBootDemo-0.0.1-SNAPSHOT.jar
 ```
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Springboot-lib-size3.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FSpringboot-lib-size3.png)
 
 完整的jar包启动命令：
 

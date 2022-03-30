@@ -47,7 +47,7 @@ ls -al ~/.ssh
 
 来查看是否有ssh key存在。
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Checking%20for%20existing%20SSH%20keys.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FChecking%20for%20existing%20SSH%20keys.png)
 
 如图，提示不存在，下面准备生成新的SSH。
 
@@ -80,7 +80,7 @@ Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 ```
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Generating%20a%20new%20SSH%20key%20and%20adding%20it%20to%20the%20ssh-agent.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FGenerating%20a%20new%20SSH%20key%20and%20adding%20it%20to%20the%20ssh-agent.png)
 
 创建完ssh key后，你需要把它添加到ssh-agent中去。
 
@@ -98,7 +98,7 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 ```
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/adding%20ssh%20to%20the%20ssh-agent.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fadding%20ssh%20to%20the%20ssh-agent.png)
 
 ### 为你的github账号添加SSH key
 
@@ -112,7 +112,7 @@ clip < ~/.ssh/id_rsa.pub
 
 登录Github,依次点击`Settings` > `SSH and GPG keys` > `New SSH key`,在`Key`一栏输入刚刚复制的ssh key, Title一栏随便填写：
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Adding%20a%20new%20SSH%20key%20to%20your%20GitHub%20account.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FAdding%20a%20new%20SSH%20key%20to%20your%20GitHub%20account.png)
 
 填写完成点击`Add SSH key`后需要输入github密码验证即可。
 
@@ -140,7 +140,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 Hi Sogrey! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Testing%20your%20SSH%20connection.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FTesting%20your%20SSH%20connection.png)
 
 则表示ssh连接成功了。如果收到`access denied`,可参考[这里](https://help.github.com/articles/error-permission-denied-publickey/)。
 
@@ -162,7 +162,7 @@ git remote -v
 
 origin为仓库名，后面接的是ssh仓库地址。
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Changing%20a%20remote's%20URL.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FChanging%20a%20remote's%20URL.png)
 
 到此Github的SSH key配置大功告成。
 
@@ -172,7 +172,7 @@ origin为仓库名，后面接的是ssh仓库地址。
 
 找到TortoiseGit自带的PuTTYgen工具，打开后点击Generate(**生成的过程中记得移动鼠标**)
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Create%20SSH%20key%20by%20PuTTY%20Key%20Generator.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FCreate%20SSH%20key%20by%20PuTTY%20Key%20Generator.png)
 
 PuTTYgen工具窗口先不要关闭，将框中显示的公钥复制下来依照[之前提到的](#为你的github账号添加SSH-key)添加到github的ssh。
 
@@ -180,7 +180,7 @@ PuTTYgen工具窗口先不要关闭，将框中显示的公钥复制下来依照
 
 找到TortoiseGit自带的`Pageant Key List`工具,点击`Add Key`添加刚刚保存的`.ppk`文件即可。
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Add%20ppk%20file%20into%20Pageant%20Key%20List.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FAdd%20ppk%20file%20into%20Pageant%20Key%20List.png)
 
 ## 异常处理
 

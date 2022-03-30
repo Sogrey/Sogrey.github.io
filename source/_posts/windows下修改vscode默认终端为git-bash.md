@@ -17,15 +17,15 @@ toc: true
 
 <!--more-->
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/vscode-git-bash-01.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fvscode-git-bash-01.png)
 
 点击VSCode左下角的齿轮，展开点击[设置]
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/vscode-git-bash-02.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fvscode-git-bash-02.png)
 
 搜索关键词`shell`,选择`终端` > `Terminal › Integrated › Automation Shell: Windows` > `在 settings.json 中编辑`
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/vscode-git-bash-03.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fvscode-git-bash-03.png)
 
 我之前配置的是下面这个，已经不能用了（具体可参考 [Integrated Terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration)）：
 
@@ -54,10 +54,10 @@ toc: true
 
 关闭配置，回到终端，点击下拉箭头，可以看到很多可选终端，并且`Git bash`设为默认，新建一个终端默认使用`Git Bash`。
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/vscode-git-bash-04.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fvscode-git-bash-04.png)
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/vscode-git-bash-05.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fvscode-git-bash-05.png)
 
 终于我的`Bash`脚本又飞起来了。
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/vscode-git-bash-06.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fvscode-git-bash-06.png)

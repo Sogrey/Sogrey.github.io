@@ -283,4 +283,4 @@ Failed to load resource: the server responded with a status of 422 (Unprocessabl
 
 **但有一点需要注意**，先前gitment创建的issues的label是包含`gitment`的，而gitalk创建的却是`gitalk`,为了能重新使用之前旧的issues，可将issues的label中的`gitment`换成`gitalk`。所幸的是github的issues支持批量操作：
 
-![gitment2gitalk](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/gitment2gitalk.png)
+![gitment2gitalk](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fgitment2gitalk.png)

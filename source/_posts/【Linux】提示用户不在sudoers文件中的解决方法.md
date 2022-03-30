@@ -66,9 +66,9 @@ ls -l /etc/sudoers # 查看文件读写状态
 
 进行完以上步骤，切换回普通用户，该用户权限提升功能完成。
 
-![linux提升用户权限sudoers](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/linux提升用户权限sudoers.png)
+![linux提升用户权限sudoers](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Flinux提升用户权限sudoers.png)
 
-![Huawei EulorOS提升用户su权限](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/EulorOS提升用户su权限.png)
+![Huawei EulorOS提升用户su权限](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FEulorOS提升用户su权限.png)
 
 ## 参考
 

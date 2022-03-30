@@ -45,7 +45,7 @@ keytool -genkey -alias spring -keypass 123456 -storetype PKCS12 -keyalg RSA -key
 
 依次填写证书相关的信息:
 
-![keytool生成ssl证书](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/keytool生成ssl证书.png)
+![keytool生成ssl证书](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fkeytool生成ssl证书.png)
 
 在E盘下就生成一个文件`spring.keystore`。
 

@@ -41,7 +41,7 @@ springboot的打包方式有很多种。有打成war的，有打成jar的，也�
 
 4. 项目右键->`Run As`->`Maven install` Maven执行打包
 
-   ![spring-boot-项目打包](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/spring-boot-项目打包.png)
+   ![spring-boot-项目打包](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fspring-boot-项目打包.png)
 
    等待出现`BUILD SUCCESS`字样，打包成功，在项目根目录`target`下查看生成的`jar`文件。
 

@@ -20,11 +20,11 @@ toc: true
 
 安装过程其实也并不复杂，这里一笔带过。安装完成后重启看到下面界面：
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/openEuler-01.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FopenEuler-01.png)
 
 登入root账户:
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/openEuler-02.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FopenEuler-02.png)
 
 对于熟悉linux系统的资深linuxer,到这已经够用了。但对于我，命令行显然并不友好，下面安装GUI，GUI选择华为为OpenEuler研发的[UKUI](https://www.ukui.org/index.php?lang=cn)。
 
@@ -51,6 +51,6 @@ systemctl set-default graphical.target
 ```
 重启(`reboot`)之后即可启动图形界面。
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/openEuler-03.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FopenEuler-03.png)
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/openEuler-04.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FopenEuler-04.png)

@@ -166,11 +166,11 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 ## 4. MySQL Workbench 连接不上mysql问题
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/MySQL%20Workbench%20%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8Amysql%E9%97%AE%E9%A2%98-1.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FMySQL%20Workbench%20%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8Amysql%E9%97%AE%E9%A2%98-1.png)
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/MySQL%20Workbench%20%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8Amysql%E9%97%AE%E9%A2%98-2.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FMySQL%20Workbench%20%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8Amysql%E9%97%AE%E9%A2%98-2.png)
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/MySQL%20Workbench%20%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8Amysql%E9%97%AE%E9%A2%98-3.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FMySQL%20Workbench%20%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8Amysql%E9%97%AE%E9%A2%98-3.png)
 
 加入host的范围
 
@@ -194,4 +194,4 @@ Query OK, 0 rows affected (0.01 sec)
 
 终于成功。记得权限类的要`flush privileges`!
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/MySQL%20Workbench%20%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8Amysql%E9%97%AE%E9%A2%98-4.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FMySQL%20Workbench%20%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8Amysql%E9%97%AE%E9%A2%98-4.png)

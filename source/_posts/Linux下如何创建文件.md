@@ -229,7 +229,7 @@ public class HelloWorld {
 }
 ```
 
-![nano创建文件](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/nano创建文件.png)
+![nano创建文件](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fnano创建文件.png)
 
 按`Ctrl+X`离开，`Ctrl+Y`选择保存，确定文件名回车即可，使用 `ls` 命令查看创建的文件。
 

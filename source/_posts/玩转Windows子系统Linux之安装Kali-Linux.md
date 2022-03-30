@@ -22,13 +22,13 @@ toc: true
 
 准备工作完成后，在 Windows 10 的软件商店中搜索`WSL`找到`Kali Linux`,点击 “获取” 之后系统会自动下载安装, 安装完成后会出现"启动"按钮。
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/wsl06.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fwsl06.png)
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/wsl07.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fwsl07.png)
 
 点击“启动”，第一次正常启动子系统时会开始安装，安装完成之后会要求设置系统用户名和用户密码，用户名最好用小写英文，密码不要忘记，后面要用到。
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/wsl08.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fwsl08.png)
 
 至此, 子系统就安装完成了。类似的步骤也可以安装其他Linux，比如 Ubuntu Linux 。
 
@@ -45,7 +45,7 @@ net start LxssManager
 
 从`开始`找到刚安装的`Kali Linux`打开就默认位`root`用户了。
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/wsl09.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fwsl09.png)
 
 修改密码：
 
@@ -57,7 +57,7 @@ Retype new password:
 passwd: password updated successfully
 ```
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/wsl10.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fwsl10.png)
 
 
 
@@ -79,7 +79,7 @@ deb https://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
 deb-src https://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
 ```
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/wsl11.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fwsl11.png)
 
 输入完以上内容 按`Ctrl+X` 退出，提示是否保存 ，按键`Y`确认保存。
 
@@ -90,7 +90,7 @@ deb-src https://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
 └─# apt-get update
 ```
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/wsl12.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fwsl12.png)
 
 ### 安装图形界面
 
@@ -103,7 +103,7 @@ deb-src https://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
 
 需要输入`Y(es)`,一会儿出现下面界面，选择第一项就好，按`↑↓`键移动到第一项点击空格选中，点击`Tab`键切换到`OK`按钮回车确认。后面就是漫长等待...
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/wsl13.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fwsl13.png)
 
 ``` bash
 ┌──(root💀DESKTOP-10KKBKG)-[~]
@@ -128,13 +128,13 @@ sudo service xrdp restart
 
 再次`win+R`打开运行栏，输入`mstsc`，打开远程桌面，输入自己的ip地址`xxx.xxx.xxx.xxx:3390`，点击连接，打开远程连接对话框。
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/wsl14.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fwsl14.png)
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/wsl15.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fwsl15.png)
 
 输入上面第一步时添加的用户和密码登录，或者后面我们修改过密码的root用户登录。
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/wsl16.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fwsl16.png)
 
 进入到kali的图形化界面。
 

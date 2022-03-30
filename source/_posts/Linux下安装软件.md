@@ -25,7 +25,7 @@ deb是debian发行版的软件包，而ubuntu是基于debian 发行的所以可�
 1. `cd` 到安装包的目录
 2. `dpkg -i 安装包名字` 如果权限不够，`sudo`来凑。
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/安装deb.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2F安装deb.png)
 
 ## 安装rpm文件
 
@@ -40,7 +40,7 @@ deb是debian发行版的软件包，而ubuntu是基于debian 发行的所以可�
 
 执行命令：`tar -zxvf jdk-8u161-linux-x64.tar.gz`
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/安装tar.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2F安装tar.png)
 
 
 其中必要参数有如下：

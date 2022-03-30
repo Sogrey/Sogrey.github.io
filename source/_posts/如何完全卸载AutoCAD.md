@@ -20,33 +20,33 @@ toc: true
 
 1、在电脑左下角，`开始（Windows）` > `设置` > `应用` > `应用和功能` 最下面找到`程序和功能` 点击打开 `卸载或更改程序` ，在控制面板中，找到**Autodesk**，一个一个的只要是能卸载的，都卸载掉。
 
-![如何完全卸载cad](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/TIM-20200726081959.png)
+![如何完全卸载cad](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FTIM-20200726081959.png)
 
 2、打开桌面我的电脑，找到AUTOCAD安装的文件夹，删掉。一般是在C盘，或自己装的其它盘。都看看，找到删掉。
 
 还有一个隐藏位置，在`C://ProgramData`下，都删了，这里包含你安装的CAD所有版本。
 
-![如何完全卸载cad](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/TIM-20200726082227.png)
+![如何完全卸载cad](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FTIM-20200726082227.png)
 
 3、彻底删除CAD注册表
 
 在电脑左下角，点开始，运行，输入`regedit`回车或点确定。
 
-![如何完全卸载cad](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/TIM-20200726082331.png)
+![如何完全卸载cad](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FTIM-20200726082331.png)
 
 出现注册表，找到“HKEY_CURRENT_USER\software\”目录下的Autodesk文件夹，在Autodesk文件夹上右键，删除。
 
-![如何完全卸载（删除）cad吗？](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/TIM-20200726082552.png)
+![如何完全卸载（删除）cad吗？](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FTIM-20200726082552.png)
 
 找到“HKEY_LOCAL_MACHINE\software\”目录下的Autodesk文件夹，在Autodesk文件夹上右键，删掉。
 
-![如何完全卸载（删除）cad吗？](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/TIM-20200726082659.png)
+![如何完全卸载（删除）cad吗？](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FTIM-20200726082659.png)
 
 删除“HKEY_LOCAL_MACHINE\software\classes\installer\products”目录下的挨个找一遍，一般会出现开头和尾号一样的几条在一起，看右边是否有`AutoCAD`字样，有就删掉。
 
 注：这里不同版本的CAD，products下的可能不一样，大家点开耐心看图二右侧处是不是CAD，是的话删除。
 
-![如何完全卸载CAD](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/TIM-20200726082817.png)
+![如何完全卸载CAD](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FTIM-20200726082817.png)
 
 再关闭注册表，现在再重装就能装上了。
 
@@ -54,7 +54,7 @@ toc: true
 
 ### 安装CAD时，提示1603错误
 
-![安装CAD时，提示1603错误](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/autocad-error-1603.png)
+![安装CAD时，提示1603错误](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fautocad-error-1603.png)
 
 1. 删除安装程序，找到一下路径`C:\Program Files (x86)\Common Files\Autodesk Shared\AdskLicensing`，然后以管理员身份运行duUNINSTALL.EXE程序，删除软件,重试。
 
@@ -64,10 +64,10 @@ toc: true
 
 如图：
 
-![CAD界面乱码](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/CAD界面乱码.png)
+![CAD界面乱码](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FCAD界面乱码.png)
 
 解决方案：
 
 找到AutoCAD安装目录跟目下的Fonts文件夹，该文件夹存放的就是字体了，在该文件夹下找到simsun.ttc字体删除就好了。
 
-![CAD界面乱码修复](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/CAD界面乱码修复.png)
+![CAD界面乱码修复](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FCAD界面乱码修复.png)

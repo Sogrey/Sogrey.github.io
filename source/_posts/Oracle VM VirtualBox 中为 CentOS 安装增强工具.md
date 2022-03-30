@@ -11,9 +11,9 @@ toc: true
 
 最近需要在linux上测试程序，Oracle VM VirtualBox上安装了CentOS，但是增强工具安装不成功，导致共享文件夹不能使用，主机与虚拟机之间不能文件交换，特此记录解决方案，以备后用。
 <!--more-->
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Oracle%20VM%20VirtualBox%20%E4%B8%AD%E4%B8%BA%20CentOS%20%E5%AE%89%E8%A3%85%E5%A2%9E%E5%BC%BA%E5%B7%A5%E5%85%B7.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FOracle%20VM%20VirtualBox%20%E4%B8%AD%E4%B8%BA%20CentOS%20%E5%AE%89%E8%A3%85%E5%A2%9E%E5%BC%BA%E5%B7%A5%E5%85%B7.png)
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Oracle%20VM%20VirtualBox%20%E4%B8%AD%E4%B8%BA%20CentOS%20%E5%AE%89%E8%A3%85%E5%A2%9E%E5%BC%BA%E5%B7%A5%E5%85%B7%E5%87%BA%E9%94%99.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FOracle%20VM%20VirtualBox%20%E4%B8%AD%E4%B8%BA%20CentOS%20%E5%AE%89%E8%A3%85%E5%A2%9E%E5%BC%BA%E5%B7%A5%E5%85%B7%E5%87%BA%E9%94%99.png)
 
 ``` bash
 Verifying archive integrity... All good.
@@ -41,7 +41,7 @@ Press Return to close this window...
 
 查看错误日志`/var/log/vboxadd-setup.log`:
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Oracle%20VM%20VirtualBox%20%E4%B8%AD%E4%B8%BA%20CentOS%20%E5%AE%89%E8%A3%85%E5%A2%9E%E5%BC%BA%E5%B7%A5%E5%85%B7-%E6%9F%A5%E7%9C%8B%E9%94%99%E8%AF%AF%E6%97%A5%E5%BF%97.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FOracle%20VM%20VirtualBox%20%E4%B8%AD%E4%B8%BA%20CentOS%20%E5%AE%89%E8%A3%85%E5%A2%9E%E5%BC%BA%E5%B7%A5%E5%85%B7-%E6%9F%A5%E7%9C%8B%E9%94%99%E8%AF%AF%E6%97%A5%E5%BF%97.png)
 
 ``` bash
 [sogrey@localhost ~]$ sudo cat /var/log/vboxadd-setup.log
@@ -112,7 +112,7 @@ Installed products updated.
 
 安装完成后移出增强工具虚拟盘，重新挂载安装增强工具，遗憾，仍然失败：
 
-![](https://gitee.com/Sogrey/gitee-cdn/raw/master/imgs/Oracle%20VM%20VirtualBox%20%E4%B8%AD%E4%B8%BA%20CentOS%20%E5%AE%89%E8%A3%85%E5%A2%9E%E5%BC%BA%E5%B7%A5%E5%85%B7-%E7%A7%BB%E9%99%A4%E8%99%9A%E6%8B%9F%E7%9B%98.png)
+![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FOracle%20VM%20VirtualBox%20%E4%B8%AD%E4%B8%BA%20CentOS%20%E5%AE%89%E8%A3%85%E5%A2%9E%E5%BC%BA%E5%B7%A5%E5%85%B7-%E7%A7%BB%E9%99%A4%E8%99%9A%E6%8B%9F%E7%9B%98.png)
 
 ``` bash
 Verifying archive integrity... All good.
