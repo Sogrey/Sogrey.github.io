@@ -42,7 +42,7 @@ toc: true
 
 ![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/picgo/%E8%AE%B0%E5%BD%95%E4%BD%BF%E7%94%A8clash_for_windows%E8%AE%A2%E9%98%85%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-05.png)
 
-原视频最后还提到需要设置代理，`127.0.0.1` 端口: `7890`。我这并没有设置。试试效果吧。
+原视频最后还提到需要设置代理，`127.0.0.1` 端口: `7890`。勾选`System Proxy`即可。试试效果吧。
 
 访问[https://www.youtube.com/](https://www.youtube.com/)真的可以打开了，视频播放也很流畅。
 
