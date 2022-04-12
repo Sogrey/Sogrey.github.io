@@ -154,6 +154,41 @@ Bye
 
 D:\Programs\mysql-8.0.23-winx64\bin>
 ```
+超过连接数的原因，是mysql的连接数保持时间太长。可以修改一下保活机制`show global variables like 'wait_timeout'` ，就是最大睡眠时间。
+
+修改一下`set global wait_timeout=300;` 自动杀死线程。
+
+```
+mysql> show global variables like 'wait_timeout';
++---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| wait_timeout  | 28800 |
++---------------+-------+
+1 row in set, 1 warning (0.01 sec)
+
+mysql> set global wait_timeout=300;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show global variables like 'wait_timeout';
++---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| wait_timeout  | 300   |
++---------------+-------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql>
+```
+刚刚的配置是临时修改，重启mysql会失效。可以通过修改mysql的配置/etc/my.cnf。
+``` 
+group_concat_max_len = 10240
+# 最大睡眠时间
+wait_timeout=300
+# 超时时间设置
+interactive_timeout = 500
+```
+修改完毕后，重启mysql即可。
 
 ## 3. Loading class `com.mysql.jdbc.Driver`. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver`. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
 
@@ -195,3 +230,97 @@ Query OK, 0 rows affected (0.01 sec)
 终于成功。记得权限类的要`flush privileges`!
 
 ![](https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2FMySQL%20Workbench%20%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8Amysql%E9%97%AE%E9%A2%98-4.png)
+
+## 5. 设置expire_logs_days自动过期清理binlog
+
+最近发现磁盘满了，saomiaoxia该分区发现mysql/data下大量`binlog.000xxx`文件，每个都几乎1G多，这是mysql二进制日志文件用于日志记录与操作恢复的，从没清理过，导致占用很大空间。
+
+查看binlog过期时间，设置的时间为90天，这个值默认是0天，也就是说不自动清理，可以根据生产情况修改，本例修改为7天
+
+```
+mysql> show variables like 'expire_logs_days';
++------------------+-------+
+| Variable_name    | Value |
++------------------+-------+
+| expire_logs_days | 0     |
++------------------+-------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> set global expire_logs_days=7;
+ERROR 3683 (HY000): The option expire_logs_days and binlog_expire_logs_seconds cannot be used together. Please use binlog_expire_logs_seconds to set the expire time (expire_logs_days is deprecated)
+mysql> set global  binlog_expire_logs_seconds=60*60*24*7;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show variables like '%expire%';
++--------------------------------+--------+
+| Variable_name                  | Value  |
++--------------------------------+--------+
+| binlog_expire_logs_seconds     | 604800 |
+| disconnect_on_expired_password | ON     |
+| expire_logs_days               | 0      |
++--------------------------------+--------+
+3 rows in set, 1 warning (0.00 sec)
+
+mysql>
+```
+设置之后不会立即清除，触发条件是：
+
+- binlog大小超过max_binlog_size
+- 手动执行flush logs
+- 重新启动时(MySQL将会new一个新文件用于记录binlog)
+
+我们执行`flush logs;` 使之立即生效，过期日志文件就被删除了。
+
+```
+mysql>  flush logs;
+Query OK, 0 rows affected (0.30 sec)
+
+mysql>
+```
+
+删除指定日期之前的 binlog ：
+
+```
+mysql> PURGE MASTER LOGS BEFORE '2020-11-11 11:11:11';
+Query OK, 0 rows affected (0.19 sec)
+```
+
+清空所有 binlog
+
+```
+mysql> RESET MASTER;
+Query OK, 0 rows affected (0.09 sec)
+```
+
+配置自动清理
+
+```
+mysql> set global expire_logs_days=7;
+```
+
+设置过期时长。过期自动删除，上面我刚试了，但提示：
+
+>  The option expire_logs_days and binlog_expire_logs_seconds cannot be used together. Please use binlog_expire_logs_seconds to set the expire time (expire_logs_days is deprecated)
+
+大意是 `expire_logs_days` 与 `binlog_expire_logs_seconds` 不能同时使用，让我们使用 `binlog_expire_logs_seconds`, 因为 `expire_logs_days` 已经过时了。 `binlog_expire_logs_seconds` 设置的过期时长单位是秒，设置7天过期：
+
+```
+mysql> set global  binlog_expire_logs_seconds=60*60*24*7;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show variables like '%expire%';
++--------------------------------+--------+
+| Variable_name                  | Value  |
++--------------------------------+--------+
+| binlog_expire_logs_seconds     | 604800 |
+| disconnect_on_expired_password | ON     |
+| expire_logs_days               | 0      |
++--------------------------------+--------+
+3 rows in set, 1 warning (0.00 sec)
+
+mysql>
+```
+
+## 附录
+
+- [MySQL优化之配置文件](https://www.cnblogs.com/childking/p/12695588.html)
