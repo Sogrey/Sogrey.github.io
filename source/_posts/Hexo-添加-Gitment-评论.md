@@ -22,17 +22,17 @@ toc: true
 
 [点击此处](https://github.com/settings/applications/new) 来注册一个新的 OAuth Application。其他内容可以随意填写，但要确保填入正确的 callback URL（一般是评论页面对应的域名，比如我的就是 `https://sogrey.github.io/`）。
 
-![注册Gitment OAuth Application](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/注册Gitment OAuth Application.png)
+![注册Gitment OAuth Application](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/%E6%B3%A8%E5%86%8CGitment%20OAuth%20Application.png)
 
 你会得到一个 client ID 和一个 client secret，这个将被用于之后的用户登录。
 
-![Gitment ClientId](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/Gitment ClientId.png)
+![Gitment ClientId](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/Gitment%20ClientId.png
 
 后面如果想查找之前注册的Gitment ClientId，在GitHub点击`Settings`>`Developer settings` 即[developers](https://github.com/settings/developers)
 
-![查找Gitment ClientId](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/查找Gitment ClientId.png)
+![查找Gitment ClientId](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/%E6%9F%A5%E6%89%BEGitment%20ClientId.png)
 
-![查找Gitment ClientId](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/查找Gitment ClientId2.png)
+![查找Gitment ClientId](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/%E6%9F%A5%E6%89%BEGitment%20ClientId2.png)
 
 ## 2 安装Gitment插件
 
@@ -185,11 +185,13 @@ Failed to load resource: the server responded with a status of 422 (Unprocessabl
 
 **6 gitment的汉化**
 
-	只需到模板里将原来定义CSS和JS的那两行改成：
-	
+只需到模板里将原来定义CSS和JS的那两行改成：
+``` html       
 	<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
 	<script src="https://billts.site/js/gitment.js"></script>
-	即可。来源：https://github.com/imsun/gitment/issues/104
+```
+
+即可。来源：https://github.com/imsun/gitment/issues/104
 
 **7 Gitment出现在文章列表上**
 
