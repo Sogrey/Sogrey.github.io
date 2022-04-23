@@ -269,7 +269,7 @@ Failed to load resource: the server responded with a status of 422 (Unprocessabl
 
 **9 绑定了新域名后评论系统登录异常**
 
-最近刚刚申请了一个`.top`域名，用来解析本站[`sogtey.github.io`](https://sogrey.github.io) -> [`https://sogrey.top/`](https://sogrey.top/)。由此也引来一些问题，不是什么大问题，就是我们的域名变了，而我们在GitHub的[`Developers srttings`](https://github.com/settings/developers) `OAuth Apps`里注册的还是`sogrey.github.io`。这就导致评论系统无法登陆，因为`Authorization callback URL`已经不匹配了。
+最近刚刚申请了一个`.top`域名，用来解析本站[`sogrey.github.io`](https://sogrey.github.io) -> [`https://sogrey.top/`](https://sogrey.top/)。由此也引来一些问题，不是什么大问题，就是我们的域名变了，而我们在GitHub的[`Developers srttings`](https://github.com/settings/developers) `OAuth Apps`里注册的还是`sogrey.github.io`。这就导致评论系统无法登陆，因为`Authorization callback URL`已经不匹配了。
 
 解决方案：
 
