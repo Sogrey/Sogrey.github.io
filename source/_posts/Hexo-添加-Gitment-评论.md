@@ -26,7 +26,7 @@ toc: true
 
 你会得到一个 client ID 和一个 client secret，这个将被用于之后的用户登录。
 
-![Gitment ClientId](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/Gitment%20ClientId.png
+![Gitment ClientId](https://cdn.jsdelivr.net/gh/sogrey/cdn/imgs/Gitment%20ClientId.png)
 
 后面如果想查找之前注册的Gitment ClientId，在GitHub点击`Settings`>`Developer settings` 即[developers](https://github.com/settings/developers)
 
