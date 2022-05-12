@@ -1,7 +1,7 @@
 ---
 title: VSCODE配置C/C++最小配置
 author: Sogrey
-date: 2018-07-04 19:09:34
+date: 2022-5-13 00:59:34
 tags: [VS code,c,c++]
 categories: VS code
 comments: true
