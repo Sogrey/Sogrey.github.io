@@ -182,7 +182,8 @@ mysql>
 ```
 刚刚的配置是临时修改，重启mysql会失效。可以通过修改mysql的配置/etc/my.cnf。
 ``` 
-group_concat_max_len = 10240
+max_connections = 1024
+group_concat_max_len = 1024
 # 最大睡眠时间
 wait_timeout=300
 # 超时时间设置
