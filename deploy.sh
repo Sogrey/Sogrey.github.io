@@ -16,6 +16,8 @@ echo -e '\033[32;40m
 '
 echo -e "\033[32;40m [1/3] \033[0m commit 2 dev branch"
 
+mkdir .deploy_git
+
 git init
 git add -A
 git commit -m 'deploy dev'
