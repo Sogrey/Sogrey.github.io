@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html id="home" lang="en">
+<head>
+<title>Apache License 2.0</title>
+<meta charset=utf-8>
+<!--
+
+Copyright (c) 2013-2019 by Sogrey 
+
+-->
+<meta name="robots" content="noindex">
+<meta name=viewport content="width=device-width, initial-scale=0.70">
+<script>document.createElement('article');document.createElement('footer');</script>
+
+<style id="jsbin-css">
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+html { background: #1a1a1a; }
+body { margin: 0; font-family: "Inconsolata", "DejaVu Sans Mono","Bitstream Vera Sans Mono", monospace; font-size: 1.2em; line-height: 1.2em; color: #999;}
+article, footer { display: block; min-width: 360px; max-width: 900px; width: 80%; }
+article {  margin: 2.5em auto 0 auto; border: 1px solid ; border-color: #505050 #373737 #373737 #505050; padding: 2em; background: #2a2a2a; }
+h1 { margin-top: 0; }
+article p:first-of-type { margin-top: 1.6em; }
+article p:last-child { margin-bottom: 0; }
+footer {  margin: 0em auto 2em auto; text-align: center; }
+footer a { color: #666; text-shadow: 0 1px 1px #999; text-decoration:none; font-size:.8em; padding: 1em; }
+/*footer a:before{content: "â¦";  font-size:1.5em; padding-right:.2em; } */
+footer a:hover, footer a:focus { color: white; }
+h1 {font-weight:normal; display:inline; border-bottom:1px solid #999; padding:0 0 3px 0; line-height: 36px; }
+a { color:#05cf62; text-decoration:none;}
+a:hover, a:focus { color:#059749; }
+a:active { color:#059749; }
+:-moz-any-link:focus {color:#000; border:0;}
+::selection {background:#ccc;}
+::-moz-selection {background:#ccc;}
+#gravatar{position:relative;float:right; margin-bottom: 1em; margin-left: 1em; border: 1px solid #999;}
+</style>
+</head>
+<body>
+<article>
+<img id="gravatar" style="width: 80px;" src="../img/logo/sogrey-rectangle-black-xl.png" onerror="javascript:this.src='source/img/logo/sogrey-rectangle-black-xl.png';"/>
+<h1>The Apache License 2.0 (Apache-2.0)</h1>
+<p>Copyright <span id="thisYear"></span> Sogrey &lt;<a href="https://sogrey.github.io">https://sogrey.github.io</a>&gt;</p>
+  
+<p>Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at</p>
+<p>    
+&nbsp;&nbsp;&nbsp;&nbsp;http://www.apache.org/licenses/LICENSE-2.0
+</p>
+<p>
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.</p>
+</article>
+<footer>
+<p><a href="https://sogrey.github.io/">@Sogrey</a></p>
+</footer>
+<script src="https://sogrey.github.io/js/my.js"></script>
+<script>
+    var tYear = new Date().getFullYear();
+    var thisYear = document.getElementById("thisYear");
+    thisYear.innerText = tYear;
+</script>
+
+</body>
+</html>

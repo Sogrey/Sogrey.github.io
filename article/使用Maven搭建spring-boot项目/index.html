@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Sogrey" />
+
+
+
+<meta name="description" content="准备工具：  MyEclipse CI 2019.4.0 JDK1.8 Tomcat 8.5  MyEclipse 和 JDK 的下载安装就不细说了，自行百度，一带而过。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Maven搭建spring boot项目">
+<meta property="og:url" content="https://sogrey.github.io/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE/index.html">
+<meta property="og:site_name" content="Sogrey">
+<meta property="og:description" content="准备工具：  MyEclipse CI 2019.4.0 JDK1.8 Tomcat 8.5  MyEclipse 和 JDK 的下载安装就不细说了，自行百度，一带而过。">
+<meta property="og:locale">
+<meta property="og:image" content="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME1.png">
+<meta property="og:image" content="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME2.png">
+<meta property="og:image" content="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME3.png">
+<meta property="og:image" content="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME4.png">
+<meta property="og:image" content="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME5.png">
+<meta property="og:image" content="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-Spring-Initializr.png">
+<meta property="og:image" content="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME6.png">
+<meta property="og:image" content="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME8.png">
+<meta property="og:image" content="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME9.png">
+<meta property="article:published_time" content="2020-11-28T02:06:01.000Z">
+<meta property="article:modified_time" content="2022-12-29T15:48:19.809Z">
+<meta property="article:author" content="Sogrey">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Spring boot">
+<meta property="article:tag" content="Maven">
+<meta property="article:tag" content="Myeclipse">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME1.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Sogrey" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-minimal.css" rel="stylesheet">
+
+<!-- css/style.css -->
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>使用Maven搭建spring boot项目 | Sogrey</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/Sogrey.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Sogrey</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="on" autocorrect="true" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+            
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签云</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/logs/">更新日志</a></li>
+                        
+                            <li><a href="/about/mit.html">license</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:408270653@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" rel="noopener" href="http://weibo.com/1766036691" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" rel="noopener" href="https://github.com/Sogrey" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" rel="noopener" href="https://www.zhihu.com/people/sogrey" title="知乎"></a>
+                            
+                                <a class="fa 简书" target="_blank" rel="noopener" href="http://www.jianshu.com/u/9ede1ff4ccfb" title="简书"></a>
+                            
+                                <a class="fa CSDN" target="_blank" rel="noopener" href="http://blog.csdn.net/sogrey" title="CSDN"></a>
+                            
+                                <a class="fa Coding" target="_blank" rel="noopener" href="https://coding.net/u/sogrey" title="Coding"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" rel="noopener" href="https://cn.linkedin.com/in/sogrey" title="LinkedIn"></a>
+                            
+                                <a class="fa LOFTER" target="_blank" rel="noopener" href="http://sogrey.lofter.com/" title="LOFTER"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/netcore/" rel="tag">.netcore</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Activity/" rel="tag">Activity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoCAD/" rel="tag">AutoCAD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bash/" rel="tag">Bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cad/" rel="tag">Cad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/" rel="tag">CentOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flutter/" rel="tag">Flutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitalk/" rel="tag">Gitalk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-pages/" rel="tag">Github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitment/" rel="tag">Gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/" rel="tag">HEXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E5%BB%BA%E7%AB%99%E5%A1%AB%E5%9D%91/" rel="tag">Hexo建站填坑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/" rel="tag">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html5/" rel="tag">Html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JCenter/" rel="tag">JCenter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/" rel="tag">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JNI/" rel="tag">JNI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/" rel="tag">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Json/" rel="tag">Json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KSoap2/" rel="tag">KSoap2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/" rel="tag">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Md5/" rel="tag">Md5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Myeclipse/" rel="tag">Myeclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenEuler/" rel="tag">OpenEuler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PE/" rel="tag">PE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PPT/" rel="tag">PPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Promise/" rel="tag">Promise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scheduled/" rel="tag">Scheduled</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-boot/" rel="tag">Spring boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UKUI/" rel="tag">UKUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS-code/" rel="tag">VS code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/" rel="tag">VSCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VirtualBox/" rel="tag">VirtualBox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WSL/" rel="tag">WSL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebApp/" rel="tag">WebApp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webp/" rel="tag">Webp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webservice/" rel="tag">Webservice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webview/" rel="tag">Webview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-10/" rel="tag">Windows 10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yelee/" rel="tag">Yelee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apk%E6%B7%B7%E6%B7%86/" rel="tag">apk混淆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deb/" rel="tag">deb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dex/" rel="tag">dex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitbook/" rel="tag">gitbook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icon-font%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/" rel="tag">icon font字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar/" rel="tag">jar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/marquee/" rel="tag">marquee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/" rel="tag">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/" rel="tag">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rpm/" rel="tag">rpm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite/" rel="tag">sqlite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sudo/" rel="tag">sudo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sudoers/" rel="tag">sudoers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/winsw/" rel="tag">winsw</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yelog/" rel="tag">yelog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/you-get/" rel="tag">you-get</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8B%E8%BD%BD/" rel="tag">下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9C%B0%E5%9D%80%E4%B8%8E%E7%BB%8F%E7%BA%AC%E5%BA%A6/" rel="tag">地址与经纬度</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E4%BD%93/" rel="tag">字体</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" rel="tag">年终总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE/" rel="tag">开源协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%8B%E8%AE%B0/" rel="tag">手记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" rel="tag">技术文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB/" rel="tag">文章分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE%E4%BA%91/" rel="tag">标签云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%99%BE%E5%BA%A6-api/" rel="tag">百度 api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="tag">科学上网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AD%BE%E5%90%8D/" rel="tag">签名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A3%85%E6%9C%BA/" rel="tag">装机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%97%E6%AD%8C/" rel="tag">诗歌</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0/" rel="tag">踩坑记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/" rel="tag">重装系统</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://cjj-sal.github.io">旅行者归来</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://pan.baidu.com/s/1hr2PiG8">芝麻开门</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://sogrey.top/Navigation/">网址导航</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/JavaDocs/">JavaDoc</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/notes/">notes</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/html-css-js-demos/">html-css-js-demos</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://sogrey.top/Linux-start/">Linux命令</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Kotlin-Notes/">Kotlin-学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Three.js-start/">Three.js学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Cesium-start/">Cesium 入门笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/TypeScript-start">TypeScript 学习入门</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://sogrey.github.io/WebGL-start/">WebGL 学习入门</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Flutter-Dart-Notes/">Flutter、Dart学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://sogrey.top/electron_study/">Electron学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/WebTools/index.html">Web开发常用工具</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://resume.github.io/?Sogrey">resume</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Android_QA/">Android技术面试题</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Web-QA/">前端技术面试题</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://sogrey.github.io/Python-QA/">Python面试题</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/blogs/">优质博文/公众号文章</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Plug-in/">插件收集</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/about/mit.html">MIT</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">必须努力，付出不亚于任何人努力</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+
+<!--aplayer-->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+<style>.aplayer.aplayer-fixed .aplayer-body{width: 270px;max-width: 270px !important;}.aplayer .aplayer-body {width: 280px;}</style>
+<div id="aplayer" style="position:fixed;left:0;bottom:0;"></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+<script>  
+  var ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    autoplay: false, //自动播放
+    listFolded: true, //播放列表默认折叠
+    listMaxHeight: 90, //播放列表最大高度
+    order: 'list', //音频循环顺序, 可选值: 'list', 'random'
+    loop: 'all', //音频循环播放, 可选值: 'all', 'one', 'none'
+    theme: '#e9e9e9', //切换音频时的主题色，优先级低于audio.theme
+    preload: 'none', //音频预加载，可选值: 'none', 'metadata', 'auto'
+    mutex: true, //互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
+    lrcType: 3, //歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式）
+    volume: 0.7, //默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+    fixed: false,
+    mini:false, 	//吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
+    audio: [{
+        name: '西安人的歌',
+        artist: '范炜|程渤智',
+        lrc: '/music/西安人的歌.lrc',
+        cover: '/music/西安人的歌.jpg',
+        url: '/music/西安人的歌.mp3'
+      },{
+        name: '武汉！武汉',
+        artist: '刘涛|黄晓明|平安|尚雯婕',
+        lrc: '/music/武汉！武汉.lrc',
+        cover: '/music/武汉！武汉.png',
+        url: '/music/武汉！武汉.mp3'
+      },{
+        name: '我要你平安归来',
+        artist: '崔姝声',
+        // lrc: '/music/我要你平安归来.lrc',
+        cover: '/music/我要你平安归来.png',
+        url: '/music/我要你平安归来.mp3'
+      },{
+        name: '我和我的祖国',
+        artist: '中央乐团合唱团',
+        lrc: '/music/我和我的祖国.lrc',
+        cover: '/music/我和我的祖国.jpg',
+        url: '/music/我和我的祖国.mp3'
+      }
+    ]
+  });
+
+  //实现切换音频时，根据音频的封面图片自适应主题色
+	var  colorThief = new ColorThief();
+	  var setTheme = (index) => {
+		if (!ap.list.audios[index].theme) {
+		  colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
+			ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+		  });
+		}
+	  };
+	  setTheme(ap.list.index);
+	  if(ap)
+	  ap.on('listswitch', (data) => {
+		setTheme(data.index);
+	  });
+</script>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Sogrey</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/Sogrey.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Sogrey</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/logs/">更新日志</a></li>
+                
+                    <li><a href="/about/mit.html">license</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:408270653@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1766036691" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/Sogrey" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/sogrey" title="知乎"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/9ede1ff4ccfb" title="简书"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/sogrey" title="CSDN"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/sogrey" title="Coding"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/sogrey" title="LinkedIn"></a>
+                            
+                                <a class="fa LOFTER" target="_blank" href="http://sogrey.lofter.com/" title="LOFTER"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签云" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-使用Maven搭建spring-boot项目" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE/" class="article-date">
+      <time datetime="2020-11-28T02:06:01.000Z" itemprop="datePublished">2020-11-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用Maven搭建spring boot项目
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Myeclipse/" rel="tag">Myeclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring-boot/" rel="tag">Spring boot</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>准备工具：</p>
+<ul>
+<li>MyEclipse CI 2019.4.0</li>
+<li>JDK1.8</li>
+<li>Tomcat 8.5</li>
+</ul>
+<p>MyEclipse 和 JDK 的下载安装就不细说了，自行百度，一带而过。</p>
+<span id="more"></span>
+
+<h2 id="MyEclipse使用Maven搭建spring-boot项目"><a href="#MyEclipse使用Maven搭建spring-boot项目" class="headerlink" title="MyEclipse使用Maven搭建spring boot项目"></a>MyEclipse使用Maven搭建spring boot项目</h2><ol>
+<li><p><code>File</code>-&gt;<code>New</code>-&gt;<code>Project</code>-&gt;<code>Maven Project</code></p>
+<p><img src="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME1.png" alt="create-spring-boot-by-ME"></p>
+</li>
+<li><p><code>Next</code>, 选择<code>Use default Workspace location</code>。</p>
+<p><img src="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME2.png" alt="create-spring-boot-by-ME"></p>
+</li>
+<li><p><code>Next</code>, 选择<code>maven-archetype-webapp</code>创建一个webapp目录结构的项目</p>
+<p><img src="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME3.png" alt="create-spring-boot-by-ME"></p>
+</li>
+<li><p>填<code>Group Id</code>，<code>Artifact Id</code>，和<code>Package，点击</code>Finish`</p>
+<ul>
+<li>GroupId：一般是公司名或组织名。</li>
+<li>ArtifactId：一般是project名。</li>
+<li>Packaging：打包类型，jar/war/rar/ear/pom等，默认是jar。</li>
+<li>Version：版本号，GroupId+ArtifactId+Packaging+Version构成项目的唯一标识。</li>
+</ul>
+<p><img src="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME4.png" alt="create-spring-boot-by-ME"></p>
+</li>
+<li><p>等待MyEclipse创建项目,完成后，文件目录结构如下</p>
+<p><img src="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME5.png" alt="create-spring-boot-by-ME"></p>
+</li>
+</ol>
+<h2 id="Eclipse暂时通过Spring-Initializr官网快速构建spring-boot工程"><a href="#Eclipse暂时通过Spring-Initializr官网快速构建spring-boot工程" class="headerlink" title="Eclipse暂时通过Spring Initializr官网快速构建spring boot工程"></a>Eclipse暂时通过Spring Initializr官网快速构建spring boot工程</h2><ol>
+<li>使用浏览器打开： <a target="_blank" rel="noopener" href="http://start.spring.io/">http://start.spring.io</a></li>
+<li>填写项目相关信息，选取依赖，然后生成项目</li>
+<li>解压项目，在Eclipse导入Maven工程</li>
+</ol>
+<p><img src="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-Spring-Initializr.png" alt="create-spring-boot-by-Spring-Initializr"></p>
+<p>到此，一个简单的Spring boot web项目就初步搭建了，要想运行起来还需加入Spring boot，<a href="/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE%EF%BC%88%E4%B8%8B%EF%BC%89/">下节</a>安排。</p>
+<h2 id="解决一些异常"><a href="#解决一些异常" class="headerlink" title="解决一些异常"></a>解决一些异常</h2><ol>
+<li><p>创建完成后，发现index.jsp报错，打开index.jsp，报错如下</p>
+<p><img src="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME6.png" alt="create-spring-boot-by-ME"></p>
+<p>在项目上右键-&gt;<code>build path</code>-&gt;<code>AddLibrary</code>,选择MyEclipse Server Library,Next后，选择一个Tomcat，Finish。</p>
+<p><img src="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME8.png" alt="create-spring-boot-by-ME"></p>
+</li>
+<li><p>pom.xml报错,有小红叉</p>
+<p>项目上右键选<code>maven</code>-&gt;<code>Update Project</code></p>
+<p><img src="https://cdn-1258560072.cos.ap-shanghai.myqcloud.com/imgs%2Fcreate-spring-boot-by-ME9.png" alt="create-spring-boot-by-ME"></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE/">使用Maven搭建spring boot项目</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
+        <p><span>发布时间:</span>2020-11-28, 10:06:01</p>
+        <p><span>最后更新:</span>2022-12-29, 23:48:19</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE/" title="使用Maven搭建spring boot项目">https://sogrey.github.io/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE%EF%BC%88%E4%B8%8B%EF%BC%89/">
+                    使用Maven搭建spring boot项目（下）
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/article/%E8%A7%A3%E9%94%81github%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%8A%80%E8%83%BD/">
+                    解锁github高级搜索技能
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MyEclipse%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE"><span class="toc-text">MyEclipse使用Maven搭建spring boot项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Eclipse%E6%9A%82%E6%97%B6%E9%80%9A%E8%BF%87Spring-Initializr%E5%AE%98%E7%BD%91%E5%BF%AB%E9%80%9F%E6%9E%84%E5%BB%BAspring-boot%E5%B7%A5%E7%A8%8B"><span class="toc-text">Eclipse暂时通过Spring Initializr官网快速构建spring boot工程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E4%B8%80%E4%BA%9B%E5%BC%82%E5%B8%B8"><span class="toc-text">解决一些异常</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE%EF%BC%88%E4%B8%8B%EF%BC%89/" title="上一篇: 使用Maven搭建spring boot项目（下）">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/article/%E8%A7%A3%E9%94%81github%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%8A%80%E8%83%BD/" title="下一篇: 解锁github高级搜索技能">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/article/VSCODE%E9%85%8D%E7%BD%AEC-CPP%E6%9C%80%E5%B0%8F%E9%85%8D%E7%BD%AE/">VSCODE配置C/C++最小配置</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E8%AE%B0%E5%BD%95%E4%BD%BF%E7%94%A8clash-for-windows%E8%AE%A2%E9%98%85%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">记录使用clash_for_windows订阅实现科学上网</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%B0%86Nodejs%E7%A8%8B%E5%BA%8F%E5%8F%91%E5%B8%83%E4%B8%BAwindows%E6%9C%8D%E5%8A%A1/">将Nodejs程序发布为windows服务</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%B0%81%E8%A3%85axios%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/">封装axios网络请求</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%A6%82%E4%BD%95%E4%BD%BFmysql%E7%94%9F%E6%88%90-db%E6%96%87%E4%BB%B6/">如何使mysql生成.db文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8java8%E4%B8%ADStream%E8%BD%BB%E6%9D%BE%E9%81%8D%E5%8E%86%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84/">使用java8中Stream轻松遍历树形结构</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2021-2022/">加油2021，期盼2022</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JS%E6%93%8D%E4%BD%9Ciframe%E5%85%83%E7%B4%A0/">JS操作iframe元素</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E4%B8%8A%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2nginx/">Linux上安装部署nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Windows%2010%20%E4%B9%8B%E8%AE%BE%E7%BD%AEURL%E6%B1%87%E6%80%BB/">Windows 10 之设置URL汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/article/OpenEuler%E5%AE%89%E8%A3%85UKUI/">OpenEuler安装UKUI</a></li><li class="post-list-item"><a class="post-list-link" href="/article/windows%E4%B8%8B%E4%BF%AE%E6%94%B9vscode%E9%BB%98%E8%AE%A4%E7%BB%88%E7%AB%AF%E4%B8%BAgit-bash/">windows下修改vscode默认终端为git bash</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E7%8E%A9%E8%BD%ACWindows%E5%AD%90%E7%B3%BB%E7%BB%9FLinux%E4%B9%8B%E5%AE%89%E8%A3%85Kali-Linux/">玩转Windows子系统Linux之安装Kali Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E7%8E%A9%E8%BD%ACWindows%E5%AD%90%E7%B3%BB%E7%BB%9FLinux%E4%B9%8B%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/">玩转Windows子系统Linux之准备工作</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8SSH%E8%BF%9E%E6%8E%A5%E5%88%B0GitHub/">使用SSH连接到GitHub</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BDJDK/">Linux安装与卸载JDK</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Oracle%20VM%20VirtualBox%20%E4%B8%AD%E4%B8%BA%20CentOS%20%E5%AE%89%E8%A3%85%E5%A2%9E%E5%BC%BA%E5%B7%A5%E5%85%B7/">Oracle VM VirtualBox 中为 CentOS 安装增强工具</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Redis%E8%B8%A9%E5%9D%91%E8%AE%B0/">Redis踩坑记</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Mysql%E8%B8%A9%E5%9D%91%E8%AE%B0/">Mysql踩坑记</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%8F%90%E9%AB%98%E5%9B%BD%E5%86%85%E8%AE%BF%E9%97%AEGitHub%E7%9A%84%E9%80%9F%E5%BA%A6/">提高国内访问GitHub的速度</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E4%B8%AD%E8%AE%A9shell%E8%84%9A%E6%9C%AC%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/">Linux中让shell脚本变成可执行文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/CentOS%E5%AE%89%E8%A3%85-netcore/">CentOS安装.netcore</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Promise-all%E5%92%8CPromise-allSettled%E7%9A%84%E5%8C%BA%E5%88%AB/">Promise.all和Promise.allSettled的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/AutoCAD_ID__Handle__ads_name/">AutoCAD_ID、指针、句柄和ads_name的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2020-2021/">致敬2020，重启2021</a></li><li class="post-list-item"><a class="post-list-link" href="/article/java%E8%B0%83%E7%94%A8shell%E8%84%9A%E6%9C%AC/">java调用shell脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot%E9%A1%B9%E7%9B%AE%E7%98%A6%E8%BA%AB/">Spring Boot 项目瘦身</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Springboot%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82/">Springboot跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot%E6%94%AF%E6%8C%81HTTPS/">SpringBoot支持HTTPS</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">SpringBoot实现定时任务</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot%E6%B3%A8%E8%A7%A3%E7%AE%80%E4%BB%8B/">SpringBoot注解简介</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6/">Linux下如何创建文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E3%80%90Linux%E3%80%91%E6%8F%90%E7%A4%BA%E7%94%A8%E6%88%B7%E4%B8%8D%E5%9C%A8sudoers%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">【Linux】提示用户不在sudoers文件中的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/">Linux下安装软件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/spring-boot%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%92%8C%E8%87%AA%E5%90%AF%E5%8A%A8/">spring-boot项目打包和自启动</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE%EF%BC%88%E4%B8%8B%EF%BC%89/">使用Maven搭建spring boot项目（下）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE/">使用Maven搭建spring boot项目</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E8%A7%A3%E9%94%81github%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%8A%80%E8%83%BD/">解锁github高级搜索技能</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%A6%82%E4%BD%95%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BDAutoCAD/">如何完全卸载AutoCAD</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%B8%93%E4%B8%BA%E7%BC%96%E7%A8%8B%E8%80%8C%E7%94%9F%E7%9A%84%E5%AD%97%E4%BD%93/">专为编程而生的字体 —— Fira Code</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Js%E4%B9%8BPromise/">Js之Promise</a></li><li class="post-list-item"><a class="post-list-link" href="/article/zj2019-zw2020/">总结2019，展望2020</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用hugo搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-Studio%E5%BC%80%E5%8F%91%E7%BB%84%E4%BB%B6%E5%8C%96App%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">Android Studio开发组件化App遇到的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/git-clone-%E8%A7%A3%E5%86%B3Permission-Denied-publickey-%E9%97%AE%E9%A2%98/">git clone 解决Permission Denied (publickey)问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/node-js%E8%B0%83%E8%AF%95/">node.js调试</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8-%E5%B9%B2%E6%8E%89%E5%AE%83/">端口被占用，干掉它</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JS%E4%B8%ADapply-%E4%B8%8Ecall-%E7%9A%84%E5%8C%BA%E5%88%AB/">JS中apply()与call()的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95%E4%B9%8B%E6%8A%8A%E7%8E%A9console/">前端调试之把玩console</a></li><li class="post-list-item"><a class="post-list-link" href="/article/you-get/">下载神器 you-get</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E2%80%9C-%E8%AF%97%E6%AD%8C-%E5%8D%83%E5%8F%A4%E5%B2%90%E5%B1%B1/">[诗歌]千古岐山</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8-npm-%E5%AE%89%E8%A3%85-gitbook/">使用 npm 安装 gitbook</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%86%8D%E8%A7%812018%EF%BC%8C%E4%BD%A0%E5%A5%BD2019/">再见2018，你好2019</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%BC%84%E6%87%82%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE-GPL%E3%80%81BSD%E3%80%81MIT%E3%80%81Mozilla%E3%80%81Apache%E5%92%8CLGPL-%E4%B9%8B%E9%97%B4%E7%9A%84%E5%B7%AE%E5%88%AB/">一张图弄懂开源协议-GPL、BSD、MIT、Mozilla、Apache和LGPL 之间的差别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F-lauchMode/">Activity启动模式(lauchMode)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Java%E5%AF%B9%E8%B1%A1%E8%BD%ACjson%E6%97%B6%E7%A9%BA%E5%80%BC-null-%E5%A4%84%E7%90%86/">Java对象转json时空值(null)处理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%E7%89%88%E6%9C%AC%E5%92%8CAPI-Level%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB/">Android版本和API Level对应关系</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Flutter%20%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/">Flutter 路由跳转</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%20%E5%8A%A8%E6%80%81%E8%B0%83%E7%94%A8%E5%A4%96%E9%83%A8jar&dex/">Android 动态调用外部jar/dex</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JNI%20Md5%E5%8A%A0%E5%AF%86%E7%94%9F%E6%88%90so%E6%96%87%E4%BB%B6/">JNI Md5加密生成so文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/PE%E8%A3%85%E6%9C%BA%EF%BC%8C%E5%BC%80%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8%E9%A1%B9%E5%BF%AB%E6%8D%B7%E9%94%AE/">pe装机，开机设置启动项快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/article/VS-code-%E6%8F%92%E4%BB%B6/">VS code 插件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E9%81%8D%E5%8E%86Map%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/">遍历Map的四种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/15%E7%A7%8DCSS%E5%B1%85%E4%B8%AD%E6%96%B9%E5%BC%8F/">15种CSS居中方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%88%A9%E7%94%A8%E7%99%BE%E5%BA%A6URL-API%E5%AE%9E%E7%8E%B0%E5%9C%B0%E5%9D%80-%E7%BB%8F%E7%BA%AC%E5%BA%A6%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/">利用百度URL API实现地址与经纬度互相转换</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%E8%8E%B7%E5%8F%96view%E5%AE%BD%E9%AB%98%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/">Android获取view宽高的三种方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-TextView%E5%B1%9E%E6%80%A7android-ellipsize-marquee%E4%B8%8D%E7%94%9F%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">Android中TextView属性ellipsize=marquee不生效的解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%85%B3%E4%BA%8EAndroid%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8KSoap2%E8%B0%83%E7%94%A8Webservice%E8%BF%90%E8%A1%8C%E4%B8%8D%E6%88%90%E5%8A%9F%E7%9A%84%E9%97%AE%E9%A2%98/">关于Android程序使用KSoap2调用Webservice运行不成功的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo-%E6%B7%BB%E5%8A%A0-Gitment-%E8%AF%84%E8%AE%BA/">Hexo 添加 Gitment 评论</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-Webview-%E5%86%85%E5%AE%B9%E8%87%AA%E9%80%82%E5%BA%94%E9%AB%98%E5%BA%A6/">Android Webview 内容自适应高度</a></li><li class="post-list-item"><a class="post-list-link" href="/article/java%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/">java实现定时任务的三种方法(收集)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Java%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%A4%A7%E5%B0%8F%E7%9A%846%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%88%E6%94%B6%E9%9B%86%EF%BC%89/">Java读取文件夹大小的6种方法（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/json%E8%BD%AC%E6%A0%91%E7%8A%B6%E7%BB%93%E6%9E%84%EF%BC%88%E6%94%B6%E9%9B%86%EF%BC%89/">json转树状结构（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%B8%80%E8%A1%8C%20%20JavaScript%20%E4%BB%A3%E7%A0%81%EF%BC%88%E6%94%B6%E9%9B%86%EF%BC%89/">一行  JavaScript 代码（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo%E5%BB%BA%E7%AB%99%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%A1%AB%E5%9D%91%EF%BC%89/">Hexo建站过程中遇到的问题（填坑篇）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-library-%E5%8F%91%E5%B8%83%E5%88%B0-JCenter/">Android library 发布到 JCenter</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%B1%87%E9%9B%86/">正则表达式匹配汇集</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BHtml%EF%BC%88CSS-JS%EF%BC%89/">技术文章之Html（CSS，JS）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BAndroid/">技术文章之Android</a></li><li class="post-list-item"><a class="post-list-link" href="/article/web-app%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86/">web app相关整理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%9D%E5%8D%B0%E8%B1%A1%E3%80%90%E6%95%B4%E7%90%86%E3%80%91/">微信小程序初印象【整理】</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Webp%E7%9A%84%E6%8E%A2%E7%A9%B6%E4%B9%8B%E8%B7%AF/">Webp的探究之路</a></li><li class="post-list-item"><a class="post-list-link" href="/article/android%E4%B8%AD%E4%BD%BF%E7%94%A8icon-fonts%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/">android中使用icon fonts字体图标</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%E6%B7%B7%E6%B7%86%E7%AD%BE%E5%90%8D%EF%BC%88%E4%B8%8B%EF%BC%89/">Android混淆签名(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%E6%B7%B7%E6%B7%86%E7%AD%BE%E5%90%8D%EF%BC%88%E4%B8%8A%EF%BC%89/">Android混淆签名(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%88%91%E6%94%B6%E9%9B%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">我收集的一些开源项目</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E4%BA%8E%E4%B8%BB%E9%A2%98Yelee-yelog-%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB/">Hexo博客基于主题Yelee(yelog) 添加文章分类</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E4%BA%8E%E4%B8%BB%E9%A2%98Yelee-yelog-%E6%B7%BB%E5%8A%A0%E2%80%9C%E6%A0%87%E7%AD%BE%E4%BA%91%E2%80%9D%E5%92%8C%E2%80%9C%E5%85%B3%E4%BA%8E%E6%88%91%E2%80%9D%E8%8F%9C%E5%8D%95%E9%A1%B9%E9%A1%B5%E9%9D%A2/">Hexo博客基于主题Yelee(yelog) 添加“标签云”和“关于我”菜单项页面</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Html5-PPT/">Html5 PPT</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%A6%82%E4%BD%95%E5%9C%A8Github-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%8B%AC%E7%AB%8B%E4%B8%BB%E9%A1%B5%EF%BC%9F/">如何在Github Pages搭建个人独立主页？</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8hexo%E6%90%AD%E5%BB%BAgithub-pages/">我是如何用hexo搭建github pages</a></li><li class="post-list-item"><a class="post-list-link" href="/article/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+
+<!--gitalk 评论-->
+
+    <div id="gitalk-container"></div>
+
+    <style>
+        #gitalk-container{
+            margin: 60px 0 0;padding: 0 60px;
+        }
+        #gitalk-container a {
+          border: none;
+        }
+		@media screen and (max-width:1040px) {
+            #gitalk-container{
+                padding: 0 30px;
+            }
+		}
+    </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+    <script>
+    var gitalk = new Gitalk({        
+        id: '使用Maven搭建spring boot项目',
+        title: '使用Maven搭建spring boot项目',
+        owner: 'Sogrey',        
+        admin: ['Sogrey'],
+        repo: 'Sogrey.github.io',
+        clientID: '582650733e15427a208c',
+        clientSecret: 'bd0b0b80b6f23921f9b9df5ad0e40650e9da65f0',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+      
+      gitalk.render('gitalk-container')
+    </script>
+
+<!--gitalk 评论 end-->
+
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <a href="https://sogrey.github.io/about/mit.html" target="_blank" title="本博客使用遵循MIT License协议的Hexo开发">MIT</a> 
+                <i class="fa fa-copyright"></i> 
+                2016-2022 <i class="fa fa-heart animated infinite pulse"></i><a href="https://sogrey.github.io" target="_blank" title="我是一个小帅哥！^_^  https://github.com/Sogrey">Sogrey</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <!-- <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span> -->
+
+                    <span id="busuanzi_container_site_pv">
+                        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <!-- <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span> -->
+
+                    <span id="busuanzi_container_page_pv">
+                        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+                      </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 3;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+             categories: ".article-category a, a.tag-list-link", 
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 敬请下次光临~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 欢迎光临~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<!--已过期-->
+<!-- <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  </div>
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/love.js"></script>
+  <!-- 动态背景 -->
+  <!--<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="120" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>-->
+  <script type="text/javascript" src="/js/canvas-nest.min.js"></script>
+
+  <script type="text/javascript" src="/js/my.js"></script>
+</body>
+</html>
