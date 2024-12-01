@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Sogrey" />
+
+
+
+<meta name="description" content="Webapp说白了就是一个针对Iphone、Android优化后的web站点，它使用的技术无非就是HTML或HTML5、CSS3、JavaScript，服务端技术JAVA、PHP、ASP。  WebApp与Native App有何区别呢？Native App：  开发成本非常大。一般使用的开发语言为JAVA、C++、Objective-C。 更新体验较差、同时也比较麻烦。每一次发布新的版本，都需">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web app相关整理">
+<meta property="og:url" content="https://sogrey.github.io/article/web-app%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86/index.html">
+<meta property="og:site_name" content="Sogrey">
+<meta property="og:description" content="Webapp说白了就是一个针对Iphone、Android优化后的web站点，它使用的技术无非就是HTML或HTML5、CSS3、JavaScript，服务端技术JAVA、PHP、ASP。  WebApp与Native App有何区别呢？Native App：  开发成本非常大。一般使用的开发语言为JAVA、C++、Objective-C。 更新体验较差、同时也比较麻烦。每一次发布新的版本，都需">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-01-18T15:28:24.000Z">
+<meta property="article:modified_time" content="2024-12-01T15:12:10.801Z">
+<meta property="article:author" content="Sogrey">
+<meta property="article:tag" content="手记">
+<meta property="article:tag" content="PPT">
+<meta property="article:tag" content="WebApp">
+<meta name="twitter:card" content="summary">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Sogrey" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="/js/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="/js/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="/js/libs/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-minimal.css" rel="stylesheet">
+
+<!-- css/style.css -->
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>web app相关整理 | Sogrey</title>
+
+<script src="/js/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "/js/libs/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "/js/libs/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "/js/libs/jqueryui/1.10.4/jquery-ui.min.js", "/js/libs/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/Sogrey.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Sogrey</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="on" autocorrect="true" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+            
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签云</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/logs/">更新日志</a></li>
+                        
+                            <li><a href="/about/mit.html">license</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:408270653@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" rel="noopener" href="http://weibo.com/1766036691" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" rel="noopener" href="https://github.com/Sogrey" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" rel="noopener" href="https://www.zhihu.com/people/sogrey" title="知乎"></a>
+                            
+                                <a class="fa 简书" target="_blank" rel="noopener" href="http://www.jianshu.com/u/9ede1ff4ccfb" title="简书"></a>
+                            
+                                <a class="fa CSDN" target="_blank" rel="noopener" href="http://blog.csdn.net/sogrey" title="CSDN"></a>
+                            
+                                <a class="fa Coding" target="_blank" rel="noopener" href="https://coding.net/u/sogrey" title="Coding"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" rel="noopener" href="https://cn.linkedin.com/in/sogrey" title="LinkedIn"></a>
+                            
+                                <a class="fa LOFTER" target="_blank" rel="noopener" href="http://sogrey.lofter.com/" title="LOFTER"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/netcore/" rel="tag">.netcore</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Activity/" rel="tag">Activity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoCAD/" rel="tag">AutoCAD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bash/" rel="tag">Bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cad/" rel="tag">Cad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/" rel="tag">CentOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flutter/" rel="tag">Flutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitalk/" rel="tag">Gitalk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-pages/" rel="tag">Github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitment/" rel="tag">Gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/" rel="tag">HEXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E5%BB%BA%E7%AB%99%E5%A1%AB%E5%9D%91/" rel="tag">Hexo建站填坑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/" rel="tag">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html5/" rel="tag">Html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JCenter/" rel="tag">JCenter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/" rel="tag">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JNI/" rel="tag">JNI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/" rel="tag">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Json/" rel="tag">Json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KSoap2/" rel="tag">KSoap2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/" rel="tag">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Md5/" rel="tag">Md5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Myeclipse/" rel="tag">Myeclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenEuler/" rel="tag">OpenEuler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PE/" rel="tag">PE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PPT/" rel="tag">PPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Promise/" rel="tag">Promise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scheduled/" rel="tag">Scheduled</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-boot/" rel="tag">Spring boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UKUI/" rel="tag">UKUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS-code/" rel="tag">VS code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/" rel="tag">VSCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VirtualBox/" rel="tag">VirtualBox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WSL/" rel="tag">WSL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebApp/" rel="tag">WebApp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webp/" rel="tag">Webp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webservice/" rel="tag">Webservice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webview/" rel="tag">Webview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-10/" rel="tag">Windows 10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yelee/" rel="tag">Yelee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apk%E6%B7%B7%E6%B7%86/" rel="tag">apk混淆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deb/" rel="tag">deb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dex/" rel="tag">dex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitbook/" rel="tag">gitbook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icon-font%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/" rel="tag">icon font字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar/" rel="tag">jar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/marquee/" rel="tag">marquee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/" rel="tag">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/" rel="tag">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rpm/" rel="tag">rpm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite/" rel="tag">sqlite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sudo/" rel="tag">sudo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sudoers/" rel="tag">sudoers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/winsw/" rel="tag">winsw</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yelog/" rel="tag">yelog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/you-get/" rel="tag">you-get</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8B%E8%BD%BD/" rel="tag">下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9C%B0%E5%9D%80%E4%B8%8E%E7%BB%8F%E7%BA%AC%E5%BA%A6/" rel="tag">地址与经纬度</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E4%BD%93/" rel="tag">字体</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" rel="tag">年终总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE/" rel="tag">开源协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%8B%E8%AE%B0/" rel="tag">手记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" rel="tag">技术文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB/" rel="tag">文章分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE%E4%BA%91/" rel="tag">标签云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%99%BE%E5%BA%A6-api/" rel="tag">百度 api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="tag">科学上网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AD%BE%E5%90%8D/" rel="tag">签名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A3%85%E6%9C%BA/" rel="tag">装机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%97%E6%AD%8C/" rel="tag">诗歌</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0/" rel="tag">踩坑记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/" rel="tag">重装系统</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://cjj-sal.github.io">旅行者归来</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://pan.baidu.com/s/1hr2PiG8">芝麻开门</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://sogrey.top/Navigation/">网址导航</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/JavaDocs/">JavaDoc</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/notes/">notes</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/html-css-js-demos/">html-css-js-demos</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://sogrey.top/Linux-start/">Linux命令</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Kotlin-Notes/">Kotlin-学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Three.js-start/">Three.js学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Cesium-start/">Cesium 入门笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/TypeScript-start">TypeScript 学习入门</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://sogrey.github.io/WebGL-start/">WebGL 学习入门</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Flutter-Dart-Notes/">Flutter、Dart学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://sogrey.top/electron_study/">Electron学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/WebTools/index.html">Web开发常用工具</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://resume.github.io/?Sogrey">resume</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Android_QA/">Android技术面试题</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Web-QA/">前端技术面试题</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://sogrey.github.io/Python-QA/">Python面试题</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/blogs/">优质博文/公众号文章</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Plug-in/">插件收集</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/about/mit.html">MIT</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">必须努力，付出不亚于任何人努力</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+
+<!--aplayer-->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+<style>.aplayer.aplayer-fixed .aplayer-body{width: 270px;max-width: 270px !important;}.aplayer .aplayer-body {width: 280px;}</style>
+<div id="aplayer" style="position:fixed;left:0;bottom:0;"></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+<script>  
+  var ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    autoplay: false, //自动播放
+    listFolded: true, //播放列表默认折叠
+    listMaxHeight: 90, //播放列表最大高度
+    order: 'list', //音频循环顺序, 可选值: 'list', 'random'
+    loop: 'all', //音频循环播放, 可选值: 'all', 'one', 'none'
+    theme: '#e9e9e9', //切换音频时的主题色，优先级低于audio.theme
+    preload: 'none', //音频预加载，可选值: 'none', 'metadata', 'auto'
+    mutex: true, //互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
+    lrcType: 3, //歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式）
+    volume: 0.7, //默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+    fixed: false,
+    mini:false, 	//吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
+    audio: [{
+        name: '西安人的歌',
+        artist: '范炜|程渤智',
+        lrc: '/music/西安人的歌.lrc',
+        cover: '/music/西安人的歌.jpg',
+        url: '/music/西安人的歌.mp3'
+      },{
+        name: '武汉！武汉',
+        artist: '刘涛|黄晓明|平安|尚雯婕',
+        lrc: '/music/武汉！武汉.lrc',
+        cover: '/music/武汉！武汉.png',
+        url: '/music/武汉！武汉.mp3'
+      },{
+        name: '我要你平安归来',
+        artist: '崔姝声',
+        // lrc: '/music/我要你平安归来.lrc',
+        cover: '/music/我要你平安归来.png',
+        url: '/music/我要你平安归来.mp3'
+      },{
+        name: '我和我的祖国',
+        artist: '中央乐团合唱团',
+        lrc: '/music/我和我的祖国.lrc',
+        cover: '/music/我和我的祖国.jpg',
+        url: '/music/我和我的祖国.mp3'
+      }
+    ]
+  });
+
+  //实现切换音频时，根据音频的封面图片自适应主题色
+	var  colorThief = new ColorThief();
+	  var setTheme = (index) => {
+		if (!ap.list.audios[index].theme) {
+		  colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
+			ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+		  });
+		}
+	  };
+	  setTheme(ap.list.index);
+	  if(ap)
+	  ap.on('listswitch', (data) => {
+		setTheme(data.index);
+	  });
+</script>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Sogrey</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/Sogrey.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Sogrey</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/logs/">更新日志</a></li>
+                
+                    <li><a href="/about/mit.html">license</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:408270653@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1766036691" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/Sogrey" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/sogrey" title="知乎"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/9ede1ff4ccfb" title="简书"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/sogrey" title="CSDN"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/sogrey" title="Coding"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/sogrey" title="LinkedIn"></a>
+                            
+                                <a class="fa LOFTER" target="_blank" href="http://sogrey.lofter.com/" title="LOFTER"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签云" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-web-app相关整理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/article/web-app%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86/" class="article-date">
+      <time datetime="2017-01-18T15:28:24.000Z" itemprop="datePublished">2017-01-18</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      web app相关整理
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/WebApp/">WebApp</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PPT/" rel="tag">PPT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebApp/" rel="tag">WebApp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%89%8B%E8%AE%B0/" rel="tag">手记</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>Webapp说白了就是一个针对Iphone、Android优化后的web站点，它使用的技术无非就是HTML或HTML5、CSS3、JavaScript，服务端技术JAVA、PHP、ASP。</p>
+</blockquote>
+<h1 id="WebApp与Native-App有何区别呢？"><a href="#WebApp与Native-App有何区别呢？" class="headerlink" title="WebApp与Native App有何区别呢？"></a>WebApp与Native App有何区别呢？</h1><p>Native App：</p>
+<ol>
+<li>开发成本非常大。一般使用的开发语言为JAVA、C++、Objective-C。</li>
+<li>更新体验较差、同时也比较麻烦。每一次发布新的版本，都需要做版本打包，且需要用户手动更新（有些应用程序即使不需要用户手动更新，但是也需要有一个恶心的提示）。</li>
+<li>非常酷。因为native app可以调用IOS中的UI控件以UI方法，它可以实现WebApp无法实现的一些非常酷的交互效果。</li>
+<li>Native app是被Apple认可的。Native app可以被Apple认可为一款可信任的独立软件，可以放在Apple Stroe出售，但是Web app却不行。</li>
+</ol>
+<p>Web App：</p>
+<ol>
+<li><p>开发成本较低。使用web开发技术就可以轻松的完成web app的开发。</p>
+</li>
+<li><p>升级较简单。升级不需要通知用户，在服务端更新文件即可，用户完全没有感觉。</p>
+</li>
+<li><p>维护比较轻松。和一般的web一样，维护比较简单，它其实就是一个站点。</p>
+</li>
+</ol>
+<span id="more"></span>
+<p>另附ppt:<a target="_blank" rel="noopener" href="https://github.com/Sogrey/WebApp-ppt">github</a>，<a target="_blank" rel="noopener" href="https://git.coding.net/sogrey/webapp-ppt.git">coding</a></p>
+<p><a target="_blank" rel="noopener" href="http://sogrey.coding.me/webapp-ppt">coding预览</a>，<a target="_blank" rel="noopener" href="http://sogrey.coding.me/webapp-ppt/example/WebApp">coding示例预览</a></p>
+<p><a href="https://sogrey.github.io/WebApp-ppt/">github预览</a>，<a href="https://sogrey.github.io/WebApp-ppt/example/WebApp">github示例预览</a></p>
+<h1 id="web-app-开发经验"><a href="#web-app-开发经验" class="headerlink" title="web app 开发经验"></a>web app 开发经验</h1><h2 id="1-viewport："><a href="#1-viewport：" class="headerlink" title="1. viewport："></a>1. viewport：</h2><p>也就是可视区域。对于桌面浏览器，我们都很清楚viewport是什么，就是出去了所有工具栏、状态栏、滚动条等等之后用于看网页的区域，<br>这是真正有效的区域。由于移动设备屏幕宽度不同于传统web,因此我们需要改变viewport;<br>实际上我们可以操作的属性有4 个：</p>
+<pre><code>width -             //  viewport 的宽度 （范围从200 到10,000，默认为980 像素）
+height -            //  viewport 的高度 （范围从223 到10,000）
+initial-scale -     //  初始的缩放比例 （范围从&gt;0 到10）
+minimum-scale -    //   允许用户缩放到的最小比例
+maximum-scale -    //   允许用户缩放到的最大比例
+user-scalable -    //   用户是否可以手动缩 (no,yes)
+</code></pre>
+<p>那么到底这些设置如何让Safari 知道？其实很简单，就一个meta，形如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;   //编码</span><br><span class="line">&lt;meta id=&quot;viewport&quot; name=&quot;viewport&quot; content=&quot;width=320; initial-scale=1.0;maximum-scale=1.0; user-scalable=no;&quot;/&gt;</span><br><span class="line">&lt;meta name=”apple-mobile-web-app-capable” content=”yes” /&gt;  // 离线应用的另一个技巧    </span><br><span class="line">&lt;meta name=”apple-mobile-web-app-status-bar-style” content=black” /&gt;  // 隐藏状态栏       </span><br><span class="line">&lt;meta content=&quot;black&quot; name=&quot;apple-mobile-web-app-status-bar-style&quot; /&gt; //指定的iphone中safari顶端的状态条的样式       </span><br><span class="line">&lt;meta content=&quot;telephone=no&quot; name=&quot;format-detection&quot; /&gt;       //告诉设备忽略将页面中的数字识别为电话号码     </span><br><span class="line">&lt;meta name=&quot;Author&quot; contect=&quot;Mr.He&quot;/ &gt; </span><br></pre></td></tr></table></figure>
+<p>在设置了<code>initial-scale=1</code> 之后，我们终于可以以1:1 的比例进行页面设计了。关于viewport，还有一个很重要的概念是：iphone 的safari 浏览器完全没有滚动条，而且不是简单的“隐藏滚动条”，是根本没有这个功能。iphone 的safari 浏览器实际上从一开始就完整显示了这个网页，然后用viewport 查看其中的一部分。当你用手指拖动时，其实拖的不是页面，而是viewport。浏览器行为的改变不止是滚动条，交互事件也跟普通桌面不一样。<br>(请参考：指尖的下JS 系列文章)</p>
+<h2 id="2-link"><a href="#2-link" class="headerlink" title="2. link:"></a>2. link:</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=”apple-touch-startup-image” href=”startup.png” /&gt; // 设置开始页面图片</span><br><span class="line">&lt;link rel=”apple-touch-icon” href=”iphon_tetris_icon.png”/&gt; // 在设置书签的时候可以显示好看的图标</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;all and (orientation:portrait)&quot; href=&quot;portrait.css&quot;&gt;    // 肖像模式样式      </span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;all and (orientation:landscape)&quot; href=&quot;landscape.css&quot;   // 风景模式样式</span><br><span class="line">//竖屏时使用的样式</span><br><span class="line">&lt;style media=&quot;all and (orientation:portrait)&quot; type=&quot;text/css&quot;&gt;</span><br><span class="line">#landscape &#123; display: none; &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">//横屏时使用的样式</span><br><span class="line">&lt;style media=&quot;all and (orientation:landscape)&quot; type=&quot;text/css&quot;&gt;</span><br><span class="line">#portrait &#123; display: none; &#125;</span><br><span class="line">&lt;/style&gt; </span><br></pre></td></tr></table></figure>
+<h2 id="3-事件-："><a href="#3-事件-：" class="headerlink" title="3. 事件 ："></a>3. 事件 ：</h2><p> (请参考：指尖的下JS 系列文章)<br>    // 手势事件<br>    touchstart            //当手指接触屏幕时触发<br>    touchmove           //当已经接触屏幕的手指开始移动后触发<br>    touchend             //当手指离开屏幕时触发<br>    touchcancel    // 触摸事件<br>    gesturestart          //当两个手指接触屏幕时触发<br>    gesturechange      //当两个手指接触屏幕后开始移动时触发<br>    gestureend    // 屏幕旋转事件<br>    onorientationchange        // 检测触摸屏幕的手指何时改变方向<br>    orientationchange          // touch事件支持的相关属性<br>    touches<br>    targetTouches<br>    changedTouches<br>    clientX　　　　// X coordinate of touch relative to the viewport (excludes scroll offset)<br>    clientY　　　　// Y coordinate of touch relative to the viewport (excludes scroll offset)<br>    screenX　　　 // Relative to the screen<br>    screenY 　　  // Relative to the screen<br>    pageX　　 　　// Relative to the full page (includes scrolling)<br>    pageY　　　　 // Relative to the full page (includes scrolling)<br>    target　　　　 // Node the touch event originated from<br>    identifier　　   // An identifying number, unique to each touch event</p>
+<h2 id="4-屏幕旋转事件：onorientationchange"><a href="#4-屏幕旋转事件：onorientationchange" class="headerlink" title="4. 屏幕旋转事件：onorientationchange"></a>4. 屏幕旋转事件：onorientationchange</h2><p>添加屏幕旋转事件侦听，可随时发现屏幕旋转状态（左旋、右旋还是没旋）。例子：<br>// 判断屏幕是否旋转</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function orientationChange() &#123;</span><br><span class="line">    switch(window.orientation) &#123;</span><br><span class="line">    　　case 0: </span><br><span class="line">            alert(&quot;肖像模式 0,screen-width: &quot; + screen.width + &quot;; screen-height:&quot; + screen.height);</span><br><span class="line">            break;</span><br><span class="line">    　　case -90: </span><br><span class="line">            alert(&quot;左旋 -90,screen-width: &quot; + screen.width + &quot;; screen-height:&quot; + screen.height);</span><br><span class="line">            break;</span><br><span class="line">    　　case 90:   </span><br><span class="line">            alert(&quot;右旋 90,screen-width: &quot; + screen.width + &quot;; screen-height:&quot; + screen.height);</span><br><span class="line">            break;</span><br><span class="line">    　　case 180:   </span><br><span class="line">        　　alert(&quot;风景模式 180,screen-width: &quot; + screen.width + &quot;; screen-height:&quot; + screen.height);</span><br><span class="line">        　　break;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>// 添加事件监听</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">addEventListener(&#x27;load&#x27;, function()&#123;</span><br><span class="line">    orientationChange();</span><br><span class="line">    window.onorientationchange = orientationChange;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="5-隐藏地址栏-amp-处理事件的时候，防止滚动条出现："><a href="#5-隐藏地址栏-amp-处理事件的时候，防止滚动条出现：" class="headerlink" title="5. 隐藏地址栏 &amp; 处理事件的时候，防止滚动条出现："></a>5. 隐藏地址栏 &amp; 处理事件的时候，防止滚动条出现：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">addEventListener(&#x27;load&#x27;, function()&#123;</span><br><span class="line">        setTimeout(function()&#123; window.scrollTo(0, 1); &#125;, 100);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="6-双手指滑动事件："><a href="#6-双手指滑动事件：" class="headerlink" title="6. 双手指滑动事件："></a>6. 双手指滑动事件：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">addEventListener(&#x27;load&#x27;,　　function()&#123; window.onmousewheel = twoFingerScroll;&#125;,</span><br><span class="line">     false   // 兼容各浏览器，表示在冒泡阶段调用事件处理程序 (true 捕获阶段)</span><br><span class="line">);</span><br><span class="line">function twoFingerScroll(ev) &#123;</span><br><span class="line">    var delta =ev.wheelDelta/120;              //对 delta 值进行判断(比如正负) ，而后执行相应操作</span><br><span class="line">    return true;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="7-判断是否为iPhone："><a href="#7-判断是否为iPhone：" class="headerlink" title="7. 判断是否为iPhone："></a>7. 判断是否为iPhone：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function isAppleMobile() &#123;</span><br><span class="line">    return (navigator.platform.indexOf(&#x27;iPad&#x27;) != -1);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-localStorage"><a href="#8-localStorage" class="headerlink" title="8. localStorage:"></a>8. localStorage:</h2><p>例子 ：（注意数据名称  n  要用引号引起来）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var v = localStorage.getItem(&#x27;n&#x27;) ? localStorage.getItem(&#x27;n&#x27;) : &quot;&quot;;   // 如果名称是  n 的数据存在 ，则将其读出 ，赋予变量  v  。</span><br><span class="line">localStorage.setItem(&#x27;n&#x27;, v);                                           // 写入名称为 n、值为  v  的数据</span><br><span class="line">localStorage.removeItem(&#x27;n&#x27;);                                           // 删除名称为  n  的数据   </span><br></pre></td></tr></table></figure>
+<h2 id="9-使用特殊链接："><a href="#9-使用特殊链接：" class="headerlink" title="9. 使用特殊链接："></a>9. 使用特殊链接：</h2><p>如果你关闭自动识别后 ，又希望某些电话号码能够链接到 iPhone 的拨号功能 ，那么可以通过这样来声明电话链接 ,</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;tel:12345654321&quot;&gt;打电话给我&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;sms:12345654321&quot;&gt;发短信&lt;/a&gt;</span><br><span class="line">或用于单元格：</span><br><span class="line">&lt;td onclick=&quot;location.href=&#x27;tel:122&#x27;&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="10-自动大写与自动修正"><a href="#10-自动大写与自动修正" class="headerlink" title="10. 自动大写与自动修正"></a>10. 自动大写与自动修正</h2><p>要关闭这两项功能，可以通过<code>autocapitalize</code> 与<code>autocorrect</code> 这两个选项：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; autocapitalize=&quot;off&quot; autocorrect=&quot;off&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="11-WebKit-CSS"><a href="#11-WebKit-CSS" class="headerlink" title="11. WebKit CSS:"></a>11. WebKit CSS:</h2><p>①“盒模型”的具体描述性质的包围盒块内容，包括边界，填充等等。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-webkit-border-bottom-left-radius: radius;</span><br><span class="line">-webkit-border-top-left-radius: horizontal_radius vertical_radius;</span><br><span class="line">-webkit-border-radius: radius;      //容器圆角</span><br><span class="line">-webkit-box-sizing: sizing_model; 边框常量值：border-box/content-box</span><br><span class="line">-webkit-box-shadow: hoff voff blur color; //容器阴影（参数分别为：水平X 方向偏移量；垂直Y 方向偏移量；高斯模糊半径值；阴影颜色值）</span><br><span class="line">-webkit-margin-bottom-collapse: collapse_behavior; 常量值：collapse/discard/separate</span><br><span class="line">-webkit-margin-start: width;</span><br><span class="line">-webkit-padding-start: width;</span><br><span class="line">-webkit-border-image: url(borderimg.gif) 25 25 25 25 round/stretch round/stretch;</span><br><span class="line">-webkit-appearance: push-button;   //内置的CSS 表现，暂时只支持push-button</span><br></pre></td></tr></table></figure>
+<p>②“视觉格式化模型”描述性质，确定了位置和大小的块元素。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">direction: rtl</span><br><span class="line">unicode-bidi: bidi-override; 常量：bidi-override/embed/normal</span><br></pre></td></tr></table></figure>
+<p>③“视觉效果”描述属性，调整的视觉效果块内容，包括溢出行为，调整行为，能见度，动画，变换，和过渡。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">clip: rect(10px, 5px, 10px, 5px)</span><br><span class="line">resize: auto; 常量：auto/both/horizontal/none/vertical</span><br><span class="line">visibility: visible; 常量: collapse/hidden/visible</span><br><span class="line">-webkit-transition: opacity 1s linear; 动画效果 ease/linear/ease-in/ease-out/ease-in-out</span><br><span class="line">-webkit-backface-visibility: visibler; 常量：visible(默认值)/hidden</span><br><span class="line">-webkit-box-reflect: right 1px; 镜向反转</span><br><span class="line">-webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottom,</span><br><span class="line">from(transparent), color-stop(0.5, transparent), to(white));</span><br><span class="line">-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));;   //CSS 遮罩/蒙板效果</span><br><span class="line">-webkit-mask-attachment: fixed; 常量：fixed/scroll</span><br><span class="line">-webkit-perspective: value; 常量：none(默认)</span><br><span class="line">-webkit-perspective-origin: left top;</span><br><span class="line">-webkit-transform: rotate(5deg);</span><br><span class="line">-webkit-transform-style: preserve-3d; 常量：flat/preserve-3d; (2D 与3D)</span><br></pre></td></tr></table></figure>
+<p>④“生成的内容，自动编号，并列出”描述属性，允许您更改内容的一个组成部分，创建自动编号的章节和标题，和操纵的风格清单的内容。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">content: “Item” counter(section) ” “;</span><br><span class="line">This resets the counter.</span><br><span class="line">First section</span><br><span class="line">&gt;two section</span><br><span class="line">three section</span><br><span class="line">counter-increment: section 1;</span><br><span class="line">counter-reset: section;</span><br></pre></td></tr></table></figure>
+<p>⑤“分页媒体”描述性能与外观的属性，控制印刷版本的网页，如分页符的行为。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">page-break-after: auto; 常量：always/auto/avoid/left/right</span><br><span class="line">page-break-before: auto; 常量：always/auto/avoid/left/right</span><br><span class="line">page-break-inside: auto; 常量：auto/avoid</span><br></pre></td></tr></table></figure>
+<p>⑥“颜色和背景”描述属性控制背景下的块级元素和颜色的文本内容的组成部分。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-webkit-background-clip: content; 常量：border/content/padding/text</span><br><span class="line">-webkit-background-origin: padding; 常量：border/content/padding/text</span><br><span class="line">-webkit-background-size: 55px; 常量：length/length_x/length_y</span><br></pre></td></tr></table></figure>
+<p>⑦ “字型”的具体描述性质的文字字体的选择范围内的一个因素。报告还描述属性用于下载字体定义。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unicode-range: U+00-FF, U+980-9FF;</span><br></pre></td></tr></table></figure>
+<p>⑧“文本”描述属性的特定文字样式，间距和自动滚屏。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">text-shadow: #00FFFC 10px 10px 5px;</span><br><span class="line">text-transform: capitalize; 常量：capitalize/lowercase/none/uppercase</span><br><span class="line">word-wrap: break-word; 常量：break-word/normal</span><br><span class="line">-webkit-marquee: right large infinite normal 10s; 常量：direction(方向) increment(迭代次数) repetition(重复) style(样式) speed(速度);</span><br><span class="line">-webkit-marquee-direction: ahead/auto/backwards/down/forwards/left/reverse/right/up</span><br><span class="line">-webkit-marquee-incrementt: 1-n/infinite(无穷次)</span><br><span class="line">-webkit-marquee-speed: fast/normal/slow</span><br><span class="line">-webkit-marquee-style: alternate/none/scroll/slide</span><br><span class="line">-webkit-text-fill-color: #ff6600; 常量：capitalize, lowercase, none, uppercase</span><br><span class="line">-webkit-text-security: circle; 常量：circle/disc/none/square</span><br><span class="line">-webkit-text-size-adjust: none; 常量:auto/none;</span><br><span class="line">-webkit-text-stroke: 15px #fff;</span><br><span class="line">-webkit-line-break: after-white-space; 常量：normal/after-white-space</span><br><span class="line">-webkit-appearance: caps-lock-indicator;</span><br><span class="line">-webkit-nbsp-mode: space; 常量： normal/space</span><br><span class="line">-webkit-rtl-ordering: logical; 常量：visual/logical</span><br><span class="line">-webkit-user-drag: element; 常量：element/auto/none</span><br><span class="line">-webkit-user-modify: read- only; 常量：read-write-plaintext-only/read-write/read-only</span><br><span class="line">-webkit-user-select: text; 常量：text/auto/none</span><br></pre></td></tr></table></figure>
+<p>⑨“表格”描述的布局和设计性能表的具体内容。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-webkit-border-horizontal-spacing: 2px;</span><br><span class="line">-webkit-border-vertical-spacing: 2px;</span><br><span class="line">-webkit-column-break-after: right; 常量：always/auto/avoid/left/right</span><br><span class="line">-webkit-column-break-before: right; 常量：always/auto/avoid/left/right</span><br><span class="line">–webkit-column-break-inside: logical; 常量：avoid/auto</span><br><span class="line">-webkit-column-count: 3; //分栏</span><br><span class="line">-webkit-column-rule: 1px solid #fff;</span><br><span class="line">style:dashed,dotted,double,groove,hidden,inset,none,outset,ridge,solid</span><br></pre></td></tr></table></figure>
+<p>⑩“用户界面”描述属性，涉及到用户界面元素在浏览器中，如滚动文字区，滚动条，等等。报告还描述属性，范围以外的网页内容，如光标的标注样式和显示当您按住触摸触摸<br>目标，如在iPhone上的链接。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-webkit-box-align: baseline,center,end,start,stretch 常量：baseline/center/end/start/stretch</span><br><span class="line">-webkit-box-direction: normal;常量：normal/reverse</span><br><span class="line">-webkit-box-flex: flex_valuet</span><br><span class="line">-webkit-box-flex-group: group_number</span><br><span class="line">-webkit-box-lines: multiple; 常量：multiple/single</span><br><span class="line">-webkit-box-ordinal-group: group_number</span><br><span class="line">-webkit-box-orient: block-axis; 常量：block-axis/horizontal/inline-axis/vertical/orientation</span><br><span class="line">–webkit-box-pack: alignment; 常量：center/end/justify/start</span><br></pre></td></tr></table></figure>
+<h2 id="12-动画过渡"><a href="#12-动画过渡" class="headerlink" title="12. 动画过渡"></a>12. 动画过渡</h2><p>这是 Webkit 中最具创新力的特性：使用过渡函数定义动画。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-webkit-animation: title infinite ease-in-out 3s;</span><br><span class="line">animation 有这几个属性：</span><br><span class="line">-webkit-animation-name： //属性名，就是我们定义的keyframes</span><br><span class="line">-webkit-animation-duration：3s //持续时间</span><br><span class="line">-webkit-animation-timing-function： //过渡类型：ease/ linear(线性) /ease-in(慢到快)/ease-out(快到慢) /ease-in-out(慢到快再到慢) /cubic-bezier</span><br><span class="line">-webkit-animation-delay：10ms //动画延迟(默认0)</span><br><span class="line">-webkit-animation-iteration-count： //循环次数(默认1)，infinite 为无限</span><br><span class="line">-webkit-animation-direction： //动画方式：normal(默认 正向播放)； alternate(交替方向，第偶数次正向播放，第奇数次反向播放)</span><br></pre></td></tr></table></figure>
+<p>这些同样是可以简写的。但真正让我觉的很爽的是keyframes，它能定义一个动画的转变过程供调用，过程为0%到100%或from(0%)到to(100%)。简单点说，只要你有想法，你想让元素在这个过程中以什么样的方式改变都是很简单的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-webkit-transform: 类型（缩放scale/旋转rotate/倾斜skew/位移translate）</span><br><span class="line">scale(num,num) 放大倍率。scaleX 和 scaleY(3)，可以简写为：scale(* , *)</span><br><span class="line">rotate(*deg) 转动角度。rotateX 和 rotateY，可以简写为：rotate(* , *)</span><br><span class="line">Skew(*deg) 倾斜角度。skewX 和skewY，可简写为：skew(* , *)</span><br><span class="line">translate(*,*) 坐标移动。translateX 和translateY，可简写为：translate(* , *)。</span><br></pre></td></tr></table></figure>
+<p>实现模拟弹出消息框（Alert）的例子：<br>①定义过渡（在<code>&lt;style type=&quot;text/css&quot;&gt;</code>段中描述keyframes）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@-webkit-keyframes DivZoom</span><br><span class="line">&#123;</span><br><span class="line">0% &#123; -webkit-transform: scale(0.01) &#125;</span><br><span class="line">60% &#123; -webkit-transform: scale(1.05) &#125;</span><br><span class="line">80% &#123; -webkit-transform: scale(0.95) &#125;</span><br><span class="line">100% &#123; -webkit-transform: scale(1.00) &#125;</span><br><span class="line">&#125;</span><br><span class="line">.sZoom &#123; -webkit-animation: DivZoom 0.5s ease-in-out &#125;</span><br></pre></td></tr></table></figure>
+<p>(很容易看懂，将元素从缩小的0.01 倍–很小但不能为0 倍，放大到1.05 倍，再缩小到0.95倍，最后到1倍即正常大小。整个过渡过程事件为0.5 秒，动画方式为ease-in-out，即慢到快再到慢，默认只进行1次过渡。这正是大家经常看到的 iPhone 弹出的提示信息的动画效果！）<br>②定义元素（在<code>&lt;body&gt;</code>段中）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;layerH&quot; style=&quot;-webkit-border-radius:12px; border:2px solid #FFF;-webkit-box-shadow: 0px 2px 4px #888;position: absolute; left: 24px; top: 106px;&lt;br&gt;width: 256px; height: 268px; padding-left: 8px; padding-right: 8px;color: #FFFFFF; text-shadow: 1px 1px 1px #000; text-align: center;background-color: RGBA(32,48,96,0.9);</span><br><span class="line">background-image:url(&#x27;BG-Msg.png&#x27;); background-repeat:no-repeat;</span><br><span class="line">z-index: 1; visibility: hidden; &quot;&gt;</span><br><span class="line">&lt;p&gt;&lt;span style=&quot;font-size: 16pt; font-weight: bold&quot;&gt;使用说明&lt;/span&gt;&lt;/p&gt;</span><br><span class="line">&lt;hr noshade size=&quot;1&quot;&gt;</span><br><span class="line">&lt;div id=&quot;HelpText&quot; style=&quot;height: 120px&quot;&gt;说明文字&lt;/div&gt;</span><br><span class="line">&lt;hr noshade size=&quot;1&quot;&gt;</span><br><span class="line">&lt;form name=&quot;formV&quot; method=&quot;POST&quot;&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;确认&quot; name=&quot;B1&quot;</span><br><span class="line">style=&quot;width: 100%; height: 40px; font-size: 14pt; ont-weight: bold;</span><br><span class="line">color: #FFFFFF; text-shadow: 0px -1px 1px #000;&quot;</span><br><span class="line">onclick=&quot; layerH.style.visibility=&#x27;hidden&#x27;&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>③启动动画（在 javascript 定义的函数中）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function pHelp()</span><br><span class="line">&#123;</span><br><span class="line">layerH.style.visibility = &#x27;visible&#x27;</span><br><span class="line">layerH.style.cssText = &quot;-webkit-animation-delay: &quot; + Math.random() + &quot;ms&quot;</span><br><span class="line">layerH.className = &#x27;sZoom&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(这个启动函数就很好理解了。但是为什么要使用-webkit-animation-delay 这句呢？因为当一个元素过渡显示完成后，若其样式没有变化，下一次将无法进行过渡动画显示。我们巧妙的利用其动画延迟时间定义，使其有所变化，就避免了上述问题。其中使用随机数函数Math.random()，产生一个大于0 小于1 的随机数。当然，延迟零点几毫秒，用户是不会察觉的。)</p>
+<p>补充：</p>
+<p>1.锁定 viewport</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ontouchmove=&quot;event.preventDefault()&quot; //锁定viewport，任何屏幕操作不移动用户界面（弹出键盘除外）。</span><br></pre></td></tr></table></figure>
+<p>2.被点击元素的外观变化，可以使用样式来设定：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-tap-highlight-color: 颜色</span><br></pre></td></tr></table></figure>
+<p>3.侦测iPhone/iPod<br>开发特定设备的移动网站，首先要做的就是设备侦测了。下面是使用Javascript侦测iPhone/iPod的UA，然后转向到专属的URL。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) &#123;</span><br><span class="line">　　if (document.cookie.indexOf(&quot;iphone_redirect=false&quot;) == -1) &#123;</span><br><span class="line">　　　　window.location = &quot;http://m.example.com&quot;;</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>虽然Javascript是可以在水果设备上运行的，但是用户还是可以禁用。它也会造成客户端刷新和额外的数据传输，所以下面是服务器端侦测和转向：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(strstr($_SERVER[&#x27;HTTP_USER_AGENT&#x27;],&#x27;iPhone&#x27;) || strstr($_SERVER[&#x27;HTTP_USER_AGENT&#x27;],&#x27;iPod&#x27;)) &#123;</span><br><span class="line">　　header(&#x27;Location: http://yoursite.com/iphone&#x27;);</span><br><span class="line">　　exit();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.阻止旋转屏幕时自动调整字体大小</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 &#123;-webkit-text-size-adjust:none;&#125;</span><br></pre></td></tr></table></figure>
+<p>5.iPhone才识别的CSS<br>如果不想设备侦测，可以用CSS媒体查询来专为iPhone/iPod定义样式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media screen and (max-device-width: 480px) &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>6.缩小图片<br>网站的大图通常宽度都超过480像素，如果用前面的代码限制了缩放，这些图片在iPhone版显示显然会超过屏幕。好在iPhone机能还够，我们可以用CSS让iPhone自动将大图片缩小显示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media screen and (max-device-width: 480px)&#123;</span><br><span class="line">　　img&#123;max-width:100%;height:auto;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>7.模拟:hover伪类<br>因为iPhone并没有鼠标指针，所以没有hover事件。那么CSS :hover伪类就没用了。但是iPhone有Touch事件，onTouchStart 类似 onMouseOver，onTouchEnd 类似 onMouseOut。所以我们可以用它来模拟hover。使用Javascript：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var myLinks = document.getElementsByTagName(&#x27;a&#x27;);</span><br><span class="line">for(var i = 0; i &lt; myLinks.length; i++)&#123;</span><br><span class="line">　　myLinks[i].addEventListener(’touchstart’, function()&#123;this.className = “hover”;&#125;, false);</span><br><span class="line">　　myLinks[i].addEventListener(’touchend’, function()&#123;this.className = “”;&#125;, false);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后用CSS增加hover效果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a:hover, a.hover &#123; /* 你的hover效果 */ &#125;</span><br></pre></td></tr></table></figure>
+<p>这样设计一个链接，感觉可以更像按钮。并且，这个模拟可以用在任何元素上。</p>
+<h1 id="web-app-开发中垒砖"><a href="#web-app-开发中垒砖" class="headerlink" title="web app 开发中垒砖"></a>web app 开发中垒砖</h1><p>当然，因为这些高端智能手机（Iphone、Android）的内置浏览器都是基于webkit内核的，所以在开发WEBAPP时，多数都是使 用 HTML5和CSS3技术做UI布局。当使用HTML5和CSS3l做UI时，若还是遵循着一般web开发中使用HTML4和CSS2那样的开发方式 的 话，这也就失去了WEBAPP的本质意义了，且有些效果也无法实现的，所以在此又回到了我们的主题–webapp的布局方式和技术。</p>
+<p>在此所说的移动平台前端开发是指针对高端智能手机（如Iphone、Android）做站点适配也就是WebApp，并非是针对普通手机开 发 Wap 2.0，所以在阅读本篇文章以前，你需要对webkit内核的浏览器有一定的了解，你需要对HTML5和CSS3有一定的了解。</p>
+<h2 id="1-webkit内核的私有的meta标签"><a href="#1-webkit内核的私有的meta标签" class="headerlink" title="1.webkit内核的私有的meta标签"></a>1.webkit内核的私有的meta标签</h2><p>首先我们来看看webkit内核中的一些私有的meta标签，这些meta标签在开发webapp时起到非常重要的作用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta content=”width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;” name=”viewport” /&gt;</span><br><span class="line">&lt;meta content=”yes” name=”apple-mobile-web-app-capable” /&gt;</span><br><span class="line">&lt;meta content=”black” name=”apple-mobile-web-app-status-bar-style” /&gt;</span><br><span class="line">&lt;meta content=”telephone=no” name=”format-detection” /&gt;</span><br></pre></td></tr></table></figure>
+
+<pre><code>第一个meta标签表示：强制让文档的宽度与设备的宽度保持1:1，并且文档最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览；
+
+第二个meta标签是iphone设备中的safari私有meta标签，它表示：允许全屏模式浏览；
+
+第三个meta标签也是iphone的私有标签，它指定的iphone中safari顶端的状态条的样式；
+
+第四个meta标签表示：告诉设备忽略将页面中的数字识别为电话号码。
+</code></pre>
+<h2 id="2-HTML5标签的使用"><a href="#2-HTML5标签的使用" class="headerlink" title="2.HTML5标签的使用"></a>2.HTML5标签的使用</h2><p>在 开始编写webapp时，哥建议前端工程师使用HTML5，而放弃HTML4，因为HTML5可以实现一些HTML4中无法实现的丰富的WEB应用程 序 的体验，可以减少开发者很多的工作量，当然了你决定使用HTML5前，一定要对此非常熟悉，要知道HTML5的新标签的作用。比如定义一块内容或文章 区域 可使用section标签，定义导航条或选项卡可以直接使用nav标签等等。</p>
+<h2 id="3-放弃CSS-float属性"><a href="#3-放弃CSS-float属性" class="headerlink" title="3.放弃CSS float属性"></a>3.放弃CSS float属性</h2><p>在项目开发过程中可以会遇到内容排列排列显示的布局(见下图)，假如你遇见这样的视觉稿，哥建议你放弃float，可以直接使用display:block;</p>
+<h2 id="4-利用CSS3边框背景属性"><a href="#4-利用CSS3边框背景属性" class="headerlink" title="4.利用CSS3边框背景属性"></a>4.利用CSS3边框背景属性</h2><p>这 个按钮有圆角效果，有内发光效果还有高光效果，这样的按钮使用CSS3写是无法写出来的，当然圆角可以使用CSS3来写，但高光和内发光却无法使 用 CSS3编写，这个时候你不妨使用-webkit-border-image来定义这个按钮的样式。-webkit-border-image就个很 复杂 的样式属性。</p>
+<h2 id="5-块级化a标签"><a href="#5-块级化a标签" class="headerlink" title="5.块级化a标签"></a>5.块级化a标签</h2><p>请保证将每条数据都放在一个a标签中，为何这样做？因为在触控手机上，为提升用户体验，尽可能的保证用户的可点击区域较大。</p>
+<h2 id="6-自适应布局模式"><a href="#6-自适应布局模式" class="headerlink" title="6.自适应布局模式"></a>6.自适应布局模式</h2><p>在 编写CSS时，我不建议前端工程师把容器（不管是外层容器还是内层）的宽度定死。为达到适配各种手持设备，我建议前端工程师使用自适应布局模式（支付 宝 采用了自适应布局模式），因为这样做可以让你的页面在ipad、itouch、ipod、iphone、android、 web safarik、 chrome都能够正常的显示，你无需再次考虑设备的分辨率。</p>
+<h2 id="7-学会使用webkit-box"><a href="#7-学会使用webkit-box" class="headerlink" title="7.学会使用webkit-box"></a>7.学会使用webkit-box</h2><p>上一节，我们说过自适应布局模式，有些同学可能会问：如何在移动设备上做到完全自适应呢？很感谢webkit为display属性提供了一个webkit-box的值，它可以帮助前端工程师做到盒子模型灵活控制。</p>
+<h2 id="8-如何去除Android平台中对邮箱地址的识别"><a href="#8-如何去除Android平台中对邮箱地址的识别" class="headerlink" title="8.如何去除Android平台中对邮箱地址的识别"></a>8.如何去除Android平台中对邮箱地址的识别</h2><p>看 过iOS webapp API的同学都知道iOS提供了一个meta标签:用于禁用iOS对页面中电话号码的自动识别。在iOS中是不自动识别邮件 地 址的，但在Android平台，它会自动检测邮件地址，当用户touch到这个邮件地址时，Android会弹出一个框提示用户发送邮件，如果你不 想 Android自动识别页面中的邮件地址，你不妨加上这样一句meta标签在head 中 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta content=”email=no” name=”format-detection” /&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-如何去除iOS和Android中的输入URL的控件条"><a href="#9-如何去除iOS和Android中的输入URL的控件条" class="headerlink" title="9.如何去除iOS和Android中的输入URL的控件条"></a>9.如何去除iOS和Android中的输入URL的控件条</h2><p>你的老板或者PD或者交互设计师可能会要求你：能否让我们的webapp更加像nativeapp，我不想让用户看见那个输入url的控件条？</p>
+<p>答案是可以做到的。我们可以利用一句简单的javascript代码来实现这个效果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(scrollTo,0,0,0);</span><br></pre></td></tr></table></figure>
+
+<p>请注意，这句代码必须放在<code>window.onload</code>里才能够正常的工作，而且你的当前文档的内容高度必须是高于窗口的高度时，这句代码才能有效的执行。</p>
+<h2 id="10-如何禁止用户旋转设备"><a href="#10-如何禁止用户旋转设备" class="headerlink" title="10.如何禁止用户旋转设备"></a>10.如何禁止用户旋转设备</h2><p>我曾经也想禁止用户旋转设备，也想实现像某些客户端那样：只能在肖像模式或景观模式下才能正常运行。但现在我可以很负责任的告诉你：别想了!在移动版的webkit中做不到！</p>
+<p>至 少Apple webapp API已经说到了：我们为了让用户在safari中正常的浏览网页，我们必须保证用户的设备处于任何一个方 位 时，safari都能够正常的显示网页内容（也就是自适应），所以我们禁止开发者阻止浏览器的<code>orientationchange</code>事件，看来苹果公司 的出 发点是正确的，苹果确实不是一般的苹果。</p>
+<p>iOS已经禁止开发者阻止<code>orientationchange</code>事件，那Android呢？对不起，我没有找到任何资料说Android禁止开发者阻止浏览器<code>orientationchange</code>事件，但是在Android平台，确实也是阻止不了的。</p>
+<h2 id="11-如何检测用户是通过主屏启动你的webapp"><a href="#11-如何检测用户是通过主屏启动你的webapp" class="headerlink" title="11.如何检测用户是通过主屏启动你的webapp"></a>11.如何检测用户是通过主屏启动你的webapp</h2><p>看过Apple webapp API的同学都知道iOS为safari提供了一个将当前页面添加主屏的功能，按下 iphoneipodipod touch底部工具中的小加号，或者ipad顶部左侧的小加号，就可以将当前的页面添加到设备的主屏，在设备的主屏会 自动 增加一个当前页面的启动图标，点击该启动图标就可以快速、便捷的启动你的webapp。从主屏启动的webapp和浏览器访问你的webapp最大 的区别 是它清除了浏览器上方和下方的工具条，这样你的webapp就更加像是nativeapp了，还有一个区别是window对像中的 <code>navigator</code>子对 象的一个<code>standalone</code>属性。iOS中浏览器直接访问站点时，<code>navigator.standalone</code>为<code>false</code>,从 主屏启动webapp 时，<code>navigator.standalone</code>为<code>true</code>， 我们可以通过<code>navigator.standalone</code>这个属性获知 用户当前是否是从主屏访 问我们的webapp的。在Android中从来没有添加到主屏这回事！</p>
+<h2 id="12-如何关闭iOS中键盘自动大写"><a href="#12-如何关闭iOS中键盘自动大写" class="headerlink" title="12.如何关闭iOS中键盘自动大写"></a>12.如何关闭iOS中键盘自动大写</h2><p>我 们知道在iOS中，当虚拟键盘弹出时，默认情况下键盘是开启首字母大写的功能的，根据某些业务场景，可能我们需要关闭这个功能，移动版本webkit 为 input元素提供了<code>autocapitalize</code>属性，通过指定<code>autocapitalize=&quot;off&quot;</code>来关闭键盘默认首字母大写。</p>
+<h2 id="13-iOS中如何彻底禁止用户在新窗口打开页面"><a href="#13-iOS中如何彻底禁止用户在新窗口打开页面" class="headerlink" title="13.iOS中如何彻底禁止用户在新窗口打开页面"></a>13.iOS中如何彻底禁止用户在新窗口打开页面</h2><p>有 时我们可能需要禁止用户在新窗口打开页面，我们可以使用a标签的<code>target=&quot;_self&quot;</code>来指定用户在新窗口打开，或者target属性保持空， 但 是你会发现iOS的用户在这个链接的上方长按3秒钟后，iOS会弹出一个列表按钮，用户通过这些按钮仍然可以在新窗口打开页面，这样的话，开发者指定 的 target属性就失效了，但是可以通过指定当前元素的<code>-webkit-touch-callout</code>样式属性为none来禁止iOS弹出这些按钮。这 个技 巧仅适用iOS对于Android平台则无效。</p>
+<h2 id="14-iOS中如何禁止用户保存图片、复制图片"><a href="#14-iOS中如何禁止用户保存图片、复制图片" class="headerlink" title="14.iOS中如何禁止用户保存图片、复制图片"></a>14.iOS中如何禁止用户保存图片、复制图片</h2><p>我们在第13条技巧中提到元素的<code>-webkit-touch-callout</code>属性，同样为一个<code>img</code>标签指定<code>-webkit-touch-callout为none</code>也会禁止设备弹出列表按钮，这样用户就无法保存/复制你的图片了。</p>
+<h2 id="15-iOS中如何禁止用户选中文字"><a href="#15-iOS中如何禁止用户选中文字" class="headerlink" title="15.iOS中如何禁止用户选中文字"></a>15.iOS中如何禁止用户选中文字</h2><p>我们通过指定文字标签的<code>-webkit-user-select</code>属性为<code>none</code>便可以禁止iOS用户选中文字。</p>
+<h2 id="16-iOS中如何获取滚动条的值"><a href="#16-iOS中如何获取滚动条的值" class="headerlink" title="16.iOS中如何获取滚动条的值"></a>16.iOS中如何获取滚动条的值</h2><p>桌 面浏览器中想要获取滚动条的值是通过<code>document.scrollTop</code>和<code>document.scrollLeft</code>得到的，但在iOS中你会发现这 两 个属性是未定义的，为什么呢？因为在iOS中没有滚动条的概念，在Android中通过这两个属性可以正常获取到滚动条的值，那么在iOS中我们该如 何获 取滚动条的值呢？</p>
+<p>通过<code>window.scrollY</code>和<code>window.scrollX</code>我们可以得到当前窗口的y轴和x轴滚动条的值。</p>
+<h2 id="17-如何解决盒子边框溢出"><a href="#17-如何解决盒子边框溢出" class="headerlink" title="17.如何解决盒子边框溢出"></a>17.如何解决盒子边框溢出</h2><p>当 你指定了一个块级元素时，并且为其定义了边框，设置了其宽度为100％。在移动设备开发过程中我们通常会对文本框定义为宽度100％，将其定义为块级 元 素以实现全屏自适应的样式，但此时你会发现，该元素的边框(左右)各1个像素会溢了文档，导致出现横向滚动条，为解决这一问题，我们可以为其添加一个 特殊 的样式<code>-webkit-box-sizing:border-box;</code>用来指定该盒子的大小包括边框的宽度。</p>
+<h2 id="18-如何解决Android-2-0以下平台中圆角的问题"><a href="#18-如何解决Android-2-0以下平台中圆角的问题" class="headerlink" title="18.如何解决Android 2.0以下平台中圆角的问题"></a>18.如何解决Android 2.0以下平台中圆角的问题</h2><p>如果大家够细心的话，在做wap站点开发时，大家应该会发现android 2.0以下的平台中问题特别的多，比如说边框圆角这个问题吧。</p>
+<p>在对一个元素定义圆角时，为完全兼容android 2.0以下的平台，我们必须要按照以下技巧来定义边框圆角：</p>
+<p><code>-webkit</code>这个前缀必须要加上（在iOS中，你可以不加，但android中一定要加）；<br>如果对针对边框做样式定义，比如<code>border:1px solid #000;</code>那么<code>-webkit-border-radius</code>这属性必须要出现在border属性后。<br>假如我们有这样的视觉元素，左上角和右上角是圆角时，我们必须要先定义全局的(4个角的圆角值)<code>-webkit-border- radius:5px;</code> 然后再依次的覆盖左下角和右下角，<code>-webkit-border-bottom-left-radius:0;-webkit- border- bottom-right-border:0;</code>否则在android 2.0以下的平台中将全部显示直角，还有记住！<code>-webkit</code>这个前缀一定要加上！</p>
+<h2 id="19-如何解决android平台中页面无法自适应"><a href="#19-如何解决android平台中页面无法自适应" class="headerlink" title="19.如何解决android平台中页面无法自适应"></a>19.如何解决android平台中页面无法自适应</h2><p>虽然你的html和css都是完全自适应的，但有一天如果你发现你的页面在android中显示的并不是自适应的时候，首先请你确认你的head标签中是否包含以下meta标签：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=”viewport” content=”width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;” /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果有的话，那请你再仔细的看清楚有没有这个属性的值<code>width=device-width</code>，如果没有请立即加上吧！</p>
+<h2 id="20-如何解决iOS-4-3版本中safari对页面中5位数字的自动识别和自动添加样式"><a href="#20-如何解决iOS-4-3版本中safari对页面中5位数字的自动识别和自动添加样式" class="headerlink" title="20.如何解决iOS 4.3版本中safari对页面中5位数字的自动识别和自动添加样式"></a>20.如何解决iOS 4.3版本中safari对页面中5位数字的自动识别和自动添加样式</h2><p>新的iOS系统也就是4.3版本，升级后对safari造成了一个bug：即使你添加了如下的meta标签，safari仍然会对页面中的5位连续的数字进行自动识别，并且将其重新渲染样式，也就是说你的css对该标签是无效的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=”format-detection” content=”telphone=no” /&gt;</span><br></pre></td></tr></table></figure>
+<p>我们可以用一个比较龌龊的办法来解决。比如说支付宝wap站点中显示金额的标签，我们都做了如下改写：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button class=”t-balance”style=”background:none;padding:0;border:0;”&gt;95009.00&lt;/button&gt;元</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="http://www.25xt.com/html5css3/10261.html/comment-page-1">http://www.25xt.com/html5css3/10261.html/comment-page-1</a><br><a target="_blank" rel="noopener" href="http://www.cnblogs.com/webapplee/p/3771716.html">http://www.cnblogs.com/webapplee/p/3771716.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/article/web-app%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86/">web app相关整理</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
+        <p><span>发布时间:</span>2017-01-18, 23:28:24</p>
+        <p><span>最后更新:</span>2024-12-01, 23:12:10</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/article/web-app%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86/" title="web app相关整理">https://sogrey.github.io/article/web-app%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/web-app%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BAndroid/">
+                    技术文章之Android
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/article/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%9D%E5%8D%B0%E8%B1%A1%E3%80%90%E6%95%B4%E7%90%86%E3%80%91/">
+                    微信小程序初印象【整理】
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#WebApp%E4%B8%8ENative-App%E6%9C%89%E4%BD%95%E5%8C%BA%E5%88%AB%E5%91%A2%EF%BC%9F"><span class="toc-text">WebApp与Native App有何区别呢？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#web-app-%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C"><span class="toc-text">web app 开发经验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-viewport%EF%BC%9A"><span class="toc-text">1. viewport：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-link"><span class="toc-text">2. link:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BA%8B%E4%BB%B6-%EF%BC%9A"><span class="toc-text">3. 事件 ：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E4%BA%8B%E4%BB%B6%EF%BC%9Aonorientationchange"><span class="toc-text">4. 屏幕旋转事件：onorientationchange</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E9%9A%90%E8%97%8F%E5%9C%B0%E5%9D%80%E6%A0%8F-amp-%E5%A4%84%E7%90%86%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E9%98%B2%E6%AD%A2%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%87%BA%E7%8E%B0%EF%BC%9A"><span class="toc-text">5. 隐藏地址栏 &amp; 处理事件的时候，防止滚动条出现：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%8F%8C%E6%89%8B%E6%8C%87%E6%BB%91%E5%8A%A8%E4%BA%8B%E4%BB%B6%EF%BC%9A"><span class="toc-text">6. 双手指滑动事件：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BAiPhone%EF%BC%9A"><span class="toc-text">7. 判断是否为iPhone：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-localStorage"><span class="toc-text">8. localStorage:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E4%BD%BF%E7%94%A8%E7%89%B9%E6%AE%8A%E9%93%BE%E6%8E%A5%EF%BC%9A"><span class="toc-text">9. 使用特殊链接：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E8%87%AA%E5%8A%A8%E5%A4%A7%E5%86%99%E4%B8%8E%E8%87%AA%E5%8A%A8%E4%BF%AE%E6%AD%A3"><span class="toc-text">10. 自动大写与自动修正</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-WebKit-CSS"><span class="toc-text">11. WebKit CSS:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E5%8A%A8%E7%94%BB%E8%BF%87%E6%B8%A1"><span class="toc-text">12. 动画过渡</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#web-app-%E5%BC%80%E5%8F%91%E4%B8%AD%E5%9E%92%E7%A0%96"><span class="toc-text">web app 开发中垒砖</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-webkit%E5%86%85%E6%A0%B8%E7%9A%84%E7%A7%81%E6%9C%89%E7%9A%84meta%E6%A0%87%E7%AD%BE"><span class="toc-text">1.webkit内核的私有的meta标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-HTML5%E6%A0%87%E7%AD%BE%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">2.HTML5标签的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%94%BE%E5%BC%83CSS-float%E5%B1%9E%E6%80%A7"><span class="toc-text">3.放弃CSS float属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%88%A9%E7%94%A8CSS3%E8%BE%B9%E6%A1%86%E8%83%8C%E6%99%AF%E5%B1%9E%E6%80%A7"><span class="toc-text">4.利用CSS3边框背景属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%9D%97%E7%BA%A7%E5%8C%96a%E6%A0%87%E7%AD%BE"><span class="toc-text">5.块级化a标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E8%87%AA%E9%80%82%E5%BA%94%E5%B8%83%E5%B1%80%E6%A8%A1%E5%BC%8F"><span class="toc-text">6.自适应布局模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8webkit-box"><span class="toc-text">7.学会使用webkit-box</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%A6%82%E4%BD%95%E5%8E%BB%E9%99%A4Android%E5%B9%B3%E5%8F%B0%E4%B8%AD%E5%AF%B9%E9%82%AE%E7%AE%B1%E5%9C%B0%E5%9D%80%E7%9A%84%E8%AF%86%E5%88%AB"><span class="toc-text">8.如何去除Android平台中对邮箱地址的识别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E5%A6%82%E4%BD%95%E5%8E%BB%E9%99%A4iOS%E5%92%8CAndroid%E4%B8%AD%E7%9A%84%E8%BE%93%E5%85%A5URL%E7%9A%84%E6%8E%A7%E4%BB%B6%E6%9D%A1"><span class="toc-text">9.如何去除iOS和Android中的输入URL的控件条</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E5%A6%82%E4%BD%95%E7%A6%81%E6%AD%A2%E7%94%A8%E6%88%B7%E6%97%8B%E8%BD%AC%E8%AE%BE%E5%A4%87"><span class="toc-text">10.如何禁止用户旋转设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E5%A6%82%E4%BD%95%E6%A3%80%E6%B5%8B%E7%94%A8%E6%88%B7%E6%98%AF%E9%80%9A%E8%BF%87%E4%B8%BB%E5%B1%8F%E5%90%AF%E5%8A%A8%E4%BD%A0%E7%9A%84webapp"><span class="toc-text">11.如何检测用户是通过主屏启动你的webapp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E5%A6%82%E4%BD%95%E5%85%B3%E9%97%ADiOS%E4%B8%AD%E9%94%AE%E7%9B%98%E8%87%AA%E5%8A%A8%E5%A4%A7%E5%86%99"><span class="toc-text">12.如何关闭iOS中键盘自动大写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-iOS%E4%B8%AD%E5%A6%82%E4%BD%95%E5%BD%BB%E5%BA%95%E7%A6%81%E6%AD%A2%E7%94%A8%E6%88%B7%E5%9C%A8%E6%96%B0%E7%AA%97%E5%8F%A3%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2"><span class="toc-text">13.iOS中如何彻底禁止用户在新窗口打开页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-iOS%E4%B8%AD%E5%A6%82%E4%BD%95%E7%A6%81%E6%AD%A2%E7%94%A8%E6%88%B7%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87%E3%80%81%E5%A4%8D%E5%88%B6%E5%9B%BE%E7%89%87"><span class="toc-text">14.iOS中如何禁止用户保存图片、复制图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-iOS%E4%B8%AD%E5%A6%82%E4%BD%95%E7%A6%81%E6%AD%A2%E7%94%A8%E6%88%B7%E9%80%89%E4%B8%AD%E6%96%87%E5%AD%97"><span class="toc-text">15.iOS中如何禁止用户选中文字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-iOS%E4%B8%AD%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E6%BB%9A%E5%8A%A8%E6%9D%A1%E7%9A%84%E5%80%BC"><span class="toc-text">16.iOS中如何获取滚动条的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E7%9B%92%E5%AD%90%E8%BE%B9%E6%A1%86%E6%BA%A2%E5%87%BA"><span class="toc-text">17.如何解决盒子边框溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3Android-2-0%E4%BB%A5%E4%B8%8B%E5%B9%B3%E5%8F%B0%E4%B8%AD%E5%9C%86%E8%A7%92%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">18.如何解决Android 2.0以下平台中圆角的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3android%E5%B9%B3%E5%8F%B0%E4%B8%AD%E9%A1%B5%E9%9D%A2%E6%97%A0%E6%B3%95%E8%87%AA%E9%80%82%E5%BA%94"><span class="toc-text">19.如何解决android平台中页面无法自适应</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3iOS-4-3%E7%89%88%E6%9C%AC%E4%B8%ADsafari%E5%AF%B9%E9%A1%B5%E9%9D%A2%E4%B8%AD5%E4%BD%8D%E6%95%B0%E5%AD%97%E7%9A%84%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB%E5%92%8C%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0%E6%A0%B7%E5%BC%8F"><span class="toc-text">20.如何解决iOS 4.3版本中safari对页面中5位数字的自动识别和自动添加样式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BAndroid/" title="上一篇: 技术文章之Android">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/article/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%9D%E5%8D%B0%E8%B1%A1%E3%80%90%E6%95%B4%E7%90%86%E3%80%91/" title="下一篇: 微信小程序初印象【整理】">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/article/VSCODE%E9%85%8D%E7%BD%AEC-CPP%E6%9C%80%E5%B0%8F%E9%85%8D%E7%BD%AE/">VSCODE配置C/C++最小配置</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E8%AE%B0%E5%BD%95%E4%BD%BF%E7%94%A8clash-for-windows%E8%AE%A2%E9%98%85%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">记录使用clash_for_windows订阅实现科学上网</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%B0%86Nodejs%E7%A8%8B%E5%BA%8F%E5%8F%91%E5%B8%83%E4%B8%BAwindows%E6%9C%8D%E5%8A%A1/">将Nodejs程序发布为windows服务</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%B0%81%E8%A3%85axios%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/">封装axios网络请求</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%A6%82%E4%BD%95%E4%BD%BFmysql%E7%94%9F%E6%88%90-db%E6%96%87%E4%BB%B6/">如何使mysql生成.db文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8java8%E4%B8%ADStream%E8%BD%BB%E6%9D%BE%E9%81%8D%E5%8E%86%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84/">使用java8中Stream轻松遍历树形结构</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2021-2022/">加油2021，期盼2022</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JS%E6%93%8D%E4%BD%9Ciframe%E5%85%83%E7%B4%A0/">JS操作iframe元素</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E4%B8%8A%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2nginx/">Linux上安装部署nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Windows%2010%20%E4%B9%8B%E8%AE%BE%E7%BD%AEURL%E6%B1%87%E6%80%BB/">Windows 10 之设置URL汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/article/OpenEuler%E5%AE%89%E8%A3%85UKUI/">OpenEuler安装UKUI</a></li><li class="post-list-item"><a class="post-list-link" href="/article/windows%E4%B8%8B%E4%BF%AE%E6%94%B9vscode%E9%BB%98%E8%AE%A4%E7%BB%88%E7%AB%AF%E4%B8%BAgit-bash/">windows下修改vscode默认终端为git bash</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E7%8E%A9%E8%BD%ACWindows%E5%AD%90%E7%B3%BB%E7%BB%9FLinux%E4%B9%8B%E5%AE%89%E8%A3%85Kali-Linux/">玩转Windows子系统Linux之安装Kali Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E7%8E%A9%E8%BD%ACWindows%E5%AD%90%E7%B3%BB%E7%BB%9FLinux%E4%B9%8B%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/">玩转Windows子系统Linux之准备工作</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8SSH%E8%BF%9E%E6%8E%A5%E5%88%B0GitHub/">使用SSH连接到GitHub</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BDJDK/">Linux安装与卸载JDK</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Oracle%20VM%20VirtualBox%20%E4%B8%AD%E4%B8%BA%20CentOS%20%E5%AE%89%E8%A3%85%E5%A2%9E%E5%BC%BA%E5%B7%A5%E5%85%B7/">Oracle VM VirtualBox 中为 CentOS 安装增强工具</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Redis%E8%B8%A9%E5%9D%91%E8%AE%B0/">Redis踩坑记</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Mysql%E8%B8%A9%E5%9D%91%E8%AE%B0/">Mysql踩坑记</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%8F%90%E9%AB%98%E5%9B%BD%E5%86%85%E8%AE%BF%E9%97%AEGitHub%E7%9A%84%E9%80%9F%E5%BA%A6/">提高国内访问GitHub的速度</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E4%B8%AD%E8%AE%A9shell%E8%84%9A%E6%9C%AC%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/">Linux中让shell脚本变成可执行文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/CentOS%E5%AE%89%E8%A3%85-netcore/">CentOS安装.netcore</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Promise-all%E5%92%8CPromise-allSettled%E7%9A%84%E5%8C%BA%E5%88%AB/">Promise.all和Promise.allSettled的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/AutoCAD_ID__Handle__ads_name/">AutoCAD_ID、指针、句柄和ads_name的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2020-2021/">致敬2020，重启2021</a></li><li class="post-list-item"><a class="post-list-link" href="/article/java%E8%B0%83%E7%94%A8shell%E8%84%9A%E6%9C%AC/">java调用shell脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot%E9%A1%B9%E7%9B%AE%E7%98%A6%E8%BA%AB/">Spring Boot 项目瘦身</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Springboot%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82/">Springboot跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot%E6%94%AF%E6%8C%81HTTPS/">SpringBoot支持HTTPS</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">SpringBoot实现定时任务</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot%E6%B3%A8%E8%A7%A3%E7%AE%80%E4%BB%8B/">SpringBoot注解简介</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6/">Linux下如何创建文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E3%80%90Linux%E3%80%91%E6%8F%90%E7%A4%BA%E7%94%A8%E6%88%B7%E4%B8%8D%E5%9C%A8sudoers%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">【Linux】提示用户不在sudoers文件中的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/">Linux下安装软件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/spring-boot%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%92%8C%E8%87%AA%E5%90%AF%E5%8A%A8/">spring-boot项目打包和自启动</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE%EF%BC%88%E4%B8%8B%EF%BC%89/">使用Maven搭建spring boot项目（下）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE/">使用Maven搭建spring boot项目</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E8%A7%A3%E9%94%81github%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%8A%80%E8%83%BD/">解锁github高级搜索技能</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%A6%82%E4%BD%95%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BDAutoCAD/">如何完全卸载AutoCAD</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%B8%93%E4%B8%BA%E7%BC%96%E7%A8%8B%E8%80%8C%E7%94%9F%E7%9A%84%E5%AD%97%E4%BD%93/">专为编程而生的字体 —— Fira Code</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Js%E4%B9%8BPromise/">Js之Promise</a></li><li class="post-list-item"><a class="post-list-link" href="/article/zj2019-zw2020/">总结2019，展望2020</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用hugo搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-Studio%E5%BC%80%E5%8F%91%E7%BB%84%E4%BB%B6%E5%8C%96App%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">Android Studio开发组件化App遇到的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/git-clone-%E8%A7%A3%E5%86%B3Permission-Denied-publickey-%E9%97%AE%E9%A2%98/">git clone 解决Permission Denied (publickey)问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/node-js%E8%B0%83%E8%AF%95/">node.js调试</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8-%E5%B9%B2%E6%8E%89%E5%AE%83/">端口被占用，干掉它</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JS%E4%B8%ADapply-%E4%B8%8Ecall-%E7%9A%84%E5%8C%BA%E5%88%AB/">JS中apply()与call()的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95%E4%B9%8B%E6%8A%8A%E7%8E%A9console/">前端调试之把玩console</a></li><li class="post-list-item"><a class="post-list-link" href="/article/you-get/">下载神器 you-get</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E2%80%9C-%E8%AF%97%E6%AD%8C-%E5%8D%83%E5%8F%A4%E5%B2%90%E5%B1%B1/">[诗歌]千古岐山</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8-npm-%E5%AE%89%E8%A3%85-gitbook/">使用 npm 安装 gitbook</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%86%8D%E8%A7%812018%EF%BC%8C%E4%BD%A0%E5%A5%BD2019/">再见2018，你好2019</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%BC%84%E6%87%82%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE-GPL%E3%80%81BSD%E3%80%81MIT%E3%80%81Mozilla%E3%80%81Apache%E5%92%8CLGPL-%E4%B9%8B%E9%97%B4%E7%9A%84%E5%B7%AE%E5%88%AB/">一张图弄懂开源协议-GPL、BSD、MIT、Mozilla、Apache和LGPL 之间的差别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F-lauchMode/">Activity启动模式(lauchMode)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Java%E5%AF%B9%E8%B1%A1%E8%BD%ACjson%E6%97%B6%E7%A9%BA%E5%80%BC-null-%E5%A4%84%E7%90%86/">Java对象转json时空值(null)处理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%E7%89%88%E6%9C%AC%E5%92%8CAPI-Level%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB/">Android版本和API Level对应关系</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Flutter%20%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/">Flutter 路由跳转</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%20%E5%8A%A8%E6%80%81%E8%B0%83%E7%94%A8%E5%A4%96%E9%83%A8jar&dex/">Android 动态调用外部jar/dex</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JNI%20Md5%E5%8A%A0%E5%AF%86%E7%94%9F%E6%88%90so%E6%96%87%E4%BB%B6/">JNI Md5加密生成so文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/PE%E8%A3%85%E6%9C%BA%EF%BC%8C%E5%BC%80%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8%E9%A1%B9%E5%BF%AB%E6%8D%B7%E9%94%AE/">pe装机，开机设置启动项快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/article/VS-code-%E6%8F%92%E4%BB%B6/">VS code 插件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E9%81%8D%E5%8E%86Map%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/">遍历Map的四种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/15%E7%A7%8DCSS%E5%B1%85%E4%B8%AD%E6%96%B9%E5%BC%8F/">15种CSS居中方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%88%A9%E7%94%A8%E7%99%BE%E5%BA%A6URL-API%E5%AE%9E%E7%8E%B0%E5%9C%B0%E5%9D%80-%E7%BB%8F%E7%BA%AC%E5%BA%A6%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/">利用百度URL API实现地址与经纬度互相转换</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%E8%8E%B7%E5%8F%96view%E5%AE%BD%E9%AB%98%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/">Android获取view宽高的三种方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-TextView%E5%B1%9E%E6%80%A7android-ellipsize-marquee%E4%B8%8D%E7%94%9F%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">Android中TextView属性ellipsize=marquee不生效的解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%85%B3%E4%BA%8EAndroid%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8KSoap2%E8%B0%83%E7%94%A8Webservice%E8%BF%90%E8%A1%8C%E4%B8%8D%E6%88%90%E5%8A%9F%E7%9A%84%E9%97%AE%E9%A2%98/">关于Android程序使用KSoap2调用Webservice运行不成功的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo-%E6%B7%BB%E5%8A%A0-Gitment-%E8%AF%84%E8%AE%BA/">Hexo 添加 Gitment 评论</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-Webview-%E5%86%85%E5%AE%B9%E8%87%AA%E9%80%82%E5%BA%94%E9%AB%98%E5%BA%A6/">Android Webview 内容自适应高度</a></li><li class="post-list-item"><a class="post-list-link" href="/article/java%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/">java实现定时任务的三种方法(收集)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Java%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%A4%A7%E5%B0%8F%E7%9A%846%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%88%E6%94%B6%E9%9B%86%EF%BC%89/">Java读取文件夹大小的6种方法（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/json%E8%BD%AC%E6%A0%91%E7%8A%B6%E7%BB%93%E6%9E%84%EF%BC%88%E6%94%B6%E9%9B%86%EF%BC%89/">json转树状结构（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%B8%80%E8%A1%8C%20%20JavaScript%20%E4%BB%A3%E7%A0%81%EF%BC%88%E6%94%B6%E9%9B%86%EF%BC%89/">一行  JavaScript 代码（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo%E5%BB%BA%E7%AB%99%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%A1%AB%E5%9D%91%EF%BC%89/">Hexo建站过程中遇到的问题（填坑篇）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-library-%E5%8F%91%E5%B8%83%E5%88%B0-JCenter/">Android library 发布到 JCenter</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%B1%87%E9%9B%86/">正则表达式匹配汇集</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BHtml%EF%BC%88CSS-JS%EF%BC%89/">技术文章之Html（CSS，JS）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BAndroid/">技术文章之Android</a></li><li class="post-list-item"><a class="post-list-link" href="/article/web-app%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86/">web app相关整理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%9D%E5%8D%B0%E8%B1%A1%E3%80%90%E6%95%B4%E7%90%86%E3%80%91/">微信小程序初印象【整理】</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Webp%E7%9A%84%E6%8E%A2%E7%A9%B6%E4%B9%8B%E8%B7%AF/">Webp的探究之路</a></li><li class="post-list-item"><a class="post-list-link" href="/article/android%E4%B8%AD%E4%BD%BF%E7%94%A8icon-fonts%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/">android中使用icon fonts字体图标</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%E6%B7%B7%E6%B7%86%E7%AD%BE%E5%90%8D%EF%BC%88%E4%B8%8A%EF%BC%89/">Android混淆签名(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%E6%B7%B7%E6%B7%86%E7%AD%BE%E5%90%8D%EF%BC%88%E4%B8%8B%EF%BC%89/">Android混淆签名(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%88%91%E6%94%B6%E9%9B%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">我收集的一些开源项目</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E4%BA%8E%E4%B8%BB%E9%A2%98Yelee-yelog-%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB/">Hexo博客基于主题Yelee(yelog) 添加文章分类</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E4%BA%8E%E4%B8%BB%E9%A2%98Yelee-yelog-%E6%B7%BB%E5%8A%A0%E2%80%9C%E6%A0%87%E7%AD%BE%E4%BA%91%E2%80%9D%E5%92%8C%E2%80%9C%E5%85%B3%E4%BA%8E%E6%88%91%E2%80%9D%E8%8F%9C%E5%8D%95%E9%A1%B9%E9%A1%B5%E9%9D%A2/">Hexo博客基于主题Yelee(yelog) 添加“标签云”和“关于我”菜单项页面</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Html5-PPT/">Html5 PPT</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%A6%82%E4%BD%95%E5%9C%A8Github-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%8B%AC%E7%AB%8B%E4%B8%BB%E9%A1%B5%EF%BC%9F/">如何在Github Pages搭建个人独立主页？</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8hexo%E6%90%AD%E5%BB%BAgithub-pages/">我是如何用hexo搭建github pages</a></li><li class="post-list-item"><a class="post-list-link" href="/article/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+
+<!--gitalk 评论-->
+
+    <div id="gitalk-container"></div>
+
+    <style>
+        #gitalk-container{
+            margin: 60px 0 0;padding: 0 60px;
+        }
+        #gitalk-container a {
+          border: none;
+        }
+		@media screen and (max-width:1040px) {
+            #gitalk-container{
+                padding: 0 30px;
+            }
+		}
+    </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+    <script>
+    var gitalk = new Gitalk({        
+        id: 'web app相关整理',
+        title: 'web app相关整理',
+        owner: 'Sogrey',        
+        admin: ['Sogrey'],
+        repo: 'Sogrey.github.io',
+        clientID: '582650733e15427a208c',
+        clientSecret: 'bd0b0b80b6f23921f9b9df5ad0e40650e9da65f0',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+      
+      gitalk.render('gitalk-container')
+    </script>
+
+<!--gitalk 评论 end-->
+
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <a href="https://sogrey.github.io/about/mit.html" target="_blank" title="本博客使用遵循MIT License协议的Hexo开发">MIT</a> 
+                <i class="fa fa-copyright"></i> 
+                2016-2024 <i class="fa fa-heart animated infinite pulse"></i><a href="https://sogrey.github.io" target="_blank" title="我是一个小帅哥！^_^  https://github.com/Sogrey">Sogrey</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <!-- <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span> -->
+
+                    <span id="busuanzi_container_site_pv">
+                        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <!-- <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span> -->
+
+                    <span id="busuanzi_container_page_pv">
+                        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+                      </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="/js/libs/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 3;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+             categories: ".article-category a, a.tag-list-link", 
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 敬请下次光临~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 欢迎光临~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<!--已过期-->
+<!-- <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  </div>
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/love.js"></script>
+  <!-- 动态背景 -->
+  <!--<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="120" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>-->
+  <script type="text/javascript" src="/js/canvas-nest.min.js"></script>
+
+  <script type="text/javascript" src="/js/my.js"></script>
+</body>
+</html>

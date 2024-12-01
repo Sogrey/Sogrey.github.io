@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Sogrey" />
+
+
+
+<meta name="description" content="在此收集看过的有用的有趣的Android技术知识，以备重阅。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="技术文章之Android">
+<meta property="og:url" content="https://sogrey.github.io/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BAndroid/index.html">
+<meta property="og:site_name" content="Sogrey">
+<meta property="og:description" content="在此收集看过的有用的有趣的Android技术知识，以备重阅。">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-02-12T12:04:54.000Z">
+<meta property="article:modified_time" content="2024-12-01T15:12:10.807Z">
+<meta property="article:author" content="Sogrey">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="技术文章">
+<meta name="twitter:card" content="summary">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Sogrey" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="/js/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="/js/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="/js/libs/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-minimal.css" rel="stylesheet">
+
+<!-- css/style.css -->
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>技术文章之Android | Sogrey</title>
+
+<script src="/js/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "/js/libs/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "/js/libs/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "/js/libs/jqueryui/1.10.4/jquery-ui.min.js", "/js/libs/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/Sogrey.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Sogrey</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="on" autocorrect="true" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+            
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签云</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/logs/">更新日志</a></li>
+                        
+                            <li><a href="/about/mit.html">license</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:408270653@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" rel="noopener" href="http://weibo.com/1766036691" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" rel="noopener" href="https://github.com/Sogrey" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" rel="noopener" href="https://www.zhihu.com/people/sogrey" title="知乎"></a>
+                            
+                                <a class="fa 简书" target="_blank" rel="noopener" href="http://www.jianshu.com/u/9ede1ff4ccfb" title="简书"></a>
+                            
+                                <a class="fa CSDN" target="_blank" rel="noopener" href="http://blog.csdn.net/sogrey" title="CSDN"></a>
+                            
+                                <a class="fa Coding" target="_blank" rel="noopener" href="https://coding.net/u/sogrey" title="Coding"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" rel="noopener" href="https://cn.linkedin.com/in/sogrey" title="LinkedIn"></a>
+                            
+                                <a class="fa LOFTER" target="_blank" rel="noopener" href="http://sogrey.lofter.com/" title="LOFTER"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/netcore/" rel="tag">.netcore</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Activity/" rel="tag">Activity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoCAD/" rel="tag">AutoCAD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bash/" rel="tag">Bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cad/" rel="tag">Cad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/" rel="tag">CentOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flutter/" rel="tag">Flutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitalk/" rel="tag">Gitalk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-pages/" rel="tag">Github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitment/" rel="tag">Gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HEXO/" rel="tag">HEXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo%E5%BB%BA%E7%AB%99%E5%A1%AB%E5%9D%91/" rel="tag">Hexo建站填坑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/" rel="tag">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html5/" rel="tag">Html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JCenter/" rel="tag">JCenter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/" rel="tag">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JNI/" rel="tag">JNI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/" rel="tag">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Json/" rel="tag">Json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KSoap2/" rel="tag">KSoap2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/" rel="tag">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Md5/" rel="tag">Md5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Myeclipse/" rel="tag">Myeclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenEuler/" rel="tag">OpenEuler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PE/" rel="tag">PE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PPT/" rel="tag">PPT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Promise/" rel="tag">Promise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scheduled/" rel="tag">Scheduled</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-boot/" rel="tag">Spring boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UKUI/" rel="tag">UKUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS-code/" rel="tag">VS code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/" rel="tag">VSCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VirtualBox/" rel="tag">VirtualBox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WSL/" rel="tag">WSL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebApp/" rel="tag">WebApp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webp/" rel="tag">Webp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webservice/" rel="tag">Webservice</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webview/" rel="tag">Webview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-10/" rel="tag">Windows 10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yelee/" rel="tag">Yelee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/" rel="tag">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apk%E6%B7%B7%E6%B7%86/" rel="tag">apk混淆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deb/" rel="tag">deb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dex/" rel="tag">dex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitbook/" rel="tag">gitbook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icon-font%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/" rel="tag">icon font字体图标</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar/" rel="tag">jar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/marquee/" rel="tag">marquee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/" rel="tag">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/" rel="tag">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rpm/" rel="tag">rpm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sqlite/" rel="tag">sqlite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sudo/" rel="tag">sudo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sudoers/" rel="tag">sudoers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/winsw/" rel="tag">winsw</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yelog/" rel="tag">yelog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/you-get/" rel="tag">you-get</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8B%E8%BD%BD/" rel="tag">下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9C%B0%E5%9D%80%E4%B8%8E%E7%BB%8F%E7%BA%AC%E5%BA%A6/" rel="tag">地址与经纬度</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E4%BD%93/" rel="tag">字体</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" rel="tag">年终总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE/" rel="tag">开源协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%8B%E8%AE%B0/" rel="tag">手记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" rel="tag">技术文章</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB/" rel="tag">文章分类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E8%AE%B0/" rel="tag">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE%E4%BA%91/" rel="tag">标签云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%99%BE%E5%BA%A6-api/" rel="tag">百度 api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="tag">科学上网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AD%BE%E5%90%8D/" rel="tag">签名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A3%85%E6%9C%BA/" rel="tag">装机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%97%E6%AD%8C/" rel="tag">诗歌</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0/" rel="tag">踩坑记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/" rel="tag">重装系统</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://cjj-sal.github.io">旅行者归来</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://pan.baidu.com/s/1hr2PiG8">芝麻开门</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://sogrey.top/Navigation/">网址导航</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/JavaDocs/">JavaDoc</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/notes/">notes</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/html-css-js-demos/">html-css-js-demos</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://sogrey.top/Linux-start/">Linux命令</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Kotlin-Notes/">Kotlin-学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Three.js-start/">Three.js学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Cesium-start/">Cesium 入门笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/TypeScript-start">TypeScript 学习入门</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://sogrey.github.io/WebGL-start/">WebGL 学习入门</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Flutter-Dart-Notes/">Flutter、Dart学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://sogrey.top/electron_study/">Electron学习笔记</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/WebTools/index.html">Web开发常用工具</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://resume.github.io/?Sogrey">resume</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Android_QA/">Android技术面试题</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Web-QA/">前端技术面试题</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://sogrey.github.io/Python-QA/">Python面试题</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/blogs/">优质博文/公众号文章</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/Plug-in/">插件收集</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sogrey.github.io/about/mit.html">MIT</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">必须努力，付出不亚于任何人努力</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+
+<!--aplayer-->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+<style>.aplayer.aplayer-fixed .aplayer-body{width: 270px;max-width: 270px !important;}.aplayer .aplayer-body {width: 280px;}</style>
+<div id="aplayer" style="position:fixed;left:0;bottom:0;"></div>
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+<script>  
+  var ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    autoplay: false, //自动播放
+    listFolded: true, //播放列表默认折叠
+    listMaxHeight: 90, //播放列表最大高度
+    order: 'list', //音频循环顺序, 可选值: 'list', 'random'
+    loop: 'all', //音频循环播放, 可选值: 'all', 'one', 'none'
+    theme: '#e9e9e9', //切换音频时的主题色，优先级低于audio.theme
+    preload: 'none', //音频预加载，可选值: 'none', 'metadata', 'auto'
+    mutex: true, //互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
+    lrcType: 3, //歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式）
+    volume: 0.7, //默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+    fixed: false,
+    mini:false, 	//吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
+    audio: [{
+        name: '西安人的歌',
+        artist: '范炜|程渤智',
+        lrc: '/music/西安人的歌.lrc',
+        cover: '/music/西安人的歌.jpg',
+        url: '/music/西安人的歌.mp3'
+      },{
+        name: '武汉！武汉',
+        artist: '刘涛|黄晓明|平安|尚雯婕',
+        lrc: '/music/武汉！武汉.lrc',
+        cover: '/music/武汉！武汉.png',
+        url: '/music/武汉！武汉.mp3'
+      },{
+        name: '我要你平安归来',
+        artist: '崔姝声',
+        // lrc: '/music/我要你平安归来.lrc',
+        cover: '/music/我要你平安归来.png',
+        url: '/music/我要你平安归来.mp3'
+      },{
+        name: '我和我的祖国',
+        artist: '中央乐团合唱团',
+        lrc: '/music/我和我的祖国.lrc',
+        cover: '/music/我和我的祖国.jpg',
+        url: '/music/我和我的祖国.mp3'
+      }
+    ]
+  });
+
+  //实现切换音频时，根据音频的封面图片自适应主题色
+	var  colorThief = new ColorThief();
+	  var setTheme = (index) => {
+		if (!ap.list.audios[index].theme) {
+		  colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
+			ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+		  });
+		}
+	  };
+	  setTheme(ap.list.index);
+	  if(ap)
+	  ap.on('listswitch', (data) => {
+		setTheme(data.index);
+	  });
+</script>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Sogrey</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/Sogrey.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Sogrey</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/logs/">更新日志</a></li>
+                
+                    <li><a href="/about/mit.html">license</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:408270653@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1766036691" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/Sogrey" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/sogrey" title="知乎"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/9ede1ff4ccfb" title="简书"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/sogrey" title="CSDN"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/sogrey" title="Coding"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/sogrey" title="LinkedIn"></a>
+                            
+                                <a class="fa LOFTER" target="_blank" href="http://sogrey.lofter.com/" title="LOFTER"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签云" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-技术文章之Android" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BAndroid/" class="article-date">
+      <time datetime="2017-02-12T12:04:54.000Z" itemprop="datePublished">2017-02-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      技术文章之Android
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/">技术文章</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" rel="tag">技术文章</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>在此收集看过的有用的有趣的Android技术知识，以备重阅。</p>
+<span id="more"></span>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822025&idx=1&sn=c01dbe2a685b6919a7029b822347fa61&chksm=80b78117b7c00801b74405beb6431ac7039b6d0dac724466bbb317f2b1294cbdd75edfdfd906&mpshare=1&scene=23&srcid=0210LJTe593ujVJxnpSAYrBY#rd">Android Camera使用总结与那些坑</a></li>
+<li><a target="_blank" rel="noopener" href="http://m.blog.csdn.net/article/details?id=54694260">微信Android热更新Tinker使用详解（by 星空武哥)</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&mid=2651434612&idx=1&sn=ae6678d8a14d3a9359e9251aeb051db4&chksm=f128870fc65f0e192424e33716021c4cc1efa2e83ccaf3e7a89f485c84e945af87a00961c34f&mpshare=1&scene=23&srcid=0208k9ZqJq9mC2xUiubNDNNM#rd">【精品】仿网易云音乐播放界面</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/aa112901/remusic">仿网易云音乐 安卓版</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&mid=2247483928&idx=1&sn=7859e0057d4f484c5598341d6d1bae9b&chksm=e95b9b8ede2c129893512aa7c9abcb964ccc7252f250d5983d1b9d26a604de040636ed2ac3e1&mpshare=1&scene=23&srcid=0208MdlVaNt4CsqTBTfAqoQO#rd">实践！业余时间做的一款阅读类App （MVP + RxJava + Retrofit）</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822023&idx=1&sn=252e5053e9ad949638b98fc53b99b091&chksm=80b78119b7c0080f7b1f12f54ccfaf344a9f89b32fde7e16a5bf166b11d5faadde21880b893d&mpshare=1&scene=23&srcid=0208WcZEfaGjR6M7yiRoYtCi#rd">Android 提高代码质量 之 多种检测方案</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650821994&idx=1&sn=265ea44d9db97a18c334d948fc0846aa&chksm=80b781f4b7c008e2bfcdde084f74e8e6ff8cb70b21b641fafccb7b5fb330cb5752adb1a802b3&mpshare=1&scene=23&srcid=0207nptfmHEZp4TCraikagZP#rd">Android 使用WindowManager实现悬浮窗及源码解析</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&mid=2651434523&idx=1&sn=234b79fe60af1d564d806dc2356c554b&chksm=f1288760c65f0e768b4604914c87a0fe21b1836b5fd0b7827a90e2c12251245384ad81a00686&mpshare=1&scene=23&srcid=0124nmSx66kXM9I47T7HAoRR#rd">【重磅】支付宝使用的开源组件总结！</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s/d9KYCnccwR4EqSWGzNpgaQ">Android View相关核心知识问答</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&mid=2651434652&idx=1&sn=da0ceda73595e5cb931abad7e51dbe62&chksm=f12887e7c65f0ef1c086784e9ae77a7d9bd82daa6ba0302cebf307577ebd06fd3e0d9e37e87a&mpshare=1&scene=23&srcid=0214krfLUHbvJekl3snlIYUG#rd">2017年,身为Android开发的你必须要掌握的热门开源框架</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&mid=2247483943&idx=1&sn=513e35f410a80b65d476d8e0740989be&chksm=e95b9bb1de2c12a7e1d823407e5e52c8725a30139c3eff35423f4e755de0ed84e69b7aee62ec&mpshare=1&scene=23&srcid=02139FATY6IN8m20sSgXL3IN#rd">Android冷启动实现APP秒开</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&mid=2247483947&idx=1&sn=8c78d6d59503588c1244db8a87f3cb62&chksm=e95b9bbdde2c12ab852485fe39a6c595edb199edef44b0057520c4697f1d5ccf26a7bc197e72&mpshare=1&scene=23&srcid=0215gfKQ1v0KnyIyxICz4HCY#rd">高仿钉钉和小米的日历控件，很实用</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.android100.org/html/201406/08/21147.html">Android相对布局属性全集</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&mid=2247483974&idx=1&sn=c88299b9c458521db9e7ba4863f90d52&chksm=e95b9bd0de2c12c6f8270a4fcc8185ec2dbef320410a0e11c81bea965166c9802d10e6247d68&mpshare=1&scene=23&srcid=0217d3Q9uP53NlhF3dOqCYU6#rd">编译时间从33.8秒降到4.5秒我只多做了一件事</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&mid=2651434682&idx=1&sn=5b277d151a18a6bd1521c1af452e3e3f&chksm=f12887c1c65f0ed70cee86fbde5c1f63ffe292fec72225225d070c0a14ecb3c3855e91f29f07&mpshare=1&scene=23&srcid=02196O2Lh5ZhtH28pduwF9kf#rd">全面了解Android Notification</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822072&idx=1&sn=82e36025a1e37b8cbb68e6f86dd08698&chksm=80b78126b7c008300d2d1ce0300adf008e53b278f24da4ea3a4b90fafa74b174e91a8ffb7964&mpshare=1&scene=23&srcid=0219HbeYoHrNTclXl5GhxjWK#rd">Android 6.0 自定义文本选择操作 咕咚翻译的体验优化</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s/EGM6SLe_5VthIrzMzkVPqg">什么？IOS的专利？Android也能流畅实现毛玻璃效果(高斯模糊)效果</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s/H9v0YeXoZ5YAmmraEA9aaQ">一种快速毛玻璃虚化效果实现</a></li>
+<li><a target="_blank" rel="noopener" href="http://wetest.qq.com/lab/view/288.html?from=adsout_qqtips_past2_288&sessionUserType=BFT.PARAMS.211332.TASKID&ADUIN=408270653&ADSESSION=1487902007&ADTAG=CLIENT.QQ.5515_.0&ADPUBNO=26657">深度了解Android 7.0 ，你准备好了吗？</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822149&idx=1&sn=170f91c7a8f3142e5e0753edeef6ba77&chksm=80b7829bb7c00b8d866e6d622df7fea71ef435baf23e0809dd573aaa08ebd849b87e6b000796&mpshare=1&scene=23&srcid=022678v7owLVNhctiGQnwGi7#rd">Android 广播相关的都在这儿</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&mid=2247484019&idx=1&sn=dc0ebf85da6556b1f6703119be215fea&chksm=e95b9be5de2c12f321b79f13841d4f1f86a7e5a878ba895f85c83d21735823d4f7c4f98dbb19&mpshare=1&scene=23&srcid=0227hRB6ZnIY0blZltECJFAu#rd">Android ADB命令?这一次我再也不死记了!</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822191&idx=1&sn=3a4280242d79af3df35501b397fedfa1&chksm=80b782b1b7c00ba786c6a7bf09a1107e85bde35d3902b084457436ba46dd269b9f9ab99614ea&mpshare=1&scene=23&srcid=0227Urwy034GuHMR70kKc1UF#rd">Android 系统自带DownloadManager详解</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&mid=2651434751&idx=1&sn=4154b06e059e17a983053a2c4806c24c&chksm=f1288784c65f0e92a443a4112c1f808db72a8595b8ba0cae9d36c661e9bb830e554b0ff87664&mpshare=1&scene=23&srcid=02271fuPd78L1MUQFhlJugdG#rd">Android Camera使用总结与那些坑</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI0NTcxNTg5Mg==&mid=2247483968&idx=1&sn=b3ea4e058af219d8f9a8994c21569676&chksm=e94b049bde3c8d8d52572a0a07ee0739b3a1df53f76871d8befa3589466579fbe27d0cd7feda&mpshare=1&scene=23&srcid=0228IyWTXDV2f0l97TK2RUb2#rd">开源许可协议了解这些就够了</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&mid=2651434795&idx=1&sn=fcbed3a22bce615e77b0945b0b54859a&chksm=f1288650c65f0f4612dd770566d961430ff63dfe5b84ccf66393fa0719ceb422955532aab091&mpshare=1&scene=23&srcid=0304wcDitruVFMCQYf4KSjLf#rd">【高端】天猫 Android UI 框架项目Tangram</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&mid=2247484054&idx=1&sn=febcfe56632f43a46f7a6d8e240b2123&chksm=e95b9b00de2c12165be5bbb3c4811e47e15631bad84a336ac6f5f8558ff8941ba934a845331b&mpshare=1&scene=23&srcid=0304cbEFWsCc3LU1whZl8aWz#rd">通过这篇文章，我找到了工作！一款优雅的App开源项目-iDaily</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&mid=2247484060&idx=1&sn=737571b872e0c90f26fd2f2990a872ee&chksm=e95b9b0ade2c121c56ae3c60d80f03c4caf098f9a0abf374c065be01156091ad5b7bbdf50ee2&mpshare=1&scene=23&srcid=0306XrVWaYnrXJZmyptsvxkJ#rd">Android卸载监听之后访问后台或者弹出一个网页</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822215&idx=1&sn=964d9f9c951044e572cccb8846330d25&chksm=80b782d9b7c00bcf9533d0ea5085d449083d014d6aa585817610e4d1b17fe89922eca7deb6c7&mpshare=1&scene=23&srcid=0305DLBdpq9zXDPxMe54AHfY#rd">Android插件化框架系列之类加载器</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/d17af84711a1?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq">Android网络框架选择（Volley、OkHttp、Retrofit）</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650238755&idx=1&sn=b4f3b351a3c8f440b538db58e67fb46d&chksm=88639e4cbf14175af6f4c27549951d718938e7f874215e765a480a1b89a0dafc6dc47bdb3954&mpshare=1&scene=23&srcid=0304DLO87Ua9ORpyRpssnnmB#rd">如何用一周时间开发一款Android APP并在Google Play上线</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&mid=2651434801&idx=1&sn=b44f08dcba949cf0b78b5adc93bc8989&chksm=f128864ac65f0f5c264a2ef7a202f3526fe7131ab2ec4f50f21f92076ea84e8ac0d9cbc9a3cc&mpshare=1&scene=23&srcid=0305tDFmvzNh6f1Je9W7ODBT#rd">安居客Android项目架构演进</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&mid=2651434590&idx=1&sn=61e8db6d4f732136764eb4e988a9276f&chksm=f1288725c65f0e334175a43ac03166ff39efa14935e67ca9044d8b367c18cc777a23c02cfcaa&mpshare=1&scene=23&srcid=0207WjJj6tVhQhmzAZajVHKO#rd">android多图选择器 图片/视频 单选or多选，以及视频录制</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822225&idx=1&sn=09177524a9e51bd049b1d042339863ec&chksm=80b782cfb7c00bd9ea3933f812c66770bd00af87c78691ad45650cd017d5d35347af30781e85&mpshare=1&scene=23&srcid=0305uuFF1GyOVIPJwYy34JKh#rd">【源码】 Android 不要错过的7个完整项目学习</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650238794&idx=1&sn=f105f8100d62a202f5695f9496425063&chksm=88639e25bf1417330f0ffb1cf6c10ea07359ff25774313fac5addfb25541f7969d1d178e17cc&mpshare=1&scene=23&srcid=0307BnnrQkjyfXWtDKaSKey9#rd">LitePal 1.5.0版本发布，你想要的都在这里</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&mid=2247484068&idx=1&sn=b77a4e7be6ee2d6aede46c07fa737022&chksm=e95b9b32de2c1224116281ab3877f3ab0c36d3c220315d5eec2a85cd01d20a0e6ac218cc3944&mpshare=1&scene=23&srcid=0307ndVEUZCfBiJnTzU3JBg3#rd">比QQ更炫酷的’选项弹窗’动画</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&mid=2651434805&idx=1&sn=c1eaf9d6be0259c1cb9eb632e981e61f&chksm=f128864ec65f0f580eb49217bb5703401f0fbb42b5accec992d3b71a6eed570a2962f0ef1e94&mpshare=1&scene=23&srcid=0307oCu1pFbVmXM5ndunyITW#rd">【推荐】Android APK 瘦身实践</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822272&idx=1&sn=a1d7956dd8437d4bb28e47fab814a7ed&chksm=80b7821eb7c00b08eb8de256529a7cbd153ca1064612eef88fe912ba9ecb11763baacc279ccb&mpshare=1&scene=23&srcid=0307yjSaM4ItKqIYSfO5CJo6#rd">Android性能优化系列之内存优化</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/m511386374/PopWin_MeiTuan">仿美团做的一个下拉选择页，类似于电商app中筛选距离的下拉菜单</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&mid=2247484070&idx=1&sn=483e54aa85354e05dc7a8d441d9232f0&chksm=e95b9b30de2c12260cf2b87d5a13fa43609c1f6be5a2898f31f14b40e2113b8df136ba1ee6dc&mpshare=1&scene=23&srcid=0308J2PpZ44c8mIKXUyOYilp#rd">让我们聊一聊安卓应用角标那些事儿</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650238800&idx=1&sn=edf37925bc998ccb9d69912bb1f2cd2d&chksm=88639e3fbf141729a6a02d8feda0e12bea97aa17e6482d22e1d8b7b6cf0ed92889239549acee&mpshare=1&scene=23&srcid=0308iEgd2AIR7rE3o2UuT9zh#rd">使用OKHttp3实现下载(断点续传、显示进度)</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650821993&idx=1&sn=550a90e30a398bbb652ecd65209b62e2&chksm=80b781f7b7c008e17d9f5a59542f46329d28cbcd2ec075d4c2d44784f789135166a4e1949303&mpshare=1&scene=23&srcid=0309ud57QhmmrCPBrhPxoRQh#rd">Android 热修复 Tinker接入及源码浅析</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822276&idx=1&sn=b19704a9d25b266d108de13cba5b5cfe&chksm=80b7821ab7c00b0cfe2c2da31fdfffede56f9aef82b85254083ec4db3e8f6aa445c96ab01de5&mpshare=1&scene=23&srcid=0309NLJ1O9vIzz9yMzUguTPx#rd">Android 热修复 Tinker 源码分析之DexDiff / DexPatch</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650238826&idx=1&sn=294d91d9a190ea56822696994f8a04b0&chksm=88639e05bf1417137f364037bb35a8fcc120679c92b924cfabffa7011199d8ac8bba69a25194&mpshare=1&scene=23&srcid=0309gYGHZFr1g8ICrQkRhStN#rd">一看你就懂，Java中的ClassLoader详解</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822284&idx=1&sn=d6b30ab442f417cbd992e784945c7799&chksm=80b78212b7c00b049243a474933e7a3f356c8b6fca1e8d67a9fcf654cef095c0c28f6a51e31c&mpshare=1&scene=23&srcid=0310u9IxkQdQ6ESusrp1BHEY#rd">Android性能优化系列之App启动优化</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/2cbf5bf3842e?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq">Android自定义dialog</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/a7e58fab4ff1?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq">优雅的使用MVP+RxJava+Retrofit框架</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/bc68e763c7a2?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq">Android数据库框架 - LitePal学习笔记</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/5eac94143bd6?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq">插件式换肤框架搭建 - 资源加载源码分析</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/af7c0585dd5b?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq">Android主题换肤 无缝切换</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/a9b86b792c8c?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq">Android知识点之悬浮通知栏</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/57c454e126a3?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq">基于Rxjava+Retrofit+Okhttp+LeanCloud的完整项目（段子手），供大家学习与交流</a></li>
+<li><a target="_blank" rel="noopener" href="http://ms.csdn.net/geek/185623">Android开发时，那些相见恨晚的工具或网站！</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650238877&idx=1&sn=fe65084035413c0c730c0f34b0781287&chksm=88639ef2bf1417e44203de6887fc1607b2ccf4d00e79ce8775b5c375e846a223ac270f14558e&mpshare=1&scene=23&srcid=0315ElX9ZknRnJoSVPHBzXeR#rd">Android Design Support Library使用详解</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822312&idx=1&sn=b93cbf8185d9bc696e59d2b8187fb94d&chksm=80b78236b7c00b20cbc226dfcb507e8c4f08350de2e86ecf773b505fdc1bf74837b422c86ad1&mpshare=1&scene=23&srcid=0315GGaZpsO2ZNdkjc7vXFn9#rd">Android进阶系列之Support Annotation Library使用详解</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&mid=2651434848&idx=1&sn=4c6ff5ffcda212d65dfa92174be4cc79&chksm=f128861bc65f0f0dc1ab7f1a25ff9e6d6e72acb7e057a6fb3b9be83c3bb08881f3ec0b03604c&mpshare=1&scene=23&srcid=0315oQ0Gwuf9mXVYmn5kRNbl#rd">【满满干货】android阿里面试题锦集</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000008608758">最全面的 Material Design 学习资料</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.csdn.net/briblue/article/details/54973413">一看你就懂，超详细java中的ClassLoader详解</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/1fecc80cbd59?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq">如何做个依赖库让别人依赖使用</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/e1d2cc82e756?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq">Android实现底部对话框BottomDialog</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/0b4854aae105?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq">Android中图片压缩方案详解</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/932568ed31af?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq">Android修改状态栏颜色全方位教程</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/3dc0d1291374?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq">github 开源库</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/023098e98695?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=qq">Toolbar 结合 SearchView实现搜索功能(具备历史记录)</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&mid=2651434858&idx=1&sn=d39e50b16b600d0269cfb8162f17cbc7&chksm=f1288611c65f0f07ac5fdd31a41618ef4cc9ad27193a8caeb464ba1065a73830c989f2b2601d&mpshare=1&scene=23&srcid=0320Q6yLuwAztSFAycB1q9d4#rd">一种快速毛玻璃虚化效果实现</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822338&idx=1&sn=ee45104f78f00101545ea7b0bba56723&chksm=80b7825cb7c00b4aa37d8ef244745600edba4ab3308d7e4a39f2a2476058affde850db3ccf79&mpshare=1&scene=23&srcid=0320Lo0ecvzwMUuSdpKPyXiK#rd">Android进阶系列之源码分析AlertDialog建造者模式</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650238917&idx=1&sn=d13fceb5aab551258c64f6aa9e03b9ff&chksm=88639eaabf1417bc470ef3c4240b6b78388959dfb2911f4e4b7e341798a42bdc33151a83dedc&mpshare=1&scene=23&srcid=03204AulbIxfz4IKrX1kQOBO#rd">onConfigurationChanged方法介绍及问题解决</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822379&idx=1&sn=8dce68bad2a32ebd001e99fcc3a18290">Android自定义键盘之汉字键盘</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s/rJ3TawFf6ww_7lfmQzxu5w">Android 自己动手生成 Apk 了解Apk生成的种种细节</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&mid=2247484101&idx=1&sn=76c0ec3cc5a59ef915f48567c652119d&chksm=e95b9b53de2c1245b4bafe92838c3149a1727b5e618bcd130a6ecbff2cb0c08afcb39ba3a0bc&mpshare=1&scene=23&srcid=0322eu6kQou0f9CPlvifthTU#rd">Android可伸缩布局－FlexboxLayout(支持RecyclerView集成)</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI0NDYzMzg0OQ==&mid=2247484095&idx=1&sn=6b067abe805ef665a072480b74aedb04&chksm=e95b9b29de2c123fa33ea267b33a303322fbc645dbbe2014af3e4cc75c33128f9a457583ff76&mpshare=1&scene=23&srcid=03228zmCyFG3jQRoISkAdlQI#rd">Android鬼点子-又来了一个LoadingBar</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650239018&idx=1&sn=0c81c2ea6a75ca3a4565df750ad8b2e6&chksm=88638145bf1408530bc5722871b6a6d44a1da0175642cc2ce834b6c6b203bfaa3d42fb6b851a&mpshare=1&scene=23&srcid=0329uXeCBJMtEF8WjAIFlllz#rd">Android通过蓝牙获取通讯录</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650238967&idx=1&sn=0b6bdee06eb94672c2924ac7ad8f2cb2&chksm=88639e98bf14178edce676d2130279ce6db22a16f5f82a569be11a6d7ab6b901c5ee3d927dd5&mpshare=1&scene=23&srcid=0329lTadyUoqpLO68rGcfH6b#rd">一篇文章带你搞懂DEX文件的结构</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822456&idx=1&sn=10c554676ce9cd0efb35bfda8e70c10f&chksm=80b783a6b7c00ab049e2e38b4913f54d672c3e74cda01ec79b1afa1c0ff6d618222a62f90b93&mpshare=1&scene=23&srcid=0329WofZiPagJsXq3O513hiC#rd">Android 加快apk的构建速度，如何把编译时间从130秒降到17秒</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&mid=2651434963&idx=1&sn=b52ecf27ce25ac4c0c4509fd96dd98cc&chksm=f12886a8c65f0fbe824134fa59b04da8a2d945c051ae800f8b44eddeb6487cff81434d2da58d&mpshare=1&scene=23&srcid=0329QNcaH7J2e9o1ehpth6To#rd">【深度总结】一个APP从启动到主页面显示经历了哪些过程？</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/0555b8c1d26a">Android使用矢量图（SVG, VectorDrawable）实践篇</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/72494773aace">Android开发人员不得不收集的代码(持续更新中)</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/b806d014162c">重撸工具类之LogUtils</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650239012&idx=1&sn=b811e0eec443d5d3f8e9863d95be0cea&chksm=8863814bbf14085ddad6c6beae2293ccd5be8e38ccf926b958953361a0f34071a1e9c8b63183&mpshare=1&scene=23&srcid=03297EZLFKWDr2xTeNrHk7y1#rd">Android使用记录访问权限</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650239036&idx=1&sn=cdde2a1f6125c8f3d780eff8c8e36076&chksm=88638153bf1408455d5c56f0778d40ba9d4448a1e68ef0bf889c4a99699353e3e4ad99f95398&mpshare=1&scene=23&srcid=0329f83Rxux9IvwfrBODq1h9#rd">Android7.0适配</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650822398&idx=1&sn=736d183aa5b95d2222e502bc9dc33ba5&chksm=80b78260b7c00b76f3d30a17ded3e30c26993832173c42192d205250a21789011bf4da0cb29b&mpshare=1&scene=23&srcid=0329qoB2w0IgSlGSIWV7mX5F#rd">Android实战自定义控件 仿华为天气预报UI</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650238931&idx=1&sn=ff6d7701f342f0ef455193f8dca1a5e8&chksm=88639ebcbf1417aa266ea74bfeb63a2a72975eee6cd6cea81ed92094eee716850cede4b0abb7&mpshare=1&scene=23&srcid=0329bcamATCy4gFCNi2RA8pX#rd">开始新的系列，Glide的基本用法</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI3MDE0NzYwNA==&mid=2651434956&idx=1&sn=73192dbef2b117cf5a66432ac9d8b23e&chksm=f12886b7c65f0fa103b8aa4757fc60d3692bb62f6234c2e47b6c4e8c4d488b9a1f2f47a53960&mpshare=1&scene=23&srcid=0329kTsFO8aK85CNYRi2g7Dn#rd">【MIUI动效】Android：会呼吸的悬浮气泡</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.csdn.net/jiangwei0910410003/article/details/61618945">Android安全防护之旅—带你把Apk混淆成中文语言代码</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.open-open.com/lib/view/open1411443332703.html">收集android上开源的酷炫的交互动画和视觉效果</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.open-open.com/doc/view/bc7ac26ff24b491492d2698807c6dc86">animation动画详解 - v1.0.pdf</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.open-open.com/lib/view/open1328063267889.html">上百个Android开源项目分享</a></li>
+<li><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650823035&idx=1&sn=2db4eea9eb569bf375f847f36b1229fa">学习Kotlin吗？</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.kotlincn.net/">kotlin中文站-有学习文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://kymjs.com/column/kotlin.html">Kotlin 一门强大的语言</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/enbandari/Kotlin-Tutorials">Kotlin从入门到『放弃』系列 视频教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/githubwing/GankClient-Kotlin">一个Kotlin实战项目GankClient-Kotlin</a></li>
+</ol>
+<p><em>会持续更新…</em></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BAndroid/">技术文章之Android</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
+        <p><span>发布时间:</span>2017-02-12, 20:04:54</p>
+        <p><span>最后更新:</span>2024-12-01, 23:12:10</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BAndroid/" title="技术文章之Android">https://sogrey.github.io/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BAndroid/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BAndroid/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BHtml%EF%BC%88CSS-JS%EF%BC%89/">
+                    技术文章之Html（CSS，JS）
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/article/web-app%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86/">
+                    web app相关整理
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BHtml%EF%BC%88CSS-JS%EF%BC%89/" title="上一篇: 技术文章之Html（CSS，JS）">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/article/web-app%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86/" title="下一篇: web app相关整理">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/article/VSCODE%E9%85%8D%E7%BD%AEC-CPP%E6%9C%80%E5%B0%8F%E9%85%8D%E7%BD%AE/">VSCODE配置C/C++最小配置</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E8%AE%B0%E5%BD%95%E4%BD%BF%E7%94%A8clash-for-windows%E8%AE%A2%E9%98%85%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">记录使用clash_for_windows订阅实现科学上网</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%B0%86Nodejs%E7%A8%8B%E5%BA%8F%E5%8F%91%E5%B8%83%E4%B8%BAwindows%E6%9C%8D%E5%8A%A1/">将Nodejs程序发布为windows服务</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%B0%81%E8%A3%85axios%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/">封装axios网络请求</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%A6%82%E4%BD%95%E4%BD%BFmysql%E7%94%9F%E6%88%90-db%E6%96%87%E4%BB%B6/">如何使mysql生成.db文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8java8%E4%B8%ADStream%E8%BD%BB%E6%9D%BE%E9%81%8D%E5%8E%86%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84/">使用java8中Stream轻松遍历树形结构</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2021-2022/">加油2021，期盼2022</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JS%E6%93%8D%E4%BD%9Ciframe%E5%85%83%E7%B4%A0/">JS操作iframe元素</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E4%B8%8A%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2nginx/">Linux上安装部署nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Windows%2010%20%E4%B9%8B%E8%AE%BE%E7%BD%AEURL%E6%B1%87%E6%80%BB/">Windows 10 之设置URL汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/article/OpenEuler%E5%AE%89%E8%A3%85UKUI/">OpenEuler安装UKUI</a></li><li class="post-list-item"><a class="post-list-link" href="/article/windows%E4%B8%8B%E4%BF%AE%E6%94%B9vscode%E9%BB%98%E8%AE%A4%E7%BB%88%E7%AB%AF%E4%B8%BAgit-bash/">windows下修改vscode默认终端为git bash</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E7%8E%A9%E8%BD%ACWindows%E5%AD%90%E7%B3%BB%E7%BB%9FLinux%E4%B9%8B%E5%AE%89%E8%A3%85Kali-Linux/">玩转Windows子系统Linux之安装Kali Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E7%8E%A9%E8%BD%ACWindows%E5%AD%90%E7%B3%BB%E7%BB%9FLinux%E4%B9%8B%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/">玩转Windows子系统Linux之准备工作</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8SSH%E8%BF%9E%E6%8E%A5%E5%88%B0GitHub/">使用SSH连接到GitHub</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BDJDK/">Linux安装与卸载JDK</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Oracle%20VM%20VirtualBox%20%E4%B8%AD%E4%B8%BA%20CentOS%20%E5%AE%89%E8%A3%85%E5%A2%9E%E5%BC%BA%E5%B7%A5%E5%85%B7/">Oracle VM VirtualBox 中为 CentOS 安装增强工具</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Redis%E8%B8%A9%E5%9D%91%E8%AE%B0/">Redis踩坑记</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Mysql%E8%B8%A9%E5%9D%91%E8%AE%B0/">Mysql踩坑记</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%8F%90%E9%AB%98%E5%9B%BD%E5%86%85%E8%AE%BF%E9%97%AEGitHub%E7%9A%84%E9%80%9F%E5%BA%A6/">提高国内访问GitHub的速度</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E4%B8%AD%E8%AE%A9shell%E8%84%9A%E6%9C%AC%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/">Linux中让shell脚本变成可执行文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/CentOS%E5%AE%89%E8%A3%85-netcore/">CentOS安装.netcore</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Promise-all%E5%92%8CPromise-allSettled%E7%9A%84%E5%8C%BA%E5%88%AB/">Promise.all和Promise.allSettled的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/AutoCAD_ID__Handle__ads_name/">AutoCAD_ID、指针、句柄和ads_name的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/2020-2021/">致敬2020，重启2021</a></li><li class="post-list-item"><a class="post-list-link" href="/article/java%E8%B0%83%E7%94%A8shell%E8%84%9A%E6%9C%AC/">java调用shell脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot%E9%A1%B9%E7%9B%AE%E7%98%A6%E8%BA%AB/">Spring Boot 项目瘦身</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Springboot%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82/">Springboot跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot%E6%94%AF%E6%8C%81HTTPS/">SpringBoot支持HTTPS</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">SpringBoot实现定时任务</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot%E6%B3%A8%E8%A7%A3%E7%AE%80%E4%BB%8B/">SpringBoot注解简介</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6/">Linux下如何创建文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E3%80%90Linux%E3%80%91%E6%8F%90%E7%A4%BA%E7%94%A8%E6%88%B7%E4%B8%8D%E5%9C%A8sudoers%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">【Linux】提示用户不在sudoers文件中的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/">Linux下安装软件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/spring-boot%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%92%8C%E8%87%AA%E5%90%AF%E5%8A%A8/">spring-boot项目打包和自启动</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE%EF%BC%88%E4%B8%8B%EF%BC%89/">使用Maven搭建spring boot项目（下）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE/">使用Maven搭建spring boot项目</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E8%A7%A3%E9%94%81github%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%8A%80%E8%83%BD/">解锁github高级搜索技能</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%A6%82%E4%BD%95%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BDAutoCAD/">如何完全卸载AutoCAD</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%B8%93%E4%B8%BA%E7%BC%96%E7%A8%8B%E8%80%8C%E7%94%9F%E7%9A%84%E5%AD%97%E4%BD%93/">专为编程而生的字体 —— Fira Code</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Js%E4%B9%8BPromise/">Js之Promise</a></li><li class="post-list-item"><a class="post-list-link" href="/article/zj2019-zw2020/">总结2019，展望2020</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">使用hugo搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-Studio%E5%BC%80%E5%8F%91%E7%BB%84%E4%BB%B6%E5%8C%96App%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">Android Studio开发组件化App遇到的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/git-clone-%E8%A7%A3%E5%86%B3Permission-Denied-publickey-%E9%97%AE%E9%A2%98/">git clone 解决Permission Denied (publickey)问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/node-js%E8%B0%83%E8%AF%95/">node.js调试</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8-%E5%B9%B2%E6%8E%89%E5%AE%83/">端口被占用，干掉它</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JS%E4%B8%ADapply-%E4%B8%8Ecall-%E7%9A%84%E5%8C%BA%E5%88%AB/">JS中apply()与call()的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95%E4%B9%8B%E6%8A%8A%E7%8E%A9console/">前端调试之把玩console</a></li><li class="post-list-item"><a class="post-list-link" href="/article/you-get/">下载神器 you-get</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E2%80%9C-%E8%AF%97%E6%AD%8C-%E5%8D%83%E5%8F%A4%E5%B2%90%E5%B1%B1/">[诗歌]千古岐山</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%BD%BF%E7%94%A8-npm-%E5%AE%89%E8%A3%85-gitbook/">使用 npm 安装 gitbook</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%86%8D%E8%A7%812018%EF%BC%8C%E4%BD%A0%E5%A5%BD2019/">再见2018，你好2019</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%BC%84%E6%87%82%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE-GPL%E3%80%81BSD%E3%80%81MIT%E3%80%81Mozilla%E3%80%81Apache%E5%92%8CLGPL-%E4%B9%8B%E9%97%B4%E7%9A%84%E5%B7%AE%E5%88%AB/">一张图弄懂开源协议-GPL、BSD、MIT、Mozilla、Apache和LGPL 之间的差别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F-lauchMode/">Activity启动模式(lauchMode)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Java%E5%AF%B9%E8%B1%A1%E8%BD%ACjson%E6%97%B6%E7%A9%BA%E5%80%BC-null-%E5%A4%84%E7%90%86/">Java对象转json时空值(null)处理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%E7%89%88%E6%9C%AC%E5%92%8CAPI-Level%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB/">Android版本和API Level对应关系</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Flutter%20%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/">Flutter 路由跳转</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%20%E5%8A%A8%E6%80%81%E8%B0%83%E7%94%A8%E5%A4%96%E9%83%A8jar&dex/">Android 动态调用外部jar/dex</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JNI%20Md5%E5%8A%A0%E5%AF%86%E7%94%9F%E6%88%90so%E6%96%87%E4%BB%B6/">JNI Md5加密生成so文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/PE%E8%A3%85%E6%9C%BA%EF%BC%8C%E5%BC%80%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8%E9%A1%B9%E5%BF%AB%E6%8D%B7%E9%94%AE/">pe装机，开机设置启动项快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/article/VS-code-%E6%8F%92%E4%BB%B6/">VS code 插件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E9%81%8D%E5%8E%86Map%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/">遍历Map的四种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/15%E7%A7%8DCSS%E5%B1%85%E4%B8%AD%E6%96%B9%E5%BC%8F/">15种CSS居中方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%88%A9%E7%94%A8%E7%99%BE%E5%BA%A6URL-API%E5%AE%9E%E7%8E%B0%E5%9C%B0%E5%9D%80-%E7%BB%8F%E7%BA%AC%E5%BA%A6%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/">利用百度URL API实现地址与经纬度互相转换</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%E8%8E%B7%E5%8F%96view%E5%AE%BD%E9%AB%98%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/">Android获取view宽高的三种方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-TextView%E5%B1%9E%E6%80%A7android-ellipsize-marquee%E4%B8%8D%E7%94%9F%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">Android中TextView属性ellipsize=marquee不生效的解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%85%B3%E4%BA%8EAndroid%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8KSoap2%E8%B0%83%E7%94%A8Webservice%E8%BF%90%E8%A1%8C%E4%B8%8D%E6%88%90%E5%8A%9F%E7%9A%84%E9%97%AE%E9%A2%98/">关于Android程序使用KSoap2调用Webservice运行不成功的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo-%E6%B7%BB%E5%8A%A0-Gitment-%E8%AF%84%E8%AE%BA/">Hexo 添加 Gitment 评论</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-Webview-%E5%86%85%E5%AE%B9%E8%87%AA%E9%80%82%E5%BA%94%E9%AB%98%E5%BA%A6/">Android Webview 内容自适应高度</a></li><li class="post-list-item"><a class="post-list-link" href="/article/java%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/">java实现定时任务的三种方法(收集)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Java%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%A4%A7%E5%B0%8F%E7%9A%846%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%88%E6%94%B6%E9%9B%86%EF%BC%89/">Java读取文件夹大小的6种方法（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/json%E8%BD%AC%E6%A0%91%E7%8A%B6%E7%BB%93%E6%9E%84%EF%BC%88%E6%94%B6%E9%9B%86%EF%BC%89/">json转树状结构（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E4%B8%80%E8%A1%8C%20%20JavaScript%20%E4%BB%A3%E7%A0%81%EF%BC%88%E6%94%B6%E9%9B%86%EF%BC%89/">一行  JavaScript 代码（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo%E5%BB%BA%E7%AB%99%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%A1%AB%E5%9D%91%EF%BC%89/">Hexo建站过程中遇到的问题（填坑篇）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-library-%E5%8F%91%E5%B8%83%E5%88%B0-JCenter/">Android library 发布到 JCenter</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%B1%87%E9%9B%86/">正则表达式匹配汇集</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BHtml%EF%BC%88CSS-JS%EF%BC%89/">技术文章之Html（CSS，JS）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BAndroid/">技术文章之Android</a></li><li class="post-list-item"><a class="post-list-link" href="/article/web-app%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86/">web app相关整理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%9D%E5%8D%B0%E8%B1%A1%E3%80%90%E6%95%B4%E7%90%86%E3%80%91/">微信小程序初印象【整理】</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Webp%E7%9A%84%E6%8E%A2%E7%A9%B6%E4%B9%8B%E8%B7%AF/">Webp的探究之路</a></li><li class="post-list-item"><a class="post-list-link" href="/article/android%E4%B8%AD%E4%BD%BF%E7%94%A8icon-fonts%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/">android中使用icon fonts字体图标</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%E6%B7%B7%E6%B7%86%E7%AD%BE%E5%90%8D%EF%BC%88%E4%B8%8A%EF%BC%89/">Android混淆签名(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android%E6%B7%B7%E6%B7%86%E7%AD%BE%E5%90%8D%EF%BC%88%E4%B8%8B%EF%BC%89/">Android混淆签名(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%88%91%E6%94%B6%E9%9B%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">我收集的一些开源项目</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E4%BA%8E%E4%B8%BB%E9%A2%98Yelee-yelog-%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB/">Hexo博客基于主题Yelee(yelog) 添加文章分类</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E4%BA%8E%E4%B8%BB%E9%A2%98Yelee-yelog-%E6%B7%BB%E5%8A%A0%E2%80%9C%E6%A0%87%E7%AD%BE%E4%BA%91%E2%80%9D%E5%92%8C%E2%80%9C%E5%85%B3%E4%BA%8E%E6%88%91%E2%80%9D%E8%8F%9C%E5%8D%95%E9%A1%B9%E9%A1%B5%E9%9D%A2/">Hexo博客基于主题Yelee(yelog) 添加“标签云”和“关于我”菜单项页面</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Html5-PPT/">Html5 PPT</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E5%A6%82%E4%BD%95%E5%9C%A8Github-Pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%8B%AC%E7%AB%8B%E4%B8%BB%E9%A1%B5%EF%BC%9F/">如何在Github Pages搭建个人独立主页？</a></li><li class="post-list-item"><a class="post-list-link" href="/article/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8hexo%E6%90%AD%E5%BB%BAgithub-pages/">我是如何用hexo搭建github pages</a></li><li class="post-list-item"><a class="post-list-link" href="/article/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+
+<!--gitalk 评论-->
+
+    <div id="gitalk-container"></div>
+
+    <style>
+        #gitalk-container{
+            margin: 60px 0 0;padding: 0 60px;
+        }
+        #gitalk-container a {
+          border: none;
+        }
+		@media screen and (max-width:1040px) {
+            #gitalk-container{
+                padding: 0 30px;
+            }
+		}
+    </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+    <script>
+    var gitalk = new Gitalk({        
+        id: '技术文章之Android',
+        title: '技术文章之Android',
+        owner: 'Sogrey',        
+        admin: ['Sogrey'],
+        repo: 'Sogrey.github.io',
+        clientID: '582650733e15427a208c',
+        clientSecret: 'bd0b0b80b6f23921f9b9df5ad0e40650e9da65f0',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+      
+      gitalk.render('gitalk-container')
+    </script>
+
+<!--gitalk 评论 end-->
+
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <a href="https://sogrey.github.io/about/mit.html" target="_blank" title="本博客使用遵循MIT License协议的Hexo开发">MIT</a> 
+                <i class="fa fa-copyright"></i> 
+                2016-2024 <i class="fa fa-heart animated infinite pulse"></i><a href="https://sogrey.github.io" target="_blank" title="我是一个小帅哥！^_^  https://github.com/Sogrey">Sogrey</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <!-- <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span> -->
+
+                    <span id="busuanzi_container_site_pv">
+                        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <!-- <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span> -->
+
+                    <span id="busuanzi_container_page_pv">
+                        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+                      </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="/js/libs/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 3;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+             categories: ".article-category a, a.tag-list-link", 
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 敬请下次光临~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 欢迎光临~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<!--已过期-->
+<!-- <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  </div>
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/love.js"></script>
+  <!-- 动态背景 -->
+  <!--<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="120" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>-->
+  <script type="text/javascript" src="/js/canvas-nest.min.js"></script>
+
+  <script type="text/javascript" src="/js/my.js"></script>
+</body>
+</html>
