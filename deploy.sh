@@ -16,7 +16,11 @@ echo -e '\033[32;40m
 '
 echo -e "\033[32;40m [1/3] \033[0m commit 2 dev branch"
 
-mkdir .deploy_git
+if [ ! -d ".deploy_git" ];then
+  mkdir .deploy_git
+  else
+  echo ".deploy_git 文件夹已经存在"
+fi
 
 git init
 git add -A

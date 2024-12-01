@@ -340,7 +340,7 @@ CDN:
   pace_js: /js/libs/pace/1.0.2/pace.min.js #//cdn.bootcss.com/pace/1.0.2/pace.min.js
   clipboard: /js/libs/clipboard.js/1.5.10/clipboard.min.js #//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js
   mathjax: /js/libs/mathjax/2.6.1/MathJax.js #//cdn.bootcss.com/mathjax/2.6.1/MathJax.js
-  scrollreveal: /js/libs/scrollReveal.js/3.1.4/scrollreveal.min.js #//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js
+  scrollreveal: /js/libs/scrollreveal.js/3.1.4/scrollreveal.min.js #//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js
   
 # --------------------------------------------------------------
 # background settings

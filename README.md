@@ -29,4 +29,3 @@ Sogrey's github pages
 - 3. 剩下的交给 `cmd.bat` 吧(需要全局安装Hexo)。
 - 4. 如果本地安装了node.js,推荐使用`npm start`预览和`npm run deploy`发布。
      
-
