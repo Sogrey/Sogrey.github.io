@@ -97,10 +97,9 @@ theme: yelog
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+# 注意：现在使用 GitHub Actions 自动部署，不需要配置 deploy
 deploy:
-  type: git
-  repository: https://github.com/Sogrey/Sogrey.github.io.git
-  branch: master
+  type: ''
 #RSS订阅
 plugin:
 - hexo-generator-feed
