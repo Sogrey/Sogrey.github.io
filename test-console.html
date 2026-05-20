@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Console Test</title>
+</head>
+<body>
+    <h1>Open Console (F12) to test</h1>
+    <script>
+        // Test 1: Simple background image
+        console.log('%c ', 'background: url(https://sogrey.top/img/logo/sogrey.github.io.svg) no-repeat; padding: 50px 200px;');
+        
+        // Test 2: With background-size
+        console.log('%c ', 'background: url(https://sogrey.top/img/logo/sogrey.github.io.svg) no-repeat; padding: 50px 200px; background-size: contain;');
+        
+        // Test 3: Full test
+        console.log('%c %c\nWelcome to%c\nSogrey\'s Blog\n%chttps://sogrey.top \n',
+            'padding:50px 200px;background:url(https://sogrey.top/img/logo/sogrey.github.io.svg) no-repeat center center;background-size:contain;height:100px;line-height:100px;',
+            'text-shadow:1px 1px 5px rgba(0,0,0.2);font-size:20px;',
+            'text-shadow:1px 1px 3px rgba(0,0,0.2);font-size:40px;',
+            'font-size:25px;font-weight:500;color:#3eaf7c!important;text-decoration:none;'
+        );
+        
+        // Test 4: Using background-image property
+        console.log('%c ', 'background-image: url(https://sogrey.top/img/logo/sogrey.github.io.svg); background-repeat: no-repeat; padding: 50px 200px; background-size: contain;');
+    </script>
+</body>
+</html>
